@@ -8,21 +8,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="6.3 Learn more | Data Visualization in R" />
+<meta property="og:title" content="6.3 Learn more | R for Environmental Health Research" />
 <meta property="og:type" content="book" />
 
 
-<meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
 <meta name="github-repo" content="rstudio/bookdown-demo" />
 
 <meta name="author" content="Brooke Anderson" />
 
-<meta name="date" content="2019-03-28" />
+<meta name="date" content="2019-04-09" />
 
 
-<meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
-<title>6.3 Learn more | Data Visualization in R</title>
+<title>6.3 Learn more | R for Environmental Health Research</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
@@ -127,33 +127,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="TOC">
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
-<li class="has-sub"><a href="2-plot.html#plot"><span class="toc-section-number">2</span> Plot</a><ul>
-<li class="has-sub"><a href="2-1-plot-elements.html#plot-elements"><span class="toc-section-number">2.1</span> Plot elements</a><ul>
-<li><a href="2-1-plot-elements.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-plot-elements.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
+<li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
+<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
+<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
+<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
 </ul></li>
-<li class="has-sub"><a href="2-2-building-a-plot.html#building-a-plot"><span class="toc-section-number">2.2</span> Building a plot</a><ul>
-<li><a href="2-2-building-a-plot.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-building-a-plot.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
+<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
+<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
 </ul></li>
-<li><a href="2-3-saving-plots.html#saving-plots"><span class="toc-section-number">2.3</span> Saving plots</a></li>
-<li><a href="2-4-learn-more.html#learn-more"><span class="toc-section-number">2.4</span> Learn more</a></li>
+<li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="3-map.html#map"><span class="toc-section-number">3</span> Map</a><ul>
-<li><a href="3-1-geographical-data-in-a-tidy-format.html#geographical-data-in-a-tidy-format"><span class="toc-section-number">3.1</span> Geographical data in a tidy format</a></li>
-<li><a href="3-2-basic-mapping.html#basic-mapping"><span class="toc-section-number">3.2</span> Basic mapping</a></li>
-<li><a href="3-3-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.3</span> Learn more</a></li>
+<li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
+<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
+<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
+<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-interact.html#interact"><span class="toc-section-number">4</span> Interact</a><ul>
-<li><a href="4-1-dt-datatables.html#dt-datatables"><span class="toc-section-number">4.1</span> DT: Datatables</a></li>
-<li><a href="4-2-plotly.html#plotly"><span class="toc-section-number">4.2</span> Plotly</a></li>
-<li><a href="4-3-leaflet.html#leaflet"><span class="toc-section-number">4.3</span> Leaflet</a></li>
+<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
+<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
+<li><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a></li>
+<li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="5-report.html#report"><span class="toc-section-number">5</span> Report</a><ul>
-<li><a href="5-1-rmarkdown.html#rmarkdown"><span class="toc-section-number">5.1</span> RMarkdown</a></li>
-<li><a href="5-2-dashboards.html#dashboards"><span class="toc-section-number">5.2</span> Dashboards</a></li>
-<li><a href="5-3-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.3</span> Learn more</a></li>
+<li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
+<li><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a></li>
+<li><a href="5-2-apis.html#apis"><span class="toc-section-number">5.2</span> APIs</a></li>
+<li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
+<li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="6-tidy.html#tidy"><span class="toc-section-number">6</span> Tidy</a><ul>
 <li><a href="6-1-tidyverse-tools.html#tidyverse-tools"><span class="toc-section-number">6.1</span> Tidyverse tools</a></li>

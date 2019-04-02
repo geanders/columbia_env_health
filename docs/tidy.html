@@ -5,34 +5,34 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 6 Tidy | Data Visualization in R</title>
-  <meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+  <title>Chapter 6 Tidy | R for Environmental Health Research</title>
+  <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 6 Tidy | Data Visualization in R" />
+  <meta property="og:title" content="Chapter 6 Tidy | R for Environmental Health Research" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Tidy | Data Visualization in R" />
+  <meta name="twitter:title" content="Chapter 6 Tidy | R for Environmental Health Research" />
   
-  <meta name="twitter:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta name="twitter:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   
 
 <meta name="author" content="Brooke Anderson">
 
 
-<meta name="date" content="2019-03-28">
+<meta name="date" content="2019-04-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="report.html">
+<link rel="prev" href="collect.html">
 <link rel="next" href="final-words.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -150,33 +150,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="plot.html"><a href="plot.html"><i class="fa fa-check"></i><b>2</b> Plot</a><ul>
-<li class="chapter" data-level="2.1" data-path="plot.html"><a href="plot.html#plot-elements"><i class="fa fa-check"></i><b>2.1</b> Plot elements</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="plot.html"><a href="plot.html#example-data"><i class="fa fa-check"></i><b>2.1.1</b> Example data</a></li>
-<li class="chapter" data-level="2.1.2" data-path="plot.html"><a href="plot.html#illustrating-plot-elements"><i class="fa fa-check"></i><b>2.1.2</b> Illustrating plot elements</a></li>
+<li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
+<li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="organize.html"><a href="organize.html#example-data"><i class="fa fa-check"></i><b>2.1.1</b> Example data</a></li>
+<li class="chapter" data-level="2.1.2" data-path="organize.html"><a href="organize.html#illustrating-plot-elements"><i class="fa fa-check"></i><b>2.1.2</b> Illustrating plot elements</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="plot.html"><a href="plot.html#building-a-plot"><i class="fa fa-check"></i><b>2.2</b> Building a plot</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="plot.html"><a href="plot.html#reading-data"><i class="fa fa-check"></i><b>2.2.1</b> Reading data</a></li>
-<li class="chapter" data-level="2.2.2" data-path="plot.html"><a href="plot.html#plotting-by-layers"><i class="fa fa-check"></i><b>2.2.2</b> Plotting by layers</a></li>
+<li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#reading-data"><i class="fa fa-check"></i><b>2.2.1</b> Reading data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#plotting-by-layers"><i class="fa fa-check"></i><b>2.2.2</b> Plotting by layers</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="plot.html"><a href="plot.html#saving-plots"><i class="fa fa-check"></i><b>2.3</b> Saving plots</a></li>
-<li class="chapter" data-level="2.4" data-path="plot.html"><a href="plot.html#learn-more"><i class="fa fa-check"></i><b>2.4</b> Learn more</a></li>
+<li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="map.html"><a href="map.html"><i class="fa fa-check"></i><b>3</b> Map</a><ul>
-<li class="chapter" data-level="3.1" data-path="map.html"><a href="map.html#geographical-data-in-a-tidy-format"><i class="fa fa-check"></i><b>3.1</b> Geographical data in a tidy format</a></li>
-<li class="chapter" data-level="3.2" data-path="map.html"><a href="map.html#basic-mapping"><i class="fa fa-check"></i><b>3.2</b> Basic mapping</a></li>
-<li class="chapter" data-level="3.3" data-path="map.html"><a href="map.html#learn-more-1"><i class="fa fa-check"></i><b>3.3</b> Learn more</a></li>
+<li class="chapter" data-level="3" data-path="track.html"><a href="track.html"><i class="fa fa-check"></i><b>3</b> Track</a><ul>
+<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a></li>
+<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
+<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="track.html"><a href="track.html#accessing-a-bash-shell"><i class="fa fa-check"></i><b>3.3.1</b> Accessing a Bash Shell</a></li>
+<li class="chapter" data-level="3.3.2" data-path="track.html"><a href="track.html#git2r-package"><i class="fa fa-check"></i><b>3.3.2</b> <code>git2r</code> package</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interact.html"><a href="interact.html"><i class="fa fa-check"></i><b>4</b> Interact</a><ul>
-<li class="chapter" data-level="4.1" data-path="interact.html"><a href="interact.html#dt-datatables"><i class="fa fa-check"></i><b>4.1</b> DT: Datatables</a></li>
-<li class="chapter" data-level="4.2" data-path="interact.html"><a href="interact.html#plotly"><i class="fa fa-check"></i><b>4.2</b> Plotly</a></li>
-<li class="chapter" data-level="4.3" data-path="interact.html"><a href="interact.html#leaflet"><i class="fa fa-check"></i><b>4.3</b> Leaflet</a></li>
-<li class="chapter" data-level="4.4" data-path="interact.html"><a href="interact.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
+<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="report.html"><a href="report.html"><i class="fa fa-check"></i><b>5</b> Report</a><ul>
-<li class="chapter" data-level="5.1" data-path="report.html"><a href="report.html#rmarkdown"><i class="fa fa-check"></i><b>5.1</b> RMarkdown</a></li>
-<li class="chapter" data-level="5.2" data-path="report.html"><a href="report.html#dashboards"><i class="fa fa-check"></i><b>5.2</b> Dashboards</a></li>
-<li class="chapter" data-level="5.3" data-path="report.html"><a href="report.html#learn-more-3"><i class="fa fa-check"></i><b>5.3</b> Learn more</a></li>
+<li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
+<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#r-packages"><i class="fa fa-check"></i><b>4.1</b> R packages</a></li>
+<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#publishing"><i class="fa fa-check"></i><b>4.2</b> Publishing</a></li>
+<li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#checking"><i class="fa fa-check"></i><b>4.3</b> Checking</a></li>
+<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
+<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a></li>
+<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#apis"><i class="fa fa-check"></i><b>5.2</b> APIs</a></li>
+<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#ropensci"><i class="fa fa-check"></i><b>5.3</b> ROpenSci</a></li>
+<li class="chapter" data-level="5.4" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>6</b> Tidy</a><ul>
 <li class="chapter" data-level="6.1" data-path="tidy.html"><a href="tidy.html#tidyverse-tools"><i class="fa fa-check"></i><b>6.1</b> Tidyverse tools</a></li>
@@ -196,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualization in R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for Environmental Health Research</a>
           </h1>
         </div>
 
@@ -225,12 +229,12 @@ and continue
 to use it. A common misperception is that R is good for visualizations, but bad for
 cleaning data. While in the past this might have been (somewhat) valid, now it couldn’t
 be further from the truth. With a collection of tools available through the
-<strong>tidyverse</strong>,<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>
+<strong>tidyverse</strong>,<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 you can write clean and compact code to clean even very large and
 messy datasets.</p>
 <p>The tidyverse works as well as it does because, for many parts of it, it requires
 a common input and output, and those input and output specifications are
-identical (the tidy data format).<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>
+identical (the tidy data format).<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 If you want to get a better idea of this concept, and why it’s so powerful,
 think of some of the
 classic toys, like Legos (train sets and Lincoln logs also
@@ -427,15 +431,15 @@ keeping them handy as you try to apply R to explore your own data.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="32">
-<li id="fn32"><p><strong>tidyverse.</strong> A collection of packages to work with data in a
+<ol start="29">
+<li id="fn29"><p><strong>tidyverse.</strong> A collection of packages to work with data in a
 “tidy” format, or to convert it to that format if needed. Many of these packages
 are developed and maintained by people at RStudio. If you run <code>library("tidyverse")</code>,
 you can load the core tidyverse packages in your R session. This way, you avoid
-having to load them one by one.<a href="tidy.html#fnref32" class="footnote-back">↩</a></p></li>
-<li id="fn33"><p>There are some clear specifications for this
+having to load them one by one.<a href="tidy.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>There are some clear specifications for this
 format. I’m not going to go into them here, but several of the references given
-in the “Learn More” section go into depth in describing and defining this format.<a href="tidy.html#fnref33" class="footnote-back">↩</a></p></li>
+in the “Learn More” section go into depth in describing and defining this format.<a href="tidy.html#fnref30" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -443,7 +447,7 @@ in the “Learn More” section go into depth in describing and defining this fo
           </div>
         </div>
       </div>
-<a href="report.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="collect.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -481,7 +485,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["navy_public_health.pdf"],
+"download": ["columbia_env_health.pdf"],
 "toc": {
 "collapse": "subsection"
 }

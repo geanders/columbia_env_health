@@ -12,7 +12,7 @@
 <meta property="og:type" content="book" />
 
 
-<meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
 <meta name="github-repo" content="rstudio/bookdown-demo" />
 
 <meta name="author" content="Brooke Anderson" />
@@ -20,7 +20,7 @@
 <meta name="date" content="2019-03-28" />
 
 
-<meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
 <title>2.1 Plot elements | Data Visualization in R</title>
 
@@ -183,7 +183,7 @@ these two ideas for the example data. On September 10, 2017, Hurricane Irma hit 
 and before it did, it triggered evacuations for much of the state. The National Highway
 Traffic Safety Administration (under the US Department of Transportation) tracks all
 the fatal motor vehicle accidents in the US through its Fatality Analysis Reporting
-System (FARS).<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> <strong>Fatality Analysis Reporting System (FARS).</strong> A surveillance system
+System (FARS).<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> <strong>Fatality Analysis Reporting System (FARS).</strong> A surveillance system
 for all fatal motor vehicle accidents in the US, maintained by the National Highway
 Traffic Safety Administration. For more, see
 <a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars">the FARS website</a>.</span></p>
@@ -386,7 +386,7 @@ in Florida per day in the weeks around Hurricane Irma, with the day of the week 
 with color (since, for some health outcomes, there are patterns by the day
 of week).</p>
 <div class="figure fullwidth"><span id="fig:plotelements"></span>
-<img src="navy_public_health_files/figure-html/plotelements-1.png" alt="Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019." width="768"  />
+<img src="columbia_env_health_files/figure-html/plotelements-1.png" alt="Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.1: Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019.
 </p>
@@ -395,7 +395,7 @@ Figure 2.1: Number of motor vehicle fatalities by day in Florida in the weeks su
 <ul>
 <li><strong>data</strong>: The data illustrated with this plot is all from the example data
 shown in Table <a href="2-1-plot-elements.html#tab:exampledata">2.1</a>.</li>
-<li><strong>geoms</strong>:<label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> <strong>geoms.</strong> The geometric objects (e.g., points, lines, bars, columns,
+<li><strong>geoms</strong>:<label for="tufte-sn-4" class="margin-toggle sidenote-number">4</label><input type="checkbox" id="tufte-sn-4" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">4</span> <strong>geoms.</strong> The geometric objects (e.g., points, lines, bars, columns,
 polygons, rectangles, text, labels) used to display data for <code>ggplot</code> plots.</span>
 The geometric objects used to plot the data are (1) points (in
 different colors, depending on the day of week) and (2) a line (in gray).</li>
@@ -421,7 +421,7 @@ working with the example data, you’ll see that these are changed from the corr
 column names in the data, to make the plot easier to understand. In addition,
 the plot has both a title (“Motor vehicle fatalities in Florida”) and a
 subtitle (“Late summer / early fall of 2019”).</li>
-<li><strong>theme</strong>:<label for="tufte-sn-7" class="margin-toggle sidenote-number">7</label><input type="checkbox" id="tufte-sn-7" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">7</span> <strong>theme.</strong> A collection of specifications for the background elements
+<li><strong>theme</strong>:<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> <strong>theme.</strong> A collection of specifications for the background elements
 of the plot, including the plot background, grid lines, legend position, text size and
 font, margins, and axis ticks.</span>
 This plot uses the default <code>theme_gray</code> theme, with a gray background
@@ -442,7 +442,7 @@ the elements again explained below the plot.</p>
 <p class="caption marginnote shownote">
 Figure 2.2: Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma’s landfall.
 </p>
-<img src="navy_public_health_files/figure-html/plotelements2-1.png" alt="Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma's landfall." width="576"  />
+<img src="columbia_env_health_files/figure-html/plotelements2-1.png" alt="Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma's landfall." width="576"  />
 </div>
 <p>Here’s the breakdown of plot elements for this plot:</p>
 <ul>

@@ -12,7 +12,7 @@
 <meta property="og:type" content="book" />
 
 
-<meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
 <meta name="github-repo" content="rstudio/bookdown-demo" />
 
 <meta name="author" content="Brooke Anderson" />
@@ -20,7 +20,7 @@
 <meta name="date" content="2019-03-28" />
 
 
-<meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
 <title>3.1 Geographical data in a tidy format | Data Visualization in R</title>
 
@@ -127,17 +127,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="TOC">
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
-<li class="has-sub"><a href="2-plot.html#plot"><span class="toc-section-number">2</span> Plot</a><ul>
-<li class="has-sub"><a href="2-1-plot-elements.html#plot-elements"><span class="toc-section-number">2.1</span> Plot elements</a><ul>
-<li><a href="2-1-plot-elements.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-plot-elements.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
+<li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
+<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
+<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
+<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
 </ul></li>
-<li class="has-sub"><a href="2-2-building-a-plot.html#building-a-plot"><span class="toc-section-number">2.2</span> Building a plot</a><ul>
-<li><a href="2-2-building-a-plot.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-building-a-plot.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
+<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
+<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
 </ul></li>
-<li><a href="2-3-saving-plots.html#saving-plots"><span class="toc-section-number">2.3</span> Saving plots</a></li>
-<li><a href="2-4-learn-more.html#learn-more"><span class="toc-section-number">2.4</span> Learn more</a></li>
+<li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-map.html#map"><span class="toc-section-number">3</span> Map</a><ul>
 <li><a href="3-1-geographical-data-in-a-tidy-format.html#geographical-data-in-a-tidy-format"><span class="toc-section-number">3.1</span> Geographical data in a tidy format</a></li>
@@ -178,7 +177,7 @@ longitude for the location of the accident. As another example, if you have a da
 the total number of motor vehicle fatalities in a year in each county in a state, the
 <code>geometry</code> column might have all the latitude and longitude points to form the
 boundary of each county.</p>
-<p>These special dataframes are given a class called <strong>sf</strong><label for="tufte-sn-20" class="margin-toggle sidenote-number">20</label><input type="checkbox" id="tufte-sn-20" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">20</span> <strong>sf.</strong> Short for “simple features”,
+<p>These special dataframes are given a class called <strong>sf</strong><label for="tufte-sn-18" class="margin-toggle sidenote-number">18</label><input type="checkbox" id="tufte-sn-18" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">18</span> <strong>sf.</strong> Short for “simple features”,
 the name of both an R package and the object class created and used by the data. This class
 includes a special column called “geometry” for geographic information about each observation.
 Objects with this class can be used for mapping spatial data, but also can be manipulated
@@ -213,12 +212,12 @@ fl_accidents</code></pre>
 ## 10 12031 2017-09-12     30.4    -81.8      1
 ## # … with 27 more rows</code></pre>
 <p>Even though this data has geographical information in it (latitude and longitude), it’s currently
-just a regular dataframe. To convert it to an <code>sf</code> class object, you can use the <code>st_as_sf</code> function,<label for="tufte-sn-21" class="margin-toggle sidenote-number">21</label><input type="checkbox" id="tufte-sn-21" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">21</span> 
+just a regular dataframe. To convert it to an <code>sf</code> class object, you can use the <code>st_as_sf</code> function,<label for="tufte-sn-19" class="margin-toggle sidenote-number">19</label><input type="checkbox" id="tufte-sn-19" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">19</span> 
 Most of the functions in the <code>st</code> package start with <code>st_</code>. Since R studio allows <strong>tab completion</strong>,
 this makes it very easy to look up a function in the package whose name you might have forgotten.
 Just try typing <code>st_</code> and then the Tab key in your R console—you should get a pop-up with a list of
 suggestions for possible function names.</span>
-specifying the columns with the geogrphical coordinates using the <code>coords</code> parameter.<label for="tufte-sn-22" class="margin-toggle sidenote-number">22</label><input type="checkbox" id="tufte-sn-22" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">22</span> Here, the
+specifying the columns with the geogrphical coordinates using the <code>coords</code> parameter.<label for="tufte-sn-20" class="margin-toggle sidenote-number">20</label><input type="checkbox" id="tufte-sn-20" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">20</span> Here, the
 compound pipe operator, <code>%&lt;&gt;%</code>, applies the function to <code>fl_accidents</code> and then overwrites the
 <code>fl_accidents</code> with the modified version, updating the object so you’re ready to use it for later
 code.</span> We also want to go ahead and set the projection to something reasonable for latitude-longitude
@@ -252,7 +251,7 @@ including the objects <strong>bounding box</strong> (<code>bbox</code>) and <str
 ## 10 12031 2017-09-12      1 (-81.76086 30.37913)
 ## # … with 27 more rows</code></pre>
 <p>A second way to create an <code>sf</code> object in R is to read in data from a geographic data file, like
-a <strong>shapefile</strong><label for="tufte-sn-23" class="margin-toggle sidenote-number">23</label><input type="checkbox" id="tufte-sn-23" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">23</span> <strong>shapefile.</strong> A format for storing geographical data common for GIS. The data
+a <strong>shapefile</strong><label for="tufte-sn-21" class="margin-toggle sidenote-number">21</label><input type="checkbox" id="tufte-sn-21" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">21</span> <strong>shapefile.</strong> A format for storing geographical data common for GIS. The data
 will typically be stored in a directory (often zipped to a single file), with separate files
 that give geographic data and other characteristics of the data.</span>
 If you followed the “Prerequisites”, you should have downloaded a shapefile as a subdirectory called
@@ -289,7 +288,7 @@ For example, to read in a line with the track of irma, you can run:</p>
 <pre class="sourceCode r"><code class="sourceCode r">irma_tracks &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;data/al112017_best_track/&quot;</span>,
                        <span class="dt">layer =</span> <span class="st">&quot;al112017_lin&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">st_transform</span>(<span class="dt">crs =</span> <span class="dv">4326</span>)</code></pre>
-<pre><code>## Reading layer `al112017_lin&#39; from data source `/Users/georgianaanderson/Documents/r_workshops/navy_public_health/data/al112017_best_track&#39; using driver `ESRI Shapefile&#39;
+<pre><code>## Reading layer `al112017_lin&#39; from data source `/Users/georgianaanderson/Documents/r_workshops/columbia_env_health/data/al112017_best_track&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 20 features and 3 fields
 ## geometry type:  LINESTRING
 ## dimension:      XY

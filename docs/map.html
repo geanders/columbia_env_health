@@ -6,20 +6,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Chapter 3 Map | Data Visualization in R</title>
-  <meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+  <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Chapter 3 Map | Data Visualization in R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 3 Map | Data Visualization in R" />
   
-  <meta name="twitter:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta name="twitter:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   
 
 <meta name="author" content="Brooke Anderson">
@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="plot.html">
+<link rel="prev" href="organize.html">
 <link rel="next" href="interact.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -150,17 +150,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="plot.html"><a href="plot.html"><i class="fa fa-check"></i><b>2</b> Plot</a><ul>
-<li class="chapter" data-level="2.1" data-path="plot.html"><a href="plot.html#plot-elements"><i class="fa fa-check"></i><b>2.1</b> Plot elements</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="plot.html"><a href="plot.html#example-data"><i class="fa fa-check"></i><b>2.1.1</b> Example data</a></li>
-<li class="chapter" data-level="2.1.2" data-path="plot.html"><a href="plot.html#illustrating-plot-elements"><i class="fa fa-check"></i><b>2.1.2</b> Illustrating plot elements</a></li>
+<li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
+<li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="organize.html"><a href="organize.html#example-data"><i class="fa fa-check"></i><b>2.1.1</b> Example data</a></li>
+<li class="chapter" data-level="2.1.2" data-path="organize.html"><a href="organize.html#illustrating-plot-elements"><i class="fa fa-check"></i><b>2.1.2</b> Illustrating plot elements</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="plot.html"><a href="plot.html#building-a-plot"><i class="fa fa-check"></i><b>2.2</b> Building a plot</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="plot.html"><a href="plot.html#reading-data"><i class="fa fa-check"></i><b>2.2.1</b> Reading data</a></li>
-<li class="chapter" data-level="2.2.2" data-path="plot.html"><a href="plot.html#plotting-by-layers"><i class="fa fa-check"></i><b>2.2.2</b> Plotting by layers</a></li>
+<li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#reading-data"><i class="fa fa-check"></i><b>2.2.1</b> Reading data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#plotting-by-layers"><i class="fa fa-check"></i><b>2.2.2</b> Plotting by layers</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="plot.html"><a href="plot.html#saving-plots"><i class="fa fa-check"></i><b>2.3</b> Saving plots</a></li>
-<li class="chapter" data-level="2.4" data-path="plot.html"><a href="plot.html#learn-more"><i class="fa fa-check"></i><b>2.4</b> Learn more</a></li>
+<li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="map.html"><a href="map.html"><i class="fa fa-check"></i><b>3</b> Map</a><ul>
 <li class="chapter" data-level="3.1" data-path="map.html"><a href="map.html#geographical-data-in-a-tidy-format"><i class="fa fa-check"></i><b>3.1</b> Geographical data in a tidy format</a></li>
@@ -231,7 +230,7 @@ longitude for the location of the accident. As another example, if you have a da
 the total number of motor vehicle fatalities in a year in each county in a state, the
 <code>geometry</code> column might have all the latitude and longitude points to form the
 boundary of each county.</p>
-<p>These special dataframes are given a class called <strong>sf</strong><a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>
+<p>These special dataframes are given a class called <strong>sf</strong><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>
 There are several ways for you to create this special type of dataframe. We’ll create a few
 to use in the later mapping examples to demonstrate some of the ways to get an <code>sf</code> object.</p>
 <p>First, if you have a regular dataframe, you can
@@ -262,8 +261,8 @@ fl_accidents</code></pre>
 ## 10 12031 2017-09-12     30.4    -81.8      1
 ## # … with 27 more rows</code></pre>
 <p>Even though this data has geographical information in it (latitude and longitude), it’s currently
-just a regular dataframe. To convert it to an <code>sf</code> class object, you can use the <code>st_as_sf</code> function,<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>
-specifying the columns with the geogrphical coordinates using the <code>coords</code> parameter.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> We also want to go ahead and set the projection to something reasonable for latitude-longitude
+just a regular dataframe. To convert it to an <code>sf</code> class object, you can use the <code>st_as_sf</code> function,<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
+specifying the columns with the geogrphical coordinates using the <code>coords</code> parameter.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> We also want to go ahead and set the projection to something reasonable for latitude-longitude
 data; the “4326” code is a good pick. That can be set with the <code>st_sf</code> function (for a lot more
 on map projections, see the resources in “Learn More”).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;sf&quot;</span>)</code></pre>
@@ -295,7 +294,7 @@ including the objects <strong>bounding box</strong> (<code>bbox</code>) and <str
 ## 10 12031 2017-09-12      1 (-81.76086 30.37913)
 ## # … with 27 more rows</code></pre>
 <p>A second way to create an <code>sf</code> object in R is to read in data from a geographic data file, like
-a <strong>shapefile</strong><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>
+a <strong>shapefile</strong><a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>
 If you followed the “Prerequisites”, you should have downloaded a shapefile as a subdirectory called
 “al112017_best_track” in the “data” subdirectory.
 I downloaded this as a zipped data file from the National Hurricane Center and unzipped it.
@@ -330,7 +329,7 @@ For example, to read in a line with the track of irma, you can run:</p>
 <pre class="sourceCode r"><code class="sourceCode r">irma_tracks &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;data/al112017_best_track/&quot;</span>,
                        <span class="dt">layer =</span> <span class="st">&quot;al112017_lin&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">st_transform</span>(<span class="dt">crs =</span> <span class="dv">4326</span>)</code></pre>
-<pre><code>## Reading layer `al112017_lin&#39; from data source `/Users/georgianaanderson/Documents/r_workshops/navy_public_health/data/al112017_best_track&#39; using driver `ESRI Shapefile&#39;
+<pre><code>## Reading layer `al112017_lin&#39; from data source `/Users/georgianaanderson/Documents/r_workshops/columbia_env_health/data/al112017_best_track&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 20 features and 3 fields
 ## geometry type:  LINESTRING
 ## dimension:      XY
@@ -375,7 +374,7 @@ directions in the “Prerequisites” and are having problems with the previous 
 <h2><span class="header-section-number">3.2</span> Basic mapping</h2>
 <p>If you don’t have <code>ggplot2</code> still loaded from the exercises in the “Plot” section, you’ll need to
 load it. Then, you can create a <code>ggplot</code> object and add an <code>sf</code> layer to it with <code>geom_sf</code>, specifying
-the <code>sf</code> data set to plot.<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>
+the <code>sf</code> data set to plot.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>
 Add a coordinate layer (<code>coord_sf</code>) appropriate for a map (otherwise,
 you might end up with a map that’s “stretched” out in either the x- or y-direction):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
@@ -383,7 +382,7 @@ you might end up with a map that’s “stretched” out in either the x- or y-d
 <span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> fl_counties) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_sf</span>()</code></pre>
-<p><img src="navy_public_health_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>You can add other <code>sf</code> layers to this map, to add points for the location of each fatal accident
 and a line for the track of Hurricane Irma. Since the track for Irma began much further south than
 Florida and continues north of Florida, you’ll need to set <code>xlim</code> and <code>ylim</code> in the <code>coord_sf</code> call
@@ -396,7 +395,7 @@ default size.</p>
 <span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> fl_accidents, <span class="kw">aes</span>(<span class="dt">color =</span> date)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> irma_tracks, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">88</span>, <span class="dv">-80</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="fl">24.5</span>, <span class="fl">31.5</span>)) </code></pre>
-<p><img src="navy_public_health_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>You can do anything to this map that you would to a regular <code>ggplot</code> object. For example, instead of
 using color to show the date of an accident, you could use faceting to add a small map of each date
 using <code>facet_wrap</code>. This example code also adds some elements for the plot’s theme, including
@@ -412,7 +411,7 @@ changing the background color and taking out the axis ticks and labels.</p>
         <span class="dt">axis.ticks =</span> <span class="kw">element_blank</span>(),
         <span class="dt">axis.text =</span> <span class="kw">element_blank</span>(),
         <span class="dt">panel.grid =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">size =</span> <span class="fl">0.8</span>))</code></pre>
-<p><img src="navy_public_health_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="learn-more-1" class="section level2">
 <h2><span class="header-section-number">3.3</span> Learn more</h2>
@@ -441,29 +440,29 @@ US Census spatial data.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="20">
-<li id="fn20"><p><strong>sf.</strong> Short for “simple features”,
+<ol start="18">
+<li id="fn18"><p><strong>sf.</strong> Short for “simple features”,
 the name of both an R package and the object class created and used by the data. This class
 includes a special column called “geometry” for geographic information about each observation.
 Objects with this class can be used for mapping spatial data, but also can be manipulated
-using tidyverse tools very similarly to tibbles.<a href="map.html#fnref20" class="footnote-back">↩</a></p></li>
-<li id="fn21"><p>
+using tidyverse tools very similarly to tibbles.<a href="map.html#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>
 Most of the functions in the <code>st</code> package start with <code>st_</code>. Since R studio allows <strong>tab completion</strong>,
 this makes it very easy to look up a function in the package whose name you might have forgotten.
 Just try typing <code>st_</code> and then the Tab key in your R console—you should get a pop-up with a list of
-suggestions for possible function names.<a href="map.html#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p>Here, the
+suggestions for possible function names.<a href="map.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p>Here, the
 compound pipe operator, <code>%&lt;&gt;%</code>, applies the function to <code>fl_accidents</code> and then overwrites the
 <code>fl_accidents</code> with the modified version, updating the object so you’re ready to use it for later
-code.<a href="map.html#fnref22" class="footnote-back">↩</a></p></li>
-<li id="fn23"><p><strong>shapefile.</strong> A format for storing geographical data common for GIS. The data
+code.<a href="map.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p><strong>shapefile.</strong> A format for storing geographical data common for GIS. The data
 will typically be stored in a directory (often zipped to a single file), with separate files
-that give geographic data and other characteristics of the data.<a href="map.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p>If you are
+that give geographic data and other characteristics of the data.<a href="map.html#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>If you are
 running this on a Mac, there’s a chance that you might get an error message about “polygon
 edge not found.” There seems to be a bug that’s still being resolved involving the default graphics
 driver on Macs with this package. If you get this error message, try fixing it by adding the
-following layer to the <code>ggplot</code> code: <code>+ theme(axis.text = element_blank(), axis.ticks = element_blank()</code><a href="map.html#fnref24" class="footnote-back">↩</a></p></li>
+following layer to the <code>ggplot</code> code: <code>+ theme(axis.text = element_blank(), axis.ticks = element_blank()</code><a href="map.html#fnref22" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -471,7 +470,7 @@ following layer to the <code>ggplot</code> code: <code>+ theme(axis.text = eleme
           </div>
         </div>
       </div>
-<a href="plot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="organize.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="interact.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -509,7 +508,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["navy_public_health.pdf"],
+"download": ["columbia_env_health.pdf"],
 "toc": {
 "collapse": "subsection"
 }

@@ -6,20 +6,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Chapter 2 Plot | Data Visualization in R</title>
-  <meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+  <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Chapter 2 Plot | Data Visualization in R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Plot | Data Visualization in R" />
   
-  <meta name="twitter:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+  <meta name="twitter:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
   
 
 <meta name="author" content="Brooke Anderson">
@@ -229,7 +229,7 @@ these two ideas for the example data. On September 10, 2017, Hurricane Irma hit 
 and before it did, it triggered evacuations for much of the state. The National Highway
 Traffic Safety Administration (under the US Department of Transportation) tracks all
 the fatal motor vehicle accidents in the US through its Fatality Analysis Reporting
-System (FARS).<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+System (FARS).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>I downloaded and cleaned some data from this surveillance system. (In a later section,
 I’ll tell you more about how to do this cleaning.) I’ve created a fairly
 simple dataset for us to start with. For each date in the weeks around the hurricane’s
@@ -436,7 +436,7 @@ of week).</p>
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
 <div class="figure"><span id="fig:plotelements"></span>
-<img src="navy_public_health_files/figure-html/plotelements-1.png" alt="Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019." width="768" />
+<img src="columbia_env_health_files/figure-html/plotelements-1.png" alt="Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019." width="768" />
 <p class="caption">
 Figure 2.1: Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019.
 </p>
@@ -445,7 +445,7 @@ Figure 2.1: Number of motor vehicle fatalities by day in Florida in the weeks su
 <ul>
 <li><strong>data</strong>: The data illustrated with this plot is all from the example data
 shown in Table <a href="plot.html#tab:exampledata">2.1</a>.</li>
-<li><strong>geoms</strong>:<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
+<li><strong>geoms</strong>:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
 The geometric objects used to plot the data are (1) points (in
 different colors, depending on the day of week) and (2) a line (in gray).</li>
 <li><strong>aesthetics</strong>: For both of the geoms (points and the line), the position along the
@@ -470,7 +470,7 @@ working with the example data, you’ll see that these are changed from the corr
 column names in the data, to make the plot easier to understand. In addition,
 the plot has both a title (“Motor vehicle fatalities in Florida”) and a
 subtitle (“Late summer / early fall of 2019”).</li>
-<li><strong>theme</strong>:<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
+<li><strong>theme</strong>:<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
 This plot uses the default <code>theme_gray</code> theme, with a gray background
 to the main plot area, white gridlines, a Sans Serif font family,
 and a base font size of 11.
@@ -491,7 +491,7 @@ the elements again explained below the plot.</p>
 ## 
 ##     date</code></pre>
 <div class="figure"><span id="fig:plotelements2"></span>
-<img src="navy_public_health_files/figure-html/plotelements2-1.png" alt="Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma's landfall." width="576" />
+<img src="columbia_env_health_files/figure-html/plotelements2-1.png" alt="Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma's landfall." width="576" />
 <p class="caption">
 Figure 2.2: Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma’s landfall.
 </p>
@@ -532,7 +532,7 @@ to create these two example plots.</p>
 <h3><span class="header-section-number">2.2.1</span> Reading data</h3>
 <p>First, you’ll need to bring the example data into your R session. If you followed
 the steps in the “Prerequisites” section, you should have a
-<strong>comma-separated file</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> in a “data” subdirectory of the R Project you downloaded. Also, if you
+<strong>comma-separated file</strong><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> in a “data” subdirectory of the R Project you downloaded. Also, if you
 followed the steps in the “Prerequisites” section, you should have installed
 all the necessary R packages for this example.</p>
 <p>While there are functions in base R that import comma-separated files, I think the
@@ -545,10 +545,10 @@ this case, “readr”). If you have forgotten to install the “readr” packag
 run this function, you’ll get the message:</p>
 <pre><code>Error in library(readr) : there is no package called ‘readr’</code></pre>
 <p>If you get that message, go back and re-read the “Prerequisites” to make sure you’ve
-installed all the required packages.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
-<p>Now that you’ve loaded <code>readr</code>, you can use the package’s <code>read_csv</code> function<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>
+installed all the required packages.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<p>Now that you’ve loaded <code>readr</code>, you can use the package’s <code>read_csv</code> function<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>
 to read in the data. The one argument this function requires is the
-<strong>file path</strong><a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>
+<strong>file path</strong><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>
 to the data file.</p>
 <pre class="sourceCode r"><code class="sourceCode r">daily_fatalities &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/daily_fatalities.csv&quot;</span>)</code></pre>
 <pre><code>## Parsed with column specification:
@@ -567,7 +567,7 @@ tells you what it guessed, so you can check. In this case, the number of
 fatalities will always be a whole number, so the “integer” class would have
 also worked well, but there should be no problem with the column having a
 “double” class for the plotting we’ll be doing, so everything looks fine.</p>
-<p>The previous code used a <strong>gets arrow</strong><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> to save the data you read in to an R object called <code>daily_fatalities</code>.
+<p>The previous code used a <strong>gets arrow</strong><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> to save the data you read in to an R object called <code>daily_fatalities</code>.
 Now, anytime you want to use this data, you can reference it with the name
 <code>daily_fatalities</code> instead of needing to read it in again. For example, you
 can print out the start of the data by calling the object name by itself:</p>
@@ -586,7 +586,7 @@ can print out the start of the data by calling the object name by itself:</p>
 ##  9 2017-09-04    36 Monday         7
 ## 10 2017-09-05    36 Tuesday        8
 ## # … with 18 more rows</code></pre>
-<p>By default, <code>read_csv</code> reads the data into a structure called a <strong>tibble</strong>,<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> and you
+<p>By default, <code>read_csv</code> reads the data into a structure called a <strong>tibble</strong>,<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> and you
 can see that the top of the print-out notes this. It also gives the dimensions
 (28 rows and 4 columns) and, under each column name, the class of the column.
 When you start plotting this data, you’ll use the dataframe’s object name
@@ -606,7 +606,7 @@ package:</p>
 the dataframe with the data you’d like to plot using the <code>data</code> parameter:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> daily_fatalities)</code></pre>
 <div class="figure"><span id="fig:step1"></span>
-<img src="navy_public_health_files/figure-html/step1-1.png" alt="Step 1 of layering a plot: Creating the ggplot object. At this point, nothing's actually plotted, because we haven't added any geoms yet." width="768" />
+<img src="columbia_env_health_files/figure-html/step1-1.png" alt="Step 1 of layering a plot: Creating the ggplot object. At this point, nothing's actually plotted, because we haven't added any geoms yet." width="768" />
 <p class="caption">
 Figure 2.3: Step 1 of layering a plot: Creating the ggplot object. At this point, nothing’s actually plotted, because we haven’t added any geoms yet.
 </p>
@@ -620,7 +620,7 @@ y-axis to show the value in the <code>fatals</code> column:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> daily_fatalities) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals))</code></pre>
 <div class="figure"><span id="fig:step2"></span>
-<img src="navy_public_health_files/figure-html/step2-1.png" alt="Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the 'date' column in the data, while the y-axis (y aesthetic) is mapped to the 'fatals' column." width="768" />
+<img src="columbia_env_health_files/figure-html/step2-1.png" alt="Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the 'date' column in the data, while the y-axis (y aesthetic) is mapped to the 'fatals' column." width="768" />
 <p class="caption">
 Figure 2.4: Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the ‘date’ column in the data, while the y-axis (y aesthetic) is mapped to the ‘fatals’ column.
 </p>
@@ -636,7 +636,7 @@ call. Try running the following code to add this layer:</p>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals, <span class="dt">color =</span> weekday))</code></pre>
 <div class="figure"><span id="fig:step3"></span>
-<img src="navy_public_health_files/figure-html/step3-1.png" alt="Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we're also mapping color to the 'weekday' column in the data." width="768" />
+<img src="columbia_env_health_files/figure-html/step3-1.png" alt="Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we're also mapping color to the 'weekday' column in the data." width="768" />
 <p class="caption">
 Figure 2.5: Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we’re also mapping color to the ‘weekday’ column in the data.
 </p>
@@ -652,18 +652,18 @@ aesthetic for all of the observations from the data, but in the same way.</p>
 <p>For example, for this plot, we’d like the line to be dark gray for all observations,
 and we’d like the points to be a little bigger. To specify a <strong>constant aesthetic</strong>,
 move it outside of the <code>aes</code> call. For colors, you can set a constant value to
-one of the many named “R Colors”<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>
+one of the many named “R Colors”<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>
 (make sure you put the color name inside parentheses—otherwise, R will think you’re
 refering to an R object). Constant point size values can be specified using numbers,
 where larger numbers will make bigger points and the default value is somewhere
-around 1.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> Try numbers bigger than 1 (e.g., 1.5, 2) for bigger points and smaller
+around 1.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Try numbers bigger than 1 (e.g., 1.5, 2) for bigger points and smaller
 values (e.g., 0.8, 0.5) for smaller points.</p>
 <p>The following code will set the line to be dark gray and the points to be a bit larger (result in Figure <a href="plot.html#fig:step4">2.6</a>):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> daily_fatalities) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals), <span class="dt">color =</span> <span class="st">&quot;darkgray&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals, <span class="dt">color =</span> weekday), <span class="dt">size =</span> <span class="dv">2</span>)</code></pre>
 <div class="figure"><span id="fig:step4"></span>
-<img src="navy_public_health_files/figure-html/step4-1.png" alt="Step 4 of layering a plot: Adding constant aesthetics. In this step, we're making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they're constant, are set outside of the 'aes' call. Also, note that thee color is specified inside quotation marks." width="768" />
+<img src="columbia_env_health_files/figure-html/step4-1.png" alt="Step 4 of layering a plot: Adding constant aesthetics. In this step, we're making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they're constant, are set outside of the 'aes' call. Also, note that thee color is specified inside quotation marks." width="768" />
 <p class="caption">
 Figure 2.6: Step 4 of layering a plot: Adding constant aesthetics. In this step, we’re making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they’re constant, are set outside of the ‘aes’ call. Also, note that thee color is specified inside quotation marks.
 </p>
@@ -695,7 +695,7 @@ scale customizations is shown in Figure <a href="plot.html#fig:step5">2.7</a>.</
 <span class="st">  </span><span class="kw">expand_limits</span>(<span class="dt">y =</span> <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">scale_color_viridis_d</span>()</code></pre>
 <div class="figure"><span id="fig:step5"></span>
-<img src="navy_public_health_files/figure-html/step5-1.png" alt="Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the 'viridis' color scale." width="768" />
+<img src="columbia_env_health_files/figure-html/step5-1.png" alt="Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the 'viridis' color scale." width="768" />
 <p class="caption">
 Figure 2.7: Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the ‘viridis’ color scale.
 </p>
@@ -720,7 +720,7 @@ The final result of adding these layers is shown in Figure <a href="plot.html#fi
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Motor vehicle fatalities in Florida&quot;</span>,
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:step6"></span>
-<img src="navy_public_health_files/figure-html/step6-1.png" alt="Step 6 of layering a plot: Customizing labels. The 'labs' layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a 'ggtitle' layer." width="768" />
+<img src="columbia_env_health_files/figure-html/step6-1.png" alt="Step 6 of layering a plot: Customizing labels. The 'labs' layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a 'ggtitle' layer." width="768" />
 <p class="caption">
 Figure 2.8: Step 6 of layering a plot: Customizing labels. The ‘labs’ layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a ‘ggtitle’ layer.
 </p>
@@ -731,7 +731,7 @@ of the legend. For a time series plot like this, the change can be helpful, as i
 lets us create a plot that’s much wider than it is tall. You can move the legend
 using the <code>theme</code> layer with an argument specified for <code>legend.position</code>. With
 the <code>theme</code> function, you can customize almost any of the background elements of a
-plot.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>
+plot.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>
 However, you’ll usually only want to do that for a few elements—if you want
 to change a lot of elements, there is a set of functions that start <code>theme_</code> that
 will let you change to one of several “themes” that change many elements at once
@@ -748,7 +748,7 @@ can create your own <code>theme_*</code> function (fill in <code>*</code> with t
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:step7"></span>
-<img src="navy_public_health_files/figure-html/step7-1.png" alt="Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot." width="768" />
+<img src="columbia_env_health_files/figure-html/step7-1.png" alt="Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot." width="768" />
 <p class="caption">
 Figure 2.9: Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot.
 </p>
@@ -758,7 +758,7 @@ the order of the days of week are different in the original plot from our final
 version here. That’s because, by default, discrete character-class values are
 ordered alphabetically. We can change this order, and should, to be the order that
 week days occur. To do this, we need to change the column class to a
-<strong>factor class</strong><a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> and then change the order of that factor’s levels.</p>
+<strong>factor class</strong><a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> and then change the order of that factor’s levels.</p>
 <p>To do this, we’ll need to load a few additional R packages (you’ll also use these
 in the “Tidy” section, which has much more on manipulating datasets). The
 <strong>forcats</strong> package <span class="citation">(Wickham <a href="#ref-R-forcats">2019</a>)</span> has functions for working with factors, including
@@ -798,7 +798,7 @@ changed (Figure <a href="plot.html#fig:step8">2.10</a>).</p>
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:step8"></span>
-<img src="navy_public_health_files/figure-html/step8-1.png" alt="Change the order of the days of week from alphabetical to temporal by transforming the data before plotting." width="768" />
+<img src="columbia_env_health_files/figure-html/step8-1.png" alt="Change the order of the days of week from alphabetical to temporal by transforming the data before plotting." width="768" />
 <p class="caption">
 Figure 2.10: Change the order of the days of week from alphabetical to temporal by transforming the data before plotting.
 </p>
@@ -814,7 +814,7 @@ familiar to you: the <code>ggplot</code> call initializes a <code>ggplot</code> 
 adds a column geom where the x aesthetic is mapped to the value in the “weekday”
 column and the y aesthetic is mapped to the value in the “fatals” column.</p>
 <div class="figure"><span id="fig:step1a"></span>
-<img src="navy_public_health_files/figure-html/step1a-1.png" alt="Adding a facet layer to a plot. The plot is now faceted by the 'week' column in the dataframe, with all the facets lined up vertically in a single column ('ncol = 1')." width="576" />
+<img src="columbia_env_health_files/figure-html/step1a-1.png" alt="Adding a facet layer to a plot. The plot is now faceted by the 'week' column in the dataframe, with all the facets lined up vertically in a single column ('ncol = 1')." width="576" />
 <p class="caption">
 Figure 2.11: Adding a facet layer to a plot. The plot is now faceted by the ‘week’ column in the dataframe, with all the facets lined up vertically in a single column (‘ncol = 1’).
 </p>
@@ -822,13 +822,13 @@ Figure 2.11: Adding a facet layer to a plot. The plot is now faceted by the ‘w
 <p>To change to the <code>theme_classic</code>, all you need to do is add a <code>theme_classic</code> layer
 (Figure <a href="plot.html#fig:step2a">2.12</a>).</p>
 <div class="figure"><span id="fig:step2a"></span>
-<img src="navy_public_health_files/figure-html/step2a-1.png" alt="Changing the theme. The 'theme_*' family of functions can quickly change many of the background elements of a plot with a single layer call." width="576" />
+<img src="columbia_env_health_files/figure-html/step2a-1.png" alt="Changing the theme. The 'theme_*' family of functions can quickly change many of the background elements of a plot with a single layer call." width="576" />
 <p class="caption">
 Figure 2.12: Changing the theme. The ’theme_*’ family of functions can quickly change many of the background elements of a plot with a single layer call.
 </p>
 </div>
 <p>Most of the rest of the layers for the plot are very similar to the first plot.
-They include changing the <strong>fill</strong><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>
+They include changing the <strong>fill</strong><a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>
 of the geom by mapping it to a constant fill
 aesthetic (<code>color = "skyblue"</code> in the <code>geom_col</code> call), customizing the labels with
 a <code>lab</code> layer, and adding a title with <code>ggtitle</code>. The result of adding these layers
@@ -840,7 +840,7 @@ is shown in Figure <a href="plot.html#fig:step3a">2.13</a></p>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;# of fatalities&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Motor vehicle fatalities in Florida by weekday, 2019&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:step3a"></span>
-<img src="navy_public_health_files/figure-html/step3a-1.png" alt="Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the 'aes' call for the geom, and that the color is specified inside quotation marks." width="576" />
+<img src="columbia_env_health_files/figure-html/step3a-1.png" alt="Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the 'aes' call for the geom, and that the color is specified inside quotation marks." width="576" />
 <p class="caption">
 Figure 2.13: Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the ‘aes’ call for the geom, and that the color is specified inside quotation marks.
 </p>
@@ -883,7 +883,7 @@ daily_fatalities <span class="op">%&lt;&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Motor vehicle fatalities in Florida by weekday, 2019&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:step4a"></span>
-<img src="navy_public_health_files/figure-html/step4a-1.png" alt="To create better facet labels, you can first make some changes to the dataset and then facet by the newly created 'week_label' column rather than the 'week' column." width="576" />
+<img src="columbia_env_health_files/figure-html/step4a-1.png" alt="To create better facet labels, you can first make some changes to the dataset and then facet by the newly created 'week_label' column rather than the 'week' column." width="576" />
 <p class="caption">
 Figure 2.14: To create better facet labels, you can first make some changes to the dataset and then facet by the newly created ‘week_label’ column rather than the ‘week’ column.
 </p>
@@ -903,7 +903,7 @@ the plot won’t print immediately after you run the code:</p>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Motor vehicle fatalities in Florida by weekday, 2019&quot;</span>)</code></pre>
 <p>However, now you can print the plot anytime you want by calling the object:</p>
 <pre class="sourceCode r"><code class="sourceCode r">irma_fatalities_plot</code></pre>
-<p><img src="navy_public_health_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>To save this plot to a file, you can use the <code>ggsave</code> function. This function can save
 the plot in several different formats (e.g., pdf, jpeg, png, svg). Further, it allows you
 to specify the size you’d like for the height and width of the plot as well as the plot
@@ -934,7 +934,7 @@ take a look at the official <code>ggplot2</code> book,
 at Paul Murrell’s book <a href="https://www.amazon.com/Graphics-Third-Chapman-Hall-CRC/dp/1498789056/ref=sr_1_1?keywords=paul+murrell+r+graphics&amp;qid=1553696167&amp;s=books&amp;sr=1-1-spell">R Graphics</a>, with
 extensive coverage of the grid graphics system that <code>ggplot2</code> builds on.</p>
 <p>Finally, one of the best ways to learn more is to check out RStudio’s “Data Visualization”
-cheatsheet,<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> Once you’ve started to
+cheatsheet,<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> Once you’ve started to
 get the hang of the basics of plotting in R, download this cheatsheet and work through the
 examples. All of them use datasets that come with R, so you should be able to run them all,
 and you’ll get a good idea of the range of plots <code>ggplot2</code> can be used to create.</p>
@@ -961,62 +961,62 @@ and you’ll get a good idea of the range of plots <code>ggplot2</code> can be u
 </div>
 <div class="footnotes">
 <hr />
-<ol start="5">
-<li id="fn5"><p><strong>Fatality Analysis Reporting System (FARS).</strong> A surveillance system
+<ol start="3">
+<li id="fn3"><p><strong>Fatality Analysis Reporting System (FARS).</strong> A surveillance system
 for all fatal motor vehicle accidents in the US, maintained by the National Highway
 Traffic Safety Administration. For more, see
-<a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars">the FARS website</a>.<a href="plot.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p><strong>geoms.</strong> The geometric objects (e.g., points, lines, bars, columns,
-polygons, rectangles, text, labels) used to display data for <code>ggplot</code> plots.<a href="plot.html#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p><strong>theme.</strong> A collection of specifications for the background elements
+<a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars">the FARS website</a>.<a href="plot.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><strong>geoms.</strong> The geometric objects (e.g., points, lines, bars, columns,
+polygons, rectangles, text, labels) used to display data for <code>ggplot</code> plots.<a href="plot.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><strong>theme.</strong> A collection of specifications for the background elements
 of the plot, including the plot background, grid lines, legend position, text size and
-font, margins, and axis ticks.<a href="plot.html#fnref7" class="footnote-back">↩</a></p></li>
-<li id="fn8"><p><strong>comma-separated file format.</strong> A flat file format
+font, margins, and axis ticks.<a href="plot.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p><strong>comma-separated file format.</strong> A flat file format
 (try opening the file in a plain text editor—unlike a binary file format like
 Excel, you should be able to read all the content) where each column entry is
 separated by a comma. This is a common file format for tabular data that can
 be read into and written from most statistical programs (including R, Excel, and
-SAS).<a href="plot.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>There is also a small chance, especially if
+SAS).<a href="plot.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>There is also a small chance, especially if
 you’re using a computer for which you don’t have superuser privileges, that something
 else is going on. Double-check that you installed the package you’re trying to load,
 and if loading the package still doesn’t work, talk with your IT team about
 installing and loading R packages on your computer. For some company- or
 government-issued computers, the computer might have been set up to restrict
 installing new software, or to save installed software somewhere other than the
-default locations where R searches with <code>library</code>.<a href="plot.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>For
+default locations where R searches with <code>library</code>.<a href="plot.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>For
 this and any other R function, you can open a help file in RStudio to give you
 more information about the function, usually including some examples of how to
-use if. Just type <code>?</code> and then the function name—for this example, <code>?read_csv</code>.<a href="plot.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p><strong>file path.</strong> The directions for where to find a file within your
+use if. Just type <code>?</code> and then the function name—for this example, <code>?read_csv</code>.<a href="plot.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p><strong>file path.</strong> The directions for where to find a file within your
 computer’s directory structure. If the file you want is in your current working
 directory, this will just be the filename of the file. If it’s not, but in a directory
 close-by, you can use a <em>relative pathname</em> to give the directions from the current
 working directory. Since the file you want to read in is in a subdirectory called
 “data” of the current working directory, the filepath here is
-“data/daily_fatalities.csv”.<a href="plot.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p><strong>gets arrow.</strong> The function
+“data/daily_fatalities.csv”.<a href="plot.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p><strong>gets arrow.</strong> The function
 <code>&lt;-</code>, which allows you to save the output from running the code on the right-hand
 side of the arrow to an object with the name on the left of the arrow. This is a
 funny kind of function called an <strong>infix function</strong>, which goes between two
 function arguments instead of putting the arguments inside parentheses. If you
 want to look up the helpfile for an infix function, wrap it in backticks:
-<code>?`&lt;-`</code>.<a href="plot.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p><strong>tibble.</strong>
+<code>?`&lt;-`</code>.<a href="plot.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p><strong>tibble.</strong>
 A slightly fancier dataframe, which is a tabular data format in R, where there are
 rows and columns, with each column having data with the same class (e.g., character,
 integer, date) and all columns having the same length. Values in the columns should
 “line up” across the rows—for example, in this case, the second value in the
 <code>fatals</code> column should be the number of fatalities for the date given by the second
 value in the <code>date</code> column. Compared to a dataframe, a tibble prints out more nicely
-when you call the object name alone, among some other advantages.<a href="plot.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>See <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">this website</a> for examples and names<a href="plot.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>For
+when you call the object name alone, among some other advantages.<a href="plot.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>See <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">this website</a> for examples and names<a href="plot.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>For
 an in-depth look at aesthetic specifications, see
-<a href="https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2-specs.html">the ggplot2 specs vignette</a><a href="plot.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>See the helpfile for “theme” with <code>?theme</code> for a full listing.<a href="plot.html#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p><strong>factor class.</strong> An R class for values that take character names,
+<a href="https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2-specs.html">the ggplot2 specs vignette</a><a href="plot.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>See the helpfile for “theme” with <code>?theme</code> for a full listing.<a href="plot.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p><strong>factor class.</strong> An R class for values that take character names,
 but that describe categories, for which you expect values to show up more than once
 in your data. In this data, the day of week is an example, since it is expressed
 as a character variable (“Monday”, “Tuesday”, etc.), but we expect there to be
@@ -1025,18 +1025,18 @@ to be unique (e.g., name of study subjects, unique ID number), the column should
 be in a character, not a factor, class.
 In R, each possible catogory for a factor is called a <strong>level</strong>.
 You can change the order of the levels of a factor, and this will change the
-order they’re shown on a plot.<a href="plot.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p><strong>fill aesthetic.</strong> While all geoms have
+order they’re shown on a plot.<a href="plot.html#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p><strong>fill aesthetic.</strong> While all geoms have
 a <strong>color aesthetic</strong>, some also have a <strong>fill</strong> aesthetic. These include columns,
 bars, polygons, and points with certain shapes. In these cases, ‘color’ will specify
 the outline of the geom while ‘fill’ will specify the inside. Each geom has a set of
 required aesthetics and a set of possible aesthetics. To find each set for a geom,
-go to its helpfile (e.g., <code>?geom_col</code>) and scroll down to the “Aesthetics” section.<a href="plot.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p><strong>cheatsheet.</strong> A two-sided, one-page sheet crammed with all the main functions
+go to its helpfile (e.g., <code>?geom_col</code>) and scroll down to the “Aesthetics” section.<a href="plot.html#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p><strong>cheatsheet.</strong> A two-sided, one-page sheet crammed with all the main functions
 for a particular topic of coding. RStudio has a large collection available
 <a href="https://www.rstudio.com/resources/cheatsheets/">here</a>, including cheatsheets for cleaning
 data, working with factors and strings, and a range of other topics. This webpage also includes
-“contributed” cheatsheets, developed by people outside of RStudio.<a href="plot.html#fnref19" class="footnote-back">↩</a></p></li>
+“contributed” cheatsheets, developed by people outside of RStudio.<a href="plot.html#fnref17" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1082,7 +1082,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["navy_public_health.pdf"],
+"download": ["columbia_env_health.pdf"],
 "toc": {
 "collapse": "subsection"
 }

@@ -12,7 +12,7 @@
 <meta property="og:type" content="book" />
 
 
-<meta property="og:description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R." />
+<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
 <meta name="github-repo" content="rstudio/bookdown-demo" />
 
 <meta name="author" content="Brooke Anderson" />
@@ -20,7 +20,7 @@
 <meta name="date" content="2019-03-28" />
 
 
-<meta name="description" content="Online booklet for conference workshop on data visualization with R, geared to those who have never used R.">
+<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
 <title>2.2 Building a plot | Data Visualization in R</title>
 
@@ -176,7 +176,7 @@ to create these two example plots.</p>
 <h3><span class="header-section-number">2.2.1</span> Reading data</h3>
 <p>First, you’ll need to bring the example data into your R session. If you followed
 the steps in the “Prerequisites” section, you should have a
-<strong>comma-separated file</strong><label for="tufte-sn-8" class="margin-toggle sidenote-number">8</label><input type="checkbox" id="tufte-sn-8" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">8</span> <strong>comma-separated file format.</strong> A flat file format
+<strong>comma-separated file</strong><label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> <strong>comma-separated file format.</strong> A flat file format
 (try opening the file in a plain text editor—unlike a binary file format like
 Excel, you should be able to read all the content) where each column entry is
 separated by a comma. This is a common file format for tabular data that can
@@ -194,7 +194,7 @@ this case, “readr”). If you have forgotten to install the “readr” packag
 run this function, you’ll get the message:</p>
 <pre><code>Error in library(readr) : there is no package called ‘readr’</code></pre>
 <p>If you get that message, go back and re-read the “Prerequisites” to make sure you’ve
-installed all the required packages.<label for="tufte-sn-9" class="margin-toggle sidenote-number">9</label><input type="checkbox" id="tufte-sn-9" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">9</span> There is also a small chance, especially if
+installed all the required packages.<label for="tufte-sn-7" class="margin-toggle sidenote-number">7</label><input type="checkbox" id="tufte-sn-7" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">7</span> There is also a small chance, especially if
 you’re using a computer for which you don’t have superuser privileges, that something
 else is going on. Double-check that you installed the package you’re trying to load,
 and if loading the package still doesn’t work, talk with your IT team about
@@ -202,12 +202,12 @@ installing and loading R packages on your computer. For some company- or
 government-issued computers, the computer might have been set up to restrict
 installing new software, or to save installed software somewhere other than the
 default locations where R searches with <code>library</code>.</span></p>
-<p>Now that you’ve loaded <code>readr</code>, you can use the package’s <code>read_csv</code> function<label for="tufte-sn-10" class="margin-toggle sidenote-number">10</label><input type="checkbox" id="tufte-sn-10" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">10</span> For
+<p>Now that you’ve loaded <code>readr</code>, you can use the package’s <code>read_csv</code> function<label for="tufte-sn-8" class="margin-toggle sidenote-number">8</label><input type="checkbox" id="tufte-sn-8" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">8</span> For
 this and any other R function, you can open a help file in RStudio to give you
 more information about the function, usually including some examples of how to
 use if. Just type <code>?</code> and then the function name—for this example, <code>?read_csv</code>.</span>
 to read in the data. The one argument this function requires is the
-<strong>file path</strong><label for="tufte-sn-11" class="margin-toggle sidenote-number">11</label><input type="checkbox" id="tufte-sn-11" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">11</span> <strong>file path.</strong> The directions for where to find a file within your
+<strong>file path</strong><label for="tufte-sn-9" class="margin-toggle sidenote-number">9</label><input type="checkbox" id="tufte-sn-9" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">9</span> <strong>file path.</strong> The directions for where to find a file within your
 computer’s directory structure. If the file you want is in your current working
 directory, this will just be the filename of the file. If it’s not, but in a directory
 close-by, you can use a <em>relative pathname</em> to give the directions from the current
@@ -232,7 +232,7 @@ tells you what it guessed, so you can check. In this case, the number of
 fatalities will always be a whole number, so the “integer” class would have
 also worked well, but there should be no problem with the column having a
 “double” class for the plotting we’ll be doing, so everything looks fine.</p>
-<p>The previous code used a <strong>gets arrow</strong><label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> <strong>gets arrow.</strong> The function
+<p>The previous code used a <strong>gets arrow</strong><label for="tufte-sn-10" class="margin-toggle sidenote-number">10</label><input type="checkbox" id="tufte-sn-10" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">10</span> <strong>gets arrow.</strong> The function
 <code>&lt;-</code>, which allows you to save the output from running the code on the right-hand
 side of the arrow to an object with the name on the left of the arrow. This is a
 funny kind of function called an <strong>infix function</strong>, which goes between two
@@ -257,7 +257,7 @@ can print out the start of the data by calling the object name by itself:</p>
 ##  9 2017-09-04    36 Monday         7
 ## 10 2017-09-05    36 Tuesday        8
 ## # … with 18 more rows</code></pre>
-<p>By default, <code>read_csv</code> reads the data into a structure called a <strong>tibble</strong>,<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> <strong>tibble.</strong>
+<p>By default, <code>read_csv</code> reads the data into a structure called a <strong>tibble</strong>,<label for="tufte-sn-11" class="margin-toggle sidenote-number">11</label><input type="checkbox" id="tufte-sn-11" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">11</span> <strong>tibble.</strong>
 A slightly fancier dataframe, which is a tabular data format in R, where there are
 rows and columns, with each column having data with the same class (e.g., character,
 integer, date) and all columns having the same length. Values in the columns should
@@ -284,7 +284,7 @@ package:</p>
 the dataframe with the data you’d like to plot using the <code>data</code> parameter:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> daily_fatalities)</code></pre>
 <div class="figure fullwidth"><span id="fig:step1"></span>
-<img src="navy_public_health_files/figure-html/step1-1.png" alt="Step 1 of layering a plot: Creating the ggplot object. At this point, nothing's actually plotted, because we haven't added any geoms yet." width="768"  />
+<img src="columbia_env_health_files/figure-html/step1-1.png" alt="Step 1 of layering a plot: Creating the ggplot object. At this point, nothing's actually plotted, because we haven't added any geoms yet." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.3: Step 1 of layering a plot: Creating the ggplot object. At this point, nothing’s actually plotted, because we haven’t added any geoms yet.
 </p>
@@ -298,7 +298,7 @@ y-axis to show the value in the <code>fatals</code> column:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> daily_fatalities) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals))</code></pre>
 <div class="figure fullwidth"><span id="fig:step2"></span>
-<img src="navy_public_health_files/figure-html/step2-1.png" alt="Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the 'date' column in the data, while the y-axis (y aesthetic) is mapped to the 'fatals' column." width="768"  />
+<img src="columbia_env_health_files/figure-html/step2-1.png" alt="Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the 'date' column in the data, while the y-axis (y aesthetic) is mapped to the 'fatals' column." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.4: Step 2 of layering a plot: Adding a line geom. In this case, the x-axis (x aesthetic) is mapped to the ‘date’ column in the data, while the y-axis (y aesthetic) is mapped to the ‘fatals’ column.
 </p>
@@ -314,7 +314,7 @@ call. Try running the following code to add this layer:</p>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals, <span class="dt">color =</span> weekday))</code></pre>
 <div class="figure fullwidth"><span id="fig:step3"></span>
-<img src="navy_public_health_files/figure-html/step3-1.png" alt="Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we're also mapping color to the 'weekday' column in the data." width="768"  />
+<img src="columbia_env_health_files/figure-html/step3-1.png" alt="Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we're also mapping color to the 'weekday' column in the data." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.5: Step 3 of layering a plot: Adding a point geom. The x and y aesthetics are the same as for the line geom, but now we’re also mapping color to the ‘weekday’ column in the data.
 </p>
@@ -330,11 +330,11 @@ aesthetic for all of the observations from the data, but in the same way.</p>
 <p>For example, for this plot, we’d like the line to be dark gray for all observations,
 and we’d like the points to be a little bigger. To specify a <strong>constant aesthetic</strong>,
 move it outside of the <code>aes</code> call. For colors, you can set a constant value to
-one of the many named “R Colors”<label for="tufte-sn-14" class="margin-toggle sidenote-number">14</label><input type="checkbox" id="tufte-sn-14" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">14</span> See <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">this website</a> for examples and names</span>
+one of the many named “R Colors”<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> See <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">this website</a> for examples and names</span>
 (make sure you put the color name inside parentheses—otherwise, R will think you’re
 refering to an R object). Constant point size values can be specified using numbers,
 where larger numbers will make bigger points and the default value is somewhere
-around 1.<label for="tufte-sn-15" class="margin-toggle sidenote-number">15</label><input type="checkbox" id="tufte-sn-15" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">15</span> For
+around 1.<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> For
 an in-depth look at aesthetic specifications, see
 <a href="https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2-specs.html">the ggplot2 specs vignette</a></span> Try numbers bigger than 1 (e.g., 1.5, 2) for bigger points and smaller
 values (e.g., 0.8, 0.5) for smaller points.</p>
@@ -343,7 +343,7 @@ values (e.g., 0.8, 0.5) for smaller points.</p>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals), <span class="dt">color =</span> <span class="st">&quot;darkgray&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> fatals, <span class="dt">color =</span> weekday), <span class="dt">size =</span> <span class="dv">2</span>)</code></pre>
 <div class="figure fullwidth"><span id="fig:step4"></span>
-<img src="navy_public_health_files/figure-html/step4-1.png" alt="Step 4 of layering a plot: Adding constant aesthetics. In this step, we're making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they're constant, are set outside of the 'aes' call. Also, note that thee color is specified inside quotation marks." width="768"  />
+<img src="columbia_env_health_files/figure-html/step4-1.png" alt="Step 4 of layering a plot: Adding constant aesthetics. In this step, we're making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they're constant, are set outside of the 'aes' call. Also, note that thee color is specified inside quotation marks." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.6: Step 4 of layering a plot: Adding constant aesthetics. In this step, we’re making the line dark gray for all observations and the points a bit larger. Note that these aesthetics, since they’re constant, are set outside of the ‘aes’ call. Also, note that thee color is specified inside quotation marks.
 </p>
@@ -375,7 +375,7 @@ scale customizations is shown in Figure <a href="2-2-building-a-plot.html#fig:st
 <span class="st">  </span><span class="kw">expand_limits</span>(<span class="dt">y =</span> <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">scale_color_viridis_d</span>()</code></pre>
 <div class="figure fullwidth"><span id="fig:step5"></span>
-<img src="navy_public_health_files/figure-html/step5-1.png" alt="Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the 'viridis' color scale." width="768"  />
+<img src="columbia_env_health_files/figure-html/step5-1.png" alt="Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the 'viridis' color scale." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.7: Step 5 of layering a plot: Changing the color scale. This step changes from the default color scale to the ‘viridis’ color scale.
 </p>
@@ -400,7 +400,7 @@ The final result of adding these layers is shown in Figure <a href="2-2-building
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Motor vehicle fatalities in Florida&quot;</span>,
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>)</code></pre>
 <div class="figure fullwidth"><span id="fig:step6"></span>
-<img src="navy_public_health_files/figure-html/step6-1.png" alt="Step 6 of layering a plot: Customizing labels. The 'labs' layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a 'ggtitle' layer." width="768"  />
+<img src="columbia_env_health_files/figure-html/step6-1.png" alt="Step 6 of layering a plot: Customizing labels. The 'labs' layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a 'ggtitle' layer." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.8: Step 6 of layering a plot: Customizing labels. The ‘labs’ layer customizes not only the x and y axis labels, but also the legend title for the color scale. The title and subtitle are added with a ‘ggtitle’ layer.
 </p>
@@ -411,7 +411,7 @@ of the legend. For a time series plot like this, the change can be helpful, as i
 lets us create a plot that’s much wider than it is tall. You can move the legend
 using the <code>theme</code> layer with an argument specified for <code>legend.position</code>. With
 the <code>theme</code> function, you can customize almost any of the background elements of a
-plot.<label for="tufte-sn-16" class="margin-toggle sidenote-number">16</label><input type="checkbox" id="tufte-sn-16" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">16</span> See the helpfile for “theme” with <code>?theme</code> for a full listing.</span>
+plot.<label for="tufte-sn-14" class="margin-toggle sidenote-number">14</label><input type="checkbox" id="tufte-sn-14" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">14</span> See the helpfile for “theme” with <code>?theme</code> for a full listing.</span>
 However, you’ll usually only want to do that for a few elements—if you want
 to change a lot of elements, there is a set of functions that start <code>theme_</code> that
 will let you change to one of several “themes” that change many elements at once
@@ -428,7 +428,7 @@ can create your own <code>theme_*</code> function (fill in <code>*</code> with t
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</code></pre>
 <div class="figure fullwidth"><span id="fig:step7"></span>
-<img src="navy_public_health_files/figure-html/step7-1.png" alt="Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot." width="768"  />
+<img src="columbia_env_health_files/figure-html/step7-1.png" alt="Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.9: Step 7 of layering a plot: Customizing the theme. Move the color legend to below the plot.
 </p>
@@ -438,7 +438,7 @@ the order of the days of week are different in the original plot from our final
 version here. That’s because, by default, discrete character-class values are
 ordered alphabetically. We can change this order, and should, to be the order that
 week days occur. To do this, we need to change the column class to a
-<strong>factor class</strong><label for="tufte-sn-17" class="margin-toggle sidenote-number">17</label><input type="checkbox" id="tufte-sn-17" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">17</span> <strong>factor class.</strong> An R class for values that take character names,
+<strong>factor class</strong><label for="tufte-sn-15" class="margin-toggle sidenote-number">15</label><input type="checkbox" id="tufte-sn-15" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">15</span> <strong>factor class.</strong> An R class for values that take character names,
 but that describe categories, for which you expect values to show up more than once
 in your data. In this data, the day of week is an example, since it is expressed
 as a character variable (“Monday”, “Tuesday”, etc.), but we expect there to be
@@ -487,7 +487,7 @@ changed (Figure <a href="2-2-building-a-plot.html#fig:step8">2.10</a>).</p>
           <span class="dt">subtitle =</span> <span class="st">&quot;Late summer / early fall of 2019&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</code></pre>
 <div class="figure fullwidth"><span id="fig:step8"></span>
-<img src="navy_public_health_files/figure-html/step8-1.png" alt="Change the order of the days of week from alphabetical to temporal by transforming the data before plotting." width="768"  />
+<img src="columbia_env_health_files/figure-html/step8-1.png" alt="Change the order of the days of week from alphabetical to temporal by transforming the data before plotting." width="768"  />
 <p class="caption marginnote shownote">
 Figure 2.10: Change the order of the days of week from alphabetical to temporal by transforming the data before plotting.
 </p>
@@ -506,7 +506,7 @@ column and the y aesthetic is mapped to the value in the “fatals” column.</p
 <p class="caption marginnote shownote">
 Figure 2.11: Adding a facet layer to a plot. The plot is now faceted by the ‘week’ column in the dataframe, with all the facets lined up vertically in a single column (‘ncol = 1’).
 </p>
-<img src="navy_public_health_files/figure-html/step1a-1.png" alt="Adding a facet layer to a plot. The plot is now faceted by the 'week' column in the dataframe, with all the facets lined up vertically in a single column ('ncol = 1')." width="576"  />
+<img src="columbia_env_health_files/figure-html/step1a-1.png" alt="Adding a facet layer to a plot. The plot is now faceted by the 'week' column in the dataframe, with all the facets lined up vertically in a single column ('ncol = 1')." width="576"  />
 </div>
 <p>To change to the <code>theme_classic</code>, all you need to do is add a <code>theme_classic</code> layer
 (Figure <a href="2-2-building-a-plot.html#fig:step2a">2.12</a>).</p>
@@ -514,10 +514,10 @@ Figure 2.11: Adding a facet layer to a plot. The plot is now faceted by the ‘w
 <p class="caption marginnote shownote">
 Figure 2.12: Changing the theme. The ’theme_*’ family of functions can quickly change many of the background elements of a plot with a single layer call.
 </p>
-<img src="navy_public_health_files/figure-html/step2a-1.png" alt="Changing the theme. The 'theme_*' family of functions can quickly change many of the background elements of a plot with a single layer call." width="576"  />
+<img src="columbia_env_health_files/figure-html/step2a-1.png" alt="Changing the theme. The 'theme_*' family of functions can quickly change many of the background elements of a plot with a single layer call." width="576"  />
 </div>
 <p>Most of the rest of the layers for the plot are very similar to the first plot.
-They include changing the <strong>fill</strong><label for="tufte-sn-18" class="margin-toggle sidenote-number">18</label><input type="checkbox" id="tufte-sn-18" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">18</span> <strong>fill aesthetic.</strong> While all geoms have
+They include changing the <strong>fill</strong><label for="tufte-sn-16" class="margin-toggle sidenote-number">16</label><input type="checkbox" id="tufte-sn-16" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">16</span> <strong>fill aesthetic.</strong> While all geoms have
 a <strong>color aesthetic</strong>, some also have a <strong>fill</strong> aesthetic. These include columns,
 bars, polygons, and points with certain shapes. In these cases, ‘color’ will specify
 the outline of the geom while ‘fill’ will specify the inside. Each geom has a set of
@@ -537,7 +537,7 @@ is shown in Figure <a href="2-2-building-a-plot.html#fig:step3a">2.13</a></p>
 <p class="caption marginnote shownote">
 Figure 2.13: Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the ‘aes’ call for the geom, and that the color is specified inside quotation marks.
 </p>
-<img src="navy_public_health_files/figure-html/step3a-1.png" alt="Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the 'aes' call for the geom, and that the color is specified inside quotation marks." width="576"  />
+<img src="columbia_env_health_files/figure-html/step3a-1.png" alt="Customizing the labeling and adding a constant fill aesthetic. Note that the constant fill aesthetic is specified outside the 'aes' call for the geom, and that the color is specified inside quotation marks." width="576"  />
 </div>
 <p>As with the first graph, to take the plot to its final stage, you’ll need to
 change the input data a bit. In this case, this step is to create clearer labels for
@@ -580,7 +580,7 @@ daily_fatalities <span class="op">%&lt;&gt;%</span><span class="st"> </span>
 <p class="caption marginnote shownote">
 Figure 2.14: To create better facet labels, you can first make some changes to the dataset and then facet by the newly created ‘week_label’ column rather than the ‘week’ column.
 </p>
-<img src="navy_public_health_files/figure-html/step4a-1.png" alt="To create better facet labels, you can first make some changes to the dataset and then facet by the newly created 'week_label' column rather than the 'week' column." width="576"  />
+<img src="columbia_env_health_files/figure-html/step4a-1.png" alt="To create better facet labels, you can first make some changes to the dataset and then facet by the newly created 'week_label' column rather than the 'week' column." width="576"  />
 </div>
 </div>
 </div>
