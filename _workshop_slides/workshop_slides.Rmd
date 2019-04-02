@@ -2,7 +2,7 @@
 author: Brooke Anderson
 address: Colorado State University
 title: R PROGRAMMING
-subtitle: for data visualization
+subtitle: for environmental health research
 date: \today
 header-includes:
    - \usepackage{epigraph}
