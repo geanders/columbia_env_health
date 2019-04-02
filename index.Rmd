@@ -1,8 +1,8 @@
 --- 
-title: "Data Visualization in R"
-subtitle: "Workshop for the 2019 Navy and Marine Corps Public Health Conference"
+title: "R for Environmental Health Research"
+subtitle: "Workshop for Climate and Health students at Columbia Mailman School of Public Health"
 author: "Brooke Anderson"
-date: "March 28, 2019"
+date: "April 9, 2019"
 site: bookdown::bookdown_site
 output:
   bookdown::tufte_html_book:
@@ -18,7 +18,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "Online booklet for conference workshop on data visualization with R, geared to those who have never used R."
+description: "Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools."
 ---
 
 ```{r include = FALSE}
@@ -35,56 +35,42 @@ example data that I hope will be interesting to Navy and Marine Corp public
 health researchers and practitioners. You can download the slides from the
 workshop by [clicking here](https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf).
 
-To try out these examples, you need some set-up: 
+I am assuming that you already have R and RStudio installed on your computer. 
+You may want to check that you have a recent version of both, and if not, update
+you version before the workshop. Some of the packages and RStudio tools we'll be 
+using will require newer versions of R and RStudio to work. You can run 
+`sessionInfo()` in R to find out the version of R you have installed. Compare this
+version to the latest R release version listed at the **Comprehensive R Archive 
+Network (CRAN)**^[**Comprehensive R Archive Network (CRAN).** ...]
 
-1. Download R
-2. Download RStudio
+To try out the examples, you will also need a bit more set-up: 
+
+1. Download git
+2. Get a GitHub account
 3. Install some R packages
 4. Download example R Project
 
 This section will walk you through each step. 
 
-1. Download R 
+1. Download git
 
-R is free and open-source software. You can download a copy for just about any 
-operating system at the ]Comprehensive R Archive Network (CRAN)] (https://cran.r-project.org/).
-Look for the links on this page to "Download for ..." and your operating system.^[
-If your computer has restrictions on what you can download, you may need to take to your
-system administrator or IT team to discuss whether you can download and install R and, if 
-so, how. In that case, you may also need to talk with them about a strategy for installing
-R packages, as well.] 
+In the workshop, you will learn how to use **git**.[^**git.** Open-source version control
+software ...] To try the examples, you will need to install git to your computer and make 
+sure that your installation of RStudio can find this software, so you can use git for version
+control for R Projects. ...
 
-2. Download RStudio
+2. Get a GitHub account
 
-You do not have to have RStudio^[In this section, I'm referring to RStudio, the software. It is 
-produced by a company that is also called "RStudio". RStudio, the company, includes a team of some
-of the best and most prolific R programmers currently contributing packages to extend R. A lot of 
-the packages covered in this booklet were created and are maintained by members of the RStudio team.]
-to run R, but it makes the experience much nicer. I also 
-think it's much easier to learn R when using RStudio to run it rather than using R by itself. 
-
-RStudio is an **Integrated Development Environment (IDE)**^[**Integrated Development 
-Environment (IDE).** A program that provides a helpful interface for developing code, often 
-geared to a specific programming language. It typically includes tools and a visual 
-set-up for the programmer's convenience.] 
-You should download it after you have downloaded R. You can download it
-[here](https://www.rstudio.com/products/rstudio/#Desktop). You want the Desktop, open source 
-edition. Download this and install it on your computer as you would any other software package
-from a website. 
+You'll also learn how to share and collaborate on an R Project using **GitHub**.^[**GitHub.**
+An online platform for directories tracked with 
+the version control software `git`. This platform has become 
+very popular for sharing code projects, as well as collaborating across a team on developing
+code and software. Other online git platforms exist and are used by some researchers, 
+including **GitLab**. Once you've mastered using GitHub, you should be able to easy 
+transfer those skills to other platforms like GitLab.] You will need to get a GitHub 
+account to be able to post repositories on GitHub. ...
 
 3. Install some R packages
-
-When you downloaded the R software from CRAN, you downloaded what's called **base R**. This 
-is the "engine" to run the heart of R, plus a few key extension packages. There are now
-several thousand packages available for R. These packages extend the core functionality of 
-R, and we'll be using a lot of these extra packages in this booklet. 
-
-When you need to use an R package that did not come with base R (most of them), you will first
-need to **install** it to your computer. This can be done from R with the `install.packages` 
-function. This installs a package from an online repository to your computer, saving the code
-in a special location that R can find. Since this function is downloading code from online, 
-your computer needs to have an internet connection when you run `install.packages`, or you'll
-get an error. 
 
 This booklet uses a number of R packages beyond base R. To install all the packages that you'll
 need, run the following code in your version of R: 
@@ -98,20 +84,16 @@ install.packages(c("readr", "ggplot2", "forcats", "magrittr",
 
 4. Download example R Project
 
-I've created a repository on **GitHub**^[**GitHub.** An online platform for directories tracked with 
-the version control software `git`. It has become a very popular place for coders to post code 
-from their projects, especially for open-source projects like R packages. You may need to get 
-a GitHub account to be able to clone this example directory. Even if not, it's not a bad idea to
-get an account if you work a lot with data and open-source code.] You can find this example
-repository by [clicking here](https://github.com/geanders/navy_public_health_examples). On the
+I've created a repository on GitHub. You can find this example
+repository by [clicking here](https://github.com/geanders/columbia_env_health_examples). On the
 page takes you to, click on the "Clone or download" button and then select "Download ZIP". 
 
 This will download a single zipped file to your computer. When you unzip the file, it will be a
 special type of directory, an R Project directory. To open the R Project and start on the 
 examples, open RStudio, then go to "File" -> "Open Project". A pop-up window will open to let you 
 navigate through your files and find an R Project to open. Navigate to the directory you 
-downloaded, which should be called "navy_public_health_examples" and doubleclick on the file 
-in this directory called "navy_public_health_examples.Rproj". 
+downloaded, which should be called "columbia_env_health_examples" and doubleclick on the file 
+in this directory called "columbia_env_health_examples.Rproj". 
 
 This will open the project. In the "Files" pane of RStudio, you should see some subdirectories for
 "R" and "data". These have the example R code and data, respectively, for you to try the examples
