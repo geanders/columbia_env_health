@@ -1,0 +1,78 @@
+# Track {#track}
+
+`r newthought("Years ago, I tried to learn to use")` git version control software with R, and
+it was a total fail. Maybe it's just me, but I found it really hard to wrap my head around
+the text-dominated, command-line interface classically used for git. However, RStudio now
+includes tools that provide a **GUI**-style^[**Graphical User Interface (GUI).** ...] 
+interface to most of the functionality you'll need from git for R-based projects. I highly 
+recommend trying git by using it through RStudio first, and then once you develop a mental 
+map of what's going on, it's much easier to transfer partially or completely to running git
+from a shell. 
+
+In this part, I'll discuss both git (the software that allows you to track changes to your
+R projects), as well as GitHub (an online platform for sharing and collaborating on 
+version-controlled projects). I'll also discuss, near the end, how to use either a Bash
+Shell or the `git2r` package to do some one-off git tasks that can't be done directly through
+the RStudio GUI-style git interface. 
+
+## git
+
+
+
+## GitHub
+
+
+## Terminal
+
+I find that, for 90% of what I want to do in git, I can do it through the GUI-style
+interface RStudio provides for git. The few exceptions include: 
+
+- Setting a remote and doing the initial push to that remote
+- Reverting a commit
+- Creating a new branch
+- Merging two branches
+
+For these tasks, I usually open up a **Bash Shell**^[**Bash Shell.** A ... . "Bash" stands
+for "Bourne-Again Shell", Stephen Bourne, a Unix developer.] and run a git command from 
+there. However, there's also a package called `git2r` that lets you run any of these 
+git commands from the R command line, so you could also do all these (fairly rare) tasks
+from the R console without ever opening a Bash Shell, if you master the `git2r` package.
+
+### Accessing a Bash Shell
+
+### `git2r` package
+
+## Learn more
+
+Hadley Wickham's excellent book on [R Packages](http://r-pkgs.had.co.nz/) includes a great 
+chapter on [Git and GitHub](http://r-pkgs.had.co.nz/git.html). While the chapter (and book) is
+focused on R packages specifically, the guidance in this chapter would apply to any 
+R Project directory under version control, whether or not the R Project is for a package. 
+This book is available free online or as a print version through O'Reilly (and 
+carried at many Barnes & Nobles).
+
+If you're using git a lot for R projects, it's helpful to have some resources available with 
+more on using git through a Bash Shell. I like the book [Pragmatic Guide to Git](https://www.amazon.com/Pragmatic-Guide-Git-Programmers/dp/1934356727/ref=sr_1_28?keywords=git&qid=1554173700&s=gateway&sr=8-28) by Travis Swicegood for a quick, short reference and 
+[Git in Practice](https://www.amazon.com/Git-Practice-Techniques-Mike-McQuaid/dp/1617291978/ref=sr_1_60?keywords=git&qid=1554174811&s=gateway&sr=8-60) by Mike McQuaid if I'm trying to dig a bit deeper
+and figure out how git works. 
+I have also heard good things about [Pro Git](https://git-scm.com/book/en/v2) by Scott Chacon and 
+Ben Straub, which is available for free online.
+
+[**StackOverflow**](https://stackoverflow.com/)^[[**StackOverflow**](https://stackoverflow.com/). 
+...] 
+is also invaluable to quickly look up how to do something in git. There are
+many tasks in git where I never remember the command, but I do remember enough about what 
+the functionality is called to be able to quickly use Google to find a StackOverflow thread
+that gives me the call. Reading through a book or tutorial on git, even if you don't 
+remember the commands you learn, can help you learn some of the vocabulary^[Some good git-related
+words to know to help you search for calls for rarer tasks: "commit", "branch", "merge", "revert", 
+"push", "pull", "merge conflict", "remote", "origin", "master", "fork", "clone", "pull request".], 
+and knowing that vocabulary will help you search for answers when you need them.
+
+Finally, if you can find a way to do it, I think the best and easiest way to learn to use git
+and GitHub with R is to collaborate with someone who's used these tools before. Most of the 
+time, these tools are very easy to use, but the small percent of the time that they're not, 
+it can be significant stumbling blocks (in terms of the time it takes to figure out the fix)
+the first few times you use the tools, while someone familiar with them and working on the 
+project can diagnose and get you over those bumps as you learn the ropes.
+
