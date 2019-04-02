@@ -1,2 +1,3 @@
-These are handouts for the workshop on "Data Visualization in R" for the
-2019 Navy and Marine Corps Public Health Conference in Hampton, VA. 
+These are handouts for the workshop on "R for Environmental Health Research" for in 
+April 2019 for members of the Environmental Health Department at Columbia Mailman
+School of Public Health. 
