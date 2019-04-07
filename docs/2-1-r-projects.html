@@ -26,26 +26,6 @@
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/jquery-1.12.4/jquery.min.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.5/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -128,13 +108,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
-<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
-<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
-</ul></li>
+<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -149,20 +126,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
-<li><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a></li>
+<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
+<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+</ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a></li>
-<li><a href="5-2-apis.html#apis"><span class="toc-section-number">5.2</span> APIs</a></li>
+<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
+<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
+<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+</ul></li>
+<li><a href="5-2-web-services.html#web-services"><span class="toc-section-number">5.2</span> Web services [?]</a></li>
 <li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
 <li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="6-tidy.html#tidy"><span class="toc-section-number">6</span> Tidy</a><ul>
-<li><a href="6-1-tidyverse-tools.html#tidyverse-tools"><span class="toc-section-number">6.1</span> Tidyverse tools</a></li>
-<li><a href="6-2-tidying-example.html#tidying-example"><span class="toc-section-number">6.2</span> Tidying example</a></li>
-<li><a href="6-3-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.3</span> Learn more</a></li>
+<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
+<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
 </ul></li>
 <li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
@@ -173,307 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="r-projects" class="section level2">
 <h2><span class="header-section-number">2.1</span> R Projects</h2>
-<p><span class="newthought"><strong>ggplot2</strong> is based on a</span> <strong>grammar of graphics</strong>. To get the hang
-of it, you’ll need to start thinking of visualizations in terms of separate elements.
-This section will set up some example data and then walk through examples of some of
-the elements of plots. Once you understand these, you can layer them together with
-<code>ggplot</code> code to obtain really nice visualizations.</p>
-<div id="example-data" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Example data</h3>
-<p>In my own research, I study the health effects of climate-related disasters, including
-heat waves and hurricanes. I noticed that a lot of the sessions at this conference
-focus on public health surveillance, so I thought it might be interesting to combine
-these two ideas for the example data. On September 10, 2017, Hurricane Irma hit Florida,
-and before it did, it triggered evacuations for much of the state. The National Highway
-Traffic Safety Administration (under the US Department of Transportation) tracks all
-the fatal motor vehicle accidents in the US through its Fatality Analysis Reporting
-System (FARS).<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> <strong>Fatality Analysis Reporting System (FARS).</strong> A surveillance system
-for all fatal motor vehicle accidents in the US, maintained by the National Highway
-Traffic Safety Administration. For more, see
-<a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars">the FARS website</a>.</span></p>
-<p>I downloaded and cleaned some data from this surveillance system. (In a later section,
-I’ll tell you more about how to do this cleaning.) I’ve created a fairly
-simple dataset for us to start with. For each date in the weeks around the hurricane’s
-landfall, it gives the total number of motor vehicle fatalities recorded in the
-state. The dataset also gives the week in the year for each date (the first week in
-January would be “1” for this measure, etc.), as well as the day of the week.
-Table <a href="2-1-r-projects.html#tab:exampledata">2.1</a> shows what this data looks like.</p>
-<p><!--
-<caption>--><span class="marginnote shownote"><span id="tab:exampledata">Table 2.1: </span>Number of motor vehicle fatalities in Florida around the date of Hurricane Irma’s Florida landfall on September 10, 2017.</span><!--</caption>--></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Date</th>
-<th align="center">Week of year</th>
-<th align="center">Day of week</th>
-<th align="center">No. of motor vehicle fatalities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">2017-08-27</td>
-<td align="center">35</td>
-<td align="center">Sunday</td>
-<td align="center">4</td>
-</tr>
-<tr class="even">
-<td align="center">2017-08-28</td>
-<td align="center">35</td>
-<td align="center">Monday</td>
-<td align="center">5</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-08-29</td>
-<td align="center">35</td>
-<td align="center">Tuesday</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">2017-08-30</td>
-<td align="center">35</td>
-<td align="center">Wednesday</td>
-<td align="center">6</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-08-31</td>
-<td align="center">35</td>
-<td align="center">Thursday</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-01</td>
-<td align="center">35</td>
-<td align="center">Friday</td>
-<td align="center">9</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-02</td>
-<td align="center">35</td>
-<td align="center">Saturday</td>
-<td align="center">8</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-03</td>
-<td align="center">36</td>
-<td align="center">Sunday</td>
-<td align="center">15</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-04</td>
-<td align="center">36</td>
-<td align="center">Monday</td>
-<td align="center">7</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-05</td>
-<td align="center">36</td>
-<td align="center">Tuesday</td>
-<td align="center">8</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-06</td>
-<td align="center">36</td>
-<td align="center">Wednesday</td>
-<td align="center">7</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-07</td>
-<td align="center">36</td>
-<td align="center">Thursday</td>
-<td align="center">12</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-08</td>
-<td align="center">36</td>
-<td align="center">Friday</td>
-<td align="center">9</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-09</td>
-<td align="center">36</td>
-<td align="center">Saturday</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-10</td>
-<td align="center">37</td>
-<td align="center">Sunday</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-11</td>
-<td align="center">37</td>
-<td align="center">Monday</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-12</td>
-<td align="center">37</td>
-<td align="center">Tuesday</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-13</td>
-<td align="center">37</td>
-<td align="center">Wednesday</td>
-<td align="center">2</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-14</td>
-<td align="center">37</td>
-<td align="center">Thursday</td>
-<td align="center">4</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-15</td>
-<td align="center">37</td>
-<td align="center">Friday</td>
-<td align="center">4</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-16</td>
-<td align="center">37</td>
-<td align="center">Saturday</td>
-<td align="center">4</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-17</td>
-<td align="center">38</td>
-<td align="center">Sunday</td>
-<td align="center">10</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-18</td>
-<td align="center">38</td>
-<td align="center">Monday</td>
-<td align="center">7</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-19</td>
-<td align="center">38</td>
-<td align="center">Tuesday</td>
-<td align="center">8</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-20</td>
-<td align="center">38</td>
-<td align="center">Wednesday</td>
-<td align="center">6</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-21</td>
-<td align="center">38</td>
-<td align="center">Thursday</td>
-<td align="center">5</td>
-</tr>
-<tr class="odd">
-<td align="center">2017-09-22</td>
-<td align="center">38</td>
-<td align="center">Friday</td>
-<td align="center">9</td>
-</tr>
-<tr class="even">
-<td align="center">2017-09-23</td>
-<td align="center">38</td>
-<td align="center">Saturday</td>
-<td align="center">7</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="illustrating-plot-elements" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Illustrating plot elements</h3>
-<p>I’ve created a simple plot of this data to use to highlight the different
-elements of a graph (Figure <a href="2-1-r-projects.html#fig:plotelements">2.1</a>). This plot shows the
-number of motor vehicle fatalities
-in Florida per day in the weeks around Hurricane Irma, with the day of the week shown
-with color (since, for some health outcomes, there are patterns by the day
-of week).</p>
-<div class="figure fullwidth"><span id="fig:plotelements"></span>
-<img src="columbia_env_health_files/figure-html/plotelements-1.png" alt="Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019." width="768"  />
-<p class="caption marginnote shownote">
-Figure 2.1: Number of motor vehicle fatalities by day in Florida in the weeks surrounding Hurricane Irma on September 10, 2019.
-</p>
-</div>
-<p>Let’s break this plot into some of its key elements:</p>
-<ul>
-<li><strong>data</strong>: The data illustrated with this plot is all from the example data
-shown in Table <a href="2-1-r-projects.html#tab:exampledata">2.1</a>.</li>
-<li><strong>geoms</strong>:<label for="tufte-sn-4" class="margin-toggle sidenote-number">4</label><input type="checkbox" id="tufte-sn-4" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">4</span> <strong>geoms.</strong> The geometric objects (e.g., points, lines, bars, columns,
-polygons, rectangles, text, labels) used to display data for <code>ggplot</code> plots.</span>
-The geometric objects used to plot the data are (1) points (in
-different colors, depending on the day of week) and (2) a line (in gray).</li>
-<li><strong>aesthetics</strong>: For both of the geoms (points and the line), the position along the
-x-axis shows (is <strong>mapped to</strong>) the date
-given for an observation in the data. The position along the y-axis is mapped to
-the number of fatalities for that observation. For the points (but not the line),
-the color is mapped to the day of week of the observation. For the line, the color
-is always gray (a <strong>constant aesthetic</strong> for color), rather than color being mapped
-to a value in the data. Other aesthetics—like size, shape, line type and
-transparency—have been left at their default (constant) values.</li>
-<li><strong>coordinate system</strong>: The plot uses a <strong>Cartesian coordinate system</strong>, the most
-common coordinate system you’ll use except when creating maps.</li>
-<li><strong>scales</strong>: The plot uses a default <strong>date scale</strong> for the x-axis. For the y-axis,
-the scale is very similar to a default
-<strong>continuous scale</strong> y-axis, but has been expanded a bit to include 0.
-The <strong>color scale</strong>is more customized. It uses
-a color scale that’s very popular right now called “viridis”, rather than the
-default color scale.</li>
-<li><strong>labels</strong>: This plot uses the axis titles “Date” for the x-axis, “# of fatalities”
-for the y-axis, and “Day of week” for the color scale. In a minute, when you start
-working with the example data, you’ll see that these are changed from the corresponding
-column names in the data, to make the plot easier to understand. In addition,
-the plot has both a title (“Motor vehicle fatalities in Florida”) and a
-subtitle (“Late summer / early fall of 2019”).</li>
-<li><strong>theme</strong>:<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> <strong>theme.</strong> A collection of specifications for the background elements
-of the plot, including the plot background, grid lines, legend position, text size and
-font, margins, and axis ticks.</span>
-This plot uses the default <code>theme_gray</code> theme, with a gray background
-to the main plot area, white gridlines, a Sans Serif font family,
-and a base font size of 11.
-The one customization is that the legend (which here provides the key for
-how color maps to
-day of the week) is shown on the bottom of the plot rather than to the right of
-the plot.</li>
-<li><strong>faceting</strong>: This plot does not take advantage of faceting. Instead, the data
-is plotted on a single background. The next example will show an example
-of faceting based on a characteristic of the data.</li>
-</ul>
-<p>To help the meaning of these elements sink in, Figure <a href="2-1-r-projects.html#fig:plotelements2">2.2</a>
-shows a second example plot, with
-the elements again explained below the plot.</p>
-<div class="figure"><span id="fig:plotelements2"></span>
-<p class="caption marginnote shownote">
-Figure 2.2: Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma’s landfall.
-</p>
-<img src="columbia_env_health_files/figure-html/plotelements2-1.png" alt="Number of motor vehicle fatalities in Florida by day of the week and week for the weeks surrounding Hurricane Irma's landfall." width="576"  />
-</div>
-<p>Here’s the breakdown of plot elements for this plot:</p>
-<ul>
-<li><strong>data</strong>: The data illustrated with this plot is the same as for Figure
-<a href="2-1-r-projects.html#fig:plotelements2">2.2</a>, the example data
-shown in Table <a href="2-1-r-projects.html#tab:exampledata">2.1</a>.</li>
-<li><strong>geoms</strong>: The geometric objects used to plot the data are columns.</li>
-<li><strong>aesthetics</strong>: For the column geoms, the x-axis position is mapped to the day
-of the week and the y-axis position is mapped to the number of fatalities. The
-color is mapped to a constant aesthetic, sky blue.</li>
-<li><strong>coordinate system</strong>: The plot uses a <strong>Cartesian coordinate system</strong>.</li>
-<li><strong>scales</strong>: The plot uses a default <strong>discrete scale</strong> for the x-axis and the
-default <strong>continuous scale</strong> for the y-axis.</li>
-<li><strong>labels</strong>: This plot uses the axis titles “Date” for the x-axis, “# of fatalities”
-for the y-axis, and “Day of week” for the color scale. In a minute, when you start
-working with the example data, you’ll see that these are changed from the corresponding
-column names in the data, to make the plot easier to understand. In addition,
-the plot has both a title (“Motor vehicle fatalities in Florida”) and a
-subtitle (“Late summer / early fall of 2019”).</li>
-<li><strong>theme</strong>: This plot uses the <code>theme_classic</code> theme, with a white background
-to the main plot area, no gridlines, a Sans Serif font family,
-and axis lines only on the left and bottom sides of the plot area.</li>
-<li><strong>faceting</strong>: This plot facets by week. This variable was obtained from the “week”
-column in the dataset, although some changes were made to have better labeling of
-the facets (e.g., “Week of August 27” rather than “35”).</li>
-</ul>
-</div>
+<p><span class="newthought">RStudio allows you to</span> create “Projects”, which help with this organization.</p>
 </div>
 <p style="text-align: center;">
 <a href="2-organize.html"><button class="btn btn-default">Previous</button></a>

@@ -26,26 +26,6 @@
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/jquery-1.12.4/jquery.min.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.5/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -128,13 +108,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
-<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
-<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
-</ul></li>
+<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -149,20 +126,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
-<li><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a></li>
+<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
+<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+</ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a></li>
-<li><a href="5-2-apis.html#apis"><span class="toc-section-number">5.2</span> APIs</a></li>
+<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
+<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
+<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+</ul></li>
+<li><a href="5-2-web-services.html#web-services"><span class="toc-section-number">5.2</span> Web services [?]</a></li>
 <li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
 <li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="6-tidy.html#tidy"><span class="toc-section-number">6</span> Tidy</a><ul>
-<li><a href="6-1-tidyverse-tools.html#tidyverse-tools"><span class="toc-section-number">6.1</span> Tidyverse tools</a></li>
-<li><a href="6-2-tidying-example.html#tidying-example"><span class="toc-section-number">6.2</span> Tidying example</a></li>
-<li><a href="6-3-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.3</span> Learn more</a></li>
+<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
+<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
 </ul></li>
 <li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
@@ -173,29 +155,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="learn-more" class="section level2">
 <h2><span class="header-section-number">2.3</span> Learn more</h2>
-<p>The <code>ggplot</code> framework has become extremely popular, and there are a lot of excellent
-resources for learning more about how to use it. Many of these are through the website
-<a href="https://bookdown.org">bookdown.org</a>, which hosts a collection of free, author-submitted
-online books, mostly about R programming.</p>
-<p><a href="https://r4ds.had.co.nz/">R for Data Science</a> is a global look at effectively using
-R’s “tidyverse”, including sections on plotting with <code>ggplot2</code>.
-Kiernan Healy’s <a href="https://socviz.co/index.html#preface">Data Visualization: A Practical Introduction</a>
-is a great book on using R for plotting, with extensive examples in R. This book also covers a lot
-of the principles of creating effective and attractive plots—it’s well worth reading.</p>
-<p>If you want to dig deeper into plotting in R using the <code>ggplot</code> framework, you might want to
-take a look at the official <code>ggplot2</code> book,
-<a href="https://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403">ggplot2: Elegant Graphics for Data Analysis</a> and
-at Paul Murrell’s book <a href="https://www.amazon.com/Graphics-Third-Chapman-Hall-CRC/dp/1498789056/ref=sr_1_1?keywords=paul+murrell+r+graphics&amp;qid=1553696167&amp;s=books&amp;sr=1-1-spell">R Graphics</a>, with
-extensive coverage of the grid graphics system that <code>ggplot2</code> builds on.</p>
-<p>Finally, one of the best ways to learn more is to check out RStudio’s “Data Visualization”
-cheatsheet,<label for="tufte-sn-17" class="margin-toggle sidenote-number">17</label><input type="checkbox" id="tufte-sn-17" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">17</span> <strong>cheatsheet.</strong> A two-sided, one-page sheet crammed with all the main functions
-for a particular topic of coding. RStudio has a large collection available
-<a href="https://www.rstudio.com/resources/cheatsheets/">here</a>, including cheatsheets for cleaning
-data, working with factors and strings, and a range of other topics. This webpage also includes
-“contributed” cheatsheets, developed by people outside of RStudio.</span> Once you’ve started to
-get the hang of the basics of plotting in R, download this cheatsheet and work through the
-examples. All of them use datasets that come with R, so you should be able to run them all,
-and you’ll get a good idea of the range of plots <code>ggplot2</code> can be used to create.</p>
+<p>[R Reproc. Research] is an excellent book with advice on improving the reproducibility of
+projects using R, including academic research projects.</p>
 
 </div>
 <!-- </div> -->

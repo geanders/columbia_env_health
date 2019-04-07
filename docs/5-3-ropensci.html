@@ -26,26 +26,6 @@
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/jquery-1.12.4/jquery.min.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.5/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -128,13 +108,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
-<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
-<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
-</ul></li>
+<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -149,20 +126,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
-<li><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a></li>
+<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
+<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+</ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a></li>
-<li><a href="5-2-apis.html#apis"><span class="toc-section-number">5.2</span> APIs</a></li>
+<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
+<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
+<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+</ul></li>
+<li><a href="5-2-web-services.html#web-services"><span class="toc-section-number">5.2</span> Web services [?]</a></li>
 <li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
 <li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="6-tidy.html#tidy"><span class="toc-section-number">6</span> Tidy</a><ul>
-<li><a href="6-1-tidyverse-tools.html#tidyverse-tools"><span class="toc-section-number">6.1</span> Tidyverse tools</a></li>
-<li><a href="6-2-tidying-example.html#tidying-example"><span class="toc-section-number">6.2</span> Tidying example</a></li>
-<li><a href="6-3-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.3</span> Learn more</a></li>
+<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
+<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
 </ul></li>
 <li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
@@ -173,9 +155,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="ropensci" class="section level2">
 <h2><span class="header-section-number">5.3</span> ROpenSci</h2>
+<p>One of the best places to explore R packages for accessing open data for science is
+<a href="https://ropensci.org/"><strong>ROpenSci</strong></a>.<label for="tufte-sn-10" class="margin-toggle sidenote-number">10</label><input type="checkbox" id="tufte-sn-10" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">10</span> <a href="https://ropensci.org/"><strong>ROpenSci</strong></a>. …</span>
+Many of its packages facilitate access to databases of open data relevant to scientific
+research that have API access [?]. You can browse through its packages on
+its <a href="https://ropensci.org/packages/"><strong>Packages</strong> page</a></p>
+<p>Examples of some packages relevant to collecting data for environmental health research
+include:</p>
+<ul>
+<li>bomrang: Australian Government Bureau of Meteorology (‘BOM’) Data Client</li>
+<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
+<li>dbhydroR: ‘DBHYDRO’ Hydrologic and Water Quality Data</li>
+<li>essurvey: Download Data from the European Social Survey on the Fly</li>
+<li>FedData: Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources</li>
+<li>camsRad: R Client for CAMS Radiation Service</li>
+<li>ccafs: CCAFS GCM Data R Client</li>
+<li>dbhydroR: R interface to the South Florida Water Management District’s DBHYDRO Database</li>
+<li>biomartr: Genomic Data Retrieval</li>
+<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
+<li>DataSpaceR: An R Interface to ‘the CAVD DataSpace’</li>
+<li>essurvey: Download Data from the European Social Survey on the Fly</li>
+<li>fingertipsR: Fingertips Data for Public Health</li>
+<li>getCRUCLdata: Use and Explore ‘CRU’ ‘CL’ v. 2.0 Climatology Elements</li>
+<li>getlandsat: Get Landsat 8 Data from Amazon Public Data Sets</li>
+<li>googleLanguageR: Call Google’s ‘Natural Language’ API, ‘Cloud Translation’ API, ‘Cloud Speech’
+API and ‘Cloud Text-to-Speech’ API</li>
+<li>GSODR: Global Surface Summary of the Day (‘GSOD’) Weather Data Client</li>
+<li>hydroscoper: Interface to the Greek National Data Bank for Hydrometeorological Information</li>
+<li>MODIStsp: A Tool for Automating Download and Preprocessing of MODIS Land Products Data</li>
+<li>nasapower: NASA POWER API Client</li>
+<li>opencage: Interface to the OpenCage API</li>
+<li>osmdata: Import ‘OpenStreetMap’ Data as Simple Features or Spatial Objects</li>
+<li>weathercan: Download Weather Data from the Environment and Climate Change Canada Website</li>
+<li>wateRinfo: Download Time Series Data from Waterinfo.be</li>
+<li>USAboundariesData: Datasets for the ‘USAboundaries’ package</li>
+<li>USAboundaries: Historical and Contemporary Boundaries of the United States of America</li>
+<li>tidyhydat: Extract and Tidy Canadian ‘Hydrometric’ Data</li>
+<li>stats19: Work with Open Road Traffic Casualty Data from Great Britain</li>
+<li>smapr: Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data</li>
+<li>rWBclimate: A package for accessing World Bank climate data</li>
+<li>rusda: Interface to USDA Databases</li>
+<li>rsnps: Get ‘SNP’ (‘Single-Nucleotide’ ‘Polymorphism’) Data on the Web</li>
+<li>rrricanesdata: Data for Atlantic and east Pacific tropical cyclones since 1998</li>
+<li>rrricanes: Web scraper for Atlantic and east Pacific hurricanes and tropical storms</li>
+<li>ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ</li>
+<li>rnoaa: ‘NOAA’ Weather Data from R</li>
+<li>rnaturalearth: World Map Data from Natural Earth</li>
+<li>riem: Accesses Weather Data from the Iowa Environment Mesonet</li>
+<li>rgpdd: R Interface to the Global Population Dynamics Database</li>
+<li>rdhs: API Client and Dataset Management for the Demographic and Health Survey (DHS) Data</li>
+<li>rdefra: Interact with the UK AIR Pollution Database from DEFRA</li>
+<li>prism: Access Data from the Oregon State Prism Climate Project</li>
+</ul>
+<p>Cleaning / exploring data:</p>
+<ul>
+<li>cleanEHR: The Critical Care Clinical Data Processing Tools</li>
+<li>colocr: Conduct Co-localization Analysis of Fluorescence Microscopy Images</li>
+<li>cRegulome: Obtain and Visualize Regulome-Gene Expression Correlations in Cancer</li>
+<li>EndoMineR: Functions to mine endoscopic and associated pathology datasets</li>
+<li>geoaxe: Split ‘Geospatial’ Objects into Pieces</li>
+<li>hddtools: Hydrological Data Discovery Tools</li>
+<li>isdparser: Parse ‘NOAA’ Integrated Surface Data Files</li>
+<li>visdat: Preliminary Visualisation of Data</li>
+<li>skimr: A frictionless, pipeable approach to dealing with summary statistics</li>
+</ul>
 </div>
 <p style="text-align: center;">
-<a href="5-2-apis.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-2-web-services.html"><button class="btn btn-default">Previous</button></a>
 <a href="5-4-learn-more-3.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>

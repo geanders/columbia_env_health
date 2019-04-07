@@ -26,26 +26,6 @@
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/jquery-1.12.4/jquery.min.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.5/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -128,13 +108,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
-<li class="has-sub"><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a><ul>
-<li><a href="2-1-r-projects.html#example-data"><span class="toc-section-number">2.1.1</span> Example data</a></li>
-<li><a href="2-1-r-projects.html#illustrating-plot-elements"><span class="toc-section-number">2.1.2</span> Illustrating plot elements</a></li>
-</ul></li>
+<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#reading-data"><span class="toc-section-number">2.2.1</span> Reading data</a></li>
-<li><a href="2-2-directory-organization.html#plotting-by-layers"><span class="toc-section-number">2.2.2</span> Plotting by layers</a></li>
+<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -149,20 +126,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
-<li><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a></li>
+<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
+<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+</ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a></li>
-<li><a href="5-2-apis.html#apis"><span class="toc-section-number">5.2</span> APIs</a></li>
+<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
+<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
+<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+</ul></li>
+<li><a href="5-2-web-services.html#web-services"><span class="toc-section-number">5.2</span> Web services [?]</a></li>
 <li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
 <li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="6-tidy.html#tidy"><span class="toc-section-number">6</span> Tidy</a><ul>
-<li><a href="6-1-tidyverse-tools.html#tidyverse-tools"><span class="toc-section-number">6.1</span> Tidyverse tools</a></li>
-<li><a href="6-2-tidying-example.html#tidying-example"><span class="toc-section-number">6.2</span> Tidying example</a></li>
-<li><a href="6-3-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.3</span> Learn more</a></li>
+<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
+<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
 </ul></li>
 <li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
@@ -173,93 +155,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="open-data" class="section level2">
 <h2><span class="header-section-number">5.1</span> Open data</h2>
-<p>The RMarkdown framework makes it very easy to create nice reports from R code in RStudio.</p>
-<p>Here are the basics of opening and rendering an R Markdown file in RStudio:</p>
-<ul>
-<li>To open a new R Markdown file, go to “File” -&gt; “New File” -&gt; “RMarkdown…”. In the
-box that pops up, chose a “Document” in “HTML” format.</li>
-<li>This will open a new R Markdown file in RStudio. The file extension for R Markdown files is “.Rmd”.</li>
-<li>The new file comes with some example code and text. You can run the file as-is to try out the example.
-You will ultimately delete this example code and text and replace it with your own.</li>
-<li>Once you “knit” the R Markdown file, R will render an HTML file with the output. This is automatically
-saved in the same directory where you saved your .Rmd file.</li>
-<li>Write everything besides R code using Markdown syntax (explained below).</li>
-</ul>
-<p>To include R code in an RMarkdown document, you need to separate off the code chunk using the
-following syntax (here, the code assigns the numbers one to 10 to the object <code>my_vec</code>):</p>
-<pre><code>```{r}
-my_vec &lt;- 1:10
-```</code></pre>
-<p>This syntax might look unusual, but it tells R how to find the start and end of pieces of R code
-when the file is processed by R. R will walk through, find each piece of R code inside these
-special sections, run it and create
-output (printed output or figures, for example). R will ignore anything not in one of these
-sections, including the text of the report.
-The output from this R processing will then pass into another program to complete
-rendering (e.g., a LaTeX engine for pdf files).</p>
-<p>R Markdown files are mostly written using Markdown. To write R Markdown files, you need to understand
-what markup languages like Markdown are and how they work.</p>
-<p>In Word and other word processing programs you have used, you can add formatting using buttons and
-keyboard shortcuts (e.g., “Ctrl-B” for bold). The file saves the words you type. It also saves the
-formatting, but you see the final output, rather than the formatting markup, when you edit the file
-(WYSIWYG – what you see is what you get).</p>
-<p>In markup languages,<label for="tufte-sn-27" class="margin-toggle sidenote-number">27</label><input type="checkbox" id="tufte-sn-27" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">27</span> Examples include HTML, LaTeX, and Markdown</span> on the other hand, you markup the
-document directly to show what formatting the
-final version should have (e.g., you type <code>**bold**</code> in the file to end up with a document with
-<strong>bold</strong>).</p>
-<p>To write a file in Markdown, you’ll need to learn the conventions for creating formatting. This table
-shows the markup for some common formatting choices:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Code</th>
-<th align="left">Rendering</th>
-<th align="left">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>**text**</code></td>
-<td align="left"><strong>text</strong></td>
-<td align="left">boldface</td>
-</tr>
-<tr class="even">
-<td align="left"><code>*text*</code></td>
-<td align="left"><em>text</em></td>
-<td align="left">italicized</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>[text](www.google.com)</code></td>
-<td align="left"><a href="www.google.com">text</a></td>
-<td align="left">hyperlink</td>
-</tr>
-<tr class="even">
-<td align="left"><code># text</code></td>
-<td align="left"></td>
-<td align="left">first-level header</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>## text</code></td>
-<td align="left"></td>
-<td align="left">second-level header</td>
-</tr>
-</tbody>
-</table>
-<p>Some other simple things you can do in Markdown include:</p>
-<ul>
-<li>Lists (ordered or bulleted)</li>
-<li>Equations</li>
-<li>Tables</li>
-<li>Figures from file</li>
-<li>Block quotes</li>
-<li>Superscripts</li>
-</ul>
-<p>See the resources listed in “Learn More” for links to some helpful resources for learning
-RMarkdown, including more of these Markdown formatting mark-ups.</p>
+<div id="admin-databases" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> [Admin databases?]</h3>
+<p>Data collected by government groups like EPA, NOAA, USGS.</p>
+</div>
+<div id="research-repositories" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> [Research repositories?]</h3>
+<p>Here, especially health-related data.
+NIH-supported (e.g., Metabolomics Workbench).
+NHANES?</p>
+</div>
 </div>
 <p style="text-align: center;">
 <a href="5-collect.html"><button class="btn btn-default">Previous</button></a>
-<a href="5-2-apis.html"><button class="btn btn-default">Next</button></a>
+<a href="5-2-web-services.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

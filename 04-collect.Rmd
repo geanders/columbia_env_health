@@ -1,6 +1,6 @@
 # Collect {#collect}
 
-`r newthought(For Environmental Health researchers, I think)` one of the most exciting 
+`r newthought("For Environmental Health researchers, I think")` one of the most exciting 
 developments in R recently is how it is changing how we can collect data, both for 
 exposures and outcomes. One direction for this development is how researchers can 
 collect and measure original data from experiments, including through new measurement
