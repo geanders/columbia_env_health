@@ -11,7 +11,7 @@ header-includes:
 output: binb::presento
 ---
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_knit$set(root.dir = "..")
 library(dplyr)
 library(ggplot2)
@@ -76,8 +76,34 @@ ____
 \begin{center}
  \hugetext{ORGANIZE} 
  \medskip 
- \small RStudio's \textbf{R Projects} for organizing
+ \small Setting up 
 \end{center}
+
+____
+
+\begin{center}
+ \largetext{One project : One directory} \\
+ \medskip 
+ \small \textbf{Rule \#1} of research project file organization 
+\end{center}
+
+____
+
+\begin{center}
+ \largetext{Use consistent names} \\
+ \medskip 
+ \small \textbf{Rule \#2} of research project file organization
+\end{center}
+
+____
+
+\begin{center}
+ \largetext{Use relative filenames} \\
+ \medskip 
+ \small \textbf{Rule \#3} of research project file organization
+\end{center}
+
+____
 
 ## Common project subdirectories
 
@@ -103,6 +129,13 @@ ____
 ```{r echo = FALSE, out.width = "0.4\\textwidth", fig.align = "center"}
 knitr::include_graphics("images/navigating_projects.png")
 ```
+
+## Navigating R Projects
+
+```{r echo = FALSE, out.width = "0.99\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/example_repo.png")
+```
+
 
 ____
 
