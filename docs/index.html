@@ -106,7 +106,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="TOC">
 <ul>
-<li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
+<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
+<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+</ul></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
@@ -125,14 +128,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
+<li class="has-sub"><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a><ul>
+<li><a href="4-1-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+</ul></li>
 <li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
 <li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
 <li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
 <li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
-<li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
+<li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
+<li><a href="4-5-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
 <li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
@@ -161,19 +169,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="prerequisites" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p><span class="newthought">I have based this workshop</span> on examples for you to try yourself,
-because you
-won’t be able to learn how to program unless you try it out. I’ve picked
-example data that I hope will be interesting to Navy and Marine Corp public
-health researchers and practitioners. You can download the slides from the
-workshop by <a href="https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf">clicking here</a>.</p>
+<div id="overview" class="section level3">
+<h3><span class="header-section-number">1.0.1</span> Overview</h3>
+<p><span class="newthought">Based on requests from </span> some of the students for this
+workshop, I’ve focused here on a few topics relevant to environmental health
+research: organizing projects and tracking them with version control, creating
+your own packages, and collecting and processing large datasets relevant to
+environmental health research. You can download the slides from the workshop by
+<a href="https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf">clicking
+here</a>.</p>
+<p>There are some additional topics in R that would also be useful for
+environmental health researchers that I won’t cover here. I would, however,
+suggest that you look at the latest on tidyverse functions for cleaning and
+visualizing data (the <code>dplyr</code> and <code>ggplot2</code> packages are at the heart of this),
+new developments on working with geospatial data with the <code>sf</code> package, creating
+interactive graphics with <code>htmlwidgets</code>, and creating reports, blogs, and books
+through the <code>rmarkdown</code> framework. In the conclusion to this booklet, I’ll
+provide some references for learning more about all of these topics.</p>
+</div>
+<div id="set-up" class="section level3">
+<h3><span class="header-section-number">1.0.2</span> Set-up</h3>
 <p>I am assuming that you already have R and RStudio installed on your computer.
 You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we’ll be
 using will require newer versions of R and RStudio to work. You can run
-<code>sessionInfo()</code> in R to find out the version of R you have installed. Compare this
-version to the latest R release version listed at the <strong>Comprehensive R Archive
-Network (CRAN)</strong><label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>Comprehensive R Archive Network (CRAN).</strong> …</span></p>
+<code>sessionInfo()</code> in R to find out the version of R you have installed. Compare
+this version to the latest R release version listed at the <strong>Comprehensive R
+Archive Network (CRAN)</strong><label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>Comprehensive R Archive Network (CRAN).</strong> …</span></p>
 <p>To try out the examples, you will also need a bit more set-up:</p>
 <ol style="list-style-type: decimal">
 <li>Download git</li>
@@ -236,6 +258,7 @@ Figure 1.1: What the example R Project for this booklet should look like once yo
 <p>Click on the <strong>Next</strong> button (or navigate using the
 links at the top of the page) to continue.</p>
 
+</div>
 </div>
 <p style="text-align: center;">
 <a href="2-organize.html"><button class="btn btn-default">Next</button></a>

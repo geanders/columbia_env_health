@@ -132,20 +132,36 @@
 \hypertarget{prerequisites}{%
 \chapter{Prerequisites}\label{prerequisites}}
 
-\newthought{I have based this workshop} on examples for you to try yourself,
-because you
-won't be able to learn how to program unless you try it out. I've picked
-example data that I hope will be interesting to Navy and Marine Corp public
-health researchers and practitioners. You can download the slides from the
-workshop by \href{https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf}{clicking here}.
+\hypertarget{overview}{%
+\subsection{Overview}\label{overview}}
+
+\newthought{Based on requests from } some of the students for this
+workshop, I've focused here on a few topics relevant to environmental health
+research: organizing projects and tracking them with version control, creating
+your own packages, and collecting and processing large datasets relevant to
+environmental health research. You can download the slides from the workshop by
+\href{https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf}{clicking
+here}.
+
+There are some additional topics in R that would also be useful for
+environmental health researchers that I won't cover here. I would, however,
+suggest that you look at the latest on tidyverse functions for cleaning and
+visualizing data (the \texttt{dplyr} and \texttt{ggplot2} packages are at the heart of this),
+new developments on working with geospatial data with the \texttt{sf} package, creating
+interactive graphics with \texttt{htmlwidgets}, and creating reports, blogs, and books
+through the \texttt{rmarkdown} framework. In the conclusion to this booklet, I'll
+provide some references for learning more about all of these topics.
+
+\hypertarget{set-up}{%
+\subsection{Set-up}\label{set-up}}
 
 I am assuming that you already have R and RStudio installed on your computer.
 You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we'll be
 using will require newer versions of R and RStudio to work. You can run
-\texttt{sessionInfo()} in R to find out the version of R you have installed. Compare this
-version to the latest R release version listed at the \textbf{Comprehensive R Archive
-Network (CRAN)}\footnote{\textbf{Comprehensive R Archive Network (CRAN).} \ldots{}}
+\texttt{sessionInfo()} in R to find out the version of R you have installed. Compare
+this version to the latest R release version listed at the \textbf{Comprehensive R
+Archive Network (CRAN)}\footnote{\textbf{Comprehensive R Archive Network (CRAN).} \ldots{}}
 
 To try out the examples, you will also need a bit more set-up:
 
@@ -257,7 +273,35 @@ analysis, and output like paper drafts and figures.
 \hypertarget{r-projects}{%
 \section{R Projects}\label{r-projects}}
 
-\newthought{RStudio allows you to} create ``Projects'', which help with this organization.
+\newthought{RStudio allows you to} create ``Projects'', which help with this
+organization. An R Project is very simple---it's just a file directory, with an
+extra subdirectory added to the directory {[}with settings?{]}. This directory is
+saved as a \textbf{dot file}\footnote{\textbf{dot file.} \ldots{}}, so you probably won't be able to see it
+listed if you look at the directory contents using your {[}file viewer?{]}. If you'd like
+to see the listing (or delete it by hand, although you likely won't ever need to
+do this), check the settings for your {[}file viewer?{]}, and see if you have the option
+to show all files. Alternatively, you can use the ``list'' command with the ``all'' option
+(\texttt{ls\ -a}) at a Bash shell to view all files and subdirectories in a directory.
+
+You can either create an R Project as a new directory or convert an existing directory into
+an R Project. To do either, in RStudio go to the ``File'' menu and select ``New Project''. You'll
+then have the option to either create a new directory that's an R Project or to search through
+your computer's files to find an existing directory to make into an R Project.
+
+Once you've created an R Project, you can open it in RStudio; opening an R Project will set
+the project's directory as your working directory, opening a ``Files'' window with all the
+subdirectories and files in the project directory and allowing you to run code with
+\textbf{relative filenames}\footnote{\textbf{relative filename.} \ldots{}} from the project's directory. If you
+share the R Project with someone else,\footnote{One way to do this would be to zipped the directory
+  into a single file and share it by email. Another is to use git version control, post the
+  directory to GitHub, and share the directory from there.} he or she will also be able to
+open the R project using RStudio.
+
+One benefit of R Projects is that it is very easy to initialize them as git repositories.
+A later section (``Track'') will go over how to initialize and use git version control for
+R Projects. You will also definitely want to use an R Project for any R package you write,
+as this will introduce a lot of functionality that ``plays well'' with the \texttt{devtools} package
+to make it easier to write, build, and publish an R package {[}?{]}.
 
 \hypertarget{directory-organization}{%
 \section{Directory organization}\label{directory-organization}}
@@ -321,6 +365,12 @@ learning more about package development.
 
 {[}R Reproc. Research{]} is an excellent book with advice on improving the reproducibility of
 projects using R, including academic research projects.
+
+A few good articles have come out recently that describe project organization within
+the scientific fields of {[}biology{]} and {[}archaeology{]}. {[}One has links to example repositories?{]}\\
+Other papers discuss project organization in the context of reproducibility, presenting
+the idea of creating a \textbf{research compendium}\footnote{\textbf{research compendium.} \ldots{}} for scientific
+publications.
 
 \hypertarget{track}{%
 \chapter{Track}\label{track}}
@@ -393,6 +443,13 @@ and figure out how git works.
 I have also heard good things about \href{https://git-scm.com/book/en/v2}{Pro Git} by Scott Chacon and
 Ben Straub, which is available for free online.
 
+However, these resources are all geared to those using git for its original purpose of
+tracking changes in software development projects. When you use git to track files for a research
+project (rather than, for example, for a repository for an R package you're writing), you
+may have some needs that don't come up under software development. A few articles have come
+out recently that give advice on using git specifically to track research projects---these provide
+helpful advice specific to this use of git, which you won't find in books about git.
+
 \href{https://stackoverflow.com/}{\textbf{StackOverflow}}\footnote{\href{https://stackoverflow.com/}{\textbf{StackOverflow}}.
   \ldots{}}
 is also invaluable to quickly look up how to do something in git. There are
@@ -426,6 +483,60 @@ submit it.
 
 \hypertarget{r-packages}{%
 \section{R packages}\label{r-packages}}
+
+\hypertarget{r-code}{%
+\subsection{R code}\label{r-code}}
+
+{[}Where to put it{]}
+
+{[}How to add documentation{]}
+
+\hypertarget{description-file}{%
+\subsection{DESCRIPTION file}\label{description-file}}
+
+\begin{itemize}
+\tightlist
+\item
+  License
+\end{itemize}
+
+\hypertarget{other-package-components}{%
+\subsection{Other package components}\label{other-package-components}}
+
+So far, I've described the barebones elements you'll need to have to create a very
+minimalist package. There are, however, a number of other elements you'll often
+want to add to the package. As with the R code for package functions and the
+DESCRIPTION file, there is a specific location and format required for each of
+these elements within an R package.
+
+Some of the most common components you'll want to add are:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Example data.}
+\item
+  \textbf{Vignettes.}
+\item
+  \textbf{Unit tests.}
+\end{itemize}
+
+To help you set up these extra components,
+you may want to take a look at the \texttt{use\_*} family of functions in the \texttt{usethis}
+\citep{R-usethis}
+package\footnote{The \texttt{use\_*} family of functions were previously in the \texttt{devtools} package, but they
+  are being deprecated there and moved to the \texttt{usethis}
+  package. The \href{http://r-pkgs.had.co.nz/}{R Packages} book was written before they were deprecated
+  in \texttt{devtools}, and so it discusses them as \texttt{devtools} functions. As long as you install and load
+  the \texttt{usethis} package, though, you'll have no problem following along with the examples in
+  that book.} For example, if you want to include example data in your package,
+you should check out the \texttt{use\_data} function, while if you want to add unit tests to your
+package, check out the \texttt{use\_test} function. When you run one of these, you'll notice that the
+function \emph{adds files and subdirectories} when needed to your R package directory. This may
+throw you at first, since most R functions don't make changes to your file directory, but
+you'll need those added files to add the package components, and it's \emph{much} easier to
+remember a single function call to run when you need to add one than to remember all the
+details of which files and in what structure need to be added.
 
 \hypertarget{publishing}{%
 \section{Publishing}\label{publishing}}
@@ -461,6 +572,29 @@ check. {[}Travis CI, winbuilder{]}
 \hypertarget{checking}{%
 \section{Checking}\label{checking}}
 
+\hypertarget{try-it-out}{%
+\section{Try it out}\label{try-it-out}}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new R Project for an R package
+\item
+  Move a function into the right place in the package
+\item
+  Edit the DESCRIPTION file as needed
+\item
+  Build the package
+\item
+  Add example data into the right place in the package
+\item
+  Add some unit tests for the function
+\item
+  Add documentation using roxygen2 notation
+\item
+  Add a short vignette
+\end{itemize}
+
 \hypertarget{learn-more-2}{%
 \section{Learn more}\label{learn-more-2}}
 
@@ -478,7 +612,15 @@ also created and maintains the \textbf{\texttt{devtools} package}\footnote{\text
   the latest, ``development'' version of a package. This package is available on
   CRAN and so can be installed with \texttt{install.packages("devtools")}.}
 
-{[}Coursera, Leanpub{]}
+\begin{itemize}
+\tightlist
+\item
+  ROpenSci handbook
+\item
+  Official R documentation
+\item
+  Coursera, Leanpub
+\end{itemize}
 
 \hypertarget{collect}{%
 \chapter{Collect}\label{collect}}
@@ -501,6 +643,25 @@ open data from R.
 
 \hypertarget{open-data}{%
 \section{Open data}\label{open-data}}
+
+A range of environmental datasets are available online, especially through national agencies.
+For example, {[}NOAA{]} provides various weather datasets, while USGS has data on water quality,
+{[}others{]}
+
+You can visit webpages hosted by these agencies where you can download the datasets you need.
+However, this process can become tedious if you need lots of datasets, as may be the case for
+large studies incorporating many cities. Further, downloading the datasets ``by hand'' is hard
+to make reproducible, unless you meticiously write down all the steps you took as you visited
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate.
+
+A growing collection of R packages are now available that allow you to download datasets
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible. \ldots{}
+
+Further, there are now a number of R packages that provide access to open datasets that the
+package maintainer collected and processed and is now making available as an R package.
+{[}More on R data packages.{]}
 
 \hypertarget{admin-databases}{%
 \subsection{{[}Admin databases?{]}}\label{admin-databases}}
@@ -644,6 +805,20 @@ Cleaning / exploring data:
 
 \hypertarget{learn-more-3}{%
 \section{Learn more}\label{learn-more-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  ROpenSci
+\item
+  The R Journal
+\item
+  CRAN task views?
+\item
+  ROpenSci articles?
+\item
+  JOSS?
+\end{itemize}
 
 \hypertarget{process}{%
 \chapter{Process}\label{process}}

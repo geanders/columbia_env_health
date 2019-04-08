@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  7 APR 2019 19:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 01:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1102,9 +1102,9 @@ LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/it' will be
 (Font)              scaled to size 13.60898pt on input line 1.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 11.50085pt on input line 3.
+(Font)              scaled to size 11.50085pt on input line 5.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/it' will be
-(Font)              scaled to size 11.34082pt on input line 3.
+(Font)              scaled to size 11.34082pt on input line 5.
 [3])
 \tf@toc=\write5
 \openout5 = `columbia_env_health.toc'.
@@ -1118,85 +1118,93 @@ This message occurred on input line 133.
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/it' will be
 (Font)              scaled to size 9.45068pt on input line 133.
+LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
+(Font)              scaled to size 10.49452pt on input line 136.
+LaTeX Font Info:    Font shape `TU/GillSans(0)/m/it' will be
+(Font)              scaled to size 10.3485pt on input line 136.
 
 LaTeX Font Warning: Font shape `TU/GillSans(0)/m/sc' undefined
-(Font)              using `TU/GillSans(0)/m/n' instead on input line 135.
+(Font)              using `TU/GillSans(0)/m/n' instead on input line 138.
 
 LaTeX Font Info:    Font shape `TU/GillSans(0)/bx/n' will be
-(Font)              scaled to size 8.59482pt on input line 148.
+(Font)              scaled to size 8.59482pt on input line 164.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 6.70883pt on input line 148.
+(Font)              scaled to size 6.70883pt on input line 164.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 4.79202pt on input line 148.
-LaTeX Font Info:    Try loading font information for U+msa on input line 148.
+(Font)              scaled to size 4.79202pt on input line 164.
+LaTeX Font Info:    Try loading font information for U+msa on input line 164.
 
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 148.
+LaTeX Font Info:    Try loading font information for U+msb on input line 164.
 
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 7.66724pt on input line 148.
+(Font)              scaled to size 7.66724pt on input line 164.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 5.75043pt on input line 148.
+(Font)              scaled to size 5.75043pt on input line 164.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/bx/n' will be
-(Font)              scaled to size 6.87585pt on input line 148.
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-
-Overfull \hbox (3.93797pt too wide) in paragraph at lines 187--195
-[]\TU/GillSans(0)/m/n/10 You’ll also learn how to share and collaborate on an R
- Project using \TU/GillSans(0)/bx/n/10 GitHub\TU/GillSans(0)/m/n/10 .[] 
- []
-
+(Font)              scaled to size 6.87585pt on input line 164.
 
 LaTeX Warning: Marginpar on page 5 moved.
 
 [5
 
 ]
+Overfull \hbox (3.93797pt too wide) in paragraph at lines 203--211
+[]\TU/GillSans(0)/m/n/10 You’ll also learn how to share and collaborate on an R
+ Project using \TU/GillSans(0)/bx/n/10 GitHub\TU/GillSans(0)/m/n/10 .[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 6 moved.
+
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 209.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 225.
 File: images/example_repo.png Graphic file (type bmp)
 <images/example_repo.png>
 
-Overfull \hbox (662.51341pt too wide) in paragraph at lines 243--244
+Overfull \hbox (662.51341pt too wide) in paragraph at lines 259--260
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
-LaTeX Warning: Float too large for page by 20.02092pt on input line 244.
+LaTeX Warning: Float too large for page by 20.02092pt on input line 260.
 
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 250.
+This message occurred on input line 266.
 
 [6]
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 250.
+This message occurred on input line 266.
 
 [7] [8
 
 ]
 Chapter 2.
 LaTeX Font Info:    Font shape `TU/GillSans(0)/m/sc' will be
-(Font)              scaled to size 9.58405pt on input line 252.
-LaTeX Font Info:    Font shape `TU/GillSans(0)/m/n' will be
-(Font)              scaled to size 10.49452pt on input line 268.
-LaTeX Font Info:    Font shape `TU/GillSans(0)/m/it' will be
-(Font)              scaled to size 10.3485pt on input line 268.
+(Font)              scaled to size 9.58405pt on input line 268.
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
+LaTeX Warning: Marginpar on page 9 moved.
+
 [9]
 
 LaTeX Warning: Marginpar on page 10 moved.
@@ -1204,57 +1212,49 @@ LaTeX Warning: Marginpar on page 10 moved.
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 326.
+This message occurred on input line 355.
 
 [10]
-Chapter 3.
 
 LaTeX Warning: Marginpar on page 11 moved.
-
-
-LaTeX Warning: Marginpar on page 11 moved.
-
-[11
-
-]
-
-LaTeX Warning: Marginpar on page 12 moved.
-
-
-LaTeX Warning: Marginpar on page 12 moved.
 
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 415.
+This message occurred on input line 376.
 
-[12]
-Chapter 4.
+[11] [12
+
+]
+Chapter 3.
 
 LaTeX Warning: Marginpar on page 13 moved.
 
-[13
 
-]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 479.
+LaTeX Warning: Marginpar on page 13 moved.
+
+[13]
+
+LaTeX Warning: Marginpar on page 14 moved.
+
 
 LaTeX Warning: Marginpar on page 14 moved.
 
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 484.
+This message occurred on input line 472.
 
 [14]
-Chapter 5.
-
-LaTeX Warning: Marginpar on page 15 moved.
-
+Chapter 4.
 [15
 
 ]
-Underfull \vbox (badness 1895) has occurred while \output is active []
+
+LaTeX Warning: Marginpar on page 16 moved.
+
+
+LaTeX Warning: Marginpar on page 16 moved.
 
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
@@ -1262,64 +1262,94 @@ Class tufte-book Warning: Proper spacing of small-caps letters has not been set
 This message occurred on input line 596.
 
 [16]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 613.
+
+LaTeX Warning: Marginpar on page 17 moved.
+
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 649.
+This message occurred on input line 626.
 
 [17] [18
 
 ]
-Chapter 6.
-
-LaTeX Warning: Marginpar on page 19 moved.
-
-
-LaTeX Warning: Marginpar on page 19 moved.
-
-
-LaTeX Warning: Marginpar on page 19 moved.
-
+Chapter 5.
 [19]
+
+LaTeX Warning: Marginpar on page 20 moved.
+
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 696.
+This message occurred on input line 733.
 
 [20]
-Chapter 7.
-(./columbia_env_health.bbl [21
 
-] [22
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 804.
+
+[21]
+
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 824.
+
+[22]
+Chapter 6.
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+[23
+
+]
+
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 871.
+
+[24]
+Chapter 7.
+(./columbia_env_health.bbl [25
+
+] [26
 
 ]
 Chapter 8.
-[23])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
+[27])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 877.
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 702.
+This message occurred on input line 877.
 
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
+[28]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 877.
 (./columbia_env_health.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 877.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 877.
 Package rerunfilecheck Info: File `columbia_env_health.out' has not changed.
-(rerunfilecheck)             Checksum: 15295C0274FB1EC258883697CD214F85.
+(rerunfilecheck)             Checksum: 5E63347928E265694035E9798D00CA31.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 877.
  ) 
 Here is how much of TeX's memory you used:
- 24400 strings out of 494921
- 451966 string characters out of 6174292
- 578337 words of memory out of 5000000
- 28000 multiletter control sequences out of 15000+600000
+ 24410 strings out of 494921
+ 452113 string characters out of 6174292
+ 581877 words of memory out of 5000000
+ 28010 multiletter control sequences out of 15000+600000
  537899 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,12n,116p,482b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,116p,482b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on columbia_env_health.pdf (24 pages).
+Output written on columbia_env_health.pdf (28 pages).

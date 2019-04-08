@@ -12,6 +12,47 @@ submit it.
 
 ## R packages
 
+### R code
+
+[Where to put it]
+
+[How to add documentation]
+
+### DESCRIPTION file
+
+- License
+
+### Other package components
+
+So far, I've described the barebones elements you'll need to have to create a very 
+minimalist package. There are, however, a number of other elements you'll often 
+want to add to the package. As with the R code for package functions and the 
+DESCRIPTION file, there is a specific location and format required for each of 
+these elements within an R package. 
+
+Some of the most common components you'll want to add are: 
+
+- **Example data.**
+- **Vignettes.**
+- **Unit tests.**
+
+To help you set up these extra components, 
+you may want to take a look at the `use_*` family of functions in the `usethis`
+[@R-usethis]
+package^[The `use_*` family of functions were previously in the `devtools` package, but they 
+are being deprecated there and moved to the `usethis`
+package. The [R Packages](http://r-pkgs.had.co.nz/) book was written before they were deprecated 
+in `devtools`, and so it discusses them as `devtools` functions. As long as you install and load
+the `usethis` package, though, you'll have no problem following along with the examples in 
+that book.] For example, if you want to include example data in your package, 
+you should check out the `use_data` function, while if you want to add unit tests to your
+package, check out the `use_test` function. When you run one of these, you'll notice that the
+function *adds files and subdirectories* when needed to your R package directory. This may 
+throw you at first, since most R functions don't make changes to your file directory, but 
+you'll need those added files to add the package components, and it's *much* easier to 
+remember a single function call to run when you need to add one than to remember all the
+details of which files and in what structure need to be added. 
+
 
 ## Publishing
 
@@ -44,7 +85,16 @@ check. [Travis CI, winbuilder]
 
 ## Checking
 
+## Try it out
 
+- Create a new R Project for an R package
+- Move a function into the right place in the package
+- Edit the DESCRIPTION file as needed
+- Build the package
+- Add example data into the right place in the package
+- Add some unit tests for the function
+- Add documentation using roxygen2 notation
+- Add a short vignette 
 
 ## Learn more
 
@@ -62,4 +112,6 @@ that are not yet available on CRAN and other repositories or if you want to use
 the latest, "development" version of a package. This package is available on
 CRAN and so can be installed with `install.packages("devtools")`.]
 
-[Coursera, Leanpub]
+- ROpenSci handbook
+- Official R documentation
+- Coursera, Leanpub

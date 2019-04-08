@@ -58,6 +58,13 @@ and figure out how git works.
 I have also heard good things about [Pro Git](https://git-scm.com/book/en/v2) by Scott Chacon and 
 Ben Straub, which is available for free online.
 
+However, these resources are all geared to those using git for its original purpose of 
+tracking changes in software development projects. When you use git to track files for a research 
+project (rather than, for example, for a repository for an R package you're writing), you 
+may have some needs that don't come up under software development. A few articles have come
+out recently that give advice on using git specifically to track research projects---these provide
+helpful advice specific to this use of git, which you won't find in books about git. 
+
 [**StackOverflow**](https://stackoverflow.com/)^[[**StackOverflow**](https://stackoverflow.com/). 
 ...] 
 is also invaluable to quickly look up how to do something in git. There are

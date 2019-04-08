@@ -20,6 +20,25 @@ open data from R.
 
 ## Open data
 
+A range of environmental datasets are available online, especially through national agencies. 
+For example, [NOAA] provides various weather datasets, while USGS has data on water quality, 
+[others]
+
+You can visit webpages hosted by these agencies where you can download the datasets you need. 
+However, this process can become tedious if you need lots of datasets, as may be the case for 
+large studies incorporating many cities. Further, downloading the datasets "by hand" is hard 
+to make reproducible, unless you meticiously write down all the steps you took as you visited 
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate. 
+
+A growing collection of R packages are now available that allow you to download datasets 
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible. ...
+
+Further, there are now a number of R packages that provide access to open datasets that the 
+package maintainer collected and processed and is now making available as an R package. 
+[More on R data packages.]
+
 ### [Admin databases?]
 
 Data collected by government groups like EPA, NOAA, USGS. 
@@ -102,3 +121,8 @@ Cleaning / exploring data:
 
 ## Learn more
 
+- ROpenSci
+- The R Journal
+- CRAN task views?
+- ROpenSci articles?
+- JOSS?

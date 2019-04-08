@@ -130,7 +130,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Data Visualization in R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.0.1</b> Overview</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i><b>1.0.2</b> Set-up</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
 <li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
 <li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
@@ -149,14 +152,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
-<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#r-packages"><i class="fa fa-check"></i><b>4.1</b> R packages</a></li>
+<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#r-packages"><i class="fa fa-check"></i><b>4.1</b> R packages</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="package.html"><a href="package.html#r-code"><i class="fa fa-check"></i><b>4.1.1</b> R code</a></li>
+<li class="chapter" data-level="4.1.2" data-path="package.html"><a href="package.html#description-file"><i class="fa fa-check"></i><b>4.1.2</b> DESCRIPTION file</a></li>
+<li class="chapter" data-level="4.1.3" data-path="package.html"><a href="package.html#other-package-components"><i class="fa fa-check"></i><b>4.1.3</b> Other package components</a></li>
+</ul></li>
 <li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#publishing"><i class="fa fa-check"></i><b>4.2</b> Publishing</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="package.html"><a href="package.html#why-publish-your-packages"><i class="fa fa-check"></i><b>4.2.1</b> Why publish your packages?</a></li>
 <li class="chapter" data-level="4.2.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.2.2</b> Where to publish packages</a></li>
 <li class="chapter" data-level="4.2.3" data-path="package.html"><a href="package.html#extra-steps-for-publishing"><i class="fa fa-check"></i><b>4.2.3</b> Extra steps for publishing</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#checking"><i class="fa fa-check"></i><b>4.3</b> Checking</a></li>
-<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
+<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.4</b> Try it out</a></li>
+<li class="chapter" data-level="4.5" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.5</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
 <li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
@@ -204,6 +212,42 @@ it is, and you may want to take the extra steps to prepare your package for CRAN
 submit it.</p>
 <div id="r-packages" class="section level2">
 <h2><span class="header-section-number">4.1</span> R packages</h2>
+<div id="r-code" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> R code</h3>
+<p>[Where to put it]</p>
+<p>[How to add documentation]</p>
+</div>
+<div id="description-file" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> DESCRIPTION file</h3>
+<ul>
+<li>License</li>
+</ul>
+</div>
+<div id="other-package-components" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Other package components</h3>
+<p>So far, I’ve described the barebones elements you’ll need to have to create a very
+minimalist package. There are, however, a number of other elements you’ll often
+want to add to the package. As with the R code for package functions and the
+DESCRIPTION file, there is a specific location and format required for each of
+these elements within an R package.</p>
+<p>Some of the most common components you’ll want to add are:</p>
+<ul>
+<li><strong>Example data.</strong></li>
+<li><strong>Vignettes.</strong></li>
+<li><strong>Unit tests.</strong></li>
+</ul>
+<p>To help you set up these extra components,
+you may want to take a look at the <code>use_*</code> family of functions in the <code>usethis</code>
+<span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span>
+package<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> For example, if you want to include example data in your package,
+you should check out the <code>use_data</code> function, while if you want to add unit tests to your
+package, check out the <code>use_test</code> function. When you run one of these, you’ll notice that the
+function <em>adds files and subdirectories</em> when needed to your R package directory. This may
+throw you at first, since most R functions don’t make changes to your file directory, but
+you’ll need those added files to add the package components, and it’s <em>much</em> easier to
+remember a single function call to run when you need to add one than to remember all the
+details of which files and in what structure need to be added.</p>
+</div>
 </div>
 <div id="publishing" class="section level2">
 <h2><span class="header-section-number">4.2</span> Publishing</h2>
@@ -222,7 +266,7 @@ use privately, but they wouldn’t be a bad idea to try to do even in that case.
 comprehensively documented. [What are requirements for this for CRAN?]</p>
 <p>In addition to documenting specific functions, you should also consider
 writing overall tutorials that walk a user through how to use your
-package in a few example scenarios. <strong>vignette</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+package in a few example scenarios. <strong>vignette</strong><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a></p>
 <p>You will also need to make sure that your package can run on different
 operating systems. If your package only has functions written exclusively
 in R, and doesn’t interact with [the computer system?] or other programs
@@ -234,22 +278,51 @@ check. [Travis CI, winbuilder]</p>
 <div id="checking" class="section level2">
 <h2><span class="header-section-number">4.3</span> Checking</h2>
 </div>
+<div id="try-it-out" class="section level2">
+<h2><span class="header-section-number">4.4</span> Try it out</h2>
+<ul>
+<li>Create a new R Project for an R package</li>
+<li>Move a function into the right place in the package</li>
+<li>Edit the DESCRIPTION file as needed</li>
+<li>Build the package</li>
+<li>Add example data into the right place in the package</li>
+<li>Add some unit tests for the function</li>
+<li>Add documentation using roxygen2 notation</li>
+<li>Add a short vignette</li>
+</ul>
+</div>
 <div id="learn-more-2" class="section level2">
-<h2><span class="header-section-number">4.4</span> Learn more</h2>
+<h2><span class="header-section-number">4.5</span> Learn more</h2>
 <p>One wonderful resource for writing and publishing R packages is the book <a href="http://r-pkgs.had.co.nz/">R
 Packages</a> by Hadley Wickham. This book is available
 for a reasonable price in paperback (many Barnes &amp; Nobles carry it in their
 computer section) and is also available for free online. The author of this book
-also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
-<p>[Coursera, Leanpub]</p>
+also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<ul>
+<li>ROpenSci handbook</li>
+<li>Official R documentation</li>
+<li>Coursera, Leanpub</li>
+</ul>
 
+</div>
+</div>
+<h3> Final Words</h3>
+<div id="refs" class="references">
+<div id="ref-R-usethis">
+<p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p><strong>vignette.</strong> …<a href="package.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p><strong><code>devtools</code> package.</strong>
+<ol start="12">
+<li id="fn12"><p>The <code>use_*</code> family of functions were previously in the <code>devtools</code> package, but they
+are being deprecated there and moved to the <code>usethis</code>
+package. The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were deprecated
+in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As long as you install and load
+the <code>usethis</code> package, though, you’ll have no problem following along with the examples in
+that book.<a href="package.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p><strong>vignette.</strong> …<a href="package.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p><strong><code>devtools</code> package.</strong>
 An R package with functions that facilitate R package development. These
 functions are well-documented in the package documentation as well as through
 the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also includes a
@@ -257,7 +330,7 @@ function for installing R packages from code posted on GitHub
 (<code>install_github</code>), which is very useful if you want to find and use packages
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, “development” version of a package. This package is available on
-CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref9" class="footnote-back">↩</a></p></li>
+CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref14" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

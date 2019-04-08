@@ -106,7 +106,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="TOC">
 <ul>
-<li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
+<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
+<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+</ul></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
@@ -125,14 +128,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
+<li class="has-sub"><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a><ul>
+<li><a href="4-1-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+</ul></li>
 <li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
 <li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
 <li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
 <li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
-<li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
+<li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
+<li><a href="4-5-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
 <li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
@@ -155,6 +163,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="open-data" class="section level2">
 <h2><span class="header-section-number">5.1</span> Open data</h2>
+<p>A range of environmental datasets are available online, especially through national agencies.
+For example, [NOAA] provides various weather datasets, while USGS has data on water quality,
+[others]</p>
+<p>You can visit webpages hosted by these agencies where you can download the datasets you need.
+However, this process can become tedious if you need lots of datasets, as may be the case for
+large studies incorporating many cities. Further, downloading the datasets “by hand” is hard
+to make reproducible, unless you meticiously write down all the steps you took as you visited
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate.</p>
+<p>A growing collection of R packages are now available that allow you to download datasets
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible. …</p>
+<p>Further, there are now a number of R packages that provide access to open datasets that the
+package maintainer collected and processed and is now making available as an R package.
+[More on R data packages.]</p>
 <div id="admin-databases" class="section level3">
 <h3><span class="header-section-number">5.1.1</span> [Admin databases?]</h3>
 <p>Data collected by government groups like EPA, NOAA, USGS.</p>

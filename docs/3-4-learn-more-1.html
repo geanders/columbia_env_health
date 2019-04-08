@@ -106,7 +106,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="TOC">
 <ul>
-<li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
+<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
+<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+</ul></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
@@ -125,14 +128,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
+<li class="has-sub"><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a><ul>
+<li><a href="4-1-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+</ul></li>
 <li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
 <li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
 <li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
 <li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
-<li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
+<li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
+<li><a href="4-5-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
 <li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
@@ -167,13 +175,19 @@ more on using git through a Bash Shell. I like the book <a href="https://www.ama
 and figure out how git works.
 I have also heard good things about <a href="https://git-scm.com/book/en/v2">Pro Git</a> by Scott Chacon and
 Ben Straub, which is available for free online.</p>
-<p><a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a><label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> <a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a>.
+<p>However, these resources are all geared to those using git for its original purpose of
+tracking changes in software development projects. When you use git to track files for a research
+project (rather than, for example, for a repository for an R package you’re writing), you
+may have some needs that don’t come up under software development. A few articles have come
+out recently that give advice on using git specifically to track research projects—these provide
+helpful advice specific to this use of git, which you won’t find in books about git.</p>
+<p><a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a><label for="tufte-sn-10" class="margin-toggle sidenote-number">10</label><input type="checkbox" id="tufte-sn-10" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">10</span> <a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a>.
 …</span>
 is also invaluable to quickly look up how to do something in git. There are
 many tasks in git where I never remember the command, but I do remember enough about what
 the functionality is called to be able to quickly use Google to find a StackOverflow thread
 that gives me the call. Reading through a book or tutorial on git, even if you don’t
-remember the commands you learn, can help you learn some of the vocabulary<label for="tufte-sn-7" class="margin-toggle sidenote-number">7</label><input type="checkbox" id="tufte-sn-7" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">7</span> Some good git-related
+remember the commands you learn, can help you learn some of the vocabulary<label for="tufte-sn-11" class="margin-toggle sidenote-number">11</label><input type="checkbox" id="tufte-sn-11" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">11</span> Some good git-related
 words to know to help you search for calls for rarer tasks: “commit”, “branch”, “merge”, “revert”,
 “push”, “pull”, “merge conflict”, “remote”, “origin”, “master”, “fork”, “clone”, “pull request”.</span>,
 and knowing that vocabulary will help you search for answers when you need them.</p>

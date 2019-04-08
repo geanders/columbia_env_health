@@ -106,7 +106,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="TOC">
 <ul>
-<li><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
+<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
+<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+</ul></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
@@ -125,14 +128,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
+<li class="has-sub"><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a><ul>
+<li><a href="4-1-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+</ul></li>
 <li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
 <li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
 <li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
 <li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
-<li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
+<li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
+<li><a href="4-5-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
 <li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
@@ -155,6 +163,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="r-packages" class="section level2">
 <h2><span class="header-section-number">4.1</span> R packages</h2>
+<div id="r-code" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> R code</h3>
+<p>[Where to put it]</p>
+<p>[How to add documentation]</p>
+</div>
+<div id="description-file" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> DESCRIPTION file</h3>
+<ul>
+<li>License</li>
+</ul>
+</div>
+<div id="other-package-components" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Other package components</h3>
+<p>So far, I’ve described the barebones elements you’ll need to have to create a very
+minimalist package. There are, however, a number of other elements you’ll often
+want to add to the package. As with the R code for package functions and the
+DESCRIPTION file, there is a specific location and format required for each of
+these elements within an R package.</p>
+<p>Some of the most common components you’ll want to add are:</p>
+<ul>
+<li><strong>Example data.</strong></li>
+<li><strong>Vignettes.</strong></li>
+<li><strong>Unit tests.</strong></li>
+</ul>
+<p>To help you set up these extra components,
+you may want to take a look at the <code>use_*</code> family of functions in the <code>usethis</code>
+<span class="citation">(Wickham and Bryan <label for="tufte-mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle">2018<span class="marginnote">Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</span>)</span>
+package<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code> package, but they
+are being deprecated there and moved to the <code>usethis</code>
+package. The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were deprecated
+in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As long as you install and load
+the <code>usethis</code> package, though, you’ll have no problem following along with the examples in
+that book.</span> For example, if you want to include example data in your package,
+you should check out the <code>use_data</code> function, while if you want to add unit tests to your
+package, check out the <code>use_test</code> function. When you run one of these, you’ll notice that the
+function <em>adds files and subdirectories</em> when needed to your R package directory. This may
+throw you at first, since most R functions don’t make changes to your file directory, but
+you’ll need those added files to add the package components, and it’s <em>much</em> easier to
+remember a single function call to run when you need to add one than to remember all the
+details of which files and in what structure need to be added.</p>
+</div>
 </div>
 <p style="text-align: center;">
 <a href="4-package.html"><button class="btn btn-default">Previous</button></a>
