@@ -25,7 +25,7 @@ knitr::opts_knit$set(root.dir = "..")
 ## Homework?!
 
 \begin{center}
-\url{goo.gl/7fPYUx}
+\url{https://bit.ly/2WQV6XT}
 \end{center}
 
 ## Today's plan
@@ -45,15 +45,29 @@ ____
  \small Setting up 
 \end{center}
 
-## Set-up
+## Install RStudio Desktop
 
-- R
-- RStudio
-- git
-- GitHub account
-- R packages
-- Download example Project
+\centering
 
+\large https://www.rstudio.com/
+
+## Install git
+
+\centering
+
+\large https://git-scm.com/downloads
+
+## Create GitHub account
+
+\centering
+
+\large https://github.com/
+
+## Download example project
+
+\centering
+
+\large [project url]
 
 ____
 
@@ -82,6 +96,21 @@ ____
 \end{column}
 \end{columns}
 
+## Navigating R Projects
+
+```{r echo = FALSE, out.width = "0.4\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/navigating_projects.png")
+```
+
+____
+
+\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
+  \includegraphics[width=1\paperwidth]{images/hidden_files}};
+\color{colorblue}
+\begin{center}
+\hugetext{\montserratfont .Rproj/}
+\end{center}
+
 ## Resources
 
 ```{r echo = FALSE, out.height = "0.8\\textheight", fig.align = "center"}
@@ -106,7 +135,14 @@ ____
  \small \textbf{git and GitHub} for version control
 \end{center}
 
+____
 
+\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
+  \includegraphics[width=1\paperwidth]{images/hidden_files}};
+\color{colorblue}
+\begin{center}
+\hugetext{\montserratfont .git/}
+\end{center}
 
 ## Using GitHub to collaborate
 
@@ -116,6 +152,12 @@ knitr::include_graphics("images/maze-minecraft.png")
 
 \center
 \url{https://github.com/ropenscilabs/miner}
+
+## Hosting content with GitHub Pages
+
+```{r echo = FALSE, out.width = "\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/github_pages.png")
+```
 
 ____
 
@@ -215,6 +257,6 @@ ____
 ## Homework!!
 
 \begin{center}
-\url{goo.gl/7fPYUx}
+\url{https://bit.ly/2WQV6XT}
 \end{center}
 
