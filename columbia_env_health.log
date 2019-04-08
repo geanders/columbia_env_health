@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 10:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1167,7 +1167,7 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 File: images/example_repo.png Graphic file (type bmp)
 <images/example_repo.png>
 
-Overfull \hbox (662.51341pt too wide) in paragraph at lines 259--260
+Overfull \hbox (572.7663pt too wide) in paragraph at lines 259--260
 [][]
  []
 
@@ -1177,7 +1177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--260
  []
 
 
-LaTeX Warning: Float too large for page by 20.02092pt on input line 260.
+LaTeX Warning: Float too large for page by 20.05571pt on input line 260.
 
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
@@ -1281,75 +1281,132 @@ Chapter 5.
 LaTeX Warning: Marginpar on page 20 moved.
 
 
+LaTeX Warning: Marginpar on page 20 moved.
+
+
+LaTeX Warning: Marginpar on page 20 moved.
+
+
+Overfull \hbox (40.10184pt too wide) in paragraph at lines 711--713
+[]\TU/GillSans(0)/m/sc/10 Once you’ve installed both the \TU/lmtt/m/n/10 hurric
+aneexposuredata \TU/GillSans(0)/m/sc/10 and \TU/lmtt/m/n/10 hurricaneexposure 
+ []
+
+
+LaTeX Warning: Marginpar on page 20 moved.
+
+File: images/tab_completion_example.png Graphic file (type bmp)
+<images/tab_completion_example.png>
+
+Overfull \hbox (844.76476pt too wide) in paragraph at lines 739--739
+[]  
+ []
+
+
+LaTeX Warning: Marginpar on page 20 moved.
+
+
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 745.
+This message occurred on input line 782.
 
 [20]
+Overfull \hbox (35.33034pt too wide) in paragraph at lines 784--786
+[]\TU/GillSans(0)/m/sc/10 If you look up events based on flood events, you can 
+instead run the \TU/lmtt/m/n/10 county_events 
+ []
+
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 816.
+This message occurred on input line 821.
 
 [21]
+File: columbia_env_health_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file
+ (type pdf)
+<use columbia_env_health_files/figure-latex/unnamed-chunk-9-1.pdf>
+
+LaTeX Warning: Marginpar on page 22 moved.
+
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 836.
+This message occurred on input line 871.
 
 [22]
-Chapter 6.
+Underfull \vbox (badness 2426) has occurred while \output is active []
 
-LaTeX Warning: Marginpar on page 23 moved.
-
-
-LaTeX Warning: Marginpar on page 23 moved.
-
-
-LaTeX Warning: Marginpar on page 23 moved.
-
-[23
-
-]
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 883.
+This message occurred on input line 904.
+
+[23]
+
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 981.
 
 [24]
-Chapter 7.
-(./columbia_env_health.bbl [25
 
-] [26
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 989.
+
+[25] [26
+
+]
+Chapter 6.
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+[27]
+
+Class tufte-book Warning: Proper spacing of small-caps letters has not been set
+ up.
+This message occurred on input line 1036.
+
+[28]
+Chapter 7.
+(./columbia_env_health.bbl [29
+
+] [30
 
 ]
 Chapter 8.
-[27])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 889.
+[31])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1042.
 
 Class tufte-book Warning: Proper spacing of small-caps letters has not been set
  up.
-This message occurred on input line 889.
+This message occurred on input line 1042.
 
-[28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 889.
+[32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1042.
 (./columbia_env_health.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 889.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 889.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1042.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1042.
+
 Package rerunfilecheck Info: File `columbia_env_health.out' has not changed.
-(rerunfilecheck)             Checksum: 5E63347928E265694035E9798D00CA31.
+(rerunfilecheck)             Checksum: 36F9F97A618B80C4CC4B12571DE60DF8.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 889.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1042.
  ) 
 Here is how much of TeX's memory you used:
- 24410 strings out of 494921
- 452113 string characters out of 6174292
- 581877 words of memory out of 5000000
- 28010 multiletter control sequences out of 15000+600000
+ 24433 strings out of 494921
+ 452819 string characters out of 6174292
+ 585613 words of memory out of 5000000
+ 28030 multiletter control sequences out of 15000+600000
  537899 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,116p,482b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,116p,385b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on columbia_env_health.pdf (28 pages).
+Output written on columbia_env_health.pdf (32 pages).

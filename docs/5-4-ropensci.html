@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="4.2 Publishing | R for Environmental Health Research" />
+<meta property="og:title" content="5.4 ROpenSci | R for Environmental Health Research" />
 <meta property="og:type" content="book" />
 
 
@@ -22,7 +22,7 @@
 
 <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
-<title>4.2 Publishing | R for Environmental Health Research</title>
+<title>5.4 ROpenSci | R for Environmental Health Research</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
@@ -162,35 +162,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="publishing" class="section level2">
-<h2><span class="header-section-number">4.2</span> Publishing</h2>
-<div id="why-publish-your-packages" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Why publish your packages?</h3>
-</div>
-<div id="where-to-publish-packages" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Where to publish packages</h3>
-</div>
-<div id="extra-steps-for-publishing" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Extra steps for publishing</h3>
-<p>If you want to submit your package to CRAN, you’ll need to take a few extra steps
-to get it ready. These steps aren’t necessary for a package you plan to just
-use privately, but they wouldn’t be a bad idea to try to do even in that case.</p>
-<p>First, you’ll need to make sure that the functions in your package are
-comprehensively documented. [What are requirements for this for CRAN?]</p>
-<p>In addition to documenting specific functions, you should also consider
-writing overall tutorials that walk a user through how to use your
-package in a few example scenarios. <strong>vignette</strong><label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> <strong>vignette.</strong> …</span></p>
-<p>You will also need to make sure that your package can run on different
-operating systems. If your package only has functions written exclusively
-in R, and doesn’t interact with [the computer system?] or other programs
-on your computer, this shouldn’t be an issue. However, you should still
-check. [Travis CI, winbuilder]</p>
-<p>[CRAN checks]</p>
-</div>
+<div id="ropensci" class="section level2">
+<h2><span class="header-section-number">5.4</span> ROpenSci</h2>
+<p>One of the best places to explore R packages for accessing open data for science is
+<a href="https://ropensci.org/"><strong>ROpenSci</strong></a>.<label for="tufte-sn-18" class="margin-toggle sidenote-number">18</label><input type="checkbox" id="tufte-sn-18" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">18</span> <a href="https://ropensci.org/"><strong>ROpenSci</strong></a>. …</span>
+Many of its packages facilitate access to databases of open data relevant to scientific
+research that have API access [?]. You can browse through its packages on
+its <a href="https://ropensci.org/packages/"><strong>Packages</strong> page</a></p>
+<p>Examples of some packages relevant to collecting data for environmental health research
+include:</p>
+<ul>
+<li>bomrang: Australian Government Bureau of Meteorology (‘BOM’) Data Client</li>
+<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
+<li>dbhydroR: ‘DBHYDRO’ Hydrologic and Water Quality Data</li>
+<li>essurvey: Download Data from the European Social Survey on the Fly</li>
+<li>FedData: Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources</li>
+<li>camsRad: R Client for CAMS Radiation Service</li>
+<li>ccafs: CCAFS GCM Data R Client</li>
+<li>dbhydroR: R interface to the South Florida Water Management District’s DBHYDRO Database</li>
+<li>biomartr: Genomic Data Retrieval</li>
+<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
+<li>DataSpaceR: An R Interface to ‘the CAVD DataSpace’</li>
+<li>essurvey: Download Data from the European Social Survey on the Fly</li>
+<li>fingertipsR: Fingertips Data for Public Health</li>
+<li>getCRUCLdata: Use and Explore ‘CRU’ ‘CL’ v. 2.0 Climatology Elements</li>
+<li>getlandsat: Get Landsat 8 Data from Amazon Public Data Sets</li>
+<li>googleLanguageR: Call Google’s ‘Natural Language’ API, ‘Cloud Translation’ API, ‘Cloud Speech’
+API and ‘Cloud Text-to-Speech’ API</li>
+<li>GSODR: Global Surface Summary of the Day (‘GSOD’) Weather Data Client</li>
+<li>hydroscoper: Interface to the Greek National Data Bank for Hydrometeorological Information</li>
+<li>MODIStsp: A Tool for Automating Download and Preprocessing of MODIS Land Products Data</li>
+<li>nasapower: NASA POWER API Client</li>
+<li>opencage: Interface to the OpenCage API</li>
+<li>osmdata: Import ‘OpenStreetMap’ Data as Simple Features or Spatial Objects</li>
+<li>weathercan: Download Weather Data from the Environment and Climate Change Canada Website</li>
+<li>wateRinfo: Download Time Series Data from Waterinfo.be</li>
+<li>USAboundariesData: Datasets for the ‘USAboundaries’ package</li>
+<li>USAboundaries: Historical and Contemporary Boundaries of the United States of America</li>
+<li>tidyhydat: Extract and Tidy Canadian ‘Hydrometric’ Data</li>
+<li>stats19: Work with Open Road Traffic Casualty Data from Great Britain</li>
+<li>smapr: Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data</li>
+<li>rWBclimate: A package for accessing World Bank climate data</li>
+<li>rusda: Interface to USDA Databases</li>
+<li>rsnps: Get ‘SNP’ (‘Single-Nucleotide’ ‘Polymorphism’) Data on the Web</li>
+<li>rrricanesdata: Data for Atlantic and east Pacific tropical cyclones since 1998</li>
+<li>rrricanes: Web scraper for Atlantic and east Pacific hurricanes and tropical storms</li>
+<li>ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ</li>
+<li>rnoaa: ‘NOAA’ Weather Data from R</li>
+<li>rnaturalearth: World Map Data from Natural Earth</li>
+<li>riem: Accesses Weather Data from the Iowa Environment Mesonet</li>
+<li>rgpdd: R Interface to the Global Population Dynamics Database</li>
+<li>rdhs: API Client and Dataset Management for the Demographic and Health Survey (DHS) Data</li>
+<li>rdefra: Interact with the UK AIR Pollution Database from DEFRA</li>
+<li>prism: Access Data from the Oregon State Prism Climate Project</li>
+</ul>
+<p>Cleaning / exploring data:</p>
+<ul>
+<li>cleanEHR: The Critical Care Clinical Data Processing Tools</li>
+<li>colocr: Conduct Co-localization Analysis of Fluorescence Microscopy Images</li>
+<li>cRegulome: Obtain and Visualize Regulome-Gene Expression Correlations in Cancer</li>
+<li>EndoMineR: Functions to mine endoscopic and associated pathology datasets</li>
+<li>geoaxe: Split ‘Geospatial’ Objects into Pieces</li>
+<li>hddtools: Hydrological Data Discovery Tools</li>
+<li>isdparser: Parse ‘NOAA’ Integrated Surface Data Files</li>
+<li>visdat: Preliminary Visualisation of Data</li>
+<li>skimr: A frictionless, pipeable approach to dealing with summary statistics</li>
+</ul>
 </div>
 <p style="text-align: center;">
-<a href="4-1-r-packages.html"><button class="btn btn-default">Previous</button></a>
-<a href="4-3-checking.html"><button class="btn btn-default">Next</button></a>
+<a href="5-3-web-services.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-5-learn-more-3.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

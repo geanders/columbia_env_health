@@ -49,6 +49,78 @@ Here, especially health-related data.
 NIH-supported (e.g., Metabolomics Workbench).
 NHANES?
 
+## Data packages
+
+...
+
+This package is too big for CRAN to host, so we have it posted through our own package
+repository.^[For more on how and why we did this, see 
+[an article](https://journal.r-project.org/archive/2017/RJ-2017-026/) we wrote about the
+process for **The R Journal**.] Because of this, you'll need to take a few extra steps
+to download and install the package:^[If you don't have the `drat` package, install it in 
+the usual way with `install.packages("drat")`.] 
+
+```{r eval = FALSE}
+library(drat)
+addRepo("geanders")
+install.packages("hurricaneexposuredata")
+install.packages("hurricaneexposure")
+```
+
+Once you've installed both the `hurricaneexposuredata` and `hurricaneexposure` packages, you 
+can load them as usual to access both the data and some functions to work with them:
+
+```{r}
+library(hurricaneexposuredata)
+library(hurricaneexposure)
+```
+
+The `hurricaneexposure` package has a series of functions that let you explore different
+exposures during storms. For example, to get the storms where either New York County, NY, 
+or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-level winds
+(17.5 m/s or higher), you can run:^[For any of these functions, you can find out what parameters
+to include, and in what format, but opening the helpfile for the function. For example, once you've
+loaded the `hurricaneexposure` package, you can open the helpfile for the `county_wind` function
+by calling `?county_wind`. Also helpful for navigating packages: take advantage of the `package::function`
+notation and RStudio's tab completion to look up the names of functions in a package. For example, 
+type `hurricaneexposure::`. A pop-up window should show up with all the functions in the package (press
+Tab if the pop-up doesn't automatically open).]
+
+```{r fig.margin = TRUE}
+knitr::include_graphics("images/tab_completion_example.png")
+```
+
+
+```{r}
+county_wind(counties = c("36061", "25025"),
+            start_year = 1988, end_year = 2015, 
+            wind_limit = 17.5)
+```
+
+If you look up events based on flood events, you can instead run the
+`county_events` function:
+
+```{r}
+county_events(counties = c("36061", "25025"),
+             start_year = 1988, end_year = 2015, 
+             event_type = "flood")
+```
+
+The `hurricaneexposure` package also has functions for mapping the exposure 
+data for specific storms. For example, to see the rainfall fro Hurricane Ivan in 
+2004, you can run:
+
+```{r fig.fullwidth = TRUE}
+map_counties(storm = "Ivan-2004", metric = "rainfall")
+```
+
+From this map, you can see that the rain from this storm extended into New
+England, even after the storm looped back around to the east and south. This is
+why New York City had heavy rainfall (and flooding) from this event, but not
+tropical storm-level winds.
+
+For more on the `hurricaneexposure` package, see [its vignette](https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html).
+
 ## Web services [?]
 
 ## ROpenSci

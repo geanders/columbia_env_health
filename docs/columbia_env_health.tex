@@ -140,7 +140,7 @@ workshop, I've focused here on a few topics relevant to environmental health
 research: organizing projects and tracking them with version control, creating
 your own packages, and collecting and processing large datasets relevant to
 environmental health research. You can download the slides from the workshop by
-\href{https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf}{clicking
+\href{https://github.com/geanders/columbia_env_health/raw/master/_workshop_slides/workshop_slides.pdf}{clicking
 here}.
 
 There are some additional topics in R that would also be useful for
@@ -252,11 +252,11 @@ This will open the project. In the ``Files'' pane of RStudio, you should see som
 ``R'' and ``data''. These have the example R code and data, respectively, for you to try the examples
 in this booklet. The code in each of the R files should run independently, including the code to
 load all required packages. Figure \ref{fig:examplerepo} shows what this package should
-look like once you've downloaded and opened it, as well as opened the ``plot.R'' file in the
+look like once you've downloaded and opened it, as well as some of the files in the
 project's ``R'' subdirectory.
 
 \begin{figure*}
-\includegraphics[width=38.64in]{images/example_repo} \caption[What the example R Project for this booklet should look like once you've downloaded and opened it, as well as opened the 'plot.R' file in the project's 'R' subdirectory]{What the example R Project for this booklet should look like once you've downloaded and opened it, as well as opened the 'plot.R' file in the project's 'R' subdirectory.}\label{fig:examplerepo}
+\includegraphics[width=28.86in]{images/example_repo} \caption[What the example R Project for this booklet should look like once you've downloaded and opened it]{What the example R Project for this booklet should look like once you've downloaded and opened it.}\label{fig:examplerepo}
 \end{figure*}
 
 Click on the \textbf{Next} button (or navigate using the
@@ -686,6 +686,159 @@ Data collected by government groups like EPA, NOAA, USGS.
 Here, especially health-related data.
 NIH-supported (e.g., Metabolomics Workbench).
 NHANES?
+
+\hypertarget{data-packages}{%
+\section{Data packages}\label{data-packages}}
+
+\ldots{}
+
+This package is too big for CRAN to host, so we have it posted through our own package
+repository.\footnote{For more on how and why we did this, see
+  \href{https://journal.r-project.org/archive/2017/RJ-2017-026/}{an article} we wrote about the
+  process for \textbf{The R Journal}.} Because of this, you'll need to take a few extra steps
+to download and install the package:\footnote{If you don't have the \texttt{drat} package, install it in
+  the usual way with \texttt{install.packages("drat")}.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(drat)}
+\KeywordTok{addRepo}\NormalTok{(}\StringTok{"geanders"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"hurricaneexposuredata"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"hurricaneexposure"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Once you've installed both the \texttt{hurricaneexposuredata} and \texttt{hurricaneexposure} packages, you
+can load them as usual to access both the data and some functions to work with them:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(hurricaneexposuredata)}
+\KeywordTok{library}\NormalTok{(hurricaneexposure)}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{hurricaneexposure} package has a series of functions that let you explore different
+exposures during storms. For example, to get the storms where either New York County, NY,
+or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-level winds
+(17.5 m/s or higher), you can run:\footnote{For any of these functions, you can find out what parameters
+  to include, and in what format, but opening the helpfile for the function. For example, once you've
+  loaded the \texttt{hurricaneexposure} package, you can open the helpfile for the \texttt{county\_wind} function
+  by calling \texttt{?county\_wind}. Also helpful for navigating packages: take advantage of the \texttt{package::function}
+  notation and RStudio's tab completion to look up the names of functions in a package. For example,
+  type \texttt{hurricaneexposure::}. A pop-up window should show up with all the functions in the package (press
+  Tab if the pop-up doesn't automatically open).}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"images/tab_completion_example.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{marginfigure}
+\includegraphics[width=13.68in]{images/tab_completion_example} \end{marginfigure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{county_wind}\NormalTok{(}\DataTypeTok{counties =} \KeywordTok{c}\NormalTok{(}\StringTok{"36061"}\NormalTok{, }\StringTok{"25025"}\NormalTok{), }\DataTypeTok{start_year =} \DecValTok{1988}\NormalTok{, }
+    \DataTypeTok{end_year =} \DecValTok{2015}\NormalTok{, }\DataTypeTok{wind_limit =} \FloatTok{17.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       storm_id  fips vmax_sust vmax_gust
+## 1     Bob-1991 25025  26.46639  39.43492
+## 2     Bob-1991 36061  18.19559  27.11142
+## 3  Bertha-1996 25025  29.64453  44.17035
+## 4  Bertha-1996 36061  28.95496  43.14289
+## 5   Floyd-1999 25025  24.46946  36.45949
+## 6   Floyd-1999 36061  20.50178  30.54765
+## 7   Hanna-2008 25025  18.36505  27.36392
+## 8   Hanna-2008 36061  19.25390  28.68832
+## 9   Irene-2011 36061  25.68553  38.27144
+## 10  Sandy-2012 36061  21.99213  32.76827
+##    sust_dur gust_dur closest_time_utc
+## 1       210      570 1991-08-19 20:00
+## 2         0      480 1991-08-19 15:00
+## 3       240      525 1996-07-14 01:15
+## 4       180      540 1996-07-13 19:45
+## 5       345      750 1999-09-17 07:45
+## 6        60      315 1999-09-17 00:15
+## 7         0      150 2008-09-07 07:15
+## 8         0      195 2008-09-07 01:45
+## 9       165      510 2011-08-28 13:15
+## 10      225      795 2012-10-30 00:30
+##    storm_dist       local_time closest_date
+## 1   27.042565 1991-08-19 16:00   1991-08-19
+## 2  161.571830 1991-08-19 11:00   1991-08-19
+## 3   38.177990 1996-07-13 21:15   1996-07-13
+## 4   16.966013 1996-07-13 15:45   1996-07-13
+## 5   51.254726 1999-09-17 03:45   1999-09-17
+## 6   45.408483 1999-09-16 20:15   1999-09-16
+## 7    6.202866 2008-09-07 03:15   2008-09-07
+## 8   29.916672 2008-09-06 21:45   2008-09-06
+## 9    5.796733 2011-08-28 09:15   2011-08-28
+## 10 158.040788 2012-10-29 20:30   2012-10-29
+\end{verbatim}
+
+If you look up events based on flood events, you can instead run the
+\texttt{county\_events} function:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{county_events}\NormalTok{(}\DataTypeTok{counties =} \KeywordTok{c}\NormalTok{(}\StringTok{"36061"}\NormalTok{, }\StringTok{"25025"}\NormalTok{), }
+    \DataTypeTok{start_year =} \DecValTok{1988}\NormalTok{, }\DataTypeTok{end_year =} \DecValTok{2015}\NormalTok{, }\DataTypeTok{event_type =} \StringTok{"flood"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     fips     storm_id closest_time_utc
+## 1  25025  Dennis-1999 1999-09-08 08:00
+## 2  36061   Floyd-1999 1999-09-17 00:15
+## 3  36061 Allison-2001 2001-06-17 14:15
+## 4  36061 Frances-2004 2004-09-09 13:30
+## 5  36061    Ivan-2004 2004-09-18 17:45
+## 6  36061  Jeanne-2004 2004-09-29 06:30
+## 7  36061   Beryl-2006 2006-07-20 22:15
+## 8  36061   Barry-2007 2007-06-04 15:45
+## 9  36061   Irene-2011 2011-08-28 13:15
+## 10 25025   Sandy-2012 2012-10-29 22:00
+## 11 25025  Andrea-2013 2013-06-08 11:30
+## 12 36061  Andrea-2013 2013-06-08 06:45
+##    storm_dist       local_time closest_date
+## 1  390.047523 1999-09-08 04:00   1999-09-08
+## 2   45.408483 1999-09-16 20:15   1999-09-16
+## 3  158.909890 2001-06-17 10:15   2001-06-17
+## 4  379.343696 2004-09-09 09:30   2004-09-09
+## 5  311.346881 2004-09-18 13:45   2004-09-18
+## 6  222.900157 2004-09-29 02:30   2004-09-29
+## 7  207.358443 2006-07-20 18:15   2006-07-20
+## 8  148.251718 2007-06-04 11:45   2007-06-04
+## 9    5.796733 2011-08-28 09:15   2011-08-28
+## 10 433.295980 2012-10-29 18:00   2012-10-29
+## 11  45.412565 2013-06-08 07:30   2013-06-08
+## 12  92.381282 2013-06-08 02:45   2013-06-08
+\end{verbatim}
+
+The \texttt{hurricaneexposure} package also has functions for mapping the exposure
+data for specific storms. For example, to see the rainfall fro Hurricane Ivan in
+2004, you can run:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{map_counties}\NormalTok{(}\DataTypeTok{storm =} \StringTok{"Ivan-2004"}\NormalTok{, }\DataTypeTok{metric =} \StringTok{"rainfall"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure*}
+\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-9-1} \end{figure*}
+
+From this map, you can see that the rain from this storm extended into New
+England, even after the storm looped back around to the east and south. This is
+why New York City had heavy rainfall (and flooding) from this event, but not
+tropical storm-level winds.
+
+For more on the \texttt{hurricaneexposure} package, see \href{https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html}{its vignette}
 
 \hypertarget{web-services}{%
 \section{Web services {[}?{]}}\label{web-services}}

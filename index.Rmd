@@ -36,7 +36,7 @@ research: organizing projects and tracking them with version control, creating
 your own packages, and collecting and processing large datasets relevant to
 environmental health research. You can download the slides from the workshop by
 [clicking
-here](https://github.com/geanders/navy_public_health/raw/master/_workshop_slides/workshop_slides.pdf).
+here](https://github.com/geanders/columbia_env_health/raw/master/_workshop_slides/workshop_slides.pdf).
 
 There are some additional topics in R that would also be useful for
 environmental health researchers that I won't cover here. I would, however,
@@ -113,10 +113,10 @@ This will open the project. In the "Files" pane of RStudio, you should see some 
 "R" and "data". These have the example R code and data, respectively, for you to try the examples
 in this booklet. The code in each of the R files should run independently, including the code to 
 load all required packages. Figure \@ref(fig:examplerepo) shows what this package should 
-look like once you've downloaded and opened it, as well as opened the "plot.R" file in the 
+look like once you've downloaded and opened it, as well as some of the files in the 
 project's "R" subdirectory.
 
-```{r examplerepo, fig.fullwidth = TRUE, echo = FALSE, fig.cap = "What the example R Project for this booklet should look like once you've downloaded and opened it, as well as opened the 'plot.R' file in the project's 'R' subdirectory."}
+```{r examplerepo, fig.fullwidth = TRUE, echo = FALSE, fig.cap = "What the example R Project for this booklet should look like once you've downloaded and opened it."}
 knitr::include_graphics("images/example_repo.png")
 ```
 

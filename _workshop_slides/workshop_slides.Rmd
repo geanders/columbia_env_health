@@ -13,6 +13,8 @@ output: binb::presento
 
 ```{r echo = FALSE}
 knitr::opts_knit$set(root.dir = "..")
+library(dplyr)
+library(ggplot2)
 ```
 
 
@@ -67,7 +69,7 @@ ____
 
 \centering
 
-\large [project url]
+\large https://github.com/geanders/columbia_env_health_examples
 
 ____
 
@@ -206,6 +208,38 @@ ____
  \small Leverage \textbf{open data} tools for collecting data
 \end{center}
 
+## Data packages
+
+\footnotesize
+
+```{r}
+library(hurricaneexposure)
+county_wind(counties = "36061", 
+            start_year = 1988, end_year = 2015, 
+            wind_limit = 17.5) %>% 
+  select(storm_id, vmax_sust, storm_dist, closest_date)
+```
+
+## Data packages
+
+\footnotesize
+
+```{r}
+county_events(counties = "36061", 
+              start_year = 1988, end_year = 2015, 
+              event_type = "flood") %>% 
+  select(storm_id, storm_dist, closest_date)
+```
+
+## Data packages
+
+\footnotesize
+
+```{r fig.width = "6in", out.width = "0.9\\textwidth"}
+map_counties(storm = "Ivan-2004", metric = "rainfall")
+```
+
+
 ## Open Data APIs
 
 ```{r eval = FALSE}
@@ -218,7 +252,6 @@ load("data/fl_counties.RData")
 ```
 
 ```{r echo = FALSE, out.height = "0.5\\textheight", fig.align = "center", fig.width = 4}
-library(ggplot2)
 ggplot() + 
   geom_sf(data = fl_counties, 
           aes(fill = ALAND)) + 
