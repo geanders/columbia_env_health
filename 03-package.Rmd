@@ -13,32 +13,45 @@ submit it.
 An R package is just "a directory of files which extend R" [cite "Writing R Extensions"].
 You should consider writing your own package anytime you find yourself cutting and pasting
 functions to different directories on your computer, so you can use them for different 
-projects. 
+projects. The RStudio team has created a number of tools to make this process easier, including
+some functionality in the RStudio IDE as well as the `devtools` package [@R-devtools].
 
 ## Components of R packages
 
 ### R code
 
-[Where to put it]
+Without R code, there's not much point to an R package.^[The exception? A data-only package, 
+where the package's purpose is to share data rather than R functions. We'll look at an 
+example in the "Collect" section.] The R function code will go in the package's "R"
+subdirectory. You can use as many or as few ".R" files in this section as you want to
+organize your code. 
+Define your functions in this section as you would if you were creating functions in 
+an R script. As you become more advanced in writing packages, you may want to start
+adapting your function code a bit. For example, the `package::function` notation can 
+help keep clear which package you mean for a function to call a function from, and so 
+the behavior will be stable regardless of the order that a user loaded packages. 
+Also, if you intend for your functions to be used inside tidyverse pipelines, you'll 
+want to take a look at the developing [Tidy evaluation](https://tidyeval.tidyverse.org/) book.
 
-[How to add documentation]
-
+Although it is not required for a package you're creating just to use yourself, you 
+should think about adding help documentation to your code very early. You can then 
+access this documentation through helpfiles in R, just like you do with other R packages.
 Even if you are just creating a package for yourself, you should add documentation
 for all the "top-level" functions^[**top-level functions.** The functions in your package
 that you expect your users (including yourself) to call directly. Your package may also
 include some functions that are "helpers", only used within other functions to help 
 keep the code clean and avoid replication, but never used directly by package users.]
 
-Years ago, you would need to write this documentation in separate ".Rd" files and save them
-in the "man" subdirectory. Now, the easiest thing to do is to use "roxygen" conventions
-to write the help information right above each function. With this style, you'll use a 
-special type of commenting character (`#'`) at the start of each line with documentation, 
-and there are special codes (e.s., `@param` when you're defining one of the function's 
-parameters) to annotate this code. This help documentation will then, when you build your
-package, be converted to the ".Rd" files you used to have to write yourself and saved in 
-the "man" directory. 
-
-... 
+Years ago, you would need to write this documentation in separate ".Rd" files
+and save them in the "man" subdirectory. Now, the easiest thing to do is to use
+"roxygen" conventions to write the help information right above each function.
+With this style, you'll use a special type of commenting character (`#'`) at the
+start of each line with documentation, and there are special codes (e.s.,
+`@param` when you're defining one of the function's parameters) to annotate this
+code. This help documentation will then, when you build your package, be
+converted to the ".Rd" files you used to have to write yourself and saved in the
+"man" directory. Several of the resources listed in "Learn more" give more
+details on writing and rendering this help documentation.
 
 ### DESCRIPTION file
 
@@ -83,8 +96,8 @@ function *adds files and subdirectories* when needed to your R package
 directory. This may throw you at first, since most R functions don't make
 changes to your file directory, but you'll need those added files to add the
 package components, and it's *much* easier to remember a single function call to
-run when you need to add one than to remember all the details of which files and
-in what structure need to be added.
+run when you need to add one than to remember all the details of which files (and
+in what structure) need to be added.
 
 ## Try it out
 
@@ -230,18 +243,21 @@ package to submit to a public repository.
 ## Learn more
 
 One wonderful resource for writing and publishing R packages is the book [R
-Packages](http://r-pkgs.had.co.nz/) by Hadley Wickham [@wickham2015r]. This book is available
-for a reasonable price in paperback (many Barnes & Nobles carry it in their
-computer section) and is also available for free online. The author of this book
-also created and maintains the **`devtools` package**^[**`devtools` package.**
-An R package with functions that facilitate R package development. These
-functions are well-documented in the package documentation as well as through
-the book [R Packages](http://r-pkgs.had.co.nz/). This package also includes a
-function for installing R packages from code posted on GitHub
+Packages](http://r-pkgs.had.co.nz/) by Hadley Wickham [@wickham2015r]. This book
+is available for a reasonable price in paperback (many Barnes & Nobles carry it
+in their computer section) and is also available for free online. The author of
+this book also created and maintains the **`devtools` package**^[**`devtools`
+package.** An R package with functions that facilitate R package development.
+These functions are well-documented in the package documentation as well as
+through the book [R Packages](http://r-pkgs.had.co.nz/). This package also
+includes a function for installing R packages from code posted on GitHub
 (`install_github`), which is very useful if you want to find and use packages
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, "development" version of a package. This package is available on
-CRAN and so can be installed with `install.packages("devtools")`.]
+CRAN and so can be installed with `install.packages("devtools")`.] The "Package
+Development" cheatsheet available through [RStudio's
+cheatsheets](https://www.rstudio.com/resources/cheatsheets/) complements these
+resources.
 
 Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
 [Mastering Software Development in

@@ -142,13 +142,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="track.html"><a href="track.html"><i class="fa fa-check"></i><b>3</b> Track</a><ul>
-<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a></li>
-<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
-<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="track.html"><a href="track.html#accessing-a-bash-shell"><i class="fa fa-check"></i><b>3.3.1</b> Accessing a Bash Shell</a></li>
-<li class="chapter" data-level="3.3.2" data-path="track.html"><a href="track.html#git2r-package"><i class="fa fa-check"></i><b>3.3.2</b> <code>git2r</code> package</a></li>
+<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="track.html"><a href="track.html#configuring-git"><i class="fa fa-check"></i><b>3.1.1</b> Configuring git</a></li>
+<li class="chapter" data-level="3.1.2" data-path="track.html"><a href="track.html#tracking-an-r-project"><i class="fa fa-check"></i><b>3.1.2</b> Tracking an R project</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
+<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
+<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a></li>
+<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#try-it-out"><i class="fa fa-check"></i><b>3.4</b> Try it out</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="track.html"><a href="track.html#track-a-project-with-git"><i class="fa fa-check"></i><b>3.4.1</b> Track a project with git</a></li>
+<li class="chapter" data-level="3.4.2" data-path="track.html"><a href="track.html#link-the-project-with-a-github-repository"><i class="fa fa-check"></i><b>3.4.2</b> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.5</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
 <li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#components-of-r-packages"><i class="fa fa-check"></i><b>4.1</b> Components of R packages</a><ul>
@@ -156,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.2" data-path="package.html"><a href="package.html#description-file"><i class="fa fa-check"></i><b>4.1.2</b> DESCRIPTION file</a></li>
 <li class="chapter" data-level="4.1.3" data-path="package.html"><a href="package.html#other-package-components"><i class="fa fa-check"></i><b>4.1.3</b> Other package components</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
+<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out-1"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
 <li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#sharing"><i class="fa fa-check"></i><b>4.3</b> Sharing</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="package.html"><a href="package.html#when-to-publish-your-packages"><i class="fa fa-check"></i><b>4.3.1</b> When to publish your packages</a></li>
 <li class="chapter" data-level="4.3.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.3.2</b> Where to publish packages</a></li>
@@ -200,10 +204,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="organize" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Organize</h1>
-<p><span class="newthought">If you are using R to write</span> for larger projects, including research
-for academic papers and theses, you should start putting some thought into how you
-organize your research files, including raw data, cleaned data, coding scripts for
-analysis, and output like paper drafts and figures.</p>
+<p><span class="newthought">If you are using R to write</span> for larger projects, including
+research for academic papers and theses, you should start putting some thought
+into how you organize your research files, including raw data, cleaned data,
+coding scripts for analysis, and output like paper drafts and figures. So far,
+you may have run much of your analysis within a single R script or R Markdown
+file. Often, any associated data are within the same working directory as your
+script or R Markdown file, but the files for one project are not separated from
+files for other projects. As you move to larger projects, this kind of set-up
+won’t work as well. Instead, you’ll want to start keeping all materials for a
+project in a single and exclusive directory.</p>
 <div id="r-projects" class="section level2">
 <h2><span class="header-section-number">2.1</span> R Projects</h2>
 <p><span class="newthought">RStudio allows you to</span> create “Projects”, which help with this
@@ -247,42 +257,52 @@ aren’t terribly tidy, either. But I do keep my project directories very tidy, 
 strongly recommend the practice.</p>
 <p>This goes beyond “well-organized”, which we just covered (putting all project
 files in one directory, using subdirectories to divide up files in a project,
-using consistent names for project file directories, etc.). Keeping a project directory
-“tidy” means having <strong>only one</strong> version of each file. Often, as you develop a project,
-especially when collaborators are involved, you can end up with many versions of a
-file. For example, you may have the draft of a journal article’s text saved
-in some versions with the file name reflecting the date of the draft (“draft_may_12.docx”),
-some versions that include the initials of people who reviewed it (“paper_draft_ba_rp_mb2.docx”),
-and so on.</p>
-<p>This type of organization—having multiple versions of project files, with the file names
-meant to help you keep track of them—results in very cluttered and hard-to-manage project
-directories. Instead, at any given moment, each of your project directories should have only
-one version of each project file. You certainly won’t want to lose information from edits
-and changes to the files along the way, so it’s smart to use some type of <strong>version control
-system</strong>[<strong>version control system.</strong> …] on each project directory. This will allow you
-to track the changes you’ve made to each file and to go back and revisit the file at any
-moment in the project’s history. A later section of this booklet will describe how you can
-use <code>git</code> for version control for R projects.</p>
+using consistent names for project file directories, etc.). Keeping a project
+directory “tidy” means having <strong>only one</strong> version of each file. Often, as you
+develop a project, especially when collaborators are involved, you can end up
+with many versions of a file. For example, you may have the draft of a journal
+article’s text saved in some versions with the file name reflecting the date of
+the draft (“draft_may_12.docx”), some versions that include the initials of
+people who reviewed it (“paper_draft_ba_rp_mb2.docx”), and so on.</p>
+<p>This type of organization—having multiple versions of project files, with the
+file names meant to help you keep track of them—results in very cluttered and
+hard-to-manage project directories. Instead, at any given moment, each of your
+project directories should have only one version of each project file. You
+certainly won’t want to lose information from edits and changes to the files
+along the way, so it’s smart to use some type of <strong>version control
+system</strong>[<strong>version control system.</strong> Software for tracking changes to software
+projects. Some researchers who use a lot of coding also use this software to
+track their projects One well-known example is <strong>git</strong>, but there are other
+version control systems as well.] on each project directory. This will allow you
+to track the changes you’ve made to each file and to go back and revisit the
+file at any moment in the project’s history. A later section of this booklet
+(“Track”) will describe how you can use <code>git</code> for version control for R
+projects.</p>
 </div>
 <div id="avoiding-repetition" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Avoiding repetition</h3>
-<p>One key to efficient organization is to <strong>avoid repetition</strong>.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> In practice, it often happens that you’re using the
-same code across several projects. For example, say you have some code that calculates the
-apparent temperature from air temperature and some measure of dewpoint temperature. If you have
-organized your project files to have one directory per paper, with all the associated code for
-a paper within the project’s directory, then you may find you’re often copying and pasting the
-code to calculate apparent temperature into different directories.</p>
-<p>This situation makes for a tricky balance—you want to organize your files and have a separate
-directory for each project, but cutting and pasting code can be a recide for disaster. Each time
-you move the code, there’s a chance for an error to slip in. Also, what if you want to make a change
-in the code? Say you hear about a better algorithm for calculating apparent temperature?
-You will either need to go through all of your projects that use that code and change the code
-everywhere, or you will have to settle for different projects using different algorithms.</p>
-<p>This means it’s time to start thinking about writing your own <strong>R package</strong>.[<span class="citation">(<span class="citeproc-not-found" data-reference-id="*"><strong>???</strong></span>)</span>*R package** …]
-You do not have to publish every R package you write—it’s fine to just use it yourself and not
-share it more widely. Regardless, a package is the right place to store related code that you use
-often, as well as documentation (and possibly tests) to go with that code. A later section of this
-booklet will go over a bit about how to write your own R packages, as well as references for
+<p>One key to efficient organization is to <strong>avoid repetition</strong>.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> In practice, it
+often happens that you’re using the same code across several projects. For
+example, say you have some code that calculates the apparent temperature from
+air temperature and some measure of dewpoint temperature. If you have organized
+your project files to have one directory per paper, with all the associated code
+for a paper within the project’s directory, then you may find you’re often
+copying and pasting the code to calculate apparent temperature into different
+directories.</p>
+<p>This situation makes for a tricky balance—you want to organize your files and
+have a separate directory for each project, but cutting and pasting code can be
+a recide for disaster. Each time you move the code, there’s a chance for an
+error to slip in. Also, what if you want to make a change in the code? Say you
+hear about a better algorithm for calculating apparent temperature? You will
+either need to go through all of your projects that use that code and change the
+code everywhere, or you will have to settle for different projects using
+different algorithms.</p>
+<p>This means it’s time to start thinking about writing your own R package. You do
+not have to publish every R package you write—it’s fine to just use it
+yourself and not share it more widely. Regardless, a package is the right place
+to store related code that you use often, as well as documentation (and possibly
+tests) to go with that code. A later section of this booklet (“Package”) will go
+over a bit about how to write your own R packages, as well as references for
 learning more about package development.</p>
 </div>
 </div>
@@ -306,8 +326,8 @@ publications.</p>
 <li id="fn5"><p>One way to do this would be to zipped the directory
 into a single file and share it by email. Another is to use git version control, post the
 directory to GitHub, and share the directory from there.<a href="organize.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>In programming, you’ll often
-hear this advice as “Do Not Repeat Yourself”.<a href="organize.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>In programming,
+you’ll often hear this advice as “Do Not Repeat Yourself”.<a href="organize.html#fnref6" class="footnote-back">↩</a></p></li>
 <li id="fn7"><p><strong>research compendium.</strong> …<a href="organize.html#fnref7" class="footnote-back">↩</a></p></li>
 </ol>
 </div>

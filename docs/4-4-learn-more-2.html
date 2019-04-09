@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -163,21 +167,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="learn-more-2" class="section level2">
 <h2><span class="header-section-number">4.4</span> Learn more</h2>
 <p>One wonderful resource for writing and publishing R packages is the book <a href="http://r-pkgs.had.co.nz/">R
-Packages</a> by Hadley Wickham <span class="citation">(Wickham <label for="tufte-mn-2" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle">2015<span class="marginnote">Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. " O’Reilly Media, Inc.".</span>)</span>. This book is available
-for a reasonable price in paperback (many Barnes &amp; Nobles carry it in their
-computer section) and is also available for free online. The author of this book
-also created and maintains the <strong><code>devtools</code> package</strong><label for="tufte-sn-15" class="margin-toggle sidenote-number">15</label><input type="checkbox" id="tufte-sn-15" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">15</span> <strong><code>devtools</code> package.</strong>
-An R package with functions that facilitate R package development. These
-functions are well-documented in the package documentation as well as through
-the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also includes a
-function for installing R packages from code posted on GitHub
+Packages</a> by Hadley Wickham <span class="citation">(Wickham <label for="tufte-mn-4" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle">2015<span class="marginnote">Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. " O’Reilly Media, Inc.".</span>)</span>. This book
+is available for a reasonable price in paperback (many Barnes &amp; Nobles carry it
+in their computer section) and is also available for free online. The author of
+this book also created and maintains the <strong><code>devtools</code> package</strong><label for="tufte-sn-15" class="margin-toggle sidenote-number">15</label><input type="checkbox" id="tufte-sn-15" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">15</span> <strong><code>devtools</code>
+package.</strong> An R package with functions that facilitate R package development.
+These functions are well-documented in the package documentation as well as
+through the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also
+includes a function for installing R packages from code posted on GitHub
 (<code>install_github</code>), which is very useful if you want to find and use packages
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, “development” version of a package. This package is available on
-CRAN and so can be installed with <code>install.packages("devtools")</code>.</span></p>
+CRAN and so can be installed with <code>install.packages("devtools")</code>.</span> The “Package
+Development” cheatsheet available through <a href="https://www.rstudio.com/resources/cheatsheets/">RStudio’s
+cheatsheets</a> complements these
+resources.</p>
 <p>Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
-<a href="https://www.coursera.org/specializations/r"><strong>Mastering Software Development in
-R</strong></a>, and we also have <a href="https://bookdown.org/rdpeng/RProgDA/">an online
+<a href="https://www.coursera.org/specializations/r">Mastering Software Development in
+R</a>, and we also have <a href="https://bookdown.org/rdpeng/RProgDA/">an online
 book</a> on bookdown on the topic. The
 official CRAN resource for writing packages, <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html">“Writing R
 Extensions”</a>, is
@@ -194,7 +201,7 @@ research, you may find that you need to help your supervisors and peers
 understand this research project. One recent article discusses how academic
 research in the data science realm is changing, as well as how department chairs
 and others can evaluate these new research products, including for promotion and
-tenure <span class="citation">(Waller <label for="tufte-mn-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle">2018<span class="marginnote">Waller, Lance A. 2018. “Documenting and Evaluating Data Science Contributions in Academic Promotion in Departments of Statistics and Biostatistics.” <em>The American Statistician</em> 72 (1): 11–19.</span>)</span>.</p>
+tenure <span class="citation">(Waller <label for="tufte-mn-5" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle">2018<span class="marginnote">Waller, Lance A. 2018. “Documenting and Evaluating Data Science Contributions in Academic Promotion in Departments of Statistics and Biostatistics.” <em>The American Statistician</em> 72 (1): 11–19.</span>)</span>.</p>
 
 </div>
 <!-- </div> -->

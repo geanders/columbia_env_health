@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -162,10 +166,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="organize" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Organize</h1>
-<p><span class="newthought">If you are using R to write</span> for larger projects, including research
-for academic papers and theses, you should start putting some thought into how you
-organize your research files, including raw data, cleaned data, coding scripts for
-analysis, and output like paper drafts and figures.</p> 
+<p><span class="newthought">If you are using R to write</span> for larger projects, including
+research for academic papers and theses, you should start putting some thought
+into how you organize your research files, including raw data, cleaned data,
+coding scripts for analysis, and output like paper drafts and figures. So far,
+you may have run much of your analysis within a single R script or R Markdown
+file. Often, any associated data are within the same working directory as your
+script or R Markdown file, but the files for one project are not separated from
+files for other projects. As you move to larger projects, this kind of set-up
+won’t work as well. Instead, you’ll want to start keeping all materials for a
+project in a single and exclusive directory.</p> 
 </div>
 <p style="text-align: center;">
 <a href="1-1-set-up.html"><button class="btn btn-default">Previous</button></a>

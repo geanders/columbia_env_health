@@ -3,7 +3,7 @@
 `r newthought("Years ago, I tried to learn to use")` git version control software with R, and
 it was a total fail. Maybe it's just me, but I found it really hard to wrap my head around
 the text-dominated, command-line interface classically used for git. However, RStudio now
-includes tools that provide a **GUI**-style^[**Graphical User Interface (GUI).** ...] 
+includes tools that provide a GUI-style
 interface to most of the functionality you'll need from git for R-based projects. I highly 
 recommend trying git by using it through RStudio first, and then once you develop a mental 
 map of what's going on, it's much easier to transfer partially or completely to running git
@@ -17,10 +17,184 @@ the RStudio GUI-style git interface.
 
 ## git
 
+Git is a version control system. It saves information about all changes you make
+on all files in a repository. This allows you to revert back to previous
+versions and search through the history for all files in the repository. Git is
+open source. You can download it for different operating systems at
+https://git-scm.com/downloads. You will need git on your computer to use git
+with RStudio and create local git repositories you can sync with GitHub
+repositories. If you are using Windows OS, you'll want your git installation to 
+include a "Bash emulation" (i.e., access to a command line that acts like a Bash
+shell), which I think should come standard with the Windows git installation. 
+On Mac or Linux computers, you should already have access to a Bash shell.
 
+### Configuring git
+
+Before you use git, you should configure it. For example, you should make sure
+it has your name and email address. You can configure git with commands at a
+Bash shell.^[If you are using Windows, search for "Bash" among your programs.
+You should be able to fine the Bash emulator that cam with your git install. If
+you are using a Mac, you'll want to open "Terminal". If you're using Linux, you
+almost certainly already know your way around a Bash shell.] For example, I
+would run the following code at a shell to configure git to have my proper user
+name and email:
+
+```
+git config --global user.name "Brooke Anderson"
+git config --global user.email "brooke.anderson@colostate.edu"
+```
+
+You'll only need to run this configuration once, until you get a new computer or 
+for some reason need to re-install git. Once you set these configurations on 
+your computer, they should be set on that computer indefinitely.
+
+Next, you need to make sure that RStudio can find the git software you
+installed. Sometimes, RStudio will automatically find git (once you've installed
+git) when you start RStudio. However, in some cases, you may need to take some
+more steps to activate git in RStudio. To do this, go to "RStudio" ->
+"Preferences" -> "Git/SVN". Choose "Enable version control". If you have just
+installed git, and have not restarted RStudio, you'll need to do that before
+RStudio will recognize git. If you do not see "Git" in the box for "Version
+control system", it means either that you do not have git installed on your
+computer or that RStudio was unable to find it. If RStudio doesn't find your
+version of git in the "Git executable" box, browse for it. If you're still
+having problems, there's a chance that you'll need to mess around some with your
+PATH variables. You may want to find a computer-savy friend or IT person to help
+you if you get to this stage.
+
+### Tracking an R project
+
+To track an R package, you'll first need to initialize it as a git repository.
+Then, as you make changes to the code, you'll want to **commit** those changes
+as you go, using **commit messages** that are short but clear enough for you to
+follow them when you review them later. 
+
+You can initialize a git repository for a directory that is an R Project
+directory through R Studio.
+
+1. Open the Project. 
+2. Go to "Tools" -> "Version Control" -> "Project Setup".
+3. In the box for "Version control system", choose "Git".
+
+You only need to do this once per project, but you will need to do it for each
+project you want to keep under version control.
+
+Once you initialize the project as a git repository, you should have a "Git"
+window in one of your RStudio panes (top right pane by default). As you make and
+save changes to files, they will show up in this window for you to commit. When
+you want git to record changes, you *commit* the files with the changes. Each
+time you commit, you have to include a short commit message with some
+information about the changes. You can make commits from a shell. However, it's
+much easier to just make commits from the RStudio environment. Click on the
+"Commit" button in the Git window. That will open a separate commit window. In
+this window, to commit changes:
+
+1. Click on the files you want to commit to select them. 
+2. If you'd like, you can use the bottom part of the window to look through the
+changes you are committing in each file.
+3. Write a message in the "Commit message" box. Keep the message to one line in
+this box if you can. If you need to explain more, write a short one-line
+message, skip a line, and then write a longer explanation.
+4. Click on the "Commit" button on the right. 
+
+Once you commit changes to files, they will disappear from the Git window until
+you make and save more changes in them.
+
+Once you've made some commits, you may want to browse through the changes. On
+the top left of the Commit window, you can toggle to "History". This window
+allows you to explore the history of commits for the repository.
 
 ## GitHub
 
+GitHub is an online platform for hosting directories under git version control.
+It allows you to host git repositories online. This allows you to: 
+
+- Work collaboratively on a shared repository
+- Fork someone else's repository to create your own copy that you can use and change as you want
+- Suggest changes to other people's repositories through pull requests
+
+To push local repositories to GitHub and fork other people's repositories, you
+will need a GitHub account. You can sign up at https://github.com. A free
+account is fine. 
+
+The basic unit for working in GitHub is the repository. You can think of a
+repository as very similar to an R Project---it's a directory of files with
+some supplemental files saving some additional information about the directory
+(and I recommend making any directory with R code that you plan to track with
+git and GitHub as an R project, although it isn't technically required).
+
+While R Projects have this additional information saved as ".RProj" files, git
+repositories have this information in a directory called ".git". Because this
+pathname starts with a dot, it won't show up in many of the ways you list files
+in a directory.^[From a Bash shell, you can see files that start with `.` by running
+`ls -a` from within that directory.]
+
+If you have a local directory that you would like to push to GitHub, these are
+the steps to do it. First, you need to make sure that the directory is under git
+version control. See the notes on initializing a repository. Next, you need to
+create an empty repository on GitHub to sync with your local repository. Do that
+by:
+
+1. In GitHub, click on the "+" in the upper right corner ("Create new").
+2. Choose "Create new repository".
+3. Give your repository the same name as the local directory you'd like to
+connect it to. For example, if you want to connect it to a directory called
+"fars_analysis" on your computer, name the repository "fars_analysis".
+4. Leave everything else as-is (unless you'd like to add a short description in
+the "Description" box). Click on "Create repository" at the bottom of the page.
+
+Before you connect your local repository with the GitHub one, you'll want to change
+some settings in RStudio so GitHub will recognize that your local repository
+belongs to you, rather than asking for you password every time.
+
+- In RStudio, go to "RStudio" -> "Preferences" -> "Git / svn". Choose to "Create
+RSA key".
+- Click on "View public key". Copy what shows up.
+- Go to your GitHub account and navigate to "Settings". Click on "SSH and GPG keys". 
+- Click on "New SSH key". Name the key something like "RStudio" (you might want
+to include the device name if you'll have SSH keys from RStudio on several
+computers). Past in your public key in the "Key box".
+
+Now you are ready to connect the two repositories: 
+
+1. Open a shell and navigate
+to the directory you want to push. (You can open a shell from RStudio using the
+gear button in the Git window.) 
+2. Add the GitHub repository as a remote branch
+with the following command (this gives an example for adding a GitHub repository
+named "ex_repo" in my GitHub account, "geanders"):
+```
+git remote add origin git@github.com:geanders/ex_repo.git
+```
+
+3. Push the contents of the local repository to the GitHub repository.
+```
+git push -u origin master
+```
+
+Once you have linked a local R project with a GitHub repository, you can push
+and pull commits using the blue down arrow (pull from GitHub) and green up arrow
+(push to GitHub) in the Git window in RStudio.
+
+Each original GitHub repository (i.e., not a fork of another repository) has a
+tab for "Issues". This page works like a Discussion Forum. You can create new
+"Issue" threads to describe and discuss things that you want to change about the
+repository. Issues can be closed once the problem has been resolved. You can
+close issues on the "Issue" page with the "Close issue" button.
+
+GitHub helps you work with others on code. There are two main ways you can do this: 
+
+- **Collaborating:** Different people have the ability to push and pull directly
+to and from the same repository. When one person pushes a change to the
+repository, other collaborators can immediately get the changes by pulling the
+latest GitHub commits to their local repository.
+- **Forking:** Different people have their own GitHub repositories, with each
+linked to their own local repository. When a person pushes changes to GitHub, it
+only makes changes to his own repository. The person must issue a pull request
+to another person's fork of the repository to share the changes.
+
+See the resources in "Learn more" for more on setting up for this kind of collaboration,
+including how to resolve merge conflicts when working with collaborators.
 
 ## Terminal
 
@@ -32,15 +206,64 @@ interface RStudio provides for git. The few exceptions include:
 - Creating a new branch
 - Merging two branches
 
-For these tasks, I usually open up a **Bash Shell**^[**Bash Shell.** A ... . "Bash" stands
-for "Bourne-Again Shell", Stephen Bourne, a Unix developer.] and run a git command from 
-there. However, there's also a package called `git2r` that lets you run any of these 
-git commands from the R command line, so you could also do all these (fairly rare) tasks
-from the R console without ever opening a Bash Shell, if you master the `git2r` package.
+For these tasks, I usually open up a Bash shell and run a git command from 
+there. I do this rarely enough that I almost always have to look up the exact
+call to use to do the task. I've included some resources in "Learn more" that
+are good to have around when you find you need to open a Bash shell for a
+git-tracked R project.
 
-### Accessing a Bash Shell
+There's also a package called `git2r` that lets you run any of these git
+commands from the R command line, so you could also do all these (fairly rare)
+tasks from the R console without ever opening a Bash Shell, if you master the
+`git2r` package. See the package's GitHub page and help documentation
+to learn more about how to use this package as an alternative to running R from
+the command line.
 
-### `git2r` package
+## Try it out
+
+### Track a project with git
+
+- If you do not already have one, sign up for a GitHub account. The free option
+is fine.
+- If you do not already have git installed on your computer, install it:
+https://git-scm.com/downloads
+- Restart RStudio. go to “RStudio” -> “Preferences” ->“Git/SVN”. Choose “Enable
+version control”. If RStudio doesn’t find your version of git in the “Git
+executable” box, browse for it.
+- Open a project you'd like to track with git in RStudio. Change your Project
+settings to initialize git for this project (see the notes above on how to do
+that).
+- Open a shell from R using the gear symbol in the "Git" pane you should now see
+in RStudio. Configure git from this shell. For example, I would open a shell and run: 
+```
+git config --global user.name "Brooke Anderson"
+git config --global user.email "brooke.anderson@colostate.edu"
+```
+- Go to the "Commit" window. Click on all of the files you see there, and then
+make an initial commit using "Initial commit" as your commit message.
+- Make a change to one of the files in the project and save the file. You should
+see that file pop up in the "Git" window of RStudio.
+- Commit this change using the "Commit" window. After you commit the changes,
+look at the "History" window to see the history of your commits.
+
+### Link the project with a GitHub repository
+
+- Login to your GitHub account online. Create an empty GitHub repository for the
+project (see the notes above). Give it the same name as the name of your R project directory.
+- If you do not already have an RSA kay, create one in RStudio and add it as an
+SSH key in your GitHub settings. If you already have a key (you almost certainly
+know if you do), see if you can copy it and submit it in GitHub. (You will only need
+to do this step once, not every time you sync a local git repository with a GitHub
+repository.)
+- Set this empty online GitHub repository as the remote branch of your local git
+repository for the project using a `git remote add origin` call at a Bash shell
+(see the notes above).
+- Push your local repository to the GitHub repository using a `git push` call
+(see the notes above). 
+- Go to your GitHub account and make sure the repository was pushed. 
+- Try making some more changes to your local repository. Commit the changes,
+then use the green up arrow in the Git window to push the changes to your GitHub
+repository.
 
 ## Learn more
 
@@ -63,10 +286,10 @@ tracking changes in software development projects. When you use git to track fil
 project (rather than, for example, for a repository for an R package you're writing), you 
 may have some needs that don't come up under software development. A few articles have come
 out recently that give advice on using git specifically to track research projects---these provide
-helpful advice specific to this use of git, which you won't find in books about git. 
+helpful advice specific to this use of git, which you won't find in books about git, including
+one by RStudio's Jenny Bryan [@bryan2018excuse]. 
 
-[**StackOverflow**](https://stackoverflow.com/)^[[**StackOverflow**](https://stackoverflow.com/). 
-...] 
+[StackOverflow](https://stackoverflow.com/)
 is also invaluable to quickly look up how to do something in git. There are
 many tasks in git where I never remember the command, but I do remember enough about what 
 the functionality is called to be able to quickly use Google to find a StackOverflow thread

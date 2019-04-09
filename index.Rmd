@@ -128,7 +128,7 @@ knitr::include_graphics("images/example_repo.png")
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'ggplot2', 'readr',
   'forcats', 'magrittr', 'dplyr', 'sf', 'htmlwidgets', 'DT', 'plotly', 
-  'leaflet', 'flexdashboard', 'usethis', 'devtools'
+  'leaflet', 'flexdashboard', 'usethis', 'devtools', 'git2r'
 ), 'packages.bib')
 ```
 

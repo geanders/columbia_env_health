@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -162,6 +166,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="github" class="section level2">
 <h2><span class="header-section-number">3.2</span> GitHub</h2>
+<p>GitHub is an online platform for hosting directories under git version control.
+It allows you to host git repositories online. This allows you to:</p>
+<ul>
+<li>Work collaboratively on a shared repository</li>
+<li>Fork someone else’s repository to create your own copy that you can use and change as you want</li>
+<li>Suggest changes to other people’s repositories through pull requests</li>
+</ul>
+<p>To push local repositories to GitHub and fork other people’s repositories, you
+will need a GitHub account. You can sign up at <a href="https://github.com" class="uri">https://github.com</a>. A free
+account is fine.</p>
+<p>The basic unit for working in GitHub is the repository. You can think of a
+repository as very similar to an R Project—it’s a directory of files with
+some supplemental files saving some additional information about the directory
+(and I recommend making any directory with R code that you plan to track with
+git and GitHub as an R project, although it isn’t technically required).</p>
+<p>While R Projects have this additional information saved as “.RProj” files, git
+repositories have this information in a directory called “.git”. Because this
+pathname starts with a dot, it won’t show up in many of the ways you list files
+in a directory.<label for="tufte-sn-9" class="margin-toggle sidenote-number">9</label><input type="checkbox" id="tufte-sn-9" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">9</span> From a Bash shell, you can see files that start with <code>.</code> by running
+<code>ls -a</code> from within that directory.</span></p>
+<p>If you have a local directory that you would like to push to GitHub, these are
+the steps to do it. First, you need to make sure that the directory is under git
+version control. See the notes on initializing a repository. Next, you need to
+create an empty repository on GitHub to sync with your local repository. Do that
+by:</p>
+<ol style="list-style-type: decimal">
+<li>In GitHub, click on the “+” in the upper right corner (“Create new”).</li>
+<li>Choose “Create new repository”.</li>
+<li>Give your repository the same name as the local directory you’d like to
+connect it to. For example, if you want to connect it to a directory called
+“fars_analysis” on your computer, name the repository “fars_analysis”.</li>
+<li>Leave everything else as-is (unless you’d like to add a short description in
+the “Description” box). Click on “Create repository” at the bottom of the page.</li>
+</ol>
+<p>Before you connect your local repository with the GitHub one, you’ll want to change
+some settings in RStudio so GitHub will recognize that your local repository
+belongs to you, rather than asking for you password every time.</p>
+<ul>
+<li>In RStudio, go to “RStudio” -&gt; “Preferences” -&gt; “Git / svn”. Choose to “Create
+RSA key”.</li>
+<li>Click on “View public key”. Copy what shows up.</li>
+<li>Go to your GitHub account and navigate to “Settings”. Click on “SSH and GPG keys”.</li>
+<li>Click on “New SSH key”. Name the key something like “RStudio” (you might want
+to include the device name if you’ll have SSH keys from RStudio on several
+computers). Past in your public key in the “Key box”.</li>
+</ul>
+<p>Now you are ready to connect the two repositories:</p>
+<ol style="list-style-type: decimal">
+<li>Open a shell and navigate
+to the directory you want to push. (You can open a shell from RStudio using the
+gear button in the Git window.)</li>
+<li>Add the GitHub repository as a remote branch
+with the following command (this gives an example for adding a GitHub repository
+named “ex_repo” in my GitHub account, “geanders”):</li>
+</ol>
+<pre><code>git remote add origin git@github.com:geanders/ex_repo.git</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Push the contents of the local repository to the GitHub repository.</li>
+</ol>
+<pre><code>git push -u origin master</code></pre>
+<p>Once you have linked a local R project with a GitHub repository, you can push
+and pull commits using the blue down arrow (pull from GitHub) and green up arrow
+(push to GitHub) in the Git window in RStudio.</p>
+<p>Each original GitHub repository (i.e., not a fork of another repository) has a
+tab for “Issues”. This page works like a Discussion Forum. You can create new
+“Issue” threads to describe and discuss things that you want to change about the
+repository. Issues can be closed once the problem has been resolved. You can
+close issues on the “Issue” page with the “Close issue” button.</p>
+<p>GitHub helps you work with others on code. There are two main ways you can do this:</p>
+<ul>
+<li><strong>Collaborating:</strong> Different people have the ability to push and pull directly
+to and from the same repository. When one person pushes a change to the
+repository, other collaborators can immediately get the changes by pulling the
+latest GitHub commits to their local repository.</li>
+<li><strong>Forking:</strong> Different people have their own GitHub repositories, with each
+linked to their own local repository. When a person pushes changes to GitHub, it
+only makes changes to his own repository. The person must issue a pull request
+to another person’s fork of the repository to share the changes.</li>
+</ul>
+<p>See the resources in “Learn more” for more on setting up for this kind of collaboration,
+including how to resolve merge conflicts when working with collaborators.</p>
 </div>
 <p style="text-align: center;">
 <a href="3-1-git.html"><button class="btn btn-default">Previous</button></a>

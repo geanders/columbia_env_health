@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -170,43 +174,53 @@ aren’t terribly tidy, either. But I do keep my project directories very tidy, 
 strongly recommend the practice.</p>
 <p>This goes beyond “well-organized”, which we just covered (putting all project
 files in one directory, using subdirectories to divide up files in a project,
-using consistent names for project file directories, etc.). Keeping a project directory
-“tidy” means having <strong>only one</strong> version of each file. Often, as you develop a project,
-especially when collaborators are involved, you can end up with many versions of a
-file. For example, you may have the draft of a journal article’s text saved
-in some versions with the file name reflecting the date of the draft (“draft_may_12.docx”),
-some versions that include the initials of people who reviewed it (“paper_draft_ba_rp_mb2.docx”),
-and so on.</p>
-<p>This type of organization—having multiple versions of project files, with the file names
-meant to help you keep track of them—results in very cluttered and hard-to-manage project
-directories. Instead, at any given moment, each of your project directories should have only
-one version of each project file. You certainly won’t want to lose information from edits
-and changes to the files along the way, so it’s smart to use some type of <strong>version control
-system</strong>[<strong>version control system.</strong> …] on each project directory. This will allow you
-to track the changes you’ve made to each file and to go back and revisit the file at any
-moment in the project’s history. A later section of this booklet will describe how you can
-use <code>git</code> for version control for R projects.</p>
+using consistent names for project file directories, etc.). Keeping a project
+directory “tidy” means having <strong>only one</strong> version of each file. Often, as you
+develop a project, especially when collaborators are involved, you can end up
+with many versions of a file. For example, you may have the draft of a journal
+article’s text saved in some versions with the file name reflecting the date of
+the draft (“draft_may_12.docx”), some versions that include the initials of
+people who reviewed it (“paper_draft_ba_rp_mb2.docx”), and so on.</p>
+<p>This type of organization—having multiple versions of project files, with the
+file names meant to help you keep track of them—results in very cluttered and
+hard-to-manage project directories. Instead, at any given moment, each of your
+project directories should have only one version of each project file. You
+certainly won’t want to lose information from edits and changes to the files
+along the way, so it’s smart to use some type of <strong>version control
+system</strong>[<strong>version control system.</strong> Software for tracking changes to software
+projects. Some researchers who use a lot of coding also use this software to
+track their projects One well-known example is <strong>git</strong>, but there are other
+version control systems as well.] on each project directory. This will allow you
+to track the changes you’ve made to each file and to go back and revisit the
+file at any moment in the project’s history. A later section of this booklet
+(“Track”) will describe how you can use <code>git</code> for version control for R
+projects.</p>
 </div>
 <div id="avoiding-repetition" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Avoiding repetition</h3>
-<p>One key to efficient organization is to <strong>avoid repetition</strong>.<label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> In programming, you’ll often
-hear this advice as “Do Not Repeat Yourself”.</span> In practice, it often happens that you’re using the
-same code across several projects. For example, say you have some code that calculates the
-apparent temperature from air temperature and some measure of dewpoint temperature. If you have
-organized your project files to have one directory per paper, with all the associated code for
-a paper within the project’s directory, then you may find you’re often copying and pasting the
-code to calculate apparent temperature into different directories.</p>
-<p>This situation makes for a tricky balance—you want to organize your files and have a separate
-directory for each project, but cutting and pasting code can be a recide for disaster. Each time
-you move the code, there’s a chance for an error to slip in. Also, what if you want to make a change
-in the code? Say you hear about a better algorithm for calculating apparent temperature?
-You will either need to go through all of your projects that use that code and change the code
-everywhere, or you will have to settle for different projects using different algorithms.</p>
-<p>This means it’s time to start thinking about writing your own <strong>R package</strong>.[<span class="citation">(<span class="citeproc-not-found" data-reference-id="*"><strong>???</strong></span>)</span>*R package** …]
-You do not have to publish every R package you write—it’s fine to just use it yourself and not
-share it more widely. Regardless, a package is the right place to store related code that you use
-often, as well as documentation (and possibly tests) to go with that code. A later section of this
-booklet will go over a bit about how to write your own R packages, as well as references for
+<p>One key to efficient organization is to <strong>avoid repetition</strong>.<label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> In programming,
+you’ll often hear this advice as “Do Not Repeat Yourself”.</span> In practice, it
+often happens that you’re using the same code across several projects. For
+example, say you have some code that calculates the apparent temperature from
+air temperature and some measure of dewpoint temperature. If you have organized
+your project files to have one directory per paper, with all the associated code
+for a paper within the project’s directory, then you may find you’re often
+copying and pasting the code to calculate apparent temperature into different
+directories.</p>
+<p>This situation makes for a tricky balance—you want to organize your files and
+have a separate directory for each project, but cutting and pasting code can be
+a recide for disaster. Each time you move the code, there’s a chance for an
+error to slip in. Also, what if you want to make a change in the code? Say you
+hear about a better algorithm for calculating apparent temperature? You will
+either need to go through all of your projects that use that code and change the
+code everywhere, or you will have to settle for different projects using
+different algorithms.</p>
+<p>This means it’s time to start thinking about writing your own R package. You do
+not have to publish every R package you write—it’s fine to just use it
+yourself and not share it more widely. Regardless, a package is the right place
+to store related code that you use often, as well as documentation (and possibly
+tests) to go with that code. A later section of this booklet (“Package”) will go
+over a bit about how to write your own R packages, as well as references for
 learning more about package development.</p>
 </div>
 </div>

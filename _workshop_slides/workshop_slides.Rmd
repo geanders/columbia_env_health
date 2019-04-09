@@ -17,19 +17,6 @@ library(dplyr)
 library(ggplot2)
 ```
 
-
-## Today's goals
-
-- LEARN principles of a key R plotting framework \bigskip
-- UNDERSTAND what R can do for visualizations \bigskip
-- KNOW what to do next to learn more
-
-## Homework?!
-
-\begin{center}
-\url{https://bit.ly/2WQV6XT}
-\end{center}
-
 ## Today's plan
 
 \montserratfont
@@ -38,6 +25,13 @@ library(ggplot2)
 - \largetext{PACKAGE} \bigskip
 - \largetext{COLLECT} \bigskip
 - \largetext{PROCESS} 
+
+
+## Homework?!
+
+\begin{center}
+\url{https://bit.ly/2WQV6XT}
+\end{center}
 
 ____
 
@@ -272,6 +266,15 @@ http://r-pkgs.had.co.nz/
 
 ## Resources
 
+```{r echo = FALSE, out.width = "0.8\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/package-development.pdf")
+```
+\vspace{-0.5cm}
+\small
+https://www.rstudio.com/resources/cheatsheets/
+
+## Resources
+
 ```{r echo = FALSE, out.width = "0.5\\textwidth", fig.align = "center"}
 knitr::include_graphics("images/train_dragon.jpeg")
 ```
@@ -349,7 +352,7 @@ ____
 ## Resources
 
 \centering
-\Huge #rstats
+\Huge #rstats \bigskip
 
 \includegraphics[width = \textwidth]{images/CRAN_package_10000}
 

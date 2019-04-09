@@ -262,10 +262,16 @@ project's ``R'' subdirectory.
 \hypertarget{organize}{%
 \chapter{Organize}\label{organize}}
 
-\newthought{If you are using R to write} for larger projects, including research
-for academic papers and theses, you should start putting some thought into how you
-organize your research files, including raw data, cleaned data, coding scripts for
-analysis, and output like paper drafts and figures.
+\newthought{If you are using R to write} for larger projects, including
+research for academic papers and theses, you should start putting some thought
+into how you organize your research files, including raw data, cleaned data,
+coding scripts for analysis, and output like paper drafts and figures. So far,
+you may have run much of your analysis within a single R script or R Markdown
+file. Often, any associated data are within the same working directory as your
+script or R Markdown file, but the files for one project are not separated from
+files for other projects. As you move to larger projects, this kind of set-up
+won't work as well. Instead, you'll want to start keeping all materials for a
+project in a single and exclusive directory.
 
 \hypertarget{r-projects}{%
 \section{R Projects}\label{r-projects}}
@@ -326,47 +332,57 @@ strongly recommend the practice.
 
 This goes beyond ``well-organized'', which we just covered (putting all project
 files in one directory, using subdirectories to divide up files in a project,
-using consistent names for project file directories, etc.). Keeping a project directory
-``tidy'' means having \textbf{only one} version of each file. Often, as you develop a project,
-especially when collaborators are involved, you can end up with many versions of a
-file. For example, you may have the draft of a journal article's text saved
-in some versions with the file name reflecting the date of the draft (``draft\_may\_12.docx''),
-some versions that include the initials of people who reviewed it (``paper\_draft\_ba\_rp\_mb2.docx''),
-and so on.
+using consistent names for project file directories, etc.). Keeping a project
+directory ``tidy'' means having \textbf{only one} version of each file. Often, as you
+develop a project, especially when collaborators are involved, you can end up
+with many versions of a file. For example, you may have the draft of a journal
+article's text saved in some versions with the file name reflecting the date of
+the draft (``draft\_may\_12.docx''), some versions that include the initials of
+people who reviewed it (``paper\_draft\_ba\_rp\_mb2.docx''), and so on.
 
-This type of organization---having multiple versions of project files, with the file names
-meant to help you keep track of them---results in very cluttered and hard-to-manage project
-directories. Instead, at any given moment, each of your project directories should have only
-one version of each project file. You certainly won't want to lose information from edits
-and changes to the files along the way, so it's smart to use some type of \textbf{version control
-system}{[}\textbf{version control system.} \ldots{}{]} on each project directory. This will allow you
-to track the changes you've made to each file and to go back and revisit the file at any
-moment in the project's history. A later section of this booklet will describe how you can
-use \texttt{git} for version control for R projects.
+This type of organization---having multiple versions of project files, with the
+file names meant to help you keep track of them---results in very cluttered and
+hard-to-manage project directories. Instead, at any given moment, each of your
+project directories should have only one version of each project file. You
+certainly won't want to lose information from edits and changes to the files
+along the way, so it's smart to use some type of \textbf{version control
+system}{[}\textbf{version control system.} Software for tracking changes to software
+projects. Some researchers who use a lot of coding also use this software to
+track their projects One well-known example is \textbf{git}, but there are other
+version control systems as well.{]} on each project directory. This will allow you
+to track the changes you've made to each file and to go back and revisit the
+file at any moment in the project's history. A later section of this booklet
+(``Track'') will describe how you can use \texttt{git} for version control for R
+projects.
 
 \hypertarget{avoiding-repetition}{%
 \subsection{Avoiding repetition}\label{avoiding-repetition}}
 
-One key to efficient organization is to \textbf{avoid repetition}.\footnote{In programming, you'll often
-  hear this advice as ``Do Not Repeat Yourself''.} In practice, it often happens that you're using the
-same code across several projects. For example, say you have some code that calculates the
-apparent temperature from air temperature and some measure of dewpoint temperature. If you have
-organized your project files to have one directory per paper, with all the associated code for
-a paper within the project's directory, then you may find you're often copying and pasting the
-code to calculate apparent temperature into different directories.
+One key to efficient organization is to \textbf{avoid repetition}.\footnote{In programming,
+  you'll often hear this advice as ``Do Not Repeat Yourself''.} In practice, it
+often happens that you're using the same code across several projects. For
+example, say you have some code that calculates the apparent temperature from
+air temperature and some measure of dewpoint temperature. If you have organized
+your project files to have one directory per paper, with all the associated code
+for a paper within the project's directory, then you may find you're often
+copying and pasting the code to calculate apparent temperature into different
+directories.
 
-This situation makes for a tricky balance---you want to organize your files and have a separate
-directory for each project, but cutting and pasting code can be a recide for disaster. Each time
-you move the code, there's a chance for an error to slip in. Also, what if you want to make a change
-in the code? Say you hear about a better algorithm for calculating apparent temperature?
-You will either need to go through all of your projects that use that code and change the code
-everywhere, or you will have to settle for different projects using different algorithms.
+This situation makes for a tricky balance---you want to organize your files and
+have a separate directory for each project, but cutting and pasting code can be
+a recide for disaster. Each time you move the code, there's a chance for an
+error to slip in. Also, what if you want to make a change in the code? Say you
+hear about a better algorithm for calculating apparent temperature? You will
+either need to go through all of your projects that use that code and change the
+code everywhere, or you will have to settle for different projects using
+different algorithms.
 
-This means it's time to start thinking about writing your own \textbf{R package}.{[}\citet{*}*R package** \ldots{}{]}
-You do not have to publish every R package you write---it's fine to just use it yourself and not
-share it more widely. Regardless, a package is the right place to store related code that you use
-often, as well as documentation (and possibly tests) to go with that code. A later section of this
-booklet will go over a bit about how to write your own R packages, as well as references for
+This means it's time to start thinking about writing your own R package. You do
+not have to publish every R package you write---it's fine to just use it
+yourself and not share it more widely. Regardless, a package is the right place
+to store related code that you use often, as well as documentation (and possibly
+tests) to go with that code. A later section of this booklet (``Package'') will go
+over a bit about how to write your own R packages, as well as references for
 learning more about package development.
 
 \hypertarget{learn-more}{%
@@ -387,7 +403,7 @@ publications.
 \newthought{Years ago, I tried to learn to use} git version control software with R, and
 it was a total fail. Maybe it's just me, but I found it really hard to wrap my head around
 the text-dominated, command-line interface classically used for git. However, RStudio now
-includes tools that provide a \textbf{GUI}-style\footnote{\textbf{Graphical User Interface (GUI).} \ldots{}}
+includes tools that provide a GUI-style
 interface to most of the functionality you'll need from git for R-based projects. I highly
 recommend trying git by using it through RStudio first, and then once you develop a mental
 map of what's going on, it's much easier to transfer partially or completely to running git
@@ -402,8 +418,242 @@ the RStudio GUI-style git interface.
 \hypertarget{git}{%
 \section{git}\label{git}}
 
+Git is a version control system. It saves information about all changes you make
+on all files in a repository. This allows you to revert back to previous
+versions and search through the history for all files in the repository. Git is
+open source. You can download it for different operating systems at
+\url{https://git-scm.com/downloads}. You will need git on your computer to use git
+with RStudio and create local git repositories you can sync with GitHub
+repositories. If you are using Windows OS, you'll want your git installation to
+include a ``Bash emulation'' (i.e., access to a command line that acts like a Bash
+shell), which I think should come standard with the Windows git installation.
+On Mac or Linux computers, you should already have access to a Bash shell.
+
+\hypertarget{configuring-git}{%
+\subsection{Configuring git}\label{configuring-git}}
+
+Before you use git, you should configure it. For example, you should make sure
+it has your name and email address. You can configure git with commands at a
+Bash shell.\footnote{If you are using Windows, search for ``Bash'' among your programs.
+  You should be able to fine the Bash emulator that cam with your git install. If
+  you are using a Mac, you'll want to open ``Terminal''. If you're using Linux, you
+  almost certainly already know your way around a Bash shell.} For example, I
+would run the following code at a shell to configure git to have my proper user
+name and email:
+
+\begin{verbatim}
+git config --global user.name "Brooke Anderson"
+git config --global user.email "brooke.anderson@colostate.edu"
+\end{verbatim}
+
+You'll only need to run this configuration once, until you get a new computer or
+for some reason need to re-install git. Once you set these configurations on
+your computer, they should be set on that computer indefinitely.
+
+Next, you need to make sure that RStudio can find the git software you
+installed. Sometimes, RStudio will automatically find git (once you've installed
+git) when you start RStudio. However, in some cases, you may need to take some
+more steps to activate git in RStudio. To do this, go to ``RStudio'' -\textgreater{}
+``Preferences'' -\textgreater{} ``Git/SVN''. Choose ``Enable version control''. If you have just
+installed git, and have not restarted RStudio, you'll need to do that before
+RStudio will recognize git. If you do not see ``Git'' in the box for ``Version
+control system'', it means either that you do not have git installed on your
+computer or that RStudio was unable to find it. If RStudio doesn't find your
+version of git in the ``Git executable'' box, browse for it. If you're still
+having problems, there's a chance that you'll need to mess around some with your
+PATH variables. You may want to find a computer-savy friend or IT person to help
+you if you get to this stage.
+
+\hypertarget{tracking-an-r-project}{%
+\subsection{Tracking an R project}\label{tracking-an-r-project}}
+
+To track an R package, you'll first need to initialize it as a git repository.
+Then, as you make changes to the code, you'll want to \textbf{commit} those changes
+as you go, using \textbf{commit messages} that are short but clear enough for you to
+follow them when you review them later.
+
+You can initialize a git repository for a directory that is an R Project
+directory through R Studio.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Open the Project.
+\item
+  Go to ``Tools'' -\textgreater{} ``Version Control'' -\textgreater{} ``Project Setup''.
+\item
+  In the box for ``Version control system'', choose ``Git''.
+\end{enumerate}
+
+You only need to do this once per project, but you will need to do it for each
+project you want to keep under version control.
+
+Once you initialize the project as a git repository, you should have a ``Git''
+window in one of your RStudio panes (top right pane by default). As you make and
+save changes to files, they will show up in this window for you to commit. When
+you want git to record changes, you \emph{commit} the files with the changes. Each
+time you commit, you have to include a short commit message with some
+information about the changes. You can make commits from a shell. However, it's
+much easier to just make commits from the RStudio environment. Click on the
+``Commit'' button in the Git window. That will open a separate commit window. In
+this window, to commit changes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Click on the files you want to commit to select them.
+\item
+  If you'd like, you can use the bottom part of the window to look through the
+  changes you are committing in each file.
+\item
+  Write a message in the ``Commit message'' box. Keep the message to one line in
+  this box if you can. If you need to explain more, write a short one-line
+  message, skip a line, and then write a longer explanation.
+\item
+  Click on the ``Commit'' button on the right.
+\end{enumerate}
+
+Once you commit changes to files, they will disappear from the Git window until
+you make and save more changes in them.
+
+Once you've made some commits, you may want to browse through the changes. On
+the top left of the Commit window, you can toggle to ``History''. This window
+allows you to explore the history of commits for the repository.
+
 \hypertarget{github}{%
 \section{GitHub}\label{github}}
+
+GitHub is an online platform for hosting directories under git version control.
+It allows you to host git repositories online. This allows you to:
+
+\begin{itemize}
+\tightlist
+\item
+  Work collaboratively on a shared repository
+\item
+  Fork someone else's repository to create your own copy that you can use and change as you want
+\item
+  Suggest changes to other people's repositories through pull requests
+\end{itemize}
+
+To push local repositories to GitHub and fork other people's repositories, you
+will need a GitHub account. You can sign up at \url{https://github.com}. A free
+account is fine.
+
+The basic unit for working in GitHub is the repository. You can think of a
+repository as very similar to an R Project---it's a directory of files with
+some supplemental files saving some additional information about the directory
+(and I recommend making any directory with R code that you plan to track with
+git and GitHub as an R project, although it isn't technically required).
+
+While R Projects have this additional information saved as ``.RProj'' files, git
+repositories have this information in a directory called ``.git''. Because this
+pathname starts with a dot, it won't show up in many of the ways you list files
+in a directory.\footnote{From a Bash shell, you can see files that start with \texttt{.} by running
+  \texttt{ls\ -a} from within that directory.}
+
+If you have a local directory that you would like to push to GitHub, these are
+the steps to do it. First, you need to make sure that the directory is under git
+version control. See the notes on initializing a repository. Next, you need to
+create an empty repository on GitHub to sync with your local repository. Do that
+by:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In GitHub, click on the ``+'' in the upper right corner (``Create new'').
+\item
+  Choose ``Create new repository''.
+\item
+  Give your repository the same name as the local directory you'd like to
+  connect it to. For example, if you want to connect it to a directory called
+  ``fars\_analysis'' on your computer, name the repository ``fars\_analysis''.
+\item
+  Leave everything else as-is (unless you'd like to add a short description in
+  the ``Description'' box). Click on ``Create repository'' at the bottom of the page.
+\end{enumerate}
+
+Before you connect your local repository with the GitHub one, you'll want to change
+some settings in RStudio so GitHub will recognize that your local repository
+belongs to you, rather than asking for you password every time.
+
+\begin{itemize}
+\tightlist
+\item
+  In RStudio, go to ``RStudio'' -\textgreater{} ``Preferences'' -\textgreater{} ``Git / svn''. Choose to ``Create
+  RSA key''.
+\item
+  Click on ``View public key''. Copy what shows up.
+\item
+  Go to your GitHub account and navigate to ``Settings''. Click on ``SSH and GPG keys''.
+\item
+  Click on ``New SSH key''. Name the key something like ``RStudio'' (you might want
+  to include the device name if you'll have SSH keys from RStudio on several
+  computers). Past in your public key in the ``Key box''.
+\end{itemize}
+
+Now you are ready to connect the two repositories:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Open a shell and navigate
+  to the directory you want to push. (You can open a shell from RStudio using the
+  gear button in the Git window.)
+\item
+  Add the GitHub repository as a remote branch
+  with the following command (this gives an example for adding a GitHub repository
+  named ``ex\_repo'' in my GitHub account, ``geanders''):
+\end{enumerate}
+
+\begin{verbatim}
+git remote add origin git@github.com:geanders/ex_repo.git
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Push the contents of the local repository to the GitHub repository.
+\end{enumerate}
+
+\begin{verbatim}
+git push -u origin master
+\end{verbatim}
+
+Once you have linked a local R project with a GitHub repository, you can push
+and pull commits using the blue down arrow (pull from GitHub) and green up arrow
+(push to GitHub) in the Git window in RStudio.
+
+Each original GitHub repository (i.e., not a fork of another repository) has a
+tab for ``Issues''. This page works like a Discussion Forum. You can create new
+``Issue'' threads to describe and discuss things that you want to change about the
+repository. Issues can be closed once the problem has been resolved. You can
+close issues on the ``Issue'' page with the ``Close issue'' button.
+
+GitHub helps you work with others on code. There are two main ways you can do this:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Collaborating:} Different people have the ability to push and pull directly
+  to and from the same repository. When one person pushes a change to the
+  repository, other collaborators can immediately get the changes by pulling the
+  latest GitHub commits to their local repository.
+\item
+  \textbf{Forking:} Different people have their own GitHub repositories, with each
+  linked to their own local repository. When a person pushes changes to GitHub, it
+  only makes changes to his own repository. The person must issue a pull request
+  to another person's fork of the repository to share the changes.
+\end{itemize}
+
+See the resources in ``Learn more'' for more on setting up for this kind of collaboration,
+including how to resolve merge conflicts when working with collaborators.
 
 \hypertarget{terminal}{%
 \section{Terminal}\label{terminal}}
@@ -423,17 +673,92 @@ interface RStudio provides for git. The few exceptions include:
   Merging two branches
 \end{itemize}
 
-For these tasks, I usually open up a \textbf{Bash Shell}\footnote{\textbf{Bash Shell.} A \ldots{} . ``Bash'' stands
-  for ``Bourne-Again Shell'', Stephen Bourne, a Unix developer.} and run a git command from
-there. However, there's also a package called \texttt{git2r} that lets you run any of these
-git commands from the R command line, so you could also do all these (fairly rare) tasks
-from the R console without ever opening a Bash Shell, if you master the \texttt{git2r} package.
+For these tasks, I usually open up a Bash shell and run a git command from
+there. I do this rarely enough that I almost always have to look up the exact
+call to use to do the task. I've included some resources in ``Learn more'' that
+are good to have around when you find you need to open a Bash shell for a
+git-tracked R project.
 
-\hypertarget{accessing-a-bash-shell}{%
-\subsection{Accessing a Bash Shell}\label{accessing-a-bash-shell}}
+There's also a package called \texttt{git2r} that lets you run any of these git
+commands from the R command line, so you could also do all these (fairly rare)
+tasks from the R console without ever opening a Bash Shell, if you master the
+\texttt{git2r} package. See the package's GitHub page and help documentation
+to learn more about how to use this package as an alternative to running R from
+the command line.
 
-\hypertarget{git2r-package}{%
-\subsection{\texorpdfstring{\texttt{git2r} package}{git2r package}}\label{git2r-package}}
+\hypertarget{try-it-out}{%
+\section{Try it out}\label{try-it-out}}
+
+\hypertarget{track-a-project-with-git}{%
+\subsection{Track a project with git}\label{track-a-project-with-git}}
+
+\begin{itemize}
+\tightlist
+\item
+  If you do not already have one, sign up for a GitHub account. The free option
+  is fine.
+\item
+  If you do not already have git installed on your computer, install it:
+  \url{https://git-scm.com/downloads}
+\item
+  Restart RStudio. go to ``RStudio'' -\textgreater{} ``Preferences'' -\textgreater{}``Git/SVN''. Choose ``Enable
+  version control''. If RStudio doesn't find your version of git in the ``Git
+  executable'' box, browse for it.
+\item
+  Open a project you'd like to track with git in RStudio. Change your Project
+  settings to initialize git for this project (see the notes above on how to do
+  that).
+\item
+  Open a shell from R using the gear symbol in the ``Git'' pane you should now see
+  in RStudio. Configure git from this shell. For example, I would open a shell and run:
+\end{itemize}
+
+\begin{verbatim}
+git config --global user.name "Brooke Anderson"
+git config --global user.email "brooke.anderson@colostate.edu"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Go to the ``Commit'' window. Click on all of the files you see there, and then
+  make an initial commit using ``Initial commit'' as your commit message.
+\item
+  Make a change to one of the files in the project and save the file. You should
+  see that file pop up in the ``Git'' window of RStudio.
+\item
+  Commit this change using the ``Commit'' window. After you commit the changes,
+  look at the ``History'' window to see the history of your commits.
+\end{itemize}
+
+\hypertarget{link-the-project-with-a-github-repository}{%
+\subsection{Link the project with a GitHub repository}\label{link-the-project-with-a-github-repository}}
+
+\begin{itemize}
+\tightlist
+\item
+  Login to your GitHub account online. Create an empty GitHub repository for the
+  project (see the notes above). Give it the same name as the name of your R project directory.
+\item
+  If you do not already have an RSA kay, create one in RStudio and add it as an
+  SSH key in your GitHub settings. If you already have a key (you almost certainly
+  know if you do), see if you can copy it and submit it in GitHub. (You will only need
+  to do this step once, not every time you sync a local git repository with a GitHub
+  repository.)
+\item
+  Set this empty online GitHub repository as the remote branch of your local git
+  repository for the project using a \texttt{git\ remote\ add\ origin} call at a Bash shell
+  (see the notes above).
+\item
+  Push your local repository to the GitHub repository using a \texttt{git\ push} call
+  (see the notes above).
+\item
+  Go to your GitHub account and make sure the repository was pushed.
+\item
+  Try making some more changes to your local repository. Commit the changes,
+  then use the green up arrow in the Git window to push the changes to your GitHub
+  repository.
+\end{itemize}
 
 \hypertarget{learn-more-1}{%
 \section{Learn more}\label{learn-more-1}}
@@ -457,10 +782,10 @@ tracking changes in software development projects. When you use git to track fil
 project (rather than, for example, for a repository for an R package you're writing), you
 may have some needs that don't come up under software development. A few articles have come
 out recently that give advice on using git specifically to track research projects---these provide
-helpful advice specific to this use of git, which you won't find in books about git.
+helpful advice specific to this use of git, which you won't find in books about git, including
+one by RStudio's Jenny Bryan \citep{bryan2018excuse}.
 
-\href{https://stackoverflow.com/}{\textbf{StackOverflow}}\footnote{\href{https://stackoverflow.com/}{\textbf{StackOverflow}}.
-  \ldots{}}
+\href{https://stackoverflow.com/}{StackOverflow}
 is also invaluable to quickly look up how to do something in git. There are
 many tasks in git where I never remember the command, but I do remember enough about what
 the functionality is called to be able to quickly use Google to find a StackOverflow thread
@@ -493,7 +818,8 @@ submit it.
 An R package is just ``a directory of files which extend R'' {[}cite ``Writing R Extensions''{]}.
 You should consider writing your own package anytime you find yourself cutting and pasting
 functions to different directories on your computer, so you can use them for different
-projects.
+projects. The RStudio team has created a number of tools to make this process easier, including
+some functionality in the RStudio IDE as well as the \texttt{devtools} package \citep{R-devtools}.
 
 \hypertarget{components-of-r-packages}{%
 \section{Components of R packages}\label{components-of-r-packages}}
@@ -501,26 +827,38 @@ projects.
 \hypertarget{r-code}{%
 \subsection{R code}\label{r-code}}
 
-{[}Where to put it{]}
+Without R code, there's not much point to an R package.\footnote{The exception? A data-only package,
+  where the package's purpose is to share data rather than R functions. We'll look at an
+  example in the ``Collect'' section.} The R function code will go in the package's ``R''
+subdirectory. You can use as many or as few ``.R'' files in this section as you want to
+organize your code.
+Define your functions in this section as you would if you were creating functions in
+an R script. As you become more advanced in writing packages, you may want to start
+adapting your function code a bit. For example, the \texttt{package::function} notation can
+help keep clear which package you mean for a function to call a function from, and so
+the behavior will be stable regardless of the order that a user loaded packages.
+Also, if you intend for your functions to be used inside tidyverse pipelines, you'll
+want to take a look at the developing \href{https://tidyeval.tidyverse.org/}{Tidy evaluation} book.
 
-{[}How to add documentation{]}
-
+Although it is not required for a package you're creating just to use yourself, you
+should think about adding help documentation to your code very early. You can then
+access this documentation through helpfiles in R, just like you do with other R packages.
 Even if you are just creating a package for yourself, you should add documentation
 for all the ``top-level'' functions\footnote{\textbf{top-level functions.} The functions in your package
   that you expect your users (including yourself) to call directly. Your package may also
   include some functions that are ``helpers'', only used within other functions to help
   keep the code clean and avoid replication, but never used directly by package users.}
 
-Years ago, you would need to write this documentation in separate ``.Rd'' files and save them
-in the ``man'' subdirectory. Now, the easiest thing to do is to use ``roxygen'' conventions
-to write the help information right above each function. With this style, you'll use a
-special type of commenting character (\texttt{\#\textquotesingle{}}) at the start of each line with documentation,
-and there are special codes (e.s., \texttt{@param} when you're defining one of the function's
-parameters) to annotate this code. This help documentation will then, when you build your
-package, be converted to the ``.Rd'' files you used to have to write yourself and saved in
-the ``man'' directory.
-
-\ldots{}
+Years ago, you would need to write this documentation in separate ``.Rd'' files
+and save them in the ``man'' subdirectory. Now, the easiest thing to do is to use
+``roxygen'' conventions to write the help information right above each function.
+With this style, you'll use a special type of commenting character (\texttt{\#\textquotesingle{}}) at the
+start of each line with documentation, and there are special codes (e.s.,
+\texttt{@param} when you're defining one of the function's parameters) to annotate this
+code. This help documentation will then, when you build your package, be
+converted to the ``.Rd'' files you used to have to write yourself and saved in the
+``man'' directory. Several of the resources listed in ``Learn more'' give more
+details on writing and rendering this help documentation.
 
 \hypertarget{description-file}{%
 \subsection{DESCRIPTION file}\label{description-file}}
@@ -567,11 +905,11 @@ function \emph{adds files and subdirectories} when needed to your R package
 directory. This may throw you at first, since most R functions don't make
 changes to your file directory, but you'll need those added files to add the
 package components, and it's \emph{much} easier to remember a single function call to
-run when you need to add one than to remember all the details of which files and
-in what structure need to be added.
+run when you need to add one than to remember all the details of which files (and
+in what structure) need to be added.
 
-\hypertarget{try-it-out}{%
-\section{Try it out}\label{try-it-out}}
+\hypertarget{try-it-out-1}{%
+\section{Try it out}\label{try-it-out-1}}
 
 I suggest you try out the following steps to experiment with
 writing your own package. I've included a function for you to build
@@ -737,22 +1075,25 @@ package to submit to a public repository.
 \section{Learn more}\label{learn-more-2}}
 
 One wonderful resource for writing and publishing R packages is the book \href{http://r-pkgs.had.co.nz/}{R
-Packages} by Hadley Wickham \citep{wickham2015r}. This book is available
-for a reasonable price in paperback (many Barnes \& Nobles carry it in their
-computer section) and is also available for free online. The author of this book
-also created and maintains the \textbf{\texttt{devtools} package}\footnote{\textbf{\texttt{devtools} package.}
-  An R package with functions that facilitate R package development. These
-  functions are well-documented in the package documentation as well as through
-  the book \href{http://r-pkgs.had.co.nz/}{R Packages}. This package also includes a
-  function for installing R packages from code posted on GitHub
+Packages} by Hadley Wickham \citep{wickham2015r}. This book
+is available for a reasonable price in paperback (many Barnes \& Nobles carry it
+in their computer section) and is also available for free online. The author of
+this book also created and maintains the \textbf{\texttt{devtools} package}\footnote{\textbf{\texttt{devtools}
+  package.} An R package with functions that facilitate R package development.
+  These functions are well-documented in the package documentation as well as
+  through the book \href{http://r-pkgs.had.co.nz/}{R Packages}. This package also
+  includes a function for installing R packages from code posted on GitHub
   (\texttt{install\_github}), which is very useful if you want to find and use packages
   that are not yet available on CRAN and other repositories or if you want to use
   the latest, ``development'' version of a package. This package is available on
-  CRAN and so can be installed with \texttt{install.packages("devtools")}.}
+  CRAN and so can be installed with \texttt{install.packages("devtools")}.} The ``Package
+Development'' cheatsheet available through \href{https://www.rstudio.com/resources/cheatsheets/}{RStudio's
+cheatsheets} complements these
+resources.
 
 Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
-\href{https://www.coursera.org/specializations/r}{\textbf{Mastering Software Development in
-R}}, and we also have \href{https://bookdown.org/rdpeng/RProgDA/}{an online
+\href{https://www.coursera.org/specializations/r}{Mastering Software Development in
+R}, and we also have \href{https://bookdown.org/rdpeng/RProgDA/}{an online
 book} on bookdown on the topic. The
 official CRAN resource for writing packages, \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{``Writing R
 Extensions''}, is

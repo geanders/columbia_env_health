@@ -142,13 +142,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="track.html"><a href="track.html"><i class="fa fa-check"></i><b>3</b> Track</a><ul>
-<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a></li>
-<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
-<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="track.html"><a href="track.html#accessing-a-bash-shell"><i class="fa fa-check"></i><b>3.3.1</b> Accessing a Bash Shell</a></li>
-<li class="chapter" data-level="3.3.2" data-path="track.html"><a href="track.html#git2r-package"><i class="fa fa-check"></i><b>3.3.2</b> <code>git2r</code> package</a></li>
+<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="track.html"><a href="track.html#configuring-git"><i class="fa fa-check"></i><b>3.1.1</b> Configuring git</a></li>
+<li class="chapter" data-level="3.1.2" data-path="track.html"><a href="track.html#tracking-an-r-project"><i class="fa fa-check"></i><b>3.1.2</b> Tracking an R project</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
+<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
+<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a></li>
+<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#try-it-out"><i class="fa fa-check"></i><b>3.4</b> Try it out</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="track.html"><a href="track.html#track-a-project-with-git"><i class="fa fa-check"></i><b>3.4.1</b> Track a project with git</a></li>
+<li class="chapter" data-level="3.4.2" data-path="track.html"><a href="track.html#link-the-project-with-a-github-repository"><i class="fa fa-check"></i><b>3.4.2</b> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.5</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
 <li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#components-of-r-packages"><i class="fa fa-check"></i><b>4.1</b> Components of R packages</a><ul>
@@ -156,7 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.2" data-path="package.html"><a href="package.html#description-file"><i class="fa fa-check"></i><b>4.1.2</b> DESCRIPTION file</a></li>
 <li class="chapter" data-level="4.1.3" data-path="package.html"><a href="package.html#other-package-components"><i class="fa fa-check"></i><b>4.1.3</b> Other package components</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
+<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out-1"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
 <li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#sharing"><i class="fa fa-check"></i><b>4.3</b> Sharing</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="package.html"><a href="package.html#when-to-publish-your-packages"><i class="fa fa-check"></i><b>4.3.1</b> When to publish your packages</a></li>
 <li class="chapter" data-level="4.3.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.3.2</b> Where to publish packages</a></li>
@@ -203,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="newthought">Years ago, I tried to learn to use</span> git version control software with R, and
 it was a total fail. Maybe it’s just me, but I found it really hard to wrap my head around
 the text-dominated, command-line interface classically used for git. However, RStudio now
-includes tools that provide a <strong>GUI</strong>-style<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>
+includes tools that provide a GUI-style
 interface to most of the functionality you’ll need from git for R-based projects. I highly
 recommend trying git by using it through RStudio first, and then once you develop a mental
 map of what’s going on, it’s much easier to transfer partially or completely to running git
@@ -215,9 +219,164 @@ Shell or the <code>git2r</code> package to do some one-off git tasks that can’
 the RStudio GUI-style git interface.</p>
 <div id="git" class="section level2">
 <h2><span class="header-section-number">3.1</span> git</h2>
+<p>Git is a version control system. It saves information about all changes you make
+on all files in a repository. This allows you to revert back to previous
+versions and search through the history for all files in the repository. Git is
+open source. You can download it for different operating systems at
+<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>. You will need git on your computer to use git
+with RStudio and create local git repositories you can sync with GitHub
+repositories. If you are using Windows OS, you’ll want your git installation to
+include a “Bash emulation” (i.e., access to a command line that acts like a Bash
+shell), which I think should come standard with the Windows git installation.
+On Mac or Linux computers, you should already have access to a Bash shell.</p>
+<div id="configuring-git" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Configuring git</h3>
+<p>Before you use git, you should configure it. For example, you should make sure
+it has your name and email address. You can configure git with commands at a
+Bash shell.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> For example, I
+would run the following code at a shell to configure git to have my proper user
+name and email:</p>
+<pre><code>git config --global user.name &quot;Brooke Anderson&quot;
+git config --global user.email &quot;brooke.anderson@colostate.edu&quot;</code></pre>
+<p>You’ll only need to run this configuration once, until you get a new computer or
+for some reason need to re-install git. Once you set these configurations on
+your computer, they should be set on that computer indefinitely.</p>
+<p>Next, you need to make sure that RStudio can find the git software you
+installed. Sometimes, RStudio will automatically find git (once you’ve installed
+git) when you start RStudio. However, in some cases, you may need to take some
+more steps to activate git in RStudio. To do this, go to “RStudio” -&gt;
+“Preferences” -&gt; “Git/SVN”. Choose “Enable version control”. If you have just
+installed git, and have not restarted RStudio, you’ll need to do that before
+RStudio will recognize git. If you do not see “Git” in the box for “Version
+control system”, it means either that you do not have git installed on your
+computer or that RStudio was unable to find it. If RStudio doesn’t find your
+version of git in the “Git executable” box, browse for it. If you’re still
+having problems, there’s a chance that you’ll need to mess around some with your
+PATH variables. You may want to find a computer-savy friend or IT person to help
+you if you get to this stage.</p>
+</div>
+<div id="tracking-an-r-project" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Tracking an R project</h3>
+<p>To track an R package, you’ll first need to initialize it as a git repository.
+Then, as you make changes to the code, you’ll want to <strong>commit</strong> those changes
+as you go, using <strong>commit messages</strong> that are short but clear enough for you to
+follow them when you review them later.</p>
+<p>You can initialize a git repository for a directory that is an R Project
+directory through R Studio.</p>
+<ol style="list-style-type: decimal">
+<li>Open the Project.</li>
+<li>Go to “Tools” -&gt; “Version Control” -&gt; “Project Setup”.</li>
+<li>In the box for “Version control system”, choose “Git”.</li>
+</ol>
+<p>You only need to do this once per project, but you will need to do it for each
+project you want to keep under version control.</p>
+<p>Once you initialize the project as a git repository, you should have a “Git”
+window in one of your RStudio panes (top right pane by default). As you make and
+save changes to files, they will show up in this window for you to commit. When
+you want git to record changes, you <em>commit</em> the files with the changes. Each
+time you commit, you have to include a short commit message with some
+information about the changes. You can make commits from a shell. However, it’s
+much easier to just make commits from the RStudio environment. Click on the
+“Commit” button in the Git window. That will open a separate commit window. In
+this window, to commit changes:</p>
+<ol style="list-style-type: decimal">
+<li>Click on the files you want to commit to select them.</li>
+<li>If you’d like, you can use the bottom part of the window to look through the
+changes you are committing in each file.</li>
+<li>Write a message in the “Commit message” box. Keep the message to one line in
+this box if you can. If you need to explain more, write a short one-line
+message, skip a line, and then write a longer explanation.</li>
+<li>Click on the “Commit” button on the right.</li>
+</ol>
+<p>Once you commit changes to files, they will disappear from the Git window until
+you make and save more changes in them.</p>
+<p>Once you’ve made some commits, you may want to browse through the changes. On
+the top left of the Commit window, you can toggle to “History”. This window
+allows you to explore the history of commits for the repository.</p>
+</div>
 </div>
 <div id="github" class="section level2">
 <h2><span class="header-section-number">3.2</span> GitHub</h2>
+<p>GitHub is an online platform for hosting directories under git version control.
+It allows you to host git repositories online. This allows you to:</p>
+<ul>
+<li>Work collaboratively on a shared repository</li>
+<li>Fork someone else’s repository to create your own copy that you can use and change as you want</li>
+<li>Suggest changes to other people’s repositories through pull requests</li>
+</ul>
+<p>To push local repositories to GitHub and fork other people’s repositories, you
+will need a GitHub account. You can sign up at <a href="https://github.com" class="uri">https://github.com</a>. A free
+account is fine.</p>
+<p>The basic unit for working in GitHub is the repository. You can think of a
+repository as very similar to an R Project—it’s a directory of files with
+some supplemental files saving some additional information about the directory
+(and I recommend making any directory with R code that you plan to track with
+git and GitHub as an R project, although it isn’t technically required).</p>
+<p>While R Projects have this additional information saved as “.RProj” files, git
+repositories have this information in a directory called “.git”. Because this
+pathname starts with a dot, it won’t show up in many of the ways you list files
+in a directory.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>If you have a local directory that you would like to push to GitHub, these are
+the steps to do it. First, you need to make sure that the directory is under git
+version control. See the notes on initializing a repository. Next, you need to
+create an empty repository on GitHub to sync with your local repository. Do that
+by:</p>
+<ol style="list-style-type: decimal">
+<li>In GitHub, click on the “+” in the upper right corner (“Create new”).</li>
+<li>Choose “Create new repository”.</li>
+<li>Give your repository the same name as the local directory you’d like to
+connect it to. For example, if you want to connect it to a directory called
+“fars_analysis” on your computer, name the repository “fars_analysis”.</li>
+<li>Leave everything else as-is (unless you’d like to add a short description in
+the “Description” box). Click on “Create repository” at the bottom of the page.</li>
+</ol>
+<p>Before you connect your local repository with the GitHub one, you’ll want to change
+some settings in RStudio so GitHub will recognize that your local repository
+belongs to you, rather than asking for you password every time.</p>
+<ul>
+<li>In RStudio, go to “RStudio” -&gt; “Preferences” -&gt; “Git / svn”. Choose to “Create
+RSA key”.</li>
+<li>Click on “View public key”. Copy what shows up.</li>
+<li>Go to your GitHub account and navigate to “Settings”. Click on “SSH and GPG keys”.</li>
+<li>Click on “New SSH key”. Name the key something like “RStudio” (you might want
+to include the device name if you’ll have SSH keys from RStudio on several
+computers). Past in your public key in the “Key box”.</li>
+</ul>
+<p>Now you are ready to connect the two repositories:</p>
+<ol style="list-style-type: decimal">
+<li>Open a shell and navigate
+to the directory you want to push. (You can open a shell from RStudio using the
+gear button in the Git window.)</li>
+<li>Add the GitHub repository as a remote branch
+with the following command (this gives an example for adding a GitHub repository
+named “ex_repo” in my GitHub account, “geanders”):</li>
+</ol>
+<pre><code>git remote add origin git@github.com:geanders/ex_repo.git</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Push the contents of the local repository to the GitHub repository.</li>
+</ol>
+<pre><code>git push -u origin master</code></pre>
+<p>Once you have linked a local R project with a GitHub repository, you can push
+and pull commits using the blue down arrow (pull from GitHub) and green up arrow
+(push to GitHub) in the Git window in RStudio.</p>
+<p>Each original GitHub repository (i.e., not a fork of another repository) has a
+tab for “Issues”. This page works like a Discussion Forum. You can create new
+“Issue” threads to describe and discuss things that you want to change about the
+repository. Issues can be closed once the problem has been resolved. You can
+close issues on the “Issue” page with the “Close issue” button.</p>
+<p>GitHub helps you work with others on code. There are two main ways you can do this:</p>
+<ul>
+<li><strong>Collaborating:</strong> Different people have the ability to push and pull directly
+to and from the same repository. When one person pushes a change to the
+repository, other collaborators can immediately get the changes by pulling the
+latest GitHub commits to their local repository.</li>
+<li><strong>Forking:</strong> Different people have their own GitHub repositories, with each
+linked to their own local repository. When a person pushes changes to GitHub, it
+only makes changes to his own repository. The person must issue a pull request
+to another person’s fork of the repository to share the changes.</li>
+</ul>
+<p>See the resources in “Learn more” for more on setting up for this kind of collaboration,
+including how to resolve merge conflicts when working with collaborators.</p>
 </div>
 <div id="terminal" class="section level2">
 <h2><span class="header-section-number">3.3</span> Terminal</h2>
@@ -229,19 +388,71 @@ interface RStudio provides for git. The few exceptions include:</p>
 <li>Creating a new branch</li>
 <li>Merging two branches</li>
 </ul>
-<p>For these tasks, I usually open up a <strong>Bash Shell</strong><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> and run a git command from
-there. However, there’s also a package called <code>git2r</code> that lets you run any of these
-git commands from the R command line, so you could also do all these (fairly rare) tasks
-from the R console without ever opening a Bash Shell, if you master the <code>git2r</code> package.</p>
-<div id="accessing-a-bash-shell" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Accessing a Bash Shell</h3>
+<p>For these tasks, I usually open up a Bash shell and run a git command from
+there. I do this rarely enough that I almost always have to look up the exact
+call to use to do the task. I’ve included some resources in “Learn more” that
+are good to have around when you find you need to open a Bash shell for a
+git-tracked R project.</p>
+<p>There’s also a package called <code>git2r</code> that lets you run any of these git
+commands from the R command line, so you could also do all these (fairly rare)
+tasks from the R console without ever opening a Bash Shell, if you master the
+<code>git2r</code> package. See the package’s GitHub page and help documentation
+to learn more about how to use this package as an alternative to running R from
+the command line.</p>
 </div>
-<div id="git2r-package" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> <code>git2r</code> package</h3>
+<div id="try-it-out" class="section level2">
+<h2><span class="header-section-number">3.4</span> Try it out</h2>
+<div id="track-a-project-with-git" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Track a project with git</h3>
+<ul>
+<li>If you do not already have one, sign up for a GitHub account. The free option
+is fine.</li>
+<li>If you do not already have git installed on your computer, install it:
+<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a></li>
+<li>Restart RStudio. go to “RStudio” -&gt; “Preferences” -&gt;“Git/SVN”. Choose “Enable
+version control”. If RStudio doesn’t find your version of git in the “Git
+executable” box, browse for it.</li>
+<li>Open a project you’d like to track with git in RStudio. Change your Project
+settings to initialize git for this project (see the notes above on how to do
+that).</li>
+<li>Open a shell from R using the gear symbol in the “Git” pane you should now see
+in RStudio. Configure git from this shell. For example, I would open a shell and run:</li>
+</ul>
+<pre><code>git config --global user.name &quot;Brooke Anderson&quot;
+git config --global user.email &quot;brooke.anderson@colostate.edu&quot;</code></pre>
+<ul>
+<li>Go to the “Commit” window. Click on all of the files you see there, and then
+make an initial commit using “Initial commit” as your commit message.</li>
+<li>Make a change to one of the files in the project and save the file. You should
+see that file pop up in the “Git” window of RStudio.</li>
+<li>Commit this change using the “Commit” window. After you commit the changes,
+look at the “History” window to see the history of your commits.</li>
+</ul>
+</div>
+<div id="link-the-project-with-a-github-repository" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Link the project with a GitHub repository</h3>
+<ul>
+<li>Login to your GitHub account online. Create an empty GitHub repository for the
+project (see the notes above). Give it the same name as the name of your R project directory.</li>
+<li>If you do not already have an RSA kay, create one in RStudio and add it as an
+SSH key in your GitHub settings. If you already have a key (you almost certainly
+know if you do), see if you can copy it and submit it in GitHub. (You will only need
+to do this step once, not every time you sync a local git repository with a GitHub
+repository.)</li>
+<li>Set this empty online GitHub repository as the remote branch of your local git
+repository for the project using a <code>git remote add origin</code> call at a Bash shell
+(see the notes above).</li>
+<li>Push your local repository to the GitHub repository using a <code>git push</code> call
+(see the notes above).</li>
+<li>Go to your GitHub account and make sure the repository was pushed.</li>
+<li>Try making some more changes to your local repository. Commit the changes,
+then use the green up arrow in the Git window to push the changes to your GitHub
+repository.</li>
+</ul>
 </div>
 </div>
 <div id="learn-more-1" class="section level2">
-<h2><span class="header-section-number">3.4</span> Learn more</h2>
+<h2><span class="header-section-number">3.5</span> Learn more</h2>
 <p>Hadley Wickham’s excellent book on <a href="http://r-pkgs.had.co.nz/">R Packages</a> includes a great
 chapter on <a href="http://r-pkgs.had.co.nz/git.html">Git and GitHub</a>. While the chapter (and book) is
 focused on R packages specifically, the guidance in this chapter would apply to any
@@ -259,13 +470,14 @@ tracking changes in software development projects. When you use git to track fil
 project (rather than, for example, for a repository for an R package you’re writing), you
 may have some needs that don’t come up under software development. A few articles have come
 out recently that give advice on using git specifically to track research projects—these provide
-helpful advice specific to this use of git, which you won’t find in books about git.</p>
-<p><a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>
+helpful advice specific to this use of git, which you won’t find in books about git, including
+one by RStudio’s Jenny Bryan <span class="citation">(Bryan <a href="#ref-bryan2018excuse">2018</a>)</span>.</p>
+<p><a href="https://stackoverflow.com/">StackOverflow</a>
 is also invaluable to quickly look up how to do something in git. There are
 many tasks in git where I never remember the command, but I do remember enough about what
 the functionality is called to be able to quickly use Google to find a StackOverflow thread
 that gives me the call. Reading through a book or tutorial on git, even if you don’t
-remember the commands you learn, can help you learn some of the vocabulary<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>,
+remember the commands you learn, can help you learn some of the vocabulary<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>,
 and knowing that vocabulary will help you search for answers when you need them.</p>
 <p>Finally, if you can find a way to do it, I think the best and easiest way to learn to use git
 and GitHub with R is to collaborate with someone who’s used these tools before. Most of the
@@ -276,17 +488,24 @@ project can diagnose and get you over those bumps as you learn the ropes.</p>
 
 </div>
 </div>
+<h3> Final Words</h3>
+<div id="refs" class="references">
+<div id="ref-bryan2018excuse">
+<p>Bryan, Jennifer. 2018. “Excuse Me, Do You Have a Moment to Talk About Version Control?” <em>The American Statistician</em> 72 (1): 20–27.</p>
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="8">
-<li id="fn8"><p><strong>Graphical User Interface (GUI).</strong> …<a href="track.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p><strong>Bash Shell.</strong> A … . “Bash” stands
-for “Bourne-Again Shell”, Stephen Bourne, a Unix developer.<a href="track.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p><a href="https://stackoverflow.com/"><strong>StackOverflow</strong></a>.
-…<a href="track.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>Some good git-related
+<li id="fn8"><p>If you are using Windows, search for “Bash” among your programs.
+You should be able to fine the Bash emulator that cam with your git install. If
+you are using a Mac, you’ll want to open “Terminal”. If you’re using Linux, you
+almost certainly already know your way around a Bash shell.<a href="track.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>From a Bash shell, you can see files that start with <code>.</code> by running
+<code>ls -a</code> from within that directory.<a href="track.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Some good git-related
 words to know to help you search for calls for rarer tasks: “commit”, “branch”, “merge”, “revert”,
-“push”, “pull”, “merge conflict”, “remote”, “origin”, “master”, “fork”, “clone”, “pull request”.<a href="track.html#fnref11" class="footnote-back">↩</a></p></li>
+“push”, “pull”, “merge conflict”, “remote”, “origin”, “master”, “fork”, “clone”, “pull request”.<a href="track.html#fnref10" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

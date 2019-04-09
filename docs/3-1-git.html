@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -162,6 +166,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="git" class="section level2">
 <h2><span class="header-section-number">3.1</span> git</h2>
+<p>Git is a version control system. It saves information about all changes you make
+on all files in a repository. This allows you to revert back to previous
+versions and search through the history for all files in the repository. Git is
+open source. You can download it for different operating systems at
+<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>. You will need git on your computer to use git
+with RStudio and create local git repositories you can sync with GitHub
+repositories. If you are using Windows OS, you’ll want your git installation to
+include a “Bash emulation” (i.e., access to a command line that acts like a Bash
+shell), which I think should come standard with the Windows git installation.
+On Mac or Linux computers, you should already have access to a Bash shell.</p>
+<div id="configuring-git" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Configuring git</h3>
+<p>Before you use git, you should configure it. For example, you should make sure
+it has your name and email address. You can configure git with commands at a
+Bash shell.<label for="tufte-sn-8" class="margin-toggle sidenote-number">8</label><input type="checkbox" id="tufte-sn-8" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">8</span> If you are using Windows, search for “Bash” among your programs.
+You should be able to fine the Bash emulator that cam with your git install. If
+you are using a Mac, you’ll want to open “Terminal”. If you’re using Linux, you
+almost certainly already know your way around a Bash shell.</span> For example, I
+would run the following code at a shell to configure git to have my proper user
+name and email:</p>
+<pre><code>git config --global user.name &quot;Brooke Anderson&quot;
+git config --global user.email &quot;brooke.anderson@colostate.edu&quot;</code></pre>
+<p>You’ll only need to run this configuration once, until you get a new computer or
+for some reason need to re-install git. Once you set these configurations on
+your computer, they should be set on that computer indefinitely.</p>
+<p>Next, you need to make sure that RStudio can find the git software you
+installed. Sometimes, RStudio will automatically find git (once you’ve installed
+git) when you start RStudio. However, in some cases, you may need to take some
+more steps to activate git in RStudio. To do this, go to “RStudio” -&gt;
+“Preferences” -&gt; “Git/SVN”. Choose “Enable version control”. If you have just
+installed git, and have not restarted RStudio, you’ll need to do that before
+RStudio will recognize git. If you do not see “Git” in the box for “Version
+control system”, it means either that you do not have git installed on your
+computer or that RStudio was unable to find it. If RStudio doesn’t find your
+version of git in the “Git executable” box, browse for it. If you’re still
+having problems, there’s a chance that you’ll need to mess around some with your
+PATH variables. You may want to find a computer-savy friend or IT person to help
+you if you get to this stage.</p>
+</div>
+<div id="tracking-an-r-project" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Tracking an R project</h3>
+<p>To track an R package, you’ll first need to initialize it as a git repository.
+Then, as you make changes to the code, you’ll want to <strong>commit</strong> those changes
+as you go, using <strong>commit messages</strong> that are short but clear enough for you to
+follow them when you review them later.</p>
+<p>You can initialize a git repository for a directory that is an R Project
+directory through R Studio.</p>
+<ol style="list-style-type: decimal">
+<li>Open the Project.</li>
+<li>Go to “Tools” -&gt; “Version Control” -&gt; “Project Setup”.</li>
+<li>In the box for “Version control system”, choose “Git”.</li>
+</ol>
+<p>You only need to do this once per project, but you will need to do it for each
+project you want to keep under version control.</p>
+<p>Once you initialize the project as a git repository, you should have a “Git”
+window in one of your RStudio panes (top right pane by default). As you make and
+save changes to files, they will show up in this window for you to commit. When
+you want git to record changes, you <em>commit</em> the files with the changes. Each
+time you commit, you have to include a short commit message with some
+information about the changes. You can make commits from a shell. However, it’s
+much easier to just make commits from the RStudio environment. Click on the
+“Commit” button in the Git window. That will open a separate commit window. In
+this window, to commit changes:</p>
+<ol style="list-style-type: decimal">
+<li>Click on the files you want to commit to select them.</li>
+<li>If you’d like, you can use the bottom part of the window to look through the
+changes you are committing in each file.</li>
+<li>Write a message in the “Commit message” box. Keep the message to one line in
+this box if you can. If you need to explain more, write a short one-line
+message, skip a line, and then write a longer explanation.</li>
+<li>Click on the “Commit” button on the right.</li>
+</ol>
+<p>Once you commit changes to files, they will disappear from the Git window until
+you make and save more changes in them.</p>
+<p>Once you’ve made some commits, you may want to browse through the changes. On
+the top left of the Commit window, you can toggle to “History”. This window
+allows you to explore the history of commits for the repository.</p>
+</div>
 </div>
 <p style="text-align: center;">
 <a href="3-track.html"><button class="btn btn-default">Previous</button></a>

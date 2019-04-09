@@ -118,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
 <li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
@@ -132,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
 <li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
 <li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
 <li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
@@ -164,22 +168,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Components of R packages</h2>
 <div id="r-code" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> R code</h3>
-<p>[Where to put it]</p>
-<p>[How to add documentation]</p>
-<p>Even if you are just creating a package for yourself, you should add documentation
+<p>Without R code, there’s not much point to an R package.<label for="tufte-sn-11" class="margin-toggle sidenote-number">11</label><input type="checkbox" id="tufte-sn-11" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">11</span> The exception? A data-only package,
+where the package’s purpose is to share data rather than R functions. We’ll look at an
+example in the “Collect” section.</span> The R function code will go in the package’s “R”
+subdirectory. You can use as many or as few “.R” files in this section as you want to
+organize your code.
+Define your functions in this section as you would if you were creating functions in
+an R script. As you become more advanced in writing packages, you may want to start
+adapting your function code a bit. For example, the <code>package::function</code> notation can
+help keep clear which package you mean for a function to call a function from, and so
+the behavior will be stable regardless of the order that a user loaded packages.
+Also, if you intend for your functions to be used inside tidyverse pipelines, you’ll
+want to take a look at the developing <a href="https://tidyeval.tidyverse.org/">Tidy evaluation</a> book.</p>
+<p>Although it is not required for a package you’re creating just to use yourself, you
+should think about adding help documentation to your code very early. You can then
+access this documentation through helpfiles in R, just like you do with other R packages.
+Even if you are just creating a package for yourself, you should add documentation
 for all the “top-level” functions<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> <strong>top-level functions.</strong> The functions in your package
 that you expect your users (including yourself) to call directly. Your package may also
 include some functions that are “helpers”, only used within other functions to help
 keep the code clean and avoid replication, but never used directly by package users.</span></p>
-<p>Years ago, you would need to write this documentation in separate “.Rd” files and save them
-in the “man” subdirectory. Now, the easiest thing to do is to use “roxygen” conventions
-to write the help information right above each function. With this style, you’ll use a
-special type of commenting character (<code>#'</code>) at the start of each line with documentation,
-and there are special codes (e.s., <code>@param</code> when you’re defining one of the function’s
-parameters) to annotate this code. This help documentation will then, when you build your
-package, be converted to the “.Rd” files you used to have to write yourself and saved in
-the “man” directory.</p>
-<p>…</p>
+<p>Years ago, you would need to write this documentation in separate “.Rd” files
+and save them in the “man” subdirectory. Now, the easiest thing to do is to use
+“roxygen” conventions to write the help information right above each function.
+With this style, you’ll use a special type of commenting character (<code>#'</code>) at the
+start of each line with documentation, and there are special codes (e.s.,
+<code>@param</code> when you’re defining one of the function’s parameters) to annotate this
+code. This help documentation will then, when you build your package, be
+converted to the “.Rd” files you used to have to write yourself and saved in the
+“man” directory. Several of the resources listed in “Learn more” give more
+details on writing and rendering this help documentation.</p>
 </div>
 <div id="description-file" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> DESCRIPTION file</h3>
@@ -208,7 +226,7 @@ these elements within an R package.</p>
 (which will go in a <code>data</code> subdirectory), tutorials for using the package
 (<code>vignettes</code> subdirectory), and unit tests for the functions (<code>tests</code>
 subdirectory). To help you set up these extra components, you may want to take a
-look at the <code>use_*</code> family of functions in the <code>usethis</code> <span class="citation">(Wickham and Bryan <label for="tufte-mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle">2018<span class="marginnote">Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</span>)</span>
+look at the <code>use_*</code> family of functions in the <code>usethis</code> <span class="citation">(Wickham and Bryan <label for="tufte-mn-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle">2018<span class="marginnote">Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</span>)</span>
 package<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code>
 package, but they are being deprecated there and moved to the <code>usethis</code> package.
 The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were
@@ -222,13 +240,13 @@ function <em>adds files and subdirectories</em> when needed to your R package
 directory. This may throw you at first, since most R functions don’t make
 changes to your file directory, but you’ll need those added files to add the
 package components, and it’s <em>much</em> easier to remember a single function call to
-run when you need to add one than to remember all the details of which files and
-in what structure need to be added.</p>
+run when you need to add one than to remember all the details of which files (and
+in what structure) need to be added.</p>
 </div>
 </div>
 <p style="text-align: center;">
 <a href="4-package.html"><button class="btn btn-default">Previous</button></a>
-<a href="4-2-try-it-out.html"><button class="btn btn-default">Next</button></a>
+<a href="4-2-try-it-out-1.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>
