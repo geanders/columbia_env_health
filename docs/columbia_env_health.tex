@@ -132,9 +132,6 @@
 \hypertarget{prerequisites}{%
 \chapter{Prerequisites}\label{prerequisites}}
 
-\hypertarget{overview}{%
-\subsection{Overview}\label{overview}}
-
 \newthought{Based on requests from } some of the students for this
 workshop, I've focused here on a few topics relevant to environmental health
 research: organizing projects and tracking them with version control, creating
@@ -152,8 +149,11 @@ interactive graphics with \texttt{htmlwidgets}, and creating reports, blogs, and
 through the \texttt{rmarkdown} framework. In the conclusion to this booklet, I'll
 provide some references for learning more about all of these topics.
 
+Click on the \textbf{Next} button (or navigate using the
+links at the top of the page) to continue.
+
 \hypertarget{set-up}{%
-\subsection{Set-up}\label{set-up}}
+\section{Set-up}\label{set-up}}
 
 I am assuming that you already have R and RStudio installed on your computer.
 You may want to check that you have a recent version of both, and if not, update
@@ -258,9 +258,6 @@ project's ``R'' subdirectory.
 \begin{figure*}
 \includegraphics[width=28.86in]{images/example_repo} \caption[What the example R Project for this booklet should look like once you've downloaded and opened it]{What the example R Project for this booklet should look like once you've downloaded and opened it.}\label{fig:examplerepo}
 \end{figure*}
-
-Click on the \textbf{Next} button (or navigate using the
-links at the top of the page) to continue.
 
 \hypertarget{organize}{%
 \chapter{Organize}\label{organize}}
@@ -493,8 +490,13 @@ private use. However, once you start writing packages, you will see how straight
 it is, and you may want to take the extra steps to prepare your package for CRAN and
 submit it.
 
-\hypertarget{r-packages}{%
-\section{R packages}\label{r-packages}}
+An R package is just ``a directory of files which extend R'' {[}cite ``Writing R Extensions''{]}.
+You should consider writing your own package anytime you find yourself cutting and pasting
+functions to different directories on your computer, so you can use them for different
+projects.
+
+\hypertarget{components-of-r-packages}{%
+\section{Components of R packages}\label{components-of-r-packages}}
 
 \hypertarget{r-code}{%
 \subsection{R code}\label{r-code}}
@@ -503,14 +505,40 @@ submit it.
 
 {[}How to add documentation{]}
 
+Even if you are just creating a package for yourself, you should add documentation
+for all the ``top-level'' functions\footnote{\textbf{top-level functions.} The functions in your package
+  that you expect your users (including yourself) to call directly. Your package may also
+  include some functions that are ``helpers'', only used within other functions to help
+  keep the code clean and avoid replication, but never used directly by package users.}
+
+Years ago, you would need to write this documentation in separate ``.Rd'' files and save them
+in the ``man'' subdirectory. Now, the easiest thing to do is to use ``roxygen'' conventions
+to write the help information right above each function. With this style, you'll use a
+special type of commenting character (\texttt{\#\textquotesingle{}}) at the start of each line with documentation,
+and there are special codes (e.s., \texttt{@param} when you're defining one of the function's
+parameters) to annotate this code. This help documentation will then, when you build your
+package, be converted to the ``.Rd'' files you used to have to write yourself and saved in
+the ``man'' directory.
+
+\ldots{}
+
 \hypertarget{description-file}{%
 \subsection{DESCRIPTION file}\label{description-file}}
 
-\begin{itemize}
-\tightlist
-\item
-  License
-\end{itemize}
+Every package directory must have a DESCRIPTION file, but if you aren't sharing
+the package, there's no harm in leaving this as the original template file you
+get when you start a package directory using RStudio (you'll try this out in
+just a minute). The exception is when your functions rely on functions from
+other R packages---in this case, you'll want to add in these dependencies in the
+DESCRIPTION file. That way, when you load your package, all of these will also
+be loaded.
+
+If you plan to share your package with others, however, and especially if you
+plan to publish your package in CRAN or another repository, you'll need to do
+a lot more with the DESCRIPTION file. This file provides the metadata on your package,
+including the authors, version, description, and dependencies on other packages.
+The \textbf{R Packages} book referenced in the ``Learn More'' section has extensive advice
+on editing this file for packages meant for publication.
 
 \hypertarget{other-package-components}{%
 \subsection{Other package components}\label{other-package-components}}
@@ -521,82 +549,45 @@ want to add to the package. As with the R code for package functions and the
 DESCRIPTION file, there is a specific location and format required for each of
 these elements within an R package.
 
-Some of the most common components you'll want to add are:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Example data.}
-\item
-  \textbf{Vignettes.}
-\item
-  \textbf{Unit tests.}
-\end{itemize}
-
-To help you set up these extra components,
-you may want to take a look at the \texttt{use\_*} family of functions in the \texttt{usethis}
-\citep{R-usethis}
-package\footnote{The \texttt{use\_*} family of functions were previously in the \texttt{devtools} package, but they
-  are being deprecated there and moved to the \texttt{usethis}
-  package. The \href{http://r-pkgs.had.co.nz/}{R Packages} book was written before they were deprecated
-  in \texttt{devtools}, and so it discusses them as \texttt{devtools} functions. As long as you install and load
-  the \texttt{usethis} package, though, you'll have no problem following along with the examples in
-  that book.} For example, if you want to include example data in your package,
-you should check out the \texttt{use\_data} function, while if you want to add unit tests to your
-package, check out the \texttt{use\_test} function. When you run one of these, you'll notice that the
-function \emph{adds files and subdirectories} when needed to your R package directory. This may
-throw you at first, since most R functions don't make changes to your file directory, but
-you'll need those added files to add the package components, and it's \emph{much} easier to
-remember a single function call to run when you need to add one than to remember all the
-details of which files and in what structure need to be added.
-
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
-
-\hypertarget{why-publish-your-packages}{%
-\subsection{Why publish your packages?}\label{why-publish-your-packages}}
-
-\hypertarget{where-to-publish-packages}{%
-\subsection{Where to publish packages}\label{where-to-publish-packages}}
-
-\hypertarget{extra-steps-for-publishing}{%
-\subsection{Extra steps for publishing}\label{extra-steps-for-publishing}}
-
-If you want to submit your package to CRAN, you'll need to take a few extra steps
-to get it ready. These steps aren't necessary for a package you plan to just
-use privately, but they wouldn't be a bad idea to try to do even in that case.
-
-First, you'll need to make sure that the functions in your package are
-comprehensively documented. {[}What are requirements for this for CRAN?{]}
-
-In addition to documenting specific functions, you should also consider
-writing overall tutorials that walk a user through how to use your
-package in a few example scenarios. \textbf{vignette}\footnote{\textbf{vignette.} \ldots{}}
-
-You will also need to make sure that your package can run on different
-operating systems. If your package only has functions written exclusively
-in R, and doesn't interact with {[}the computer system?{]} or other programs
-on your computer, this shouldn't be an issue. However, you should still
-check. {[}Travis CI, winbuilder{]}
-
-{[}CRAN checks{]}
-
-\hypertarget{checking}{%
-\section{Checking}\label{checking}}
+Some of the most common components you'll want to add include example datasets
+(which will go in a \texttt{data} subdirectory), tutorials for using the package
+(\texttt{vignettes} subdirectory), and unit tests for the functions (\texttt{tests}
+subdirectory). To help you set up these extra components, you may want to take a
+look at the \texttt{use\_*} family of functions in the \texttt{usethis} \citep{R-usethis}
+package\footnote{The \texttt{use\_*} family of functions were previously in the \texttt{devtools}
+  package, but they are being deprecated there and moved to the \texttt{usethis} package.
+  The \href{http://r-pkgs.had.co.nz/}{R Packages} book was written before they were
+  deprecated in \texttt{devtools}, and so it discusses them as \texttt{devtools} functions. As
+  long as you install and load the \texttt{usethis} package, though, you'll have no
+  problem following along with the examples in that book.} For example, if you
+want to include example data in your package, you should check out the
+\texttt{use\_data} function, while if you want to add unit tests to your package, check
+out the \texttt{use\_test} function. When you run one of these, you'll notice that the
+function \emph{adds files and subdirectories} when needed to your R package
+directory. This may throw you at first, since most R functions don't make
+changes to your file directory, but you'll need those added files to add the
+package components, and it's \emph{much} easier to remember a single function call to
+run when you need to add one than to remember all the details of which files and
+in what structure need to be added.
 
 \hypertarget{try-it-out}{%
 \section{Try it out}\label{try-it-out}}
 
+I suggest you try out the following steps to experiment with
+writing your own package. I've included a function for you to build
+your package around in the ``package.R'' file of the R project with
+examples for the workshop.
+
 \begin{itemize}
 \tightlist
 \item
-  Create a new R Project for an R package
+  Create a new R Project for your R package
+\item
+  Build the package
 \item
   Move a function into the right place in the package
 \item
   Edit the DESCRIPTION file as needed
-\item
-  Build the package
 \item
   Add example data into the right place in the package
 \item
@@ -607,11 +598,146 @@ check. {[}Travis CI, winbuilder{]}
   Add a short vignette
 \end{itemize}
 
+I'll walk you through the first three steps, and then I suggest you use
+Hadley Wickham's \textbf{R Packages} book (see the ``Learn More'' section) to
+get some tips as you try out the rest on your own.
+
+\textbf{Create a new R Project for an R package.} Open RStudio and go to ``File'' -\textgreater{}
+``New Project''. Choose ``New Directory'' and then ``R Package''. Name your package
+``convertr''. Then click on ``Create Project''.
+
+The R Project you've just created will open in RStudio. If you look in the ``R''
+subdirectory, you'll see there's one file called ``hello.R''. There's also a
+subdirectory called ``man''and three files in the top directory called
+``.Rbuildignore'', ``DESCRIPTION'', and ``NAMESPACE''.
+
+\textbf{Build the package.} This project opens with a template---a very small but working package that can
+serve as a skeleton as you adapt the files to create your own package. Before you
+do anything to change from the template, try building the package using the
+\texttt{build} function from the \texttt{devtools} package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools)}
+\KeywordTok{build}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+You should get some output like this:
+
+\begin{verbatim}
+✔  checking for file ‘/Users/georgianaanderson/Documents/r_workshops/convertr/DESCRIPTION’ ...
+─  preparing ‘convertr’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘convertr_0.1.0.tar.gz’
+\end{verbatim}
+
+Congratulations! You've built (maybe) your first R package. You should now be able to
+load it like any other R package on computer and run its function. Try running:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(convertr)}
+\KeywordTok{hello}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+To build the package in a way that you can use it anywhere on your computer,
+go to the ``Build'' tab in RStudio and click ``Install and Restart''. As long
+as you don't get warning messages, you should be able to load and use the
+package from any R session on your computer.
+
+\textbf{Move a function into the right place in the package.}
+
+Now try adapting the template into your own package. Delete the file
+``hello.R'' in the ``R'' subdirectory. Create a new file in this subdirectory
+called something like ``temp\_conversions.R''. Copy the code for the
+\texttt{c\_to\_f} function, which is in the ``package.R'' file of the R Project
+with examples for this workshop. Save the file and rebuild the package,
+either with the \texttt{build} call to build within that project or with the
+``Install and Restart'' button in the ``Build'' tab to make it available
+anywhere on your computer.
+
+\hypertarget{sharing}{%
+\section{Sharing}\label{sharing}}
+
+\hypertarget{when-to-publish-your-packages}{%
+\subsection{When to publish your packages}\label{when-to-publish-your-packages}}
+
+Once you have some functions that you think others might find useful, you
+should consider creating a package with them and sharing that package with
+others. Similarly, if you have a dataset that you think others might
+find useful and that you have permission to share, you should consider creating
+a data-only package to use to share that data.
+
+\hypertarget{where-to-publish-packages}{%
+\subsection{Where to publish packages}\label{where-to-publish-packages}}
+
+There are a few ways to publish your R package, and they have different
+levels of requirements as well as different levels of recognition (including
+for CVs and progress reports).
+
+First, you can share the ``tar.gz'' file that's create when you run ``Install and Restart''
+for an R package from RStudio. The other user can install this file locally using
+\texttt{install.packages} with some extra options. For example, if you shared your
+``convertr.tar.gz'' package file with someone else, they could install it on their
+computer with the call:\footnote{This call assumes that the other person has ``convertr.tar.gz''
+  saved in his or her working directory. Otherwise, use a pathname to direct R to where
+  the file is saved on the computer.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"convertr.tar.gz"}\NormalTok{, }\DataTypeTok{repos =} \OtherTok{NULL}\NormalTok{, }
+    \DataTypeTok{type =} \StringTok{"source"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Second, and perhaps even easier (certainly for the other user), you can post your
+package as a GitHub repository. The other user can then use the \texttt{install\_github}
+function from the \texttt{devtools} package to install the package. Unless you set
+the repository to be private, be aware that your package code would be public.
+This means anyone could install and use it, although if you don't publicize it,
+it's unlikely that many people will.
+
+If you want to share your package more widely, you should submit it to a repository.
+The \href{https://cran.rstudio.com/}{Comprehensive R Archive Network (CRAN)} is the most
+popular for most scientific fields. The \texttt{devtools} package has some tools specifically
+for checking and releasing a package to CRAN. \href{https://www.bioconductor.org/}{Bioconductor}
+is the top choice for many bioinformatics packages.
+
+Finally, an excellent choice is to submit the package to
+\href{https://ropensci.org/}{ROpenSci} for peer review. If you are thinking of doing this,
+check ROpenSci's policies on what types of packages are considered ``in scope'' for it.
+If you submit a package here, it will be openly reviewed by two other R programmers,
+with an open review process. You will then have the chance to revise the package
+code in response to the reviewers' comments. Accepted packages can also be
+submitted to CRAN or Bioconductor.
+
+\hypertarget{extra-steps-for-publishing}{%
+\subsection{Extra steps for publishing}\label{extra-steps-for-publishing}}
+
+If you want to submit your package to CRAN, you'll need to take a few extra
+steps to get it ready. These steps aren't necessary for a package you plan to
+just use privately, but they wouldn't be a bad idea to try to do even in that
+case. For example, you'll need to make sure that the functions in your package
+are comprehensively documented. Every function that you expect an end user might
+use should have a helpfile. In addition to documenting specific functions, you
+should also consider writing overall tutorials (called \textbf{vignettes}) that walk
+a user through how to use your package in a few example scenarios. You will also
+need to make sure that your package can run on different operating systems. If
+your package only has straightforward functions written exclusively in R, with
+little interaction outside of R on the user's computer, this shouldn't be an
+issue. However, you should still check before submitting to CRAN. Several of the
+resources listed in ``Learn More'' have very detailed information on preparing a
+package to submit to a public repository.
+
 \hypertarget{learn-more-2}{%
 \section{Learn more}\label{learn-more-2}}
 
 One wonderful resource for writing and publishing R packages is the book \href{http://r-pkgs.had.co.nz/}{R
-Packages} by Hadley Wickham. This book is available
+Packages} by Hadley Wickham \citep{wickham2015r}. This book is available
 for a reasonable price in paperback (many Barnes \& Nobles carry it in their
 computer section) and is also available for free online. The author of this book
 also created and maintains the \textbf{\texttt{devtools} package}\footnote{\textbf{\texttt{devtools} package.}
@@ -624,15 +750,28 @@ also created and maintains the \textbf{\texttt{devtools} package}\footnote{\text
   the latest, ``development'' version of a package. This package is available on
   CRAN and so can be installed with \texttt{install.packages("devtools")}.}
 
-\begin{itemize}
-\tightlist
-\item
-  ROpenSci handbook
-\item
-  Official R documentation
-\item
-  Coursera, Leanpub
-\end{itemize}
+Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
+\href{https://www.coursera.org/specializations/r}{\textbf{Mastering Software Development in
+R}}, and we also have \href{https://bookdown.org/rdpeng/RProgDA/}{an online
+book} on bookdown on the topic. The
+official CRAN resource for writing packages, \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{``Writing R
+Extensions''}, is
+available online. However, it gets very technical, and so I recommend starting
+with other resources and working up to this document.
+
+To learn more about best practices for creating R, especially for publication,
+check out \href{https://ropensci.github.io/dev_guide/}{ROpenSci's handbook}. ROpenSci
+conducts peer review for R packages, and it's all conducted openly. You can
+learn a lot about packages and package development, especially for more complex
+packages, by following this peer review package. It's all conducted through \href{https://github.com/ropensci/software-review/issues}{the
+``Issues'' in a GitHub repo}.
+
+If you end up writing and publishing a lot of R packages through your scientific
+research, you may find that you need to help your supervisors and peers
+understand this research project. One recent article discusses how academic
+research in the data science realm is changing, as well as how department chairs
+and others can evaluate these new research products, including for promotion and
+tenure \citep{waller2018documenting}.
 
 \hypertarget{collect}{%
 \chapter{Collect}\label{collect}}
@@ -831,14 +970,14 @@ data for specific storms. For example, to see the rainfall fro Hurricane Ivan in
 \end{Shaded}
 
 \begin{figure*}
-\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-9-1} \end{figure*}
+\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-12-1} \end{figure*}
 
 From this map, you can see that the rain from this storm extended into New
 England, even after the storm looped back around to the east and south. This is
 why New York City had heavy rainfall (and flooding) from this event, but not
 tropical storm-level winds.
 
-For more on the \texttt{hurricaneexposure} package, see \href{https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html}{its vignette}
+For more on the \texttt{hurricaneexposure} package, see \href{https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html}{its vignette}.
 
 \hypertarget{web-services}{%
 \section{Web services {[}?{]}}\label{web-services}}

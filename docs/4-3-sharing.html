@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="2.2 Directory organization | R for Environmental Health Research" />
+<meta property="og:title" content="4.3 Sharing | R for Environmental Health Research" />
 <meta property="og:type" content="book" />
 
 
@@ -22,7 +22,7 @@
 
 <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
-<title>2.2 Directory organization | R for Environmental Health Research</title>
+<title>4.3 Sharing | R for Environmental Health Research</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
@@ -160,59 +160,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="directory-organization" class="section level2">
-<h2><span class="header-section-number">2.2</span> Directory organization</h2>
-<p>…</p>
-<div id="keeping-things-tidy" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Keeping things tidy</h3>
-<p>My desk at work is very messy, with lots of paper printouts piled up. My car and my closet
-aren’t terribly tidy, either. But I do keep my project directories very tidy, and I
-strongly recommend the practice.</p>
-<p>This goes beyond “well-organized”, which we just covered (putting all project
-files in one directory, using subdirectories to divide up files in a project,
-using consistent names for project file directories, etc.). Keeping a project directory
-“tidy” means having <strong>only one</strong> version of each file. Often, as you develop a project,
-especially when collaborators are involved, you can end up with many versions of a
-file. For example, you may have the draft of a journal article’s text saved
-in some versions with the file name reflecting the date of the draft (“draft_may_12.docx”),
-some versions that include the initials of people who reviewed it (“paper_draft_ba_rp_mb2.docx”),
-and so on.</p>
-<p>This type of organization—having multiple versions of project files, with the file names
-meant to help you keep track of them—results in very cluttered and hard-to-manage project
-directories. Instead, at any given moment, each of your project directories should have only
-one version of each project file. You certainly won’t want to lose information from edits
-and changes to the files along the way, so it’s smart to use some type of <strong>version control
-system</strong>[<strong>version control system.</strong> …] on each project directory. This will allow you
-to track the changes you’ve made to each file and to go back and revisit the file at any
-moment in the project’s history. A later section of this booklet will describe how you can
-use <code>git</code> for version control for R projects.</p>
+<div id="sharing" class="section level2">
+<h2><span class="header-section-number">4.3</span> Sharing</h2>
+<div id="when-to-publish-your-packages" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> When to publish your packages</h3>
+<p>Once you have some functions that you think others might find useful, you
+should consider creating a package with them and sharing that package with
+others. Similarly, if you have a dataset that you think others might
+find useful and that you have permission to share, you should consider creating
+a data-only package to use to share that data.</p>
 </div>
-<div id="avoiding-repetition" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Avoiding repetition</h3>
-<p>One key to efficient organization is to <strong>avoid repetition</strong>.<label for="tufte-sn-6" class="margin-toggle sidenote-number">6</label><input type="checkbox" id="tufte-sn-6" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">6</span> In programming, you’ll often
-hear this advice as “Do Not Repeat Yourself”.</span> In practice, it often happens that you’re using the
-same code across several projects. For example, say you have some code that calculates the
-apparent temperature from air temperature and some measure of dewpoint temperature. If you have
-organized your project files to have one directory per paper, with all the associated code for
-a paper within the project’s directory, then you may find you’re often copying and pasting the
-code to calculate apparent temperature into different directories.</p>
-<p>This situation makes for a tricky balance—you want to organize your files and have a separate
-directory for each project, but cutting and pasting code can be a recide for disaster. Each time
-you move the code, there’s a chance for an error to slip in. Also, what if you want to make a change
-in the code? Say you hear about a better algorithm for calculating apparent temperature?
-You will either need to go through all of your projects that use that code and change the code
-everywhere, or you will have to settle for different projects using different algorithms.</p>
-<p>This means it’s time to start thinking about writing your own <strong>R package</strong>.[<span class="citation">(<span class="citeproc-not-found" data-reference-id="*"><strong>???</strong></span>)</span>*R package** …]
-You do not have to publish every R package you write—it’s fine to just use it yourself and not
-share it more widely. Regardless, a package is the right place to store related code that you use
-often, as well as documentation (and possibly tests) to go with that code. A later section of this
-booklet will go over a bit about how to write your own R packages, as well as references for
-learning more about package development.</p>
+<div id="where-to-publish-packages" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Where to publish packages</h3>
+<p>There are a few ways to publish your R package, and they have different
+levels of requirements as well as different levels of recognition (including
+for CVs and progress reports).</p>
+<p>First, you can share the “tar.gz” file that’s create when you run “Install and Restart”
+for an R package from RStudio. The other user can install this file locally using
+<code>install.packages</code> with some extra options. For example, if you shared your
+“convertr.tar.gz” package file with someone else, they could install it on their
+computer with the call:<label for="tufte-sn-14" class="margin-toggle sidenote-number">14</label><input type="checkbox" id="tufte-sn-14" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">14</span> This call assumes that the other person has “convertr.tar.gz”
+saved in his or her working directory. Otherwise, use a pathname to direct R to where
+the file is saved on the computer.</span></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;convertr.tar.gz&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>, <span class="dt">type =</span> <span class="st">&quot;source&quot;</span>)</code></pre>
+<p>Second, and perhaps even easier (certainly for the other user), you can post your
+package as a GitHub repository. The other user can then use the <code>install_github</code>
+function from the <code>devtools</code> package to install the package. Unless you set
+the repository to be private, be aware that your package code would be public.
+This means anyone could install and use it, although if you don’t publicize it,
+it’s unlikely that many people will.</p>
+<p>If you want to share your package more widely, you should submit it to a repository.
+The <a href="https://cran.rstudio.com/">Comprehensive R Archive Network (CRAN)</a> is the most
+popular for most scientific fields. The <code>devtools</code> package has some tools specifically
+for checking and releasing a package to CRAN. <a href="https://www.bioconductor.org/">Bioconductor</a>
+is the top choice for many bioinformatics packages.</p>
+<p>Finally, an excellent choice is to submit the package to
+<a href="https://ropensci.org/">ROpenSci</a> for peer review. If you are thinking of doing this,
+check ROpenSci’s policies on what types of packages are considered “in scope” for it.
+If you submit a package here, it will be openly reviewed by two other R programmers,
+with an open review process. You will then have the chance to revise the package
+code in response to the reviewers’ comments. Accepted packages can also be
+submitted to CRAN or Bioconductor.</p>
+</div>
+<div id="extra-steps-for-publishing" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Extra steps for publishing</h3>
+<p>If you want to submit your package to CRAN, you’ll need to take a few extra
+steps to get it ready. These steps aren’t necessary for a package you plan to
+just use privately, but they wouldn’t be a bad idea to try to do even in that
+case. For example, you’ll need to make sure that the functions in your package
+are comprehensively documented. Every function that you expect an end user might
+use should have a helpfile. In addition to documenting specific functions, you
+should also consider writing overall tutorials (called <strong>vignettes</strong>) that walk
+a user through how to use your package in a few example scenarios. You will also
+need to make sure that your package can run on different operating systems. If
+your package only has straightforward functions written exclusively in R, with
+little interaction outside of R on the user’s computer, this shouldn’t be an
+issue. However, you should still check before submitting to CRAN. Several of the
+resources listed in “Learn More” have very detailed information on preparing a
+package to submit to a public repository.</p>
 </div>
 </div>
 <p style="text-align: center;">
-<a href="2-1-r-projects.html"><button class="btn btn-default">Previous</button></a>
-<a href="2-3-learn-more.html"><button class="btn btn-default">Next</button></a>
+<a href="4-2-try-it-out.html"><button class="btn btn-default">Previous</button></a>
+<a href="4-4-learn-more-2.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

@@ -1,0 +1,13 @@
+\frametitle{Open Data APIs}
+\protect\hypertarget{open-data-apis}{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tigris)}
+\NormalTok{fl_counties <-}\StringTok{ }\KeywordTok{counties}\NormalTok{(}\DataTypeTok{state =} \StringTok{"FL"}\NormalTok{,}
+                        \DataTypeTok{class =} \StringTok{"sf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[height=0.5\textheight]{workshop_slides_files/figure-beamer/unnamed-chunk-16-1} \end{center}
+

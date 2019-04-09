@@ -107,8 +107,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="TOC">
 <ul>
 <li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
-<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
-<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+<li><a href="1-1-set-up.html#set-up"><span class="toc-section-number">1.1</span> Set-up</a></li>
 </ul></li>
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
@@ -128,13 +127,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a></li>
-<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
-<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
-<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
-<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+<li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
+<li><a href="4-1-components-of-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
+<li><a href="4-2-try-it-out.html#try-it-out"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
+<li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
+<li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
+<li><a href="4-3-sharing.html#extra-steps-for-publishing"><span class="toc-section-number">4.3.3</span> Extra steps for publishing</a></li>
+</ul></li>
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
@@ -142,9 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
 <li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
 </ul></li>
-<li><a href="5-2-web-services.html#web-services"><span class="toc-section-number">5.2</span> Web services [?]</a></li>
-<li><a href="5-3-ropensci.html#ropensci"><span class="toc-section-number">5.3</span> ROpenSci</a></li>
-<li><a href="5-4-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.4</span> Learn more</a></li>
+<li><a href="5-2-data-packages.html#data-packages"><span class="toc-section-number">5.2</span> Data packages</a></li>
+<li><a href="5-3-web-services.html#web-services"><span class="toc-section-number">5.3</span> Web services [?]</a></li>
+<li><a href="5-4-ropensci.html#ropensci"><span class="toc-section-number">5.4</span> ROpenSci</a></li>
+<li><a href="5-5-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.5</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
 <li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
@@ -159,10 +163,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="learn-more-2" class="section level2">
 <h2><span class="header-section-number">4.4</span> Learn more</h2>
 <p>One wonderful resource for writing and publishing R packages is the book <a href="http://r-pkgs.had.co.nz/">R
-Packages</a> by Hadley Wickham. This book is available
+Packages</a> by Hadley Wickham <span class="citation">(Wickham <label for="tufte-mn-2" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle">2015<span class="marginnote">Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. " O’Reilly Media, Inc.".</span>)</span>. This book is available
 for a reasonable price in paperback (many Barnes &amp; Nobles carry it in their
 computer section) and is also available for free online. The author of this book
-also created and maintains the <strong><code>devtools</code> package</strong><label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> <strong><code>devtools</code> package.</strong>
+also created and maintains the <strong><code>devtools</code> package</strong><label for="tufte-sn-15" class="margin-toggle sidenote-number">15</label><input type="checkbox" id="tufte-sn-15" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">15</span> <strong><code>devtools</code> package.</strong>
 An R package with functions that facilitate R package development. These
 functions are well-documented in the package documentation as well as through
 the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also includes a
@@ -171,12 +175,31 @@ function for installing R packages from code posted on GitHub
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, “development” version of a package. This package is available on
 CRAN and so can be installed with <code>install.packages("devtools")</code>.</span></p>
-<p>[Coursera, Leanpub]</p>
+<p>Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
+<a href="https://www.coursera.org/specializations/r"><strong>Mastering Software Development in
+R</strong></a>, and we also have <a href="https://bookdown.org/rdpeng/RProgDA/">an online
+book</a> on bookdown on the topic. The
+official CRAN resource for writing packages, <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html">“Writing R
+Extensions”</a>, is
+available online. However, it gets very technical, and so I recommend starting
+with other resources and working up to this document.</p>
+<p>To learn more about best practices for creating R, especially for publication,
+check out <a href="https://ropensci.github.io/dev_guide/">ROpenSci’s handbook</a>. ROpenSci
+conducts peer review for R packages, and it’s all conducted openly. You can
+learn a lot about packages and package development, especially for more complex
+packages, by following this peer review package. It’s all conducted through <a href="https://github.com/ropensci/software-review/issues">the
+“Issues” in a GitHub repo</a>.</p>
+<p>If you end up writing and publishing a lot of R packages through your scientific
+research, you may find that you need to help your supervisors and peers
+understand this research project. One recent article discusses how academic
+research in the data science realm is changing, as well as how department chairs
+and others can evaluate these new research products, including for promotion and
+tenure <span class="citation">(Waller <label for="tufte-mn-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle">2018<span class="marginnote">Waller, Lance A. 2018. “Documenting and Evaluating Data Science Contributions in Academic Promotion in Departments of Statistics and Biostatistics.” <em>The American Statistician</em> 72 (1): 11–19.</span>)</span>.</p>
 
 </div>
 <!-- </div> -->
 <p style="text-align: center;">
-<a href="4-3-checking.html"><button class="btn btn-default">Previous</button></a>
+<a href="4-3-sharing.html"><button class="btn btn-default">Previous</button></a>
 <a href="5-collect.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>

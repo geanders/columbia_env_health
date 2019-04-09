@@ -1,34 +1,55 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
 
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="R for Environmental Health Research" />
-<meta property="og:type" content="book" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R for Environmental Health Research</title>
+  <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="R for Environmental Health Research" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R for Environmental Health Research" />
+  
+  <meta name="twitter:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
+  
+
+<meta name="author" content="Brooke Anderson">
 
 
-<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
-<meta name="github-repo" content="rstudio/bookdown-demo" />
+<meta name="date" content="2019-04-09">
 
-<meta name="author" content="Brooke Anderson" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
 
-<meta name="date" content="2019-04-09" />
+<link rel="next" href="organize.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
-<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
-
-<title>R for Environmental Health Research</title>
-
-<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
-<link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
+
+
+
+
+
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
@@ -93,85 +114,98 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
-<link rel="stylesheet" href="toc.css" type="text/css" />
-
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
 
 
 
-<div class="row">
-<div class="col-sm-12">
-<div id="TOC">
-<ul>
-<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
-<li><a href="index.html#overview"><span class="toc-section-number">1.0.1</span> Overview</a></li>
-<li><a href="index.html#set-up"><span class="toc-section-number">1.0.2</span> Set-up</a></li>
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Visualization in R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i><b>1.1</b> Set-up</a></li>
 </ul></li>
-<li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
-<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
-<li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
-<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
+<li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
+<li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
+<li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#keeping-things-tidy"><i class="fa fa-check"></i><b>2.2.1</b> Keeping things tidy</a></li>
+<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.2</b> Avoiding repetition</a></li>
 </ul></li>
-<li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
+<li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
-<li><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a></li>
-<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
-<li class="has-sub"><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a><ul>
-<li><a href="3-3-terminal.html#accessing-a-bash-shell"><span class="toc-section-number">3.3.1</span> Accessing a Bash Shell</a></li>
-<li><a href="3-3-terminal.html#git2r-package"><span class="toc-section-number">3.3.2</span> <code>git2r</code> package</a></li>
+<li class="chapter" data-level="3" data-path="track.html"><a href="track.html"><i class="fa fa-check"></i><b>3</b> Track</a><ul>
+<li class="chapter" data-level="3.1" data-path="track.html"><a href="track.html#git"><i class="fa fa-check"></i><b>3.1</b> git</a></li>
+<li class="chapter" data-level="3.2" data-path="track.html"><a href="track.html#github"><i class="fa fa-check"></i><b>3.2</b> GitHub</a></li>
+<li class="chapter" data-level="3.3" data-path="track.html"><a href="track.html#terminal"><i class="fa fa-check"></i><b>3.3</b> Terminal</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="track.html"><a href="track.html#accessing-a-bash-shell"><i class="fa fa-check"></i><b>3.3.1</b> Accessing a Bash Shell</a></li>
+<li class="chapter" data-level="3.3.2" data-path="track.html"><a href="track.html#git2r-package"><i class="fa fa-check"></i><b>3.3.2</b> <code>git2r</code> package</a></li>
 </ul></li>
-<li><a href="3-4-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.4</span> Learn more</a></li>
+<li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
-<li class="has-sub"><a href="4-1-r-packages.html#r-packages"><span class="toc-section-number">4.1</span> R packages</a><ul>
-<li><a href="4-1-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
-<li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
-<li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+<li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
+<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#components-of-r-packages"><i class="fa fa-check"></i><b>4.1</b> Components of R packages</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="package.html"><a href="package.html#r-code"><i class="fa fa-check"></i><b>4.1.1</b> R code</a></li>
+<li class="chapter" data-level="4.1.2" data-path="package.html"><a href="package.html#description-file"><i class="fa fa-check"></i><b>4.1.2</b> DESCRIPTION file</a></li>
+<li class="chapter" data-level="4.1.3" data-path="package.html"><a href="package.html#other-package-components"><i class="fa fa-check"></i><b>4.1.3</b> Other package components</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
-<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
-<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
-<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
+<li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#sharing"><i class="fa fa-check"></i><b>4.3</b> Sharing</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="package.html"><a href="package.html#when-to-publish-your-packages"><i class="fa fa-check"></i><b>4.3.1</b> When to publish your packages</a></li>
+<li class="chapter" data-level="4.3.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.3.2</b> Where to publish packages</a></li>
+<li class="chapter" data-level="4.3.3" data-path="package.html"><a href="package.html#extra-steps-for-publishing"><i class="fa fa-check"></i><b>4.3.3</b> Extra steps for publishing</a></li>
 </ul></li>
-<li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
-<li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
-<li><a href="4-5-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.5</span> Learn more</a></li>
+<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
-<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
-<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+<li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
+<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="collect.html"><a href="collect.html#admin-databases"><i class="fa fa-check"></i><b>5.1.1</b> [Admin databases?]</a></li>
+<li class="chapter" data-level="5.1.2" data-path="collect.html"><a href="collect.html#research-repositories"><i class="fa fa-check"></i><b>5.1.2</b> [Research repositories?]</a></li>
 </ul></li>
-<li><a href="5-2-data-packages.html#data-packages"><span class="toc-section-number">5.2</span> Data packages</a></li>
-<li><a href="5-3-web-services.html#web-services"><span class="toc-section-number">5.3</span> Web services [?]</a></li>
-<li><a href="5-4-ropensci.html#ropensci"><span class="toc-section-number">5.4</span> ROpenSci</a></li>
-<li><a href="5-5-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.5</span> Learn more</a></li>
+<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.2</b> Data packages</a></li>
+<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#web-services"><i class="fa fa-check"></i><b>5.3</b> Web services [?]</a></li>
+<li class="chapter" data-level="5.4" data-path="collect.html"><a href="collect.html#ropensci"><i class="fa fa-check"></i><b>5.4</b> ROpenSci</a></li>
+<li class="chapter" data-level="5.5" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.5</b> Learn more</a></li>
 </ul></li>
-<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
-<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
+<li class="chapter" data-level="6" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>6</b> Process</a><ul>
+<li class="chapter" data-level="6.1" data-path="process.html"><a href="process.html#learn-more-4"><i class="fa fa-check"></i><b>6.1</b> Learn more</a></li>
 </ul></li>
-<li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
+<li class="chapter" data-level="7" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>7</b> Final Words</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12">
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for Environmental Health Research</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">R for Environmental Health Research</h1>
-<h3 class="subtitle"><em>Workshop for Climate and Health students at Columbia Mailman School of Public Health</em></h3>
-<h4 class="author"><em>Brooke Anderson</em></h4>
-<h4 class="date"><em>April 9, 2019</em></h4>
+<h2 class="subtitle"><em>Workshop for Climate and Health students at Columbia Mailman School of Public Health</em></h2>
+<p class="author"><em>Brooke Anderson</em></p>
+<p class="date"><em>April 9, 2019</em></p>
 </div>
 <div id="prerequisites" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<div id="overview" class="section level3">
-<h3><span class="header-section-number">1.0.1</span> Overview</h3>
 <p><span class="newthought">Based on requests from </span> some of the students for this
 workshop, I’ve focused here on a few topics relevant to environmental health
 research: organizing projects and tracking them with version control, creating
@@ -187,16 +221,17 @@ new developments on working with geospatial data with the <code>sf</code> packag
 interactive graphics with <code>htmlwidgets</code>, and creating reports, blogs, and books
 through the <code>rmarkdown</code> framework. In the conclusion to this booklet, I’ll
 provide some references for learning more about all of these topics.</p>
-</div>
-<div id="set-up" class="section level3">
-<h3><span class="header-section-number">1.0.2</span> Set-up</h3>
+<p>Click on the <strong>Next</strong> button (or navigate using the
+links at the top of the page) to continue.</p>
+<div id="set-up" class="section level2">
+<h2><span class="header-section-number">1.1</span> Set-up</h2>
 <p>I am assuming that you already have R and RStudio installed on your computer.
 You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we’ll be
 using will require newer versions of R and RStudio to work. You can run
 <code>sessionInfo()</code> in R to find out the version of R you have installed. Compare
 this version to the latest R release version listed at the <strong>Comprehensive R
-Archive Network (CRAN)</strong><label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>Comprehensive R Archive Network (CRAN).</strong> …</span></p>
+Archive Network (CRAN)</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>To try out the examples, you will also need a bit more set-up:</p>
 <ol style="list-style-type: decimal">
 <li>Download git</li>
@@ -215,13 +250,7 @@ control for R Projects. …</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Get a GitHub account</li>
 </ol>
-<p>You’ll also learn how to share and collaborate on an R Project using <strong>GitHub</strong>.<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> <strong>GitHub.</strong>
-An online platform for directories tracked with
-the version control software <code>git</code>. This platform has become
-very popular for sharing code projects, as well as collaborating across a team on developing
-code and software. Other online git platforms exist and are used by some researchers,
-including <strong>GitLab</strong>. Once you’ve mastered using GitHub, you should be able to easy
-transfer those skills to other platforms like GitLab.</span> You will need to get a GitHub
+<p>You’ll also learn how to share and collaborate on an R Project using <strong>GitHub</strong>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> You will need to get a GitHub
 account to be able to post repositories on GitHub. …</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Install some R packages</li>
@@ -250,24 +279,79 @@ in this booklet. The code in each of the R files should run independently, inclu
 load all required packages. Figure <a href="index.html#fig:examplerepo">1.1</a> shows what this package should
 look like once you’ve downloaded and opened it, as well as some of the files in the
 project’s “R” subdirectory.</p>
-<div class="figure fullwidth"><span id="fig:examplerepo"></span>
-<img src="images/example_repo.png" alt="What the example R Project for this booklet should look like once you've downloaded and opened it." width="1039"  />
-<p class="caption marginnote shownote">
+<div class="figure"><span id="fig:examplerepo"></span>
+<img src="images/example_repo.png" alt="What the example R Project for this booklet should look like once you've downloaded and opened it." width="1039" />
+<p class="caption">
 Figure 1.1: What the example R Project for this booklet should look like once you’ve downloaded and opened it.
 </p>
 </div>
-<p>Click on the <strong>Next</strong> button (or navigate using the
-links at the top of the page) to continue.</p>
 
 </div>
 </div>
-<p style="text-align: center;">
-<a href="2-organize.html"><button class="btn btn-default">Next</button></a>
-</p>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><strong>Comprehensive R Archive Network (CRAN).</strong> …<a href="index.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><strong>GitHub.</strong>
+An online platform for directories tracked with
+the version control software <code>git</code>. This platform has become
+very popular for sharing code projects, as well as collaborating across a team on developing
+code and software. Other online git platforms exist and are used by some researchers,
+including <strong>GitLab</strong>. Once you’ve mastered using GitHub, you should be able to easy
+transfer those skills to other platforms like GitLab.<a href="index.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
-</div>
+            </section>
 
+          </div>
+        </div>
+      </div>
 
+<a href="organize.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["columbia_env_health.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
 
 </body>
+
 </html>

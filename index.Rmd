@@ -28,8 +28,6 @@ library(knitr)
 
 # Prerequisites
 
-### Overview
-
 `r newthought("Based on requests from ")` some of the students for this
 workshop, I've focused here on a few topics relevant to environmental health
 research: organizing projects and tracking them with version control, creating
@@ -47,7 +45,10 @@ interactive graphics with `htmlwidgets`, and creating reports, blogs, and books
 through the `rmarkdown` framework. In the conclusion to this booklet, I'll
 provide some references for learning more about all of these topics.
 
-### Set-up
+Click on the **Next** button (or navigate using the
+links at the top of the page) to continue.
+
+## Set-up
 
 I am assuming that you already have R and RStudio installed on your computer.
 You may want to check that you have a recent version of both, and if not, update
@@ -120,15 +121,14 @@ project's "R" subdirectory.
 knitr::include_graphics("images/example_repo.png")
 ```
 
-Click on the **Next** button (or navigate using the
-links at the top of the page) to continue.
+
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'ggplot2', 'readr',
   'forcats', 'magrittr', 'dplyr', 'sf', 'htmlwidgets', 'DT', 'plotly', 
-  'leaflet', 'flexdashboard', 'usethis'
+  'leaflet', 'flexdashboard', 'usethis', 'devtools'
 ), 'packages.bib')
 ```
 

@@ -133,10 +133,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
-<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
-<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
-<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+<li class="has-sub"><a href="4-2-sharing.html#sharing"><span class="toc-section-number">4.2</span> Sharing</a><ul>
+<li><a href="4-2-sharing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-sharing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
@@ -164,16 +164,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="r-packages" class="section level2">
 <h2><span class="header-section-number">4.1</span> R packages</h2>
+<p>An R package is just “a directory of files which extend R” [cite “Writing R Extensions”].</p>
 <div id="r-code" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> R code</h3>
 <p>[Where to put it]</p>
 <p>[How to add documentation]</p>
+<p>Even if you are just creating a package for yourself, you should add documentation
+for all the “top-level” functions<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> <strong>top-level functions.</strong> The functions in your package
+that you expect your users (including yourself) to call directly. Your package may also
+include some functions that are “helpers”, only used within other functions to help
+keep the code clean and avoid replication, but never used directly by package users.</span></p>
+<p>Years ago, you would need to write this documentation in separate “.Rd” files and save them
+in the “man” subdirectory. Now, the easiest thing to do is to use “roxygen” conventions
+to write the help information right above each function. With this style, you’ll use a
+special type of commenting character (<code>#'</code>) at the start of each line with documentation,
+and there are special codes (e.s., <code>@param</code> when you’re defining one of the function’s
+parameters) to annotate this code. This help documentation will then, when you build your
+package, be converted to the “.Rd” files you used to have to write yourself and saved in
+the “man” directory.</p>
+<p>…</p>
 </div>
 <div id="description-file" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> DESCRIPTION file</h3>
-<ul>
-<li>License</li>
-</ul>
+<p>Every package directory must have a DESCRIPTION file, but if you aren’t sharing
+the package, there’s no harm in leaving this as the original template file you
+get when you start a package directory using RStudio (you’ll try this out in
+just a minute). The exception is when your functions rely on functions from
+other R packages—in this case, you’ll want to add in these dependencies in the
+DESCRIPTION file. That way, when you load your package, all of these will also
+be loaded.</p>
+<p>If you plan to share your package with others, however, and especially if you
+plan to publish your package in CRAN or another repository, you’ll need to do
+a lot more with the DESCRIPTION file. This file provides the metadata on your package,
+including the authors, version, description, and dependencies on other packages.
+The <strong>R Packages</strong> book referenced in the “Learn More” section has extensive advice
+on editing this file for packages meant for publication.</p>
 </div>
 <div id="other-package-components" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Other package components</h3>
@@ -191,7 +216,7 @@ these elements within an R package.</p>
 <p>To help you set up these extra components,
 you may want to take a look at the <code>use_*</code> family of functions in the <code>usethis</code>
 <span class="citation">(Wickham and Bryan <label for="tufte-mn-1" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle">2018<span class="marginnote">Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</span>)</span>
-package<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code> package, but they
+package<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code> package, but they
 are being deprecated there and moved to the <code>usethis</code>
 package. The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were deprecated
 in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As long as you install and load
@@ -208,7 +233,7 @@ details of which files and in what structure need to be added.</p>
 </div>
 <p style="text-align: center;">
 <a href="4-package.html"><button class="btn btn-default">Previous</button></a>
-<a href="4-2-publishing.html"><button class="btn btn-default">Next</button></a>
+<a href="4-2-sharing.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

@@ -131,8 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
-<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.0.1</b> Overview</a></li>
-<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i><b>1.0.2</b> Set-up</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#set-up"><i class="fa fa-check"></i><b>1.1</b> Set-up</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
 <li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
@@ -152,19 +151,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="track.html"><a href="track.html#learn-more-1"><i class="fa fa-check"></i><b>3.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="package.html"><a href="package.html"><i class="fa fa-check"></i><b>4</b> Package</a><ul>
-<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#r-packages"><i class="fa fa-check"></i><b>4.1</b> R packages</a><ul>
+<li class="chapter" data-level="4.1" data-path="package.html"><a href="package.html#components-of-r-packages"><i class="fa fa-check"></i><b>4.1</b> Components of R packages</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="package.html"><a href="package.html#r-code"><i class="fa fa-check"></i><b>4.1.1</b> R code</a></li>
 <li class="chapter" data-level="4.1.2" data-path="package.html"><a href="package.html#description-file"><i class="fa fa-check"></i><b>4.1.2</b> DESCRIPTION file</a></li>
 <li class="chapter" data-level="4.1.3" data-path="package.html"><a href="package.html#other-package-components"><i class="fa fa-check"></i><b>4.1.3</b> Other package components</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#publishing"><i class="fa fa-check"></i><b>4.2</b> Publishing</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="package.html"><a href="package.html#why-publish-your-packages"><i class="fa fa-check"></i><b>4.2.1</b> Why publish your packages?</a></li>
-<li class="chapter" data-level="4.2.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.2.2</b> Where to publish packages</a></li>
-<li class="chapter" data-level="4.2.3" data-path="package.html"><a href="package.html#extra-steps-for-publishing"><i class="fa fa-check"></i><b>4.2.3</b> Extra steps for publishing</a></li>
+<li class="chapter" data-level="4.2" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.2</b> Try it out</a></li>
+<li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#sharing"><i class="fa fa-check"></i><b>4.3</b> Sharing</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="package.html"><a href="package.html#when-to-publish-your-packages"><i class="fa fa-check"></i><b>4.3.1</b> When to publish your packages</a></li>
+<li class="chapter" data-level="4.3.2" data-path="package.html"><a href="package.html#where-to-publish-packages"><i class="fa fa-check"></i><b>4.3.2</b> Where to publish packages</a></li>
+<li class="chapter" data-level="4.3.3" data-path="package.html"><a href="package.html#extra-steps-for-publishing"><i class="fa fa-check"></i><b>4.3.3</b> Extra steps for publishing</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="package.html"><a href="package.html#checking"><i class="fa fa-check"></i><b>4.3</b> Checking</a></li>
-<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#try-it-out"><i class="fa fa-check"></i><b>4.4</b> Try it out</a></li>
-<li class="chapter" data-level="4.5" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.5</b> Learn more</a></li>
+<li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
 <li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
@@ -211,18 +209,43 @@ fine to start by just writing packages for your own use, or for your research gr
 private use. However, once you start writing packages, you will see how straightforward
 it is, and you may want to take the extra steps to prepare your package for CRAN and
 submit it.</p>
-<div id="r-packages" class="section level2">
-<h2><span class="header-section-number">4.1</span> R packages</h2>
+<p>An R package is just “a directory of files which extend R” [cite “Writing R Extensions”].
+You should consider writing your own package anytime you find yourself cutting and pasting
+functions to different directories on your computer, so you can use them for different
+projects.</p>
+<div id="components-of-r-packages" class="section level2">
+<h2><span class="header-section-number">4.1</span> Components of R packages</h2>
 <div id="r-code" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> R code</h3>
 <p>[Where to put it]</p>
 <p>[How to add documentation]</p>
+<p>Even if you are just creating a package for yourself, you should add documentation
+for all the “top-level” functions<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
+<p>Years ago, you would need to write this documentation in separate “.Rd” files and save them
+in the “man” subdirectory. Now, the easiest thing to do is to use “roxygen” conventions
+to write the help information right above each function. With this style, you’ll use a
+special type of commenting character (<code>#'</code>) at the start of each line with documentation,
+and there are special codes (e.s., <code>@param</code> when you’re defining one of the function’s
+parameters) to annotate this code. This help documentation will then, when you build your
+package, be converted to the “.Rd” files you used to have to write yourself and saved in
+the “man” directory.</p>
+<p>…</p>
 </div>
 <div id="description-file" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> DESCRIPTION file</h3>
-<ul>
-<li>License</li>
-</ul>
+<p>Every package directory must have a DESCRIPTION file, but if you aren’t sharing
+the package, there’s no harm in leaving this as the original template file you
+get when you start a package directory using RStudio (you’ll try this out in
+just a minute). The exception is when your functions rely on functions from
+other R packages—in this case, you’ll want to add in these dependencies in the
+DESCRIPTION file. That way, when you load your package, all of these will also
+be loaded.</p>
+<p>If you plan to share your package with others, however, and especially if you
+plan to publish your package in CRAN or another repository, you’ll need to do
+a lot more with the DESCRIPTION file. This file provides the metadata on your package,
+including the authors, version, description, and dependencies on other packages.
+The <strong>R Packages</strong> book referenced in the “Learn More” section has extensive advice
+on editing this file for packages meant for publication.</p>
 </div>
 <div id="other-package-components" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Other package components</h3>
@@ -231,79 +254,165 @@ minimalist package. There are, however, a number of other elements you’ll ofte
 want to add to the package. As with the R code for package functions and the
 DESCRIPTION file, there is a specific location and format required for each of
 these elements within an R package.</p>
-<p>Some of the most common components you’ll want to add are:</p>
-<ul>
-<li><strong>Example data.</strong></li>
-<li><strong>Vignettes.</strong></li>
-<li><strong>Unit tests.</strong></li>
-</ul>
-<p>To help you set up these extra components,
-you may want to take a look at the <code>use_*</code> family of functions in the <code>usethis</code>
-<span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span>
-package<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> For example, if you want to include example data in your package,
-you should check out the <code>use_data</code> function, while if you want to add unit tests to your
-package, check out the <code>use_test</code> function. When you run one of these, you’ll notice that the
-function <em>adds files and subdirectories</em> when needed to your R package directory. This may
-throw you at first, since most R functions don’t make changes to your file directory, but
-you’ll need those added files to add the package components, and it’s <em>much</em> easier to
-remember a single function call to run when you need to add one than to remember all the
-details of which files and in what structure need to be added.</p>
+<p>Some of the most common components you’ll want to add include example datasets
+(which will go in a <code>data</code> subdirectory), tutorials for using the package
+(<code>vignettes</code> subdirectory), and unit tests for the functions (<code>tests</code>
+subdirectory). To help you set up these extra components, you may want to take a
+look at the <code>use_*</code> family of functions in the <code>usethis</code> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span>
+package<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> For example, if you
+want to include example data in your package, you should check out the
+<code>use_data</code> function, while if you want to add unit tests to your package, check
+out the <code>use_test</code> function. When you run one of these, you’ll notice that the
+function <em>adds files and subdirectories</em> when needed to your R package
+directory. This may throw you at first, since most R functions don’t make
+changes to your file directory, but you’ll need those added files to add the
+package components, and it’s <em>much</em> easier to remember a single function call to
+run when you need to add one than to remember all the details of which files and
+in what structure need to be added.</p>
 </div>
-</div>
-<div id="publishing" class="section level2">
-<h2><span class="header-section-number">4.2</span> Publishing</h2>
-<div id="why-publish-your-packages" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Why publish your packages?</h3>
-</div>
-<div id="where-to-publish-packages" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Where to publish packages</h3>
-</div>
-<div id="extra-steps-for-publishing" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Extra steps for publishing</h3>
-<p>If you want to submit your package to CRAN, you’ll need to take a few extra steps
-to get it ready. These steps aren’t necessary for a package you plan to just
-use privately, but they wouldn’t be a bad idea to try to do even in that case.</p>
-<p>First, you’ll need to make sure that the functions in your package are
-comprehensively documented. [What are requirements for this for CRAN?]</p>
-<p>In addition to documenting specific functions, you should also consider
-writing overall tutorials that walk a user through how to use your
-package in a few example scenarios. <strong>vignette</strong><a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a></p>
-<p>You will also need to make sure that your package can run on different
-operating systems. If your package only has functions written exclusively
-in R, and doesn’t interact with [the computer system?] or other programs
-on your computer, this shouldn’t be an issue. However, you should still
-check. [Travis CI, winbuilder]</p>
-<p>[CRAN checks]</p>
-</div>
-</div>
-<div id="checking" class="section level2">
-<h2><span class="header-section-number">4.3</span> Checking</h2>
 </div>
 <div id="try-it-out" class="section level2">
-<h2><span class="header-section-number">4.4</span> Try it out</h2>
+<h2><span class="header-section-number">4.2</span> Try it out</h2>
+<p>I suggest you try out the following steps to experiment with
+writing your own package. I’ve included a function for you to build
+your package around in the “package.R” file of the R project with
+examples for the workshop.</p>
 <ul>
-<li>Create a new R Project for an R package</li>
+<li>Create a new R Project for your R package</li>
+<li>Build the package</li>
 <li>Move a function into the right place in the package</li>
 <li>Edit the DESCRIPTION file as needed</li>
-<li>Build the package</li>
 <li>Add example data into the right place in the package</li>
 <li>Add some unit tests for the function</li>
 <li>Add documentation using roxygen2 notation</li>
 <li>Add a short vignette</li>
 </ul>
+<p>I’ll walk you through the first three steps, and then I suggest you use
+Hadley Wickham’s <strong>R Packages</strong> book (see the “Learn More” section) to
+get some tips as you try out the rest on your own.</p>
+<p><strong>Create a new R Project for an R package.</strong> Open RStudio and go to “File” -&gt;
+“New Project”. Choose “New Directory” and then “R Package”. Name your package
+“convertr”. Then click on “Create Project”.</p>
+<p>The R Project you’ve just created will open in RStudio. If you look in the “R”
+subdirectory, you’ll see there’s one file called “hello.R”. There’s also a
+subdirectory called “man”and three files in the top directory called
+“.Rbuildignore”, “DESCRIPTION”, and “NAMESPACE”.</p>
+<p><strong>Build the package.</strong> This project opens with a template—a very small but working package that can
+serve as a skeleton as you adapt the files to create your own package. Before you
+do anything to change from the template, try building the package using the
+<code>build</code> function from the <code>devtools</code> package:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
+<span class="kw">build</span>()</code></pre>
+<p>You should get some output like this:</p>
+<pre><code>✔  checking for file ‘/Users/georgianaanderson/Documents/r_workshops/convertr/DESCRIPTION’ ...
+─  preparing ‘convertr’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘convertr_0.1.0.tar.gz’</code></pre>
+<p>Congratulations! You’ve built (maybe) your first R package. You should now be able to
+load it like any other R package on computer and run its function. Try running:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(convertr)
+<span class="kw">hello</span>()</code></pre>
+<p>To build the package in a way that you can use it anywhere on your computer,
+go to the “Build” tab in RStudio and click “Install and Restart”. As long
+as you don’t get warning messages, you should be able to load and use the
+package from any R session on your computer.</p>
+<p><strong>Move a function into the right place in the package.</strong></p>
+<p>Now try adapting the template into your own package. Delete the file
+“hello.R” in the “R” subdirectory. Create a new file in this subdirectory
+called something like “temp_conversions.R”. Copy the code for the
+<code>c_to_f</code> function, which is in the “package.R” file of the R Project
+with examples for this workshop. Save the file and rebuild the package,
+either with the <code>build</code> call to build within that project or with the
+“Install and Restart” button in the “Build” tab to make it available
+anywhere on your computer.</p>
+</div>
+<div id="sharing" class="section level2">
+<h2><span class="header-section-number">4.3</span> Sharing</h2>
+<div id="when-to-publish-your-packages" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> When to publish your packages</h3>
+<p>Once you have some functions that you think others might find useful, you
+should consider creating a package with them and sharing that package with
+others. Similarly, if you have a dataset that you think others might
+find useful and that you have permission to share, you should consider creating
+a data-only package to use to share that data.</p>
+</div>
+<div id="where-to-publish-packages" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Where to publish packages</h3>
+<p>There are a few ways to publish your R package, and they have different
+levels of requirements as well as different levels of recognition (including
+for CVs and progress reports).</p>
+<p>First, you can share the “tar.gz” file that’s create when you run “Install and Restart”
+for an R package from RStudio. The other user can install this file locally using
+<code>install.packages</code> with some extra options. For example, if you shared your
+“convertr.tar.gz” package file with someone else, they could install it on their
+computer with the call:<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;convertr.tar.gz&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>, <span class="dt">type =</span> <span class="st">&quot;source&quot;</span>)</code></pre>
+<p>Second, and perhaps even easier (certainly for the other user), you can post your
+package as a GitHub repository. The other user can then use the <code>install_github</code>
+function from the <code>devtools</code> package to install the package. Unless you set
+the repository to be private, be aware that your package code would be public.
+This means anyone could install and use it, although if you don’t publicize it,
+it’s unlikely that many people will.</p>
+<p>If you want to share your package more widely, you should submit it to a repository.
+The <a href="https://cran.rstudio.com/">Comprehensive R Archive Network (CRAN)</a> is the most
+popular for most scientific fields. The <code>devtools</code> package has some tools specifically
+for checking and releasing a package to CRAN. <a href="https://www.bioconductor.org/">Bioconductor</a>
+is the top choice for many bioinformatics packages.</p>
+<p>Finally, an excellent choice is to submit the package to
+<a href="https://ropensci.org/">ROpenSci</a> for peer review. If you are thinking of doing this,
+check ROpenSci’s policies on what types of packages are considered “in scope” for it.
+If you submit a package here, it will be openly reviewed by two other R programmers,
+with an open review process. You will then have the chance to revise the package
+code in response to the reviewers’ comments. Accepted packages can also be
+submitted to CRAN or Bioconductor.</p>
+</div>
+<div id="extra-steps-for-publishing" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Extra steps for publishing</h3>
+<p>If you want to submit your package to CRAN, you’ll need to take a few extra
+steps to get it ready. These steps aren’t necessary for a package you plan to
+just use privately, but they wouldn’t be a bad idea to try to do even in that
+case. For example, you’ll need to make sure that the functions in your package
+are comprehensively documented. Every function that you expect an end user might
+use should have a helpfile. In addition to documenting specific functions, you
+should also consider writing overall tutorials (called <strong>vignettes</strong>) that walk
+a user through how to use your package in a few example scenarios. You will also
+need to make sure that your package can run on different operating systems. If
+your package only has straightforward functions written exclusively in R, with
+little interaction outside of R on the user’s computer, this shouldn’t be an
+issue. However, you should still check before submitting to CRAN. Several of the
+resources listed in “Learn More” have very detailed information on preparing a
+package to submit to a public repository.</p>
+</div>
 </div>
 <div id="learn-more-2" class="section level2">
-<h2><span class="header-section-number">4.5</span> Learn more</h2>
+<h2><span class="header-section-number">4.4</span> Learn more</h2>
 <p>One wonderful resource for writing and publishing R packages is the book <a href="http://r-pkgs.had.co.nz/">R
-Packages</a> by Hadley Wickham. This book is available
+Packages</a> by Hadley Wickham <span class="citation">(Wickham <a href="#ref-wickham2015r">2015</a>)</span>. This book is available
 for a reasonable price in paperback (many Barnes &amp; Nobles carry it in their
 computer section) and is also available for free online. The author of this book
-also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
-<ul>
-<li>ROpenSci handbook</li>
-<li>Official R documentation</li>
-<li>Coursera, Leanpub</li>
-</ul>
+also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></p>
+<p>Along with Roger Peng and Sean Kross, I co-teach a Coursera Specialization on
+<a href="https://www.coursera.org/specializations/r"><strong>Mastering Software Development in
+R</strong></a>, and we also have <a href="https://bookdown.org/rdpeng/RProgDA/">an online
+book</a> on bookdown on the topic. The
+official CRAN resource for writing packages, <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html">“Writing R
+Extensions”</a>, is
+available online. However, it gets very technical, and so I recommend starting
+with other resources and working up to this document.</p>
+<p>To learn more about best practices for creating R, especially for publication,
+check out <a href="https://ropensci.github.io/dev_guide/">ROpenSci’s handbook</a>. ROpenSci
+conducts peer review for R packages, and it’s all conducted openly. You can
+learn a lot about packages and package development, especially for more complex
+packages, by following this peer review package. It’s all conducted through <a href="https://github.com/ropensci/software-review/issues">the
+“Issues” in a GitHub repo</a>.</p>
+<p>If you end up writing and publishing a lot of R packages through your scientific
+research, you may find that you need to help your supervisors and peers
+understand this research project. One recent article discusses how academic
+research in the data science realm is changing, as well as how department chairs
+and others can evaluate these new research products, including for promotion and
+tenure <span class="citation">(Waller <a href="#ref-waller2018documenting">2018</a>)</span>.</p>
 
 </div>
 </div>
@@ -312,18 +421,30 @@ also created and maintains the <strong><code>devtools</code> package</strong><a 
 <div id="ref-R-usethis">
 <p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</p>
 </div>
+<div id="ref-wickham2015r">
+<p>Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. " O’Reilly Media, Inc.".</p>
+</div>
+<div id="ref-waller2018documenting">
+<p>Waller, Lance A. 2018. “Documenting and Evaluating Data Science Contributions in Academic Promotion in Departments of Statistics and Biostatistics.” <em>The American Statistician</em> 72 (1): 11–19.</p>
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="12">
-<li id="fn12"><p>The <code>use_*</code> family of functions were previously in the <code>devtools</code> package, but they
-are being deprecated there and moved to the <code>usethis</code>
-package. The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were deprecated
-in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As long as you install and load
-the <code>usethis</code> package, though, you’ll have no problem following along with the examples in
-that book.<a href="package.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p><strong>vignette.</strong> …<a href="package.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p><strong><code>devtools</code> package.</strong>
+<li id="fn12"><p><strong>top-level functions.</strong> The functions in your package
+that you expect your users (including yourself) to call directly. Your package may also
+include some functions that are “helpers”, only used within other functions to help
+keep the code clean and avoid replication, but never used directly by package users.<a href="package.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>The <code>use_*</code> family of functions were previously in the <code>devtools</code>
+package, but they are being deprecated there and moved to the <code>usethis</code> package.
+The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were
+deprecated in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As
+long as you install and load the <code>usethis</code> package, though, you’ll have no
+problem following along with the examples in that book.<a href="package.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>This call assumes that the other person has “convertr.tar.gz”
+saved in his or her working directory. Otherwise, use a pathname to direct R to where
+the file is saved on the computer.<a href="package.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p><strong><code>devtools</code> package.</strong>
 An R package with functions that facilitate R package development. These
 functions are well-documented in the package documentation as well as through
 the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also includes a
@@ -331,7 +452,7 @@ function for installing R packages from code posted on GitHub
 (<code>install_github</code>), which is very useful if you want to find and use packages
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, “development” version of a package. This package is available on
-CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref14" class="footnote-back">↩</a></p></li>
+CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref15" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

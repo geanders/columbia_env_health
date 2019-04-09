@@ -133,10 +133,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-1-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
 <li><a href="4-1-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-2-publishing.html#publishing"><span class="toc-section-number">4.2</span> Publishing</a><ul>
-<li><a href="4-2-publishing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
-<li><a href="4-2-publishing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
-<li><a href="4-2-publishing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
+<li class="has-sub"><a href="4-2-sharing.html#sharing"><span class="toc-section-number">4.2</span> Sharing</a><ul>
+<li><a href="4-2-sharing.html#why-publish-your-packages"><span class="toc-section-number">4.2.1</span> Why publish your packages?</a></li>
+<li><a href="4-2-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.2.2</span> Where to publish packages</a></li>
+<li><a href="4-2-sharing.html#extra-steps-for-publishing"><span class="toc-section-number">4.2.3</span> Extra steps for publishing</a></li>
 </ul></li>
 <li><a href="4-3-checking.html#checking"><span class="toc-section-number">4.3</span> Checking</a></li>
 <li><a href="4-4-try-it-out.html#try-it-out"><span class="toc-section-number">4.4</span> Try it out</a></li>
@@ -164,16 +164,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="col-sm-12">
 <div id="try-it-out" class="section level2">
 <h2><span class="header-section-number">4.4</span> Try it out</h2>
+<p>I suggest you try out the following steps to experiment with
+writing your own package. I’ve included a function for you to build
+your package around in the “package.R” file of the R project with
+examples for the workshop.</p>
 <ul>
-<li>Create a new R Project for an R package</li>
+<li>Create a new R Project for your R package</li>
+<li>Build the package</li>
 <li>Move a function into the right place in the package</li>
 <li>Edit the DESCRIPTION file as needed</li>
-<li>Build the package</li>
 <li>Add example data into the right place in the package</li>
 <li>Add some unit tests for the function</li>
 <li>Add documentation using roxygen2 notation</li>
 <li>Add a short vignette</li>
 </ul>
+<p>I’ll walk you through the first three steps, and then I suggest you use
+Hadley Wickham’s <strong>R Packages</strong> book (see the “Learn More” section) to
+get some tips as you try out the rest on your own.</p>
+<p><strong>Create a new R Project for an R package.</strong> Open RStudio and go to “File” -&gt;
+“New Project”. Choose “New Directory” and then “R Package”. Name your package
+“convertr”. Then click on “Create Project”.</p>
+<p>The R Project you’ve just created will open in RStudio. If you look in the “R”
+subdirectory, you’ll see there’s one file called “hello.R”. There’s also a
+subdirectory called “man”and three files in the top directory called
+“.Rbuildignore”, “DESCRIPTION”, and “NAMESPACE”.</p>
+<p><strong>Build the package.</strong> This project opens with a template—a very small but working package that can
+serve as a skeleton as you adapt the files to create your own package. Before you
+do anything to change from the template, try building the package using the
+<code>build</code> function from the <code>devtools</code> package:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
+<span class="kw">build</span>()</code></pre>
+<p>You should get some output like this:</p>
+<pre><code>✔  checking for file ‘/Users/georgianaanderson/Documents/r_workshops/convertr/DESCRIPTION’ ...
+─  preparing ‘convertr’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘convertr_0.1.0.tar.gz’</code></pre>
+<p>Congratulations! You’ve built (maybe) your first R package. You should now be able to
+load it like any other R package on computer and run its function. Try running:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(convertr)
+<span class="kw">hello</span>()</code></pre>
+<p>To build the package in a way that you can use it anywhere on your computer,
+go to the “Build” tab in RStudio and click “Install and Restart”. As long
+as you don’t get warning messages, you should be able to load and use the
+package from any R session on your computer.</p>
+<p><strong>Move a function into the right place in the package.</strong></p>
+<p>Now try adapting the template into your own package. Delete the file
+“hello.R” in the “R” subdirectory. Create a new file in this subdirectory
+called something like “temp_conversions.R”. Copy the code for the
+<code>c_to_f</code> function, which is in the “package.R” file of the R Project
+with examples for this workshop. Save the file and rebuild the package,
+either with the <code>build</code> call to build within that project or with the
+“Install and Restart” button in the “Build” tab to make it available
+anywhere on your computer.</p>
 </div>
 <p style="text-align: center;">
 <a href="4-3-checking.html"><button class="btn btn-default">Previous</button></a>

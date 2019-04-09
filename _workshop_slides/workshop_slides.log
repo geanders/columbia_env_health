@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 14:16
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 22:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1753,40 +1753,54 @@ File: images/example_code.png Graphic file (type bmp)
 ] [26
 
 ]
-File: images/CRAN_package_10000.png Graphic file (type bmp)
-<images/CRAN_package_10000.png>
+File: images/JeffLeekQuote.png Graphic file (type bmp)
+<images/JeffLeekQuote.png>
 [27
 
+] [28
+
 ]
-File: images/p_packages_cover.png Graphic file (type bmp)
-<images/p_packages_cover.png>
-[28
+File: images/weathermetrics_package.png Graphic file (type bmp)
+<images/weathermetrics_package.png>
+[29
+
+]
+File: images/package_template.png Graphic file (type bmp)
+<images/package_template.png>
+[30
+
+] [31
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
-[29
+[32
 
-] [30
+]
+File: images/p_packages_cover.png Graphic file (type bmp)
+<images/p_packages_cover.png>
+[33
+
+]
+File: images/train_dragon.jpeg Graphic file (type bmp)
+<images/train_dragon.jpeg>
+
+Overfull \vbox (8.4402pt too high) detected at line 532
+ []
+
+[34
+
+] [35
 
 ]
 \openout4 = `workshop_slides.vrb'.
 
-(./workshop_slides.vrb) [31
+(./workshop_slides.vrb) [36
 
 ]
 \openout4 = `workshop_slides.vrb'.
 
-(./workshop_slides.vrb) [32
-
-]
-\openout4 = `workshop_slides.vrb'.
-
-(./workshop_slides.vrb
-File: workshop_slides_files/figure-beamer/unnamed-chunk-10-1.pdf Graphic file (
-type pdf)
-<use workshop_slides_files/figure-beamer/unnamed-chunk-10-1.pdf>
-) [33
+(./workshop_slides.vrb) [37
 
 ]
 \openout4 = `workshop_slides.vrb'.
@@ -1795,21 +1809,37 @@ type pdf)
 File: workshop_slides_files/figure-beamer/unnamed-chunk-13-1.pdf Graphic file (
 type pdf)
 <use workshop_slides_files/figure-beamer/unnamed-chunk-13-1.pdf>
-) [34
+) [38
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb
+File: workshop_slides_files/figure-beamer/unnamed-chunk-16-1.pdf Graphic file (
+type pdf)
+<use workshop_slides_files/figure-beamer/unnamed-chunk-16-1.pdf>
+) [39
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
-[35
+[40
 
-] [36
+]
+File: images/CRAN_package_10000.png Graphic file (type bmp)
+<images/CRAN_package_10000.png>
+[41
+
+] [42
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
-[37
+[43
 
-] [38
+] [44
+
+] [45
 
 ]
 \tf@nav=\write7
@@ -1821,11 +1851,11 @@ File: images/example_code.png Graphic file (type bmp)
 \tf@snm=\write9
 \openout9 = `workshop_slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 605.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 605.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 693.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 693.
 (./workshop_slides.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 605.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 605.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 693.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 693.
 Package rerunfilecheck Info: File `workshop_slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
@@ -1833,12 +1863,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 36402 strings out of 494921
- 739159 string characters out of 6174292
- 808559 words of memory out of 5000000
- 39676 multiletter control sequences out of 15000+600000
- 539582 words of font info for 100 fonts, out of 8000000 for 9000
+ 36480 strings out of 494921
+ 740851 string characters out of 6174292
+ 809311 words of memory out of 5000000
+ 39747 multiletter control sequences out of 15000+600000
+ 539590 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  50i,15n,80p,802b,807s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on workshop_slides.pdf (38 pages).
+Output written on workshop_slides.pdf (45 pages).
