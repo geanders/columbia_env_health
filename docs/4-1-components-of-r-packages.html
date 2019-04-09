@@ -112,8 +112,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
-<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.1</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -145,19 +144,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
-<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
-<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+<li><a href="5-1-data-packages.html#data-packages"><span class="toc-section-number">5.1</span> Data packages</a></li>
+<li><a href="5-2-open-data-apis.html#open-data-apis"><span class="toc-section-number">5.2</span> Open data APIs</a></li>
+<li><a href="5-3-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.3</span> Learn more</a></li>
 </ul></li>
-<li><a href="5-2-data-packages.html#data-packages"><span class="toc-section-number">5.2</span> Data packages</a></li>
-<li><a href="5-3-web-services.html#web-services"><span class="toc-section-number">5.3</span> Web services [?]</a></li>
-<li><a href="5-4-ropensci.html#ropensci"><span class="toc-section-number">5.4</span> ROpenSci</a></li>
-<li><a href="5-5-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.5</span> Learn more</a></li>
-</ul></li>
-<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
-<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
-</ul></li>
-<li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
 </div>
 </div>
@@ -168,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Components of R packages</h2>
 <div id="r-code" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> R code</h3>
-<p>Without R code, there’s not much point to an R package.<label for="tufte-sn-11" class="margin-toggle sidenote-number">11</label><input type="checkbox" id="tufte-sn-11" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">11</span> The exception? A data-only package,
+<p>Without R code, there’s not much point to an R package.<label for="tufte-sn-7" class="margin-toggle sidenote-number">7</label><input type="checkbox" id="tufte-sn-7" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">7</span> The exception? A data-only package,
 where the package’s purpose is to share data rather than R functions. We’ll look at an
 example in the “Collect” section.</span> The R function code will go in the package’s “R”
 subdirectory. You can use as many or as few “.R” files in this section as you want to
@@ -184,7 +174,7 @@ want to take a look at the developing <a href="https://tidyeval.tidyverse.org/">
 should think about adding help documentation to your code very early. You can then
 access this documentation through helpfiles in R, just like you do with other R packages.
 Even if you are just creating a package for yourself, you should add documentation
-for all the “top-level” functions<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> <strong>top-level functions.</strong> The functions in your package
+for all the “top-level” functions<label for="tufte-sn-8" class="margin-toggle sidenote-number">8</label><input type="checkbox" id="tufte-sn-8" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">8</span> <strong>top-level functions.</strong> The functions in your package
 that you expect your users (including yourself) to call directly. Your package may also
 include some functions that are “helpers”, only used within other functions to help
 keep the code clean and avoid replication, but never used directly by package users.</span></p>
@@ -192,7 +182,7 @@ keep the code clean and avoid replication, but never used directly by package us
 and save them in the “man” subdirectory. Now, the easiest thing to do is to use
 “roxygen” conventions to write the help information right above each function.
 With this style, you’ll use a special type of commenting character (<code>#'</code>) at the
-start of each line with documentation, and there are special codes (e.s.,
+start of each line with documentation, and there are special codes (e.g.,
 <code>@param</code> when you’re defining one of the function’s parameters) to annotate this
 code. This help documentation will then, when you build your package, be
 converted to the “.Rd” files you used to have to write yourself and saved in the
@@ -227,7 +217,7 @@ these elements within an R package.</p>
 (<code>vignettes</code> subdirectory), and unit tests for the functions (<code>tests</code>
 subdirectory). To help you set up these extra components, you may want to take a
 look at the <code>use_*</code> family of functions in the <code>usethis</code> <span class="citation">(Wickham and Bryan <label for="tufte-mn-3" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle">2018<span class="marginnote">Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</span>)</span>
-package<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code>
+package<label for="tufte-sn-9" class="margin-toggle sidenote-number">9</label><input type="checkbox" id="tufte-sn-9" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">9</span> The <code>use_*</code> family of functions were previously in the <code>devtools</code>
 package, but they are being deprecated there and moved to the <code>usethis</code> package.
 The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were
 deprecated in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As

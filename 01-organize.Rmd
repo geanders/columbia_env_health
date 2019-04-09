@@ -16,11 +16,11 @@ project in a single and exclusive directory.
 
 `r newthought("RStudio allows you to")` create "Projects", which help with this
 organization. An R Project is very simple---it's just a file directory, with an
-extra subdirectory added to the directory [with settings?]. This directory is
-saved as a **dot file**^[**dot file.** ...], so you probably won't be able to see it
-listed if you look at the directory contents using your [file viewer?]. If you'd like
+extra subdirectory added to the directory with settings to remind RStudio about for the project. This directory is
+saved as a dot file, so you probably won't be able to see it
+listed if you look at the directory contents using your computer's file finder. If you'd like
 to see the listing (or delete it by hand, although you likely won't ever need to 
-do this), check the settings for your [file viewer?], and see if you have the option 
+do this), check the settings for your file finder, and see if you have the option 
 to show all files. Alternatively, you can use the "list" command with the "all" option
 (`ls -a`) at a Bash shell to view all files and subdirectories in a directory. 
 
@@ -38,7 +38,7 @@ your computer's files to find an existing directory to make into an R Project.
 Once you've created an R Project, you can open it in RStudio; opening an R Project will set 
 the project's directory as your working directory, opening a "Files" window with all the
 subdirectories and files in the project directory and allowing you to run code with 
-**relative filenames**^[**relative filename.** ...] from the project's directory. If you 
+relative filenames from the project's directory. If you 
 share the R Project with someone else,^[One way to do this would be to zipped the directory
 into a single file and share it by email. Another is to use git version control, post the
 directory to GitHub, and share the directory from there.] he or she will also be able to 
@@ -48,19 +48,12 @@ One benefit of R Projects is that it is very easy to initialize them as git repo
 A later section ("Track") will go over how to initialize and use git version control for
 R Projects. You will also definitely want to use an R Project for any R package you write, 
 as this will introduce a lot of functionality that "plays well" with the `devtools` package
-to make it easier to write, build, and publish an R package [?]. 
+to make it easier to write, build, and publish an R package. 
 
 ## Directory organization
 
-...
-
-
-
-### Keeping things tidy
-
-My desk at work is very messy, with lots of paper printouts piled up. My car and my closet 
-aren't terribly tidy, either. But I do keep my project directories very tidy, and I 
-strongly recommend the practice. 
+My desk at work is very messy, with lots of paper printouts piled up. But I do
+keep my project directories very tidy, and I strongly recommend the practice.
 
 This goes beyond "well-organized", which we just covered (putting all project
 files in one directory, using subdirectories to divide up files in a project,
@@ -118,11 +111,10 @@ learning more about package development.
 
 ## Learn more
 
-[R Reproc. Research] is an excellent book with advice on improving the reproducibility of 
+[Reproducible Research with R and R Studio](https://www.amazon.com/Reproducible-Research-Studio-Chapman-Hall/dp/1466572841) is an excellent book with advice on improving the reproducibility of 
 projects using R, including academic research projects. 
 
 A few good articles have come out recently that describe project organization within 
-the scientific fields of [biology] and [archaeology]. [One has links to example repositories?]  
-Other papers discuss project organization in the context of reproducibility, presenting 
-the idea of creating a **research compendium**^[**research compendium.** ...] for scientific
-publications. 
+different scientific fields (e.g., biology, archaeology, ecology). 
+It's worth searching Google Scholar for "reproducible research in R" and your own
+or a closely related research field. 

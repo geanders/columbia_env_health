@@ -112,8 +112,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
-<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.1</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -145,19 +144,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
-<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
-<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+<li><a href="5-1-data-packages.html#data-packages"><span class="toc-section-number">5.1</span> Data packages</a></li>
+<li><a href="5-2-open-data-apis.html#open-data-apis"><span class="toc-section-number">5.2</span> Open data APIs</a></li>
+<li><a href="5-3-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.3</span> Learn more</a></li>
 </ul></li>
-<li><a href="5-2-data-packages.html#data-packages"><span class="toc-section-number">5.2</span> Data packages</a></li>
-<li><a href="5-3-web-services.html#web-services"><span class="toc-section-number">5.3</span> Web services [?]</a></li>
-<li><a href="5-4-ropensci.html#ropensci"><span class="toc-section-number">5.4</span> ROpenSci</a></li>
-<li><a href="5-5-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.5</span> Learn more</a></li>
-</ul></li>
-<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
-<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
-</ul></li>
-<li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
 </div>
 </div>
@@ -171,8 +161,8 @@ You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we’ll be
 using will require newer versions of R and RStudio to work. You can run
 <code>sessionInfo()</code> in R to find out the version of R you have installed. Compare
-this version to the latest R release version listed at the <strong>Comprehensive R
-Archive Network (CRAN)</strong><label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>Comprehensive R Archive Network (CRAN).</strong> …</span></p>
+this version to the latest R release version listed at the Comprehensive R
+Archive Network (CRAN).</p>
 <p>To try out the examples, you will also need a bit more set-up:</p>
 <ol style="list-style-type: decimal">
 <li>Download git</li>
@@ -185,29 +175,33 @@ Archive Network (CRAN)</strong><label for="tufte-sn-1" class="margin-toggle side
 <li>Download git</li>
 </ol>
 <p>In the workshop, you will learn how to use <strong>git</strong>.[^<strong>git.</strong> Open-source version control
-software …] To try the examples, you will need to install git to your computer and make
+software that can be easily integrated with R projects.] To try the examples, you will need to
+install git to your computer and make
 sure that your installation of RStudio can find this software, so you can use git for version
-control for R Projects. …</p>
+control for R Projects. There are more details on this process in the “Track” section.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Get a GitHub account</li>
 </ol>
-<p>You’ll also learn how to share and collaborate on an R Project using <strong>GitHub</strong>.<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> <strong>GitHub.</strong>
+<p>You’ll also learn how to share and collaborate on an R Project using <strong>GitHub</strong>.<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>GitHub.</strong>
 An online platform for directories tracked with
 the version control software <code>git</code>. This platform has become
 very popular for sharing code projects, as well as collaborating across a team on developing
 code and software. Other online git platforms exist and are used by some researchers,
 including <strong>GitLab</strong>. Once you’ve mastered using GitHub, you should be able to easy
 transfer those skills to other platforms like GitLab.</span> You will need to get a GitHub
-account to be able to post repositories on GitHub. …</p>
+account to be able to post repositories on GitHub.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Install some R packages</li>
 </ol>
 <p>This booklet uses a number of R packages beyond base R. To install all the packages that you’ll
 need, run the following code in your version of R:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;readr&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;forcats&quot;</span>, <span class="st">&quot;magrittr&quot;</span>, 
-                   <span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;lubridate&quot;</span>, <span class="st">&quot;sf&quot;</span>, <span class="st">&quot;tigris&quot;</span>,
-                   <span class="st">&quot;DT&quot;</span>, <span class="st">&quot;plotly&quot;</span>, <span class="st">&quot;leaflet&quot;</span>, <span class="st">&quot;flexdashboard&quot;</span>, 
-                   <span class="st">&quot;tidyr&quot;</span>, <span class="st">&quot;stringr&quot;</span>))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;drat&quot;</span>, <span class="st">&quot;tigris&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>))</code></pre>
+<p>Also, you’ll want to install the <code>hurricaneexposuredata</code> and <code>hurricaneexposure</code> packages, which
+you need to do in a bit of a different way:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(drat)
+<span class="kw">addRepo</span>(<span class="st">&quot;geanders&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposuredata&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposure&quot;</span>)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Download example R Project</li>
 </ol>

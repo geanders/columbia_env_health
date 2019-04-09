@@ -23,9 +23,7 @@ library(ggplot2)
 - \largetext{ORGANIZE} \bigskip
 - \largetext{TRACK} \bigskip
 - \largetext{PACKAGE} \bigskip
-- \largetext{COLLECT} \bigskip
-- \largetext{PROCESS} 
-
+- \largetext{COLLECT} 
 
 ## Homework?!
 
@@ -70,29 +68,46 @@ ____
 \begin{center}
  \hugetext{ORGANIZE} 
  \medskip 
- \small Setting up 
+ \small Using **R projects** to organize research files
 \end{center}
+
+____
+
+\begin{center}
+ \largetext{One file : One version} \\
+ \medskip 
+ \small \textbf{Rule \#1} of research project file organization 
+\end{center}
+
+## Organizing research project files
+
+```{r echo = FALSE, out.width = "0.5\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/FileSystemCartoon.jpg")
+```
+\vspace{-0.5cm}
+\footnotesize Source: PhDComics
 
 ____
 
 \begin{center}
  \largetext{One project : One directory} \\
  \medskip 
- \small \textbf{Rule \#1} of research project file organization 
+ \small \textbf{Rule \#2} of research project file organization 
 \end{center}
+
+## Example project directory
+
+```{r echo = FALSE, out.width = "0.6\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/directory_organization.jpeg")
+```
+\vspace{-0.5cm}
+\footnotesize Source: "A Guide to Reproducible Code in Ecology and Evolution".
+British Ecological Society.
 
 ____
 
 \begin{center}
  \largetext{Use consistent names} \\
- \medskip 
- \small \textbf{Rule \#2} of research project file organization
-\end{center}
-
-____
-
-\begin{center}
- \largetext{Use relative filenames} \\
  \medskip 
  \small \textbf{Rule \#3} of research project file organization
 \end{center}
@@ -106,6 +121,21 @@ ____
 - **R** Code for any functions used in analysis. \medskip
 - **figures** Figures created from R code. \medskip
 - **reports** R Markdown files and products rendered from those files (e.g., paper drafts, presentations).
+
+____
+
+\begin{center}
+ \largetext{Use relative filenames} \\
+ \medskip 
+ \small \textbf{Rule \#4} of research project file organization
+\end{center}
+
+\centering
+
+```
+data/my_data_file.csv
+figures/figure_1.png
+```
 
 ## Create R project
 
@@ -130,7 +160,6 @@ knitr::include_graphics("images/navigating_projects.png")
 knitr::include_graphics("images/example_repo.png")
 ```
 
-
 ____
 
 \tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
@@ -140,11 +169,7 @@ ____
 \hugetext{\montserratfont .Rproj/}
 \end{center}
 
-## Resources
 
-```{r echo = FALSE, out.height = "0.8\\textheight", fig.align = "center"}
-knitr::include_graphics("images/repro_research_book.jpeg")
-```
 
 ____
 
@@ -156,6 +181,12 @@ ____
 \end{center}
 
 
+## Resources
+
+```{r echo = FALSE, out.height = "0.8\\textheight", fig.align = "center"}
+knitr::include_graphics("images/repro_research_book.jpeg")
+```
+
 ____
 
 \begin{center}
@@ -166,11 +197,64 @@ ____
 
 ____
 
+```{r echo = FALSE, out.width = "0.8\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/GitHubDiagram.png")
+```
+Source: GitHub
+
+____
+
 \tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
   \includegraphics[width=1\paperwidth]{images/hidden_files}};
 \color{colorblue}
 \begin{center}
 \hugetext{\montserratfont .git/}
+\end{center}
+
+## Git commits in RStudio
+
+\small
+Once you initialize the project as a git repository, you should have a "Git" window in one of your RStudio panes (top right pane by default). 
+
+```{r echo = FALSE, out.width="0.8\\textwidth", fig.align="center"}
+knitr::include_graphics("images/ExampleGitWindow.png")
+```
+
+## Git commits in RStudio
+
+\small
+When you click on"Commit", it opens a separate commit window : 
+
+```{r echo = FALSE, out.width="0.8\\textwidth", fig.align="center"}
+knitr::include_graphics("images/ExampleCommitWindow.png")
+```
+
+## Commit messages
+
+```{r echo = FALSE, out.width = "\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/git_commit.png")
+```
+\footnotesize
+Source: xkcd
+
+## Browsing history 
+
+\small
+On the top left of the Commit window, you can toggle to "History":
+
+```{r echo = FALSE, out.width="0.8\\textwidth", fig.align="center"}
+knitr::include_graphics("images/ExampleHistoryWindow.png")
+```
+
+
+
+____
+
+\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
+  \includegraphics[width=1\paperwidth]{images/example_code}};
+\color{colorblue}
+\begin{center}
+\hugetext{\montserratfont [Live coding example]}
 \end{center}
 
 ## Using GitHub to collaborate
@@ -188,14 +272,6 @@ knitr::include_graphics("images/maze-minecraft.png")
 knitr::include_graphics("images/github_pages.png")
 ```
 
-____
-
-\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
-  \includegraphics[width=1\paperwidth]{images/example_code}};
-\color{colorblue}
-\begin{center}
-\hugetext{\montserratfont [Live coding example]}
-\end{center}
 
 ____
 
@@ -356,23 +432,6 @@ ____
 
 \includegraphics[width = \textwidth]{images/CRAN_package_10000}
 
-
-____
-
-\begin{center}
- \hugetext{PROCESS} 
- \medskip 
- \small Find and make \textbf{R packages} for processing data
-\end{center}
-
-____
-
-\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
-  \includegraphics[width=1\paperwidth]{images/example_code}};
-\color{colorblue}
-\begin{center}
-\hugetext{\montserratfont [Live coding example]}
-\end{center}
 
 ## Resources
 

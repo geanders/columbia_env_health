@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="package.html">
-<link rel="next" href="process.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,8 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
 <li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
 <li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#keeping-things-tidy"><i class="fa fa-check"></i><b>2.2.1</b> Keeping things tidy</a></li>
-<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.2</b> Avoiding repetition</a></li>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.1</b> Avoiding repetition</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
@@ -169,19 +168,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
-<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="collect.html"><a href="collect.html#admin-databases"><i class="fa fa-check"></i><b>5.1.1</b> [Admin databases?]</a></li>
-<li class="chapter" data-level="5.1.2" data-path="collect.html"><a href="collect.html#research-repositories"><i class="fa fa-check"></i><b>5.1.2</b> [Research repositories?]</a></li>
+<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.1</b> Data packages</a></li>
+<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#open-data-apis"><i class="fa fa-check"></i><b>5.2</b> Open data APIs</a></li>
+<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.3</b> Learn more</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.2</b> Data packages</a></li>
-<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#web-services"><i class="fa fa-check"></i><b>5.3</b> Web services [?]</a></li>
-<li class="chapter" data-level="5.4" data-path="collect.html"><a href="collect.html#ropensci"><i class="fa fa-check"></i><b>5.4</b> ROpenSci</a></li>
-<li class="chapter" data-level="5.5" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.5</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>6</b> Process</a><ul>
-<li class="chapter" data-level="6.1" data-path="process.html"><a href="process.html#learn-more-4"><i class="fa fa-check"></i><b>6.1</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>7</b> Final Words</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -212,46 +202,24 @@ technologies (e.g., phone-based Apps) and through new or rapidly changing health
 measurements (e.g., metabolomics, flow cytometry) and associated open-source
 software.</p>
 <p>R is also facilitating and leveraging rapid developments in how researchers can access and
-query secondary data, including from [large admin databases?] and [data repositories
-encouraged or required for some NIH-funded projects]. … This section will provide an
+query secondary data, including from large adminstrative databases, like those maintained
+by the US Census, NOAA, and the USGS. This section will provide an
 introduction to some of the ideas and techniques behind these developments for
 collecting secondary or public-use data for environmental health research, as well as
 give you somee directions on where to go to find R packages that facilitate collecting
 open data from R.</p>
-<div id="open-data" class="section level2">
-<h2><span class="header-section-number">5.1</span> Open data</h2>
-<p>A range of environmental datasets are available online, especially through national agencies.
-For example, [NOAA] provides various weather datasets, while USGS has data on water quality,
-[others]</p>
-<p>You can visit webpages hosted by these agencies where you can download the datasets you need.
-However, this process can become tedious if you need lots of datasets, as may be the case for
-large studies incorporating many cities. Further, downloading the datasets “by hand” is hard
-to make reproducible, unless you meticiously write down all the steps you took as you visited
-the website. This means that your process will be harder for you to repeat in the future
-or for others to replicate.</p>
-<p>A growing collection of R packages are now available that allow you to download datasets
-available online directly from R. This means that you can write an R script for your data
-collection, making this step both better documented and more reproducible. …</p>
-<p>Further, there are now a number of R packages that provide access to open datasets that the
-package maintainer collected and processed and is now making available as an R package.
-[More on R data packages.]</p>
-<div id="admin-databases" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> [Admin databases?]</h3>
-<p>Data collected by government groups like EPA, NOAA, USGS.</p>
-</div>
-<div id="research-repositories" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> [Research repositories?]</h3>
-<p>Here, especially health-related data.
-NIH-supported (e.g., Metabolomics Workbench).
-NHANES?</p>
-</div>
-</div>
 <div id="data-packages" class="section level2">
-<h2><span class="header-section-number">5.2</span> Data packages</h2>
-<p>…</p>
+<h2><span class="header-section-number">5.1</span> Data packages</h2>
+<p>With R, you can create packages that are exclusively or mainly created to share data.
+Some researchers are creating and publishing this type of “data package”, and some
+may be relevant to your research. These packages provide access to open datasets that the
+package maintainer collected and processed and is now making available as an R package,
+but the data is static (as of the last version of the package), rather than interfacing
+to pull the most recent data. However, this set-up can achieve more stability—it won’t
+be broken by a change in an online API.</p>
 <p>This package is too big for CRAN to host, so we have it posted through our own package
-repository.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> Because of this, you’ll need to take a few extra steps
-to download and install the package:<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a></p>
+repository.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> Because of this, you’ll need to take a few extra steps
+to download and install the package:<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(drat)
 <span class="kw">addRepo</span>(<span class="st">&quot;geanders&quot;</span>)
 <span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposuredata&quot;</span>)
@@ -263,7 +231,7 @@ can load them as usual to access both the data and some functions to work with t
 <p>The <code>hurricaneexposure</code> package has a series of functions that let you explore different
 exposures during storms. For example, to get the storms where either New York County, NY,
 or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-level winds
-(17.5 m/s or higher), you can run:<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></p>
+(17.5 m/s or higher), you can run:<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/tab_completion_example.png&quot;</span>)</code></pre>
 <p><img src="images/tab_completion_example.png" width="492" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">county_wind</span>(<span class="dt">counties =</span> <span class="kw">c</span>(<span class="st">&quot;36061&quot;</span>, <span class="st">&quot;25025&quot;</span>),
@@ -294,7 +262,7 @@ or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-le
 <p>If you look up events based on flood events, you can instead run the
 <code>county_events</code> function:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">county_events</span>(<span class="dt">counties =</span> <span class="kw">c</span>(<span class="st">&quot;36061&quot;</span>, <span class="st">&quot;25025&quot;</span>),
-             <span class="dt">start_year =</span> <span class="dv">1988</span>, <span class="dt">end_year =</span> <span class="dv">2015</span>, 
+             <span class="dt">start_year =</span> <span class="dv">1996</span>, <span class="dt">end_year =</span> <span class="dv">2015</span>, 
              <span class="dt">event_type =</span> <span class="st">&quot;flood&quot;</span>)</code></pre>
 <pre><code>##     fips     storm_id closest_time_utc storm_dist       local_time
 ## 1  25025  Dennis-1999 1999-09-08 08:00 390.047523 1999-09-08 04:00
@@ -326,111 +294,154 @@ or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-le
 data for specific storms. For example, to see the rainfall fro Hurricane Ivan in
 2004, you can run:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">map_counties</span>(<span class="dt">storm =</span> <span class="st">&quot;Ivan-2004&quot;</span>, <span class="dt">metric =</span> <span class="st">&quot;rainfall&quot;</span>)</code></pre>
-<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>From this map, you can see that the rain from this storm extended into New
 England, even after the storm looped back around to the east and south. This is
 why New York City had heavy rainfall (and flooding) from this event, but not
 tropical storm-level winds.</p>
 <p>For more on the <code>hurricaneexposure</code> package, see <a href="https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html">its vignette</a>.</p>
 </div>
-<div id="web-services" class="section level2">
-<h2><span class="header-section-number">5.3</span> Web services [?]</h2>
-</div>
-<div id="ropensci" class="section level2">
-<h2><span class="header-section-number">5.4</span> ROpenSci</h2>
-<p>One of the best places to explore R packages for accessing open data for science is
-<a href="https://ropensci.org/"><strong>ROpenSci</strong></a>.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
-Many of its packages facilitate access to databases of open data relevant to scientific
-research that have API access [?]. You can browse through its packages on
-its <a href="https://ropensci.org/packages/"><strong>Packages</strong> page</a></p>
-<p>Examples of some packages relevant to collecting data for environmental health research
-include:</p>
-<ul>
-<li>bomrang: Australian Government Bureau of Meteorology (‘BOM’) Data Client</li>
-<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
-<li>dbhydroR: ‘DBHYDRO’ Hydrologic and Water Quality Data</li>
-<li>essurvey: Download Data from the European Social Survey on the Fly</li>
-<li>FedData: Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources</li>
-<li>camsRad: R Client for CAMS Radiation Service</li>
-<li>ccafs: CCAFS GCM Data R Client</li>
-<li>dbhydroR: R interface to the South Florida Water Management District’s DBHYDRO Database</li>
-<li>biomartr: Genomic Data Retrieval</li>
-<li>clifro: Easily Download and Visualise Climate Data from CliFlo</li>
-<li>DataSpaceR: An R Interface to ‘the CAVD DataSpace’</li>
-<li>essurvey: Download Data from the European Social Survey on the Fly</li>
-<li>fingertipsR: Fingertips Data for Public Health</li>
-<li>getCRUCLdata: Use and Explore ‘CRU’ ‘CL’ v. 2.0 Climatology Elements</li>
-<li>getlandsat: Get Landsat 8 Data from Amazon Public Data Sets</li>
-<li>googleLanguageR: Call Google’s ‘Natural Language’ API, ‘Cloud Translation’ API, ‘Cloud Speech’
-API and ‘Cloud Text-to-Speech’ API</li>
-<li>GSODR: Global Surface Summary of the Day (‘GSOD’) Weather Data Client</li>
-<li>hydroscoper: Interface to the Greek National Data Bank for Hydrometeorological Information</li>
-<li>MODIStsp: A Tool for Automating Download and Preprocessing of MODIS Land Products Data</li>
-<li>nasapower: NASA POWER API Client</li>
-<li>opencage: Interface to the OpenCage API</li>
-<li>osmdata: Import ‘OpenStreetMap’ Data as Simple Features or Spatial Objects</li>
-<li>weathercan: Download Weather Data from the Environment and Climate Change Canada Website</li>
-<li>wateRinfo: Download Time Series Data from Waterinfo.be</li>
-<li>USAboundariesData: Datasets for the ‘USAboundaries’ package</li>
-<li>USAboundaries: Historical and Contemporary Boundaries of the United States of America</li>
-<li>tidyhydat: Extract and Tidy Canadian ‘Hydrometric’ Data</li>
-<li>stats19: Work with Open Road Traffic Casualty Data from Great Britain</li>
-<li>smapr: Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data</li>
-<li>rWBclimate: A package for accessing World Bank climate data</li>
-<li>rusda: Interface to USDA Databases</li>
-<li>rsnps: Get ‘SNP’ (‘Single-Nucleotide’ ‘Polymorphism’) Data on the Web</li>
-<li>rrricanesdata: Data for Atlantic and east Pacific tropical cyclones since 1998</li>
-<li>rrricanes: Web scraper for Atlantic and east Pacific hurricanes and tropical storms</li>
-<li>ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ</li>
-<li>rnoaa: ‘NOAA’ Weather Data from R</li>
-<li>rnaturalearth: World Map Data from Natural Earth</li>
-<li>riem: Accesses Weather Data from the Iowa Environment Mesonet</li>
-<li>rgpdd: R Interface to the Global Population Dynamics Database</li>
-<li>rdhs: API Client and Dataset Management for the Demographic and Health Survey (DHS) Data</li>
-<li>rdefra: Interact with the UK AIR Pollution Database from DEFRA</li>
-<li>prism: Access Data from the Oregon State Prism Climate Project</li>
-</ul>
-<p>Cleaning / exploring data:</p>
-<ul>
-<li>cleanEHR: The Critical Care Clinical Data Processing Tools</li>
-<li>colocr: Conduct Co-localization Analysis of Fluorescence Microscopy Images</li>
-<li>cRegulome: Obtain and Visualize Regulome-Gene Expression Correlations in Cancer</li>
-<li>EndoMineR: Functions to mine endoscopic and associated pathology datasets</li>
-<li>geoaxe: Split ‘Geospatial’ Objects into Pieces</li>
-<li>hddtools: Hydrological Data Discovery Tools</li>
-<li>isdparser: Parse ‘NOAA’ Integrated Surface Data Files</li>
-<li>visdat: Preliminary Visualisation of Data</li>
-<li>skimr: A frictionless, pipeable approach to dealing with summary statistics</li>
-</ul>
+<div id="open-data-apis" class="section level2">
+<h2><span class="header-section-number">5.2</span> Open data APIs</h2>
+<p>A range of environmental datasets are available online, especially through national agencies.
+For example, NOAA provides various weather datasets, while USGS has data on water quality,</p>
+<p>You can visit webpages hosted by these agencies where you can download the datasets you need.
+However, this process can become tedious if you need lots of datasets, as may be the case for
+large studies incorporating many cities. Further, downloading the datasets “by hand” is hard
+to make reproducible, unless you meticiously write down all the steps you took as you visited
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate.</p>
+<p>A growing collection of R packages are now available that allow you to download datasets
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible.</p>
+<p>One great example is the <code>tigris</code> package. This package lets you pull
+spatial data into R directly from the US Census. To get spatial data for all the counties in
+Florida, you can run:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tigris)
+fl_counties &lt;-<span class="st"> </span><span class="kw">counties</span>(<span class="dt">state =</span> <span class="st">&quot;FL&quot;</span>,
+                        <span class="dt">class =</span> <span class="st">&quot;sf&quot;</span>)</code></pre>
+<p>Now you can plot this data with <code>ggplot</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> fl_counties, 
+          <span class="kw">aes</span>(<span class="dt">fill =</span> ALAND)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_fill_viridis_c</span>(<span class="dt">name =</span> <span class="st">&quot;Land area&quot;</span>, <span class="dt">label =</span> scales<span class="op">::</span>scientific) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text =</span> <span class="kw">element_blank</span>(),
+        <span class="dt">axis.ticks =</span> <span class="kw">element_blank</span>())</code></pre>
+<p><img src="columbia_env_health_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="learn-more-3" class="section level2">
-<h2><span class="header-section-number">5.5</span> Learn more</h2>
-<ul>
-<li>ROpenSci</li>
-<li>The R Journal</li>
-<li>CRAN task views?</li>
-<li>ROpenSci articles?</li>
-<li>JOSS?</li>
-</ul>
+<h2><span class="header-section-number">5.3</span> Learn more</h2>
+<p>One of the best places to explore R packages for accessing open data for science is
+<a href="https://ropensci.org/">ROpenSci</a>.
+Many of its packages facilitate access to databases of open data relevant to scientific
+research that have web services. You can browse through its packages on
+its <a href="https://ropensci.org/packages/">Packages page</a>. You may also want to
+check its affiliated <a href="https://joss.theoj.org/">Journal of Open-Source Software</a>.
+Authors of these packages will also sometimes publish associated articles in
+<a href="https://journal.r-project.org/">The R Journal</a>, so it’s worth browsing through
+that occasionally.
+Finally, Twitter is a great place ot keep an eye out for new packages, including
+those that can help you collect data. Follow the “#rstats” tag.</p>
 
+<div id="refs" class="references">
+<div>
+<p>Bryan, Jennifer. 2018. “Excuse Me, Do You Have a Moment to Talk About Version Control?” <em>The American Statistician</em> 72 (1): 20–27.</p>
+</div>
+<div>
+<p>Waller, Lance A. 2018. “Documenting and Evaluating Data Science Contributions in Academic Promotion in Departments of Statistics and Biostatistics.” <em>The American Statistician</em> 72 (1): 11–19.</p>
+</div>
+<div>
+<p>Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. " O’Reilly Media, Inc.".</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis">https://CRAN.R-project.org/package=usethis</a>.</p>
+</div>
+<div>
+<p>Wickham, Hadley, Jim Hester, and Winston Chang. 2019. <em>Devtools: Tools to Make Developing R Packages Easier</em>. <a href="https://github.com/r-lib/devtools">https://github.com/r-lib/devtools</a>.</p>
 </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="footnotes">
 <hr />
-<ol start="16">
-<li id="fn16"><p>For more on how and why we did this, see
+<ol start="12">
+<li id="fn12"><p>For more on how and why we did this, see
 <a href="https://journal.r-project.org/archive/2017/RJ-2017-026/">an article</a> we wrote about the
-process for <strong>The R Journal</strong>.<a href="collect.html#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p>If you don’t have the <code>drat</code> package, install it in
-the usual way with <code>install.packages("drat")</code>.<a href="collect.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>For any of these functions, you can find out what parameters
+process for <strong>The R Journal</strong>.<a href="collect.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>If you don’t have the <code>drat</code> package, install it in
+the usual way with <code>install.packages("drat")</code>.<a href="collect.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>For any of these functions, you can find out what parameters
 to include, and in what format, but opening the helpfile for the function. For example, once you’ve
 loaded the <code>hurricaneexposure</code> package, you can open the helpfile for the <code>county_wind</code> function
 by calling <code>?county_wind</code>. Also helpful for navigating packages: take advantage of the <code>package::function</code>
 notation and RStudio’s tab completion to look up the names of functions in a package. For example,
 type <code>hurricaneexposure::</code>. A pop-up window should show up with all the functions in the package (press
-Tab if the pop-up doesn’t automatically open).<a href="collect.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p><a href="https://ropensci.org/"><strong>ROpenSci</strong></a>. …<a href="collect.html#fnref19" class="footnote-back">↩</a></p></li>
+Tab if the pop-up doesn’t automatically open).<a href="collect.html#fnref14" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -438,8 +449,8 @@ Tab if the pop-up doesn’t automatically open).<a href="collect.html#fnref18" c
           </div>
         </div>
       </div>
-<a href="package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="process.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="package.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

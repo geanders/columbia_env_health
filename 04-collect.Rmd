@@ -9,49 +9,23 @@ measurements (e.g., metabolomics, flow cytometry) and associated open-source
 software. 
 
 R is also facilitating and leveraging rapid developments in how researchers can access and
-query secondary data, including from [large admin databases?] and [data repositories
-encouraged or required for some NIH-funded projects]. ... This section will provide an 
+query secondary data, including from large adminstrative databases, like those maintained
+by the US Census, NOAA, and the USGS. This section will provide an 
 introduction to some of the ideas and techniques behind these developments for 
 collecting secondary or public-use data for environmental health research, as well as
 give you somee directions on where to go to find R packages that facilitate collecting
 open data from R.
 
 
-
-## Open data
-
-A range of environmental datasets are available online, especially through national agencies. 
-For example, [NOAA] provides various weather datasets, while USGS has data on water quality, 
-[others]
-
-You can visit webpages hosted by these agencies where you can download the datasets you need. 
-However, this process can become tedious if you need lots of datasets, as may be the case for 
-large studies incorporating many cities. Further, downloading the datasets "by hand" is hard 
-to make reproducible, unless you meticiously write down all the steps you took as you visited 
-the website. This means that your process will be harder for you to repeat in the future
-or for others to replicate. 
-
-A growing collection of R packages are now available that allow you to download datasets 
-available online directly from R. This means that you can write an R script for your data
-collection, making this step both better documented and more reproducible. ...
-
-Further, there are now a number of R packages that provide access to open datasets that the 
-package maintainer collected and processed and is now making available as an R package. 
-[More on R data packages.]
-
-### [Admin databases?]
-
-Data collected by government groups like EPA, NOAA, USGS. 
-
-### [Research repositories?]
-
-Here, especially health-related data. 
-NIH-supported (e.g., Metabolomics Workbench).
-NHANES?
-
 ## Data packages
 
-...
+With R, you can create packages that are exclusively or mainly created to share data. 
+Some researchers are creating and publishing this type of "data package", and some
+may be relevant to your research. These packages provide access to open datasets that the 
+package maintainer collected and processed and is now making available as an R package, 
+but the data is static (as of the last version of the package), rather than interfacing
+to pull the most recent data. However, this set-up can achieve more stability---it won't 
+be broken by a change in an online API. 
 
 This package is too big for CRAN to host, so we have it posted through our own package
 repository.^[For more on how and why we did this, see 
@@ -102,7 +76,7 @@ If you look up events based on flood events, you can instead run the
 
 ```{r}
 county_events(counties = c("36061", "25025"),
-             start_year = 1988, end_year = 2015, 
+             start_year = 1996, end_year = 2015, 
              event_type = "flood")
 ```
 
@@ -121,80 +95,59 @@ tropical storm-level winds.
 
 For more on the `hurricaneexposure` package, see [its vignette](https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html).
 
-## Web services [?]
+## Open data APIs
 
-## ROpenSci
+A range of environmental datasets are available online, especially through national agencies. 
+For example, NOAA provides various weather datasets, while USGS has data on water quality, 
 
-One of the best places to explore R packages for accessing open data for science is 
-[**ROpenSci**](https://ropensci.org/).^[[**ROpenSci**](https://ropensci.org/). ...]
-Many of its packages facilitate access to databases of open data relevant to scientific
-research that have API access [?]. You can browse through its packages on 
-its [**Packages** page](https://ropensci.org/packages/) 
+You can visit webpages hosted by these agencies where you can download the datasets you need. 
+However, this process can become tedious if you need lots of datasets, as may be the case for 
+large studies incorporating many cities. Further, downloading the datasets "by hand" is hard 
+to make reproducible, unless you meticiously write down all the steps you took as you visited 
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate. 
 
-Examples of some packages relevant to collecting data for environmental health research 
-include: 
+A growing collection of R packages are now available that allow you to download datasets 
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible. 
 
-- bomrang: Australian Government Bureau of Meteorology ('BOM') Data Client
-- clifro: Easily Download and Visualise Climate Data from CliFlo
-- dbhydroR: 'DBHYDRO' Hydrologic and Water Quality Data
-- essurvey: Download Data from the European Social Survey on the Fly
-- FedData: Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources
-- camsRad: R Client for CAMS Radiation Service
-- ccafs: CCAFS GCM Data R Client
-- dbhydroR: R interface to the South Florida Water Management District's DBHYDRO Database
-- biomartr: Genomic Data Retrieval
-- clifro: Easily Download and Visualise Climate Data from CliFlo
-- DataSpaceR: An R Interface to 'the CAVD DataSpace'
-- essurvey: Download Data from the European Social Survey on the Fly
-- fingertipsR: Fingertips Data for Public Health
-- getCRUCLdata: Use and Explore 'CRU' 'CL' v. 2.0 Climatology Elements
-- getlandsat: Get Landsat 8 Data from Amazon Public Data Sets
-- googleLanguageR: Call Google's 'Natural Language' API, 'Cloud Translation' API, 'Cloud Speech' 
-API and 'Cloud Text-to-Speech' API
-- GSODR: Global Surface Summary of the Day ('GSOD') Weather Data Client
-- hydroscoper: Interface to the Greek National Data Bank for Hydrometeorological Information
-- MODIStsp: A Tool for Automating Download and Preprocessing of MODIS Land Products Data
-- nasapower: NASA POWER API Client
-- opencage: Interface to the OpenCage API
-- osmdata: Import 'OpenStreetMap' Data as Simple Features or Spatial Objects
-- weathercan: Download Weather Data from the Environment and Climate Change Canada Website
-- wateRinfo: Download Time Series Data from Waterinfo.be
-- USAboundariesData: Datasets for the 'USAboundaries' package
-- USAboundaries: Historical and Contemporary Boundaries of the United States of America
-- tidyhydat: Extract and Tidy Canadian 'Hydrometric' Data
-- stats19: Work with Open Road Traffic Casualty Data from Great Britain
-- smapr: Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data
-- rWBclimate: A package for accessing World Bank climate data
-- rusda: Interface to USDA Databases
-- rsnps: Get 'SNP' ('Single-Nucleotide' 'Polymorphism') Data on the Web
-- rrricanesdata: Data for Atlantic and east Pacific tropical cyclones since 1998
-- rrricanes: Web scraper for Atlantic and east Pacific hurricanes and tropical storms
-- ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ
-- rnoaa: 'NOAA' Weather Data from R
-- rnaturalearth: World Map Data from Natural Earth
-- riem: Accesses Weather Data from the Iowa Environment Mesonet
-- rgpdd: R Interface to the Global Population Dynamics Database
-- rdhs: API Client and Dataset Management for the Demographic and Health Survey (DHS) Data
-- rdefra: Interact with the UK AIR Pollution Database from DEFRA
-- prism: Access Data from the Oregon State Prism Climate Project
+One great example is the `tigris` package. This package lets you pull
+spatial data into R directly from the US Census. To get spatial data for all the counties in 
+Florida, you can run:
 
-Cleaning / exploring data: 
+```{r eval = FALSE}
+library(tigris)
+fl_counties <- counties(state = "FL",
+                        class = "sf")
+```
+```{r echo = FALSE}
+load("data/fl_counties.RData")
+```
 
-- cleanEHR: The Critical Care Clinical Data Processing Tools
-- colocr: Conduct Co-localization Analysis of Fluorescence Microscopy Images
-- cRegulome: Obtain and Visualize Regulome-Gene Expression Correlations in Cancer
-- EndoMineR: Functions to mine endoscopic and associated pathology datasets
-- geoaxe: Split 'Geospatial' Objects into Pieces
-- hddtools: Hydrological Data Discovery Tools
-- isdparser: Parse 'NOAA' Integrated Surface Data Files
-- visdat: Preliminary Visualisation of Data
-- skimr: A frictionless, pipeable approach to dealing with summary statistics
+Now you can plot this data with `ggplot`: 
+
+```{r fig.align = "center"}
+library(ggplot2)
+ggplot() + 
+  geom_sf(data = fl_counties, 
+          aes(fill = ALAND)) + 
+  theme_bw() + 
+  scale_fill_viridis_c(name = "Land area", label = scales::scientific) + 
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank())
+```
 
 
 ## Learn more
 
-- ROpenSci
-- The R Journal
-- CRAN task views?
-- ROpenSci articles?
-- JOSS?
+One of the best places to explore R packages for accessing open data for science is 
+[ROpenSci](https://ropensci.org/).
+Many of its packages facilitate access to databases of open data relevant to scientific
+research that have web services. You can browse through its packages on 
+its [Packages page](https://ropensci.org/packages/). You may also want to 
+check its affiliated [Journal of Open-Source Software](https://joss.theoj.org/).
+Authors of these packages will also sometimes publish associated articles in 
+[The R Journal](https://journal.r-project.org/), so it's worth browsing through
+that occasionally. 
+Finally, Twitter is a great place ot keep an eye out for new packages, including
+those that can help you collect data. Follow the "#rstats" tag.

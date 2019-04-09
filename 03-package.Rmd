@@ -10,7 +10,7 @@ private use. However, once you start writing packages, you will see how straight
 it is, and you may want to take the extra steps to prepare your package for CRAN and 
 submit it.
 
-An R package is just "a directory of files which extend R" [cite "Writing R Extensions"].
+An R package is just "a directory of files which extend R" (https://cran.r-project.org/doc/manuals/r-release/R-exts.html).
 You should consider writing your own package anytime you find yourself cutting and pasting
 functions to different directories on your computer, so you can use them for different 
 projects. The RStudio team has created a number of tools to make this process easier, including
@@ -46,7 +46,7 @@ Years ago, you would need to write this documentation in separate ".Rd" files
 and save them in the "man" subdirectory. Now, the easiest thing to do is to use
 "roxygen" conventions to write the help information right above each function.
 With this style, you'll use a special type of commenting character (`#'`) at the
-start of each line with documentation, and there are special codes (e.s.,
+start of each line with documentation, and there are special codes (e.g.,
 `@param` when you're defining one of the function's parameters) to annotate this
 code. This help documentation will then, when you build your package, be
 converted to the ".Rd" files you used to have to write yourself and saved in the

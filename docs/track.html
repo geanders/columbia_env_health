@@ -136,8 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
 <li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
 <li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#keeping-things-tidy"><i class="fa fa-check"></i><b>2.2.1</b> Keeping things tidy</a></li>
-<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.2</b> Avoiding repetition</a></li>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.1</b> Avoiding repetition</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
@@ -169,19 +168,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
-<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="collect.html"><a href="collect.html#admin-databases"><i class="fa fa-check"></i><b>5.1.1</b> [Admin databases?]</a></li>
-<li class="chapter" data-level="5.1.2" data-path="collect.html"><a href="collect.html#research-repositories"><i class="fa fa-check"></i><b>5.1.2</b> [Research repositories?]</a></li>
+<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.1</b> Data packages</a></li>
+<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#open-data-apis"><i class="fa fa-check"></i><b>5.2</b> Open data APIs</a></li>
+<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.3</b> Learn more</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.2</b> Data packages</a></li>
-<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#web-services"><i class="fa fa-check"></i><b>5.3</b> Web services [?]</a></li>
-<li class="chapter" data-level="5.4" data-path="collect.html"><a href="collect.html#ropensci"><i class="fa fa-check"></i><b>5.4</b> ROpenSci</a></li>
-<li class="chapter" data-level="5.5" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.5</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>6</b> Process</a><ul>
-<li class="chapter" data-level="6.1" data-path="process.html"><a href="process.html#learn-more-4"><i class="fa fa-check"></i><b>6.1</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>7</b> Final Words</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -233,7 +223,7 @@ On Mac or Linux computers, you should already have access to a Bash shell.</p>
 <h3><span class="header-section-number">3.1.1</span> Configuring git</h3>
 <p>Before you use git, you should configure it. For example, you should make sure
 it has your name and email address. You can configure git with commands at a
-Bash shell.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> For example, I
+Bash shell.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> For example, I
 would run the following code at a shell to configure git to have my proper user
 name and email:</p>
 <pre><code>git config --global user.name &quot;Brooke Anderson&quot;
@@ -315,7 +305,7 @@ git and GitHub as an R project, although it isn’t technically required).</p>
 <p>While R Projects have this additional information saved as “.RProj” files, git
 repositories have this information in a directory called “.git”. Because this
 pathname starts with a dot, it won’t show up in many of the ways you list files
-in a directory.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+in a directory.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
 <p>If you have a local directory that you would like to push to GitHub, these are
 the steps to do it. First, you need to make sure that the directory is under git
 version control. See the notes on initializing a repository. Next, you need to
@@ -477,7 +467,7 @@ is also invaluable to quickly look up how to do something in git. There are
 many tasks in git where I never remember the command, but I do remember enough about what
 the functionality is called to be able to quickly use Google to find a StackOverflow thread
 that gives me the call. Reading through a book or tutorial on git, even if you don’t
-remember the commands you learn, can help you learn some of the vocabulary<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>,
+remember the commands you learn, can help you learn some of the vocabulary<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>,
 and knowing that vocabulary will help you search for answers when you need them.</p>
 <p>Finally, if you can find a way to do it, I think the best and easiest way to learn to use git
 and GitHub with R is to collaborate with someone who’s used these tools before. Most of the
@@ -488,7 +478,7 @@ project can diagnose and get you over those bumps as you learn the ropes.</p>
 
 </div>
 </div>
-<h3> Final Words</h3>
+<h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-bryan2018excuse">
 <p>Bryan, Jennifer. 2018. “Excuse Me, Do You Have a Moment to Talk About Version Control?” <em>The American Statistician</em> 72 (1): 20–27.</p>
@@ -496,16 +486,16 @@ project can diagnose and get you over those bumps as you learn the ropes.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>If you are using Windows, search for “Bash” among your programs.
+<ol start="4">
+<li id="fn4"><p>If you are using Windows, search for “Bash” among your programs.
 You should be able to fine the Bash emulator that cam with your git install. If
 you are using a Mac, you’ll want to open “Terminal”. If you’re using Linux, you
-almost certainly already know your way around a Bash shell.<a href="track.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>From a Bash shell, you can see files that start with <code>.</code> by running
-<code>ls -a</code> from within that directory.<a href="track.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>Some good git-related
+almost certainly already know your way around a Bash shell.<a href="track.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>From a Bash shell, you can see files that start with <code>.</code> by running
+<code>ls -a</code> from within that directory.<a href="track.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Some good git-related
 words to know to help you search for calls for rarer tasks: “commit”, “branch”, “merge”, “revert”,
-“push”, “pull”, “merge conflict”, “remote”, “origin”, “master”, “fork”, “clone”, “pull request”.<a href="track.html#fnref10" class="footnote-back">↩</a></p></li>
+“push”, “pull”, “merge conflict”, “remote”, “origin”, “master”, “fork”, “clone”, “pull request”.<a href="track.html#fnref6" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

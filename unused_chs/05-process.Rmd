@@ -1,0 +1,43 @@
+# Process
+
+`r newthought("For environmental health research,")` once you have collected your raw data, 
+you will often need to do a bit of work processing the data before you can apply epidemiological
+models. As one example, you may pull **gridded data**^[**gridded data.** ...] on an 
+environmental exposure of interest, but need to link it with health data that is aggregated
+based on administrative boundaries (e.g., counties). As another example, you might have 
+daily temperature data and want to identify the dates of heat waves in a community based on
+that data. 
+
+R has some wonderful tools for processing data that are relevant to environmental health research. 
+Here, I'll focus on tools from a few packages I've developed, but in "Learn more", I'll also 
+point you to more resources for finding R tools that might be relevant to your own environmental 
+health research projects. 
+
+I strongly encourage you, as you work through this section, to start thinking about possibly 
+creating your own R packages to solve data processing tasks you commonly face for your research. 
+All the code for the packages I'll discuss is available on GitHub, so you can look at this code
+as examples as you think about writing your own packages. 
+
+
+
+## Learn more
+
+- CRAN taskviews
+- Bioconductor [taskviews?]
+- ROpenSci
+
+[CRAN] One excellent example of CRAN-based packages [?] for processing environmental 
+data is the suite of packages created and maintained by scientists at the **United States
+Geological Survey (USGS)**^[**United States Geological Survey (USGS).** ...]
+This group has a collection of packages, listed at ... . The packages include ...
+For a very cool example of using some of these packages for a timely application for 
+environmental health, check out these visualizations of flooding during Hurricanes ..., 
+as well as the code used to create them. 
+
+For biological data, **Bioconductor**^[**Bioconductor.** ...] can be a great
+resource for finding packages to process and pull out relevant data. For example, 
+Bioconductor has a large collection of packages for working with biological data collected 
+through flow cytometry, mass spectrometry (e.g., metabolomics), RNA sequencing, [others]
+
+
+

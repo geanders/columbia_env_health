@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  8 APR 2019 22:38
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  9 APR 2019 00:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1609,47 +1609,45 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/translator/trans
 lator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-)
-No file workshop_slides.nav.
-[1
+) (./workshop_slides.nav) [1
 
 ] [2
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+NotoSans-Regular(1) on
- input line 191.
-LaTeX Font Info:    No file OT1NotoSans-Regular(1).fd. on input line 191.
+ input line 189.
+LaTeX Font Info:    No file OT1NotoSans-Regular(1).fd. on input line 189.
 
 LaTeX Font Warning: Font shape `OT1/NotoSans-Regular(1)/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 191.
+(Font)              using `OT1/cmr/m/n' instead on input line 189.
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 191.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 189.
 
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 191
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 189
 .
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 191
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 189
 .
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 191.
+(Font)              <14.4> on input line 189.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 191.
+(Font)              <10> on input line 189.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 191.
-LaTeX Font Info:    Try loading font information for U+msa on input line 191.
+(Font)              <7> on input line 189.
+LaTeX Font Info:    Try loading font information for U+msa on input line 189.
 
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 191.
+LaTeX Font Info:    Try loading font information for U+msb on input line 189.
 
 (/Users/georgianaanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1659,9 +1657,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 210.
+(Font)              <17.28> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 210.
+(Font)              <12> on input line 208.
 [5
 
 ] [6
@@ -1674,181 +1672,214 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [10
 
-] [11
+]
+File: images/FileSystemCartoon.jpg Graphic file (type bmp)
+<images/FileSystemCartoon.jpg>
+[11
 
 ] [12
 
 ]
+File: images/directory_organization.png Graphic file (type bmp)
+<images/directory_organization.png>
+[13
+
+] [14
+
+]
 \openout4 = `workshop_slides.vrb'.
 
-(./workshop_slides.vrb) [13
+(./workshop_slides.vrb) [15
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb) [16
 
 ]
 File: images/create_r_project.png Graphic file (type bmp)
 <images/create_r_project.png>
 
-Overfull \hbox (61.60008pt too wide) in paragraph at lines 313--313
+Overfull \hbox (61.60008pt too wide) in paragraph at lines 349--349
 [][]  
  []
 
 File: images/selecting_r_project.png Graphic file (type bmp)
 <images/selecting_r_project.png>
-[14
+[17
 
 ]
 File: images/navigating_projects.png Graphic file (type bmp)
 <images/navigating_projects.png>
 
-Overfull \vbox (22.68779pt too high) detected at line 320
+Overfull \vbox (22.68779pt too high) detected at line 356
  []
 
-[15
+[18
 
 ]
 File: images/example_repo.png Graphic file (type bmp)
 <images/example_repo.png>
-[16
+[19
 
 ]
 File: images/hidden_files.png Graphic file (type bmp)
 <images/hidden_files.png>
-[17
-
-]
-File: images/repro_research_book.jpg Graphic file (type bmp)
-<images/repro_research_book.jpg>
-[18
+[20
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
-[19
+[21
 
-] [20
+]
+File: images/repro_research_book.jpg Graphic file (type bmp)
+<images/repro_research_book.jpg>
+[22
+
+] [23
+
+]
+File: images/GitHubDiagram.png Graphic file (type bmp)
+<images/GitHubDiagram.png>
+[24
 
 ]
 File: images/hidden_files.png Graphic file (type bmp)
 <images/hidden_files.png>
-[21
+[25
+
+]
+File: images/ExampleGitWindow.png Graphic file (type bmp)
+<images/ExampleGitWindow.png>
+[26
+
+]
+File: images/ExampleCommitWindow.png Graphic file (type bmp)
+<images/ExampleCommitWindow.png>
+[27
+
+]
+File: images/git_commit.png Graphic file (type bmp)
+<images/git_commit.png>
+[28
+
+]
+File: images/ExampleHistoryWindow.png Graphic file (type bmp)
+<images/ExampleHistoryWindow.png>
+[29
+
+]
+File: images/example_code.png Graphic file (type bmp)
+<images/example_code.png>
+[30
 
 ]
 File: images/maze-minecraft.png Graphic file (type bmp)
 <images/maze-minecraft.png>
 
-Overfull \vbox (6.66086pt too high) detected at line 391
+Overfull \vbox (6.66086pt too high) detected at line 491
  []
 
-[22
+[31
 
 ]
 File: images/github_pages.png Graphic file (type bmp)
 <images/github_pages.png>
-[23
+[32
 
-]
-File: images/example_code.png Graphic file (type bmp)
-<images/example_code.png>
-[24
-
-] [25
+] [33
 
 ]
 File: images/JeffLeekQuote.png Graphic file (type bmp)
 <images/JeffLeekQuote.png>
-[26
-
-] [27
-
-]
-File: images/weathermetrics_package.png Graphic file (type bmp)
-<images/weathermetrics_package.png>
-[28
-
-]
-File: images/package_template.png Graphic file (type bmp)
-<images/package_template.png>
-[29
-
-] [30
-
-]
-File: images/example_code.png Graphic file (type bmp)
-<images/example_code.png>
-[31
-
-]
-File: images/p_packages_cover.png Graphic file (type bmp)
-<images/p_packages_cover.png>
-[32
-
-]
-File: images/package-development.pdf Graphic file (type pdf)
-<use images/package-development.pdf>
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 521.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 521.
-[33
-
-]
-File: images/train_dragon.jpeg Graphic file (type bmp)
-<images/train_dragon.jpeg>
-
-Overfull \vbox (8.4402pt too high) detected at line 528
- []
-
 [34
 
 ] [35
 
 ]
-\openout4 = `workshop_slides.vrb'.
-
-(./workshop_slides.vrb) [36
-
-]
-\openout4 = `workshop_slides.vrb'.
-
-(./workshop_slides.vrb) [37
+File: images/weathermetrics_package.png Graphic file (type bmp)
+<images/weathermetrics_package.png>
+[36
 
 ]
-\openout4 = `workshop_slides.vrb'.
+File: images/package_template.png Graphic file (type bmp)
+<images/package_template.png>
+[37
 
-(./workshop_slides.vrb
-File: workshop_slides_files/figure-beamer/unnamed-chunk-14-1.pdf Graphic file (
-type pdf)
-<use workshop_slides_files/figure-beamer/unnamed-chunk-14-1.pdf>
-) [38
-
-]
-\openout4 = `workshop_slides.vrb'.
-
-(./workshop_slides.vrb
-File: workshop_slides_files/figure-beamer/unnamed-chunk-17-1.pdf Graphic file (
-type pdf)
-<use workshop_slides_files/figure-beamer/unnamed-chunk-17-1.pdf>
-) [39
+] [38
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
+[39
+
+]
+File: images/p_packages_cover.png Graphic file (type bmp)
+<images/p_packages_cover.png>
 [40
+
+]
+File: images/package-development.pdf Graphic file (type pdf)
+<use images/package-development.pdf>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 609.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 609.
+[41
+
+]
+File: images/train_dragon.jpeg Graphic file (type bmp)
+<images/train_dragon.jpeg>
+
+Overfull \vbox (8.4402pt too high) detected at line 616
+ []
+
+[42
+
+] [43
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb) [44
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb) [45
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb
+File: workshop_slides_files/figure-beamer/unnamed-chunk-21-1.pdf Graphic file (
+type pdf)
+<use workshop_slides_files/figure-beamer/unnamed-chunk-21-1.pdf>
+) [46
+
+]
+\openout4 = `workshop_slides.vrb'.
+
+(./workshop_slides.vrb
+File: workshop_slides_files/figure-beamer/unnamed-chunk-24-1.pdf Graphic file (
+type pdf)
+<use workshop_slides_files/figure-beamer/unnamed-chunk-24-1.pdf>
+) [47
+
+]
+File: images/example_code.png Graphic file (type bmp)
+<images/example_code.png>
+[48
 
 ]
 File: images/CRAN_package_10000.png Graphic file (type bmp)
 <images/CRAN_package_10000.png>
-[41
+[49
 
-] [42
+] [50
 
-]
-File: images/example_code.png Graphic file (type bmp)
-<images/example_code.png>
-[43
-
-] [44
-
-] [45
+] [51
 
 ]
 \tf@nav=\write7
@@ -1860,11 +1891,11 @@ File: images/example_code.png Graphic file (type bmp)
 \tf@snm=\write9
 \openout9 = `workshop_slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 689.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 689.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
 (./workshop_slides.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 689.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 689.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 755.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 755.
 Package rerunfilecheck Info: File `workshop_slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
@@ -1872,12 +1903,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 36424 strings out of 494921
- 740971 string characters out of 6174292
- 809311 words of memory out of 5000000
- 39683 multiletter control sequences out of 15000+600000
+ 36567 strings out of 494921
+ 742809 string characters out of 6174292
+ 809868 words of memory out of 5000000
+ 39815 multiletter control sequences out of 15000+600000
  542356 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  50i,15n,80p,802b,807s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on workshop_slides.pdf (45 pages).
+Output written on workshop_slides.pdf (51 pages).

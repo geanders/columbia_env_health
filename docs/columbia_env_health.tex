@@ -146,8 +146,8 @@ suggest that you look at the latest on tidyverse functions for cleaning and
 visualizing data (the \texttt{dplyr} and \texttt{ggplot2} packages are at the heart of this),
 new developments on working with geospatial data with the \texttt{sf} package, creating
 interactive graphics with \texttt{htmlwidgets}, and creating reports, blogs, and books
-through the \texttt{rmarkdown} framework. In the conclusion to this booklet, I'll
-provide some references for learning more about all of these topics.
+through the \texttt{rmarkdown} framework. These are all areas for you to check out as you
+continue developing how you use R for research.
 
 Click on the \textbf{Next} button (or navigate using the
 links at the top of the page) to continue.
@@ -160,8 +160,8 @@ You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we'll be
 using will require newer versions of R and RStudio to work. You can run
 \texttt{sessionInfo()} in R to find out the version of R you have installed. Compare
-this version to the latest R release version listed at the \textbf{Comprehensive R
-Archive Network (CRAN)}\footnote{\textbf{Comprehensive R Archive Network (CRAN).} \ldots{}}
+this version to the latest R release version listed at the Comprehensive R
+Archive Network (CRAN).
 
 To try out the examples, you will also need a bit more set-up:
 
@@ -188,9 +188,10 @@ This section will walk you through each step.
 \end{enumerate}
 
 In the workshop, you will learn how to use \textbf{git}.{[}\^{}\textbf{git.} Open-source version control
-software \ldots{}{]} To try the examples, you will need to install git to your computer and make
+software that can be easily integrated with R projects.{]} To try the examples, you will need to
+install git to your computer and make
 sure that your installation of RStudio can find this software, so you can use git for version
-control for R Projects. \ldots{}
+control for R Projects. There are more details on this process in the ``Track'' section.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -207,7 +208,7 @@ You'll also learn how to share and collaborate on an R Project using \textbf{Git
   code and software. Other online git platforms exist and are used by some researchers,
   including \textbf{GitLab}. Once you've mastered using GitHub, you should be able to easy
   transfer those skills to other platforms like GitLab.} You will need to get a GitHub
-account to be able to post repositories on GitHub. \ldots{}
+account to be able to post repositories on GitHub.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -222,10 +223,20 @@ need, run the following code in your version of R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"forcats"}\NormalTok{, }
-    \StringTok{"magrittr"}\NormalTok{, }\StringTok{"dplyr"}\NormalTok{, }\StringTok{"lubridate"}\NormalTok{, }\StringTok{"sf"}\NormalTok{, }\StringTok{"tigris"}\NormalTok{, }
-    \StringTok{"DT"}\NormalTok{, }\StringTok{"plotly"}\NormalTok{, }\StringTok{"leaflet"}\NormalTok{, }\StringTok{"flexdashboard"}\NormalTok{, }
-    \StringTok{"tidyr"}\NormalTok{, }\StringTok{"stringr"}\NormalTok{))}
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\StringTok{"drat"}\NormalTok{, }\StringTok{"tigris"}\NormalTok{, }
+    \StringTok{"ggplot2"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Also, you'll want to install the \texttt{hurricaneexposuredata} and \texttt{hurricaneexposure} packages, which
+you need to do in a bit of a different way:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(drat)}
+\KeywordTok{addRepo}\NormalTok{(}\StringTok{"geanders"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"hurricaneexposuredata"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"hurricaneexposure"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -278,11 +289,11 @@ project in a single and exclusive directory.
 
 \newthought{RStudio allows you to} create ``Projects'', which help with this
 organization. An R Project is very simple---it's just a file directory, with an
-extra subdirectory added to the directory {[}with settings?{]}. This directory is
-saved as a \textbf{dot file}\footnote{\textbf{dot file.} \ldots{}}, so you probably won't be able to see it
-listed if you look at the directory contents using your {[}file viewer?{]}. If you'd like
+extra subdirectory added to the directory with settings to remind RStudio about for the project. This directory is
+saved as a dot file, so you probably won't be able to see it
+listed if you look at the directory contents using your computer's file finder. If you'd like
 to see the listing (or delete it by hand, although you likely won't ever need to
-do this), check the settings for your {[}file viewer?{]}, and see if you have the option
+do this), check the settings for your file finder, and see if you have the option
 to show all files. Alternatively, you can use the ``list'' command with the ``all'' option
 (\texttt{ls\ -a}) at a Bash shell to view all files and subdirectories in a directory.
 
@@ -306,7 +317,7 @@ your computer's files to find an existing directory to make into an R Project.
 Once you've created an R Project, you can open it in RStudio; opening an R Project will set
 the project's directory as your working directory, opening a ``Files'' window with all the
 subdirectories and files in the project directory and allowing you to run code with
-\textbf{relative filenames}\footnote{\textbf{relative filename.} \ldots{}} from the project's directory. If you
+relative filenames from the project's directory. If you
 share the R Project with someone else,\footnote{One way to do this would be to zipped the directory
   into a single file and share it by email. Another is to use git version control, post the
   directory to GitHub, and share the directory from there.} he or she will also be able to
@@ -316,19 +327,13 @@ One benefit of R Projects is that it is very easy to initialize them as git repo
 A later section (``Track'') will go over how to initialize and use git version control for
 R Projects. You will also definitely want to use an R Project for any R package you write,
 as this will introduce a lot of functionality that ``plays well'' with the \texttt{devtools} package
-to make it easier to write, build, and publish an R package {[}?{]}.
+to make it easier to write, build, and publish an R package.
 
 \hypertarget{directory-organization}{%
 \section{Directory organization}\label{directory-organization}}
 
-\ldots{}
-
-\hypertarget{keeping-things-tidy}{%
-\subsection{Keeping things tidy}\label{keeping-things-tidy}}
-
-My desk at work is very messy, with lots of paper printouts piled up. My car and my closet
-aren't terribly tidy, either. But I do keep my project directories very tidy, and I
-strongly recommend the practice.
+My desk at work is very messy, with lots of paper printouts piled up. But I do
+keep my project directories very tidy, and I strongly recommend the practice.
 
 This goes beyond ``well-organized'', which we just covered (putting all project
 files in one directory, using subdirectories to divide up files in a project,
@@ -388,14 +393,13 @@ learning more about package development.
 \hypertarget{learn-more}{%
 \section{Learn more}\label{learn-more}}
 
-{[}R Reproc. Research{]} is an excellent book with advice on improving the reproducibility of
+\href{https://www.amazon.com/Reproducible-Research-Studio-Chapman-Hall/dp/1466572841}{Reproducible Research with R and R Studio} is an excellent book with advice on improving the reproducibility of
 projects using R, including academic research projects.
 
 A few good articles have come out recently that describe project organization within
-the scientific fields of {[}biology{]} and {[}archaeology{]}. {[}One has links to example repositories?{]}\\
-Other papers discuss project organization in the context of reproducibility, presenting
-the idea of creating a \textbf{research compendium}\footnote{\textbf{research compendium.} \ldots{}} for scientific
-publications.
+different scientific fields (e.g., biology, archaeology, ecology).
+It's worth searching Google Scholar for ``reproducible research in R'' and your own
+or a closely related research field.
 
 \hypertarget{track}{%
 \chapter{Track}\label{track}}
@@ -815,7 +819,7 @@ private use. However, once you start writing packages, you will see how straight
 it is, and you may want to take the extra steps to prepare your package for CRAN and
 submit it.
 
-An R package is just ``a directory of files which extend R'' {[}cite ``Writing R Extensions''{]}.
+An R package is just ``a directory of files which extend R'' (\url{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}).
 You should consider writing your own package anytime you find yourself cutting and pasting
 functions to different directories on your computer, so you can use them for different
 projects. The RStudio team has created a number of tools to make this process easier, including
@@ -853,7 +857,7 @@ Years ago, you would need to write this documentation in separate ``.Rd'' files
 and save them in the ``man'' subdirectory. Now, the easiest thing to do is to use
 ``roxygen'' conventions to write the help information right above each function.
 With this style, you'll use a special type of commenting character (\texttt{\#\textquotesingle{}}) at the
-start of each line with documentation, and there are special codes (e.s.,
+start of each line with documentation, and there are special codes (e.g.,
 \texttt{@param} when you're defining one of the function's parameters) to annotate this
 code. This help documentation will then, when you build your package, be
 converted to the ``.Rd'' files you used to have to write yourself and saved in the
@@ -1126,51 +1130,23 @@ measurements (e.g., metabolomics, flow cytometry) and associated open-source
 software.
 
 R is also facilitating and leveraging rapid developments in how researchers can access and
-query secondary data, including from {[}large admin databases?{]} and {[}data repositories
-encouraged or required for some NIH-funded projects{]}. \ldots{} This section will provide an
+query secondary data, including from large adminstrative databases, like those maintained
+by the US Census, NOAA, and the USGS. This section will provide an
 introduction to some of the ideas and techniques behind these developments for
 collecting secondary or public-use data for environmental health research, as well as
 give you somee directions on where to go to find R packages that facilitate collecting
 open data from R.
 
-\hypertarget{open-data}{%
-\section{Open data}\label{open-data}}
-
-A range of environmental datasets are available online, especially through national agencies.
-For example, {[}NOAA{]} provides various weather datasets, while USGS has data on water quality,
-{[}others{]}
-
-You can visit webpages hosted by these agencies where you can download the datasets you need.
-However, this process can become tedious if you need lots of datasets, as may be the case for
-large studies incorporating many cities. Further, downloading the datasets ``by hand'' is hard
-to make reproducible, unless you meticiously write down all the steps you took as you visited
-the website. This means that your process will be harder for you to repeat in the future
-or for others to replicate.
-
-A growing collection of R packages are now available that allow you to download datasets
-available online directly from R. This means that you can write an R script for your data
-collection, making this step both better documented and more reproducible. \ldots{}
-
-Further, there are now a number of R packages that provide access to open datasets that the
-package maintainer collected and processed and is now making available as an R package.
-{[}More on R data packages.{]}
-
-\hypertarget{admin-databases}{%
-\subsection{{[}Admin databases?{]}}\label{admin-databases}}
-
-Data collected by government groups like EPA, NOAA, USGS.
-
-\hypertarget{research-repositories}{%
-\subsection{{[}Research repositories?{]}}\label{research-repositories}}
-
-Here, especially health-related data.
-NIH-supported (e.g., Metabolomics Workbench).
-NHANES?
-
 \hypertarget{data-packages}{%
 \section{Data packages}\label{data-packages}}
 
-\ldots{}
+With R, you can create packages that are exclusively or mainly created to share data.
+Some researchers are creating and publishing this type of ``data package'', and some
+may be relevant to your research. These packages provide access to open datasets that the
+package maintainer collected and processed and is now making available as an R package,
+but the data is static (as of the last version of the package), rather than interfacing
+to pull the most recent data. However, this set-up can achieve more stability---it won't
+be broken by a change in an online API.
 
 This package is too big for CRAN to host, so we have it posted through our own package
 repository.\footnote{For more on how and why we did this, see
@@ -1267,7 +1243,7 @@ If you look up events based on flood events, you can instead run the
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{county_events}\NormalTok{(}\DataTypeTok{counties =} \KeywordTok{c}\NormalTok{(}\StringTok{"36061"}\NormalTok{, }\StringTok{"25025"}\NormalTok{), }
-    \DataTypeTok{start_year =} \DecValTok{1988}\NormalTok{, }\DataTypeTok{end_year =} \DecValTok{2015}\NormalTok{, }\DataTypeTok{event_type =} \StringTok{"flood"}\NormalTok{)}
+    \DataTypeTok{start_year =} \DecValTok{1996}\NormalTok{, }\DataTypeTok{end_year =} \DecValTok{2015}\NormalTok{, }\DataTypeTok{event_type =} \StringTok{"flood"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1311,7 +1287,7 @@ data for specific storms. For example, to see the rainfall fro Hurricane Ivan in
 \end{Shaded}
 
 \begin{figure*}
-\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-12-1} \end{figure*}
+\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-13-1} \end{figure*}
 
 From this map, you can see that the rain from this storm extended into New
 England, even after the storm looped back around to the east and south. This is
@@ -1320,200 +1296,62 @@ tropical storm-level winds.
 
 For more on the \texttt{hurricaneexposure} package, see \href{https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html}{its vignette}.
 
-\hypertarget{web-services}{%
-\section{Web services {[}?{]}}\label{web-services}}
+\hypertarget{open-data-apis}{%
+\section{Open data APIs}\label{open-data-apis}}
 
-\hypertarget{ropensci}{%
-\section{ROpenSci}\label{ropensci}}
+A range of environmental datasets are available online, especially through national agencies.
+For example, NOAA provides various weather datasets, while USGS has data on water quality,
 
-One of the best places to explore R packages for accessing open data for science is
-\href{https://ropensci.org/}{\textbf{ROpenSci}}.\footnote{\href{https://ropensci.org/}{\textbf{ROpenSci}}. \ldots{}}
-Many of its packages facilitate access to databases of open data relevant to scientific
-research that have API access {[}?{]}. You can browse through its packages on
-its \href{https://ropensci.org/packages/}{\textbf{Packages} page}
+You can visit webpages hosted by these agencies where you can download the datasets you need.
+However, this process can become tedious if you need lots of datasets, as may be the case for
+large studies incorporating many cities. Further, downloading the datasets ``by hand'' is hard
+to make reproducible, unless you meticiously write down all the steps you took as you visited
+the website. This means that your process will be harder for you to repeat in the future
+or for others to replicate.
 
-Examples of some packages relevant to collecting data for environmental health research
-include:
+A growing collection of R packages are now available that allow you to download datasets
+available online directly from R. This means that you can write an R script for your data
+collection, making this step both better documented and more reproducible.
 
-\begin{itemize}
-\tightlist
-\item
-  bomrang: Australian Government Bureau of Meteorology (`BOM') Data Client
-\item
-  clifro: Easily Download and Visualise Climate Data from CliFlo
-\item
-  dbhydroR: `DBHYDRO' Hydrologic and Water Quality Data
-\item
-  essurvey: Download Data from the European Social Survey on the Fly
-\item
-  FedData: Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources
-\item
-  camsRad: R Client for CAMS Radiation Service
-\item
-  ccafs: CCAFS GCM Data R Client
-\item
-  dbhydroR: R interface to the South Florida Water Management District's DBHYDRO Database
-\item
-  biomartr: Genomic Data Retrieval
-\item
-  clifro: Easily Download and Visualise Climate Data from CliFlo
-\item
-  DataSpaceR: An R Interface to `the CAVD DataSpace'
-\item
-  essurvey: Download Data from the European Social Survey on the Fly
-\item
-  fingertipsR: Fingertips Data for Public Health
-\item
-  getCRUCLdata: Use and Explore `CRU' `CL' v. 2.0 Climatology Elements
-\item
-  getlandsat: Get Landsat 8 Data from Amazon Public Data Sets
-\item
-  googleLanguageR: Call Google's `Natural Language' API, `Cloud Translation' API, `Cloud Speech'
-  API and `Cloud Text-to-Speech' API
-\item
-  GSODR: Global Surface Summary of the Day (`GSOD') Weather Data Client
-\item
-  hydroscoper: Interface to the Greek National Data Bank for Hydrometeorological Information
-\item
-  MODIStsp: A Tool for Automating Download and Preprocessing of MODIS Land Products Data
-\item
-  nasapower: NASA POWER API Client
-\item
-  opencage: Interface to the OpenCage API
-\item
-  osmdata: Import `OpenStreetMap' Data as Simple Features or Spatial Objects
-\item
-  weathercan: Download Weather Data from the Environment and Climate Change Canada Website
-\item
-  wateRinfo: Download Time Series Data from Waterinfo.be
-\item
-  USAboundariesData: Datasets for the `USAboundaries' package
-\item
-  USAboundaries: Historical and Contemporary Boundaries of the United States of America
-\item
-  tidyhydat: Extract and Tidy Canadian `Hydrometric' Data
-\item
-  stats19: Work with Open Road Traffic Casualty Data from Great Britain
-\item
-  smapr: Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data
-\item
-  rWBclimate: A package for accessing World Bank climate data
-\item
-  rusda: Interface to USDA Databases
-\item
-  rsnps: Get `SNP' (`Single-Nucleotide' `Polymorphism') Data on the Web
-\item
-  rrricanesdata: Data for Atlantic and east Pacific tropical cyclones since 1998
-\item
-  rrricanes: Web scraper for Atlantic and east Pacific hurricanes and tropical storms
-\item
-  ropenaq: Accesses Air Quality Data from the Open Data Platform OpenAQ
-\item
-  rnoaa: `NOAA' Weather Data from R
-\item
-  rnaturalearth: World Map Data from Natural Earth
-\item
-  riem: Accesses Weather Data from the Iowa Environment Mesonet
-\item
-  rgpdd: R Interface to the Global Population Dynamics Database
-\item
-  rdhs: API Client and Dataset Management for the Demographic and Health Survey (DHS) Data
-\item
-  rdefra: Interact with the UK AIR Pollution Database from DEFRA
-\item
-  prism: Access Data from the Oregon State Prism Climate Project
-\end{itemize}
+One great example is the \texttt{tigris} package. This package lets you pull
+spatial data into R directly from the US Census. To get spatial data for all the counties in
+Florida, you can run:
 
-Cleaning / exploring data:
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tigris)}
+\NormalTok{fl_counties <-}\StringTok{ }\KeywordTok{counties}\NormalTok{(}\DataTypeTok{state =} \StringTok{"FL"}\NormalTok{, }\DataTypeTok{class =} \StringTok{"sf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\begin{itemize}
-\tightlist
-\item
-  cleanEHR: The Critical Care Clinical Data Processing Tools
-\item
-  colocr: Conduct Co-localization Analysis of Fluorescence Microscopy Images
-\item
-  cRegulome: Obtain and Visualize Regulome-Gene Expression Correlations in Cancer
-\item
-  EndoMineR: Functions to mine endoscopic and associated pathology datasets
-\item
-  geoaxe: Split `Geospatial' Objects into Pieces
-\item
-  hddtools: Hydrological Data Discovery Tools
-\item
-  isdparser: Parse `NOAA' Integrated Surface Data Files
-\item
-  visdat: Preliminary Visualisation of Data
-\item
-  skimr: A frictionless, pipeable approach to dealing with summary statistics
-\end{itemize}
+Now you can plot this data with \texttt{ggplot}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{ggplot}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_sf}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ fl_counties, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{fill =}\NormalTok{ ALAND)) }\OperatorTok{+}\StringTok{ }
+\StringTok{    }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{scale_fill_viridis_c}\NormalTok{(}\DataTypeTok{name =} \StringTok{"Land area"}\NormalTok{, }
+    \DataTypeTok{label =}\NormalTok{ scales}\OperatorTok{::}\NormalTok{scientific) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.text =} \KeywordTok{element_blank}\NormalTok{(), }
+    \DataTypeTok{axis.ticks =} \KeywordTok{element_blank}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{columbia_env_health_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 \hypertarget{learn-more-3}{%
 \section{Learn more}\label{learn-more-3}}
 
-\begin{itemize}
-\tightlist
-\item
-  ROpenSci
-\item
-  The R Journal
-\item
-  CRAN task views?
-\item
-  ROpenSci articles?
-\item
-  JOSS?
-\end{itemize}
-
-\hypertarget{process}{%
-\chapter{Process}\label{process}}
-
-\newthought{For environmental health research,} once you have collected your raw data,
-you will often need to do a bit of work processing the data before you can apply epidemiological
-models. As one example, you may pull \textbf{gridded data}\footnote{\textbf{gridded data.} \ldots{}} on an
-environmental exposure of interest, but need to link it with health data that is aggregated
-based on administrative boundaries (e.g., counties). As another example, you might have
-daily temperature data and want to identify the dates of heat waves in a community based on
-that data.
-
-R has some wonderful tools for processing data that are relevant to environmental health research.
-Here, I'll focus on tools from a few packages I've developed, but in ``Learn more'', I'll also
-point you to more resources for finding R tools that might be relevant to your own environmental
-health research projects.
-
-I strongly encourage you, as you work through this section, to start thinking about possibly
-creating your own R packages to solve data processing tasks you commonly face for your research.
-All the code for the packages I'll discuss is available on GitHub, so you can look at this code
-as examples as you think about writing your own packages.
-
-\hypertarget{learn-more-4}{%
-\section{Learn more}\label{learn-more-4}}
-
-\begin{itemize}
-\tightlist
-\item
-  CRAN taskviews
-\item
-  Bioconductor {[}taskviews?{]}
-\item
-  ROpenSci
-\end{itemize}
-
-{[}CRAN{]} One excellent example of CRAN-based packages {[}?{]} for processing environmental
-data is the suite of packages created and maintained by scientists at the \textbf{United States
-Geological Survey (USGS)}\footnote{\textbf{United States Geological Survey (USGS).} \ldots{}}
-This group has a collection of packages, listed at \ldots{} . The packages include \ldots{}
-For a very cool example of using some of these packages for a timely application for
-environmental health, check out these visualizations of flooding during Hurricanes \ldots{},
-as well as the code used to create them.
-
-For biological data, \textbf{Bioconductor}\footnote{\textbf{Bioconductor.} \ldots{}} can be a great
-resource for finding packages to process and pull out relevant data. For example,
-Bioconductor has a large collection of packages for working with biological data collected
-through flow cytometry, mass spectrometry (e.g., metabolomics), RNA sequencing, {[}others{]}
-
-\hypertarget{final-words}{%
-\chapter{Final Words}\label{final-words}}
+One of the best places to explore R packages for accessing open data for science is
+\href{https://ropensci.org/}{ROpenSci}.
+Many of its packages facilitate access to databases of open data relevant to scientific
+research that have web services. You can browse through its packages on
+its \href{https://ropensci.org/packages/}{Packages page}. You may also want to
+check its affiliated \href{https://joss.theoj.org/}{Journal of Open-Source Software}.
+Authors of these packages will also sometimes publish associated articles in
+\href{https://journal.r-project.org/}{The R Journal}, so it's worth browsing through
+that occasionally.
+Finally, Twitter is a great place ot keep an eye out for new packages, including
+those that can help you collect data. Follow the ``\#rstats'' tag.
 
 \bibliography{book.bib,packages.bib}
 

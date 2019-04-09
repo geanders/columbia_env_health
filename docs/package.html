@@ -136,8 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="organize.html"><a href="organize.html"><i class="fa fa-check"></i><b>2</b> Organize</a><ul>
 <li class="chapter" data-level="2.1" data-path="organize.html"><a href="organize.html#r-projects"><i class="fa fa-check"></i><b>2.1</b> R Projects</a></li>
 <li class="chapter" data-level="2.2" data-path="organize.html"><a href="organize.html#directory-organization"><i class="fa fa-check"></i><b>2.2</b> Directory organization</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#keeping-things-tidy"><i class="fa fa-check"></i><b>2.2.1</b> Keeping things tidy</a></li>
-<li class="chapter" data-level="2.2.2" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.2</b> Avoiding repetition</a></li>
+<li class="chapter" data-level="2.2.1" data-path="organize.html"><a href="organize.html#avoiding-repetition"><i class="fa fa-check"></i><b>2.2.1</b> Avoiding repetition</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="organize.html"><a href="organize.html#learn-more"><i class="fa fa-check"></i><b>2.3</b> Learn more</a></li>
 </ul></li>
@@ -169,19 +168,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="package.html"><a href="package.html#learn-more-2"><i class="fa fa-check"></i><b>4.4</b> Learn more</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="collect.html"><a href="collect.html"><i class="fa fa-check"></i><b>5</b> Collect</a><ul>
-<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#open-data"><i class="fa fa-check"></i><b>5.1</b> Open data</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="collect.html"><a href="collect.html#admin-databases"><i class="fa fa-check"></i><b>5.1.1</b> [Admin databases?]</a></li>
-<li class="chapter" data-level="5.1.2" data-path="collect.html"><a href="collect.html#research-repositories"><i class="fa fa-check"></i><b>5.1.2</b> [Research repositories?]</a></li>
+<li class="chapter" data-level="5.1" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.1</b> Data packages</a></li>
+<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#open-data-apis"><i class="fa fa-check"></i><b>5.2</b> Open data APIs</a></li>
+<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.3</b> Learn more</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="collect.html"><a href="collect.html#data-packages"><i class="fa fa-check"></i><b>5.2</b> Data packages</a></li>
-<li class="chapter" data-level="5.3" data-path="collect.html"><a href="collect.html#web-services"><i class="fa fa-check"></i><b>5.3</b> Web services [?]</a></li>
-<li class="chapter" data-level="5.4" data-path="collect.html"><a href="collect.html#ropensci"><i class="fa fa-check"></i><b>5.4</b> ROpenSci</a></li>
-<li class="chapter" data-level="5.5" data-path="collect.html"><a href="collect.html#learn-more-3"><i class="fa fa-check"></i><b>5.5</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>6</b> Process</a><ul>
-<li class="chapter" data-level="6.1" data-path="process.html"><a href="process.html#learn-more-4"><i class="fa fa-check"></i><b>6.1</b> Learn more</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>7</b> Final Words</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -213,7 +203,7 @@ fine to start by just writing packages for your own use, or for your research gr
 private use. However, once you start writing packages, you will see how straightforward
 it is, and you may want to take the extra steps to prepare your package for CRAN and
 submit it.</p>
-<p>An R package is just “a directory of files which extend R” [cite “Writing R Extensions”].
+<p>An R package is just “a directory of files which extend R” (<a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-exts.html</a>).
 You should consider writing your own package anytime you find yourself cutting and pasting
 functions to different directories on your computer, so you can use them for different
 projects. The RStudio team has created a number of tools to make this process easier, including
@@ -222,7 +212,7 @@ some functionality in the RStudio IDE as well as the <code>devtools</code> packa
 <h2><span class="header-section-number">4.1</span> Components of R packages</h2>
 <div id="r-code" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> R code</h3>
-<p>Without R code, there’s not much point to an R package.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> The R function code will go in the package’s “R”
+<p>Without R code, there’s not much point to an R package.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> The R function code will go in the package’s “R”
 subdirectory. You can use as many or as few “.R” files in this section as you want to
 organize your code.
 Define your functions in this section as you would if you were creating functions in
@@ -236,12 +226,12 @@ want to take a look at the developing <a href="https://tidyeval.tidyverse.org/">
 should think about adding help documentation to your code very early. You can then
 access this documentation through helpfiles in R, just like you do with other R packages.
 Even if you are just creating a package for yourself, you should add documentation
-for all the “top-level” functions<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
+for all the “top-level” functions<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
 <p>Years ago, you would need to write this documentation in separate “.Rd” files
 and save them in the “man” subdirectory. Now, the easiest thing to do is to use
 “roxygen” conventions to write the help information right above each function.
 With this style, you’ll use a special type of commenting character (<code>#'</code>) at the
-start of each line with documentation, and there are special codes (e.s.,
+start of each line with documentation, and there are special codes (e.g.,
 <code>@param</code> when you’re defining one of the function’s parameters) to annotate this
 code. This help documentation will then, when you build your package, be
 converted to the “.Rd” files you used to have to write yourself and saved in the
@@ -276,7 +266,7 @@ these elements within an R package.</p>
 (<code>vignettes</code> subdirectory), and unit tests for the functions (<code>tests</code>
 subdirectory). To help you set up these extra components, you may want to take a
 look at the <code>use_*</code> family of functions in the <code>usethis</code> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span>
-package<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> For example, if you
+package<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> For example, if you
 want to include example data in your package, you should check out the
 <code>use_data</code> function, while if you want to add unit tests to your package, check
 out the <code>use_test</code> function. When you run one of these, you’ll notice that the
@@ -364,7 +354,7 @@ for CVs and progress reports).</p>
 for an R package from RStudio. The other user can install this file locally using
 <code>install.packages</code> with some extra options. For example, if you shared your
 “convertr.tar.gz” package file with someone else, they could install it on their
-computer with the call:<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+computer with the call:<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;convertr.tar.gz&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>, <span class="dt">type =</span> <span class="st">&quot;source&quot;</span>)</code></pre>
 <p>Second, and perhaps even easier (certainly for the other user), you can post your
 package as a GitHub repository. The other user can then use the <code>install_github</code>
@@ -409,7 +399,7 @@ package to submit to a public repository.</p>
 Packages</a> by Hadley Wickham <span class="citation">(Wickham <a href="#ref-wickham2015r">2015</a>)</span>. This book
 is available for a reasonable price in paperback (many Barnes &amp; Nobles carry it
 in their computer section) and is also available for free online. The author of
-this book also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> The “Package
+this book also created and maintains the <strong><code>devtools</code> package</strong><a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> The “Package
 Development” cheatsheet available through <a href="https://www.rstudio.com/resources/cheatsheets/">RStudio’s
 cheatsheets</a> complements these
 resources.</p>
@@ -436,7 +426,7 @@ tenure <span class="citation">(Waller <a href="#ref-waller2018documenting">2018<
 
 </div>
 </div>
-<h3> Final Words</h3>
+<h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-devtools">
 <p>Wickham, Hadley, Jim Hester, and Winston Chang. 2019. <em>Devtools: Tools to Make Developing R Packages Easier</em>. <a href="https://github.com/r-lib/devtools">https://github.com/r-lib/devtools</a>.</p>
@@ -453,24 +443,24 @@ tenure <span class="citation">(Waller <a href="#ref-waller2018documenting">2018<
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>The exception? A data-only package,
+<ol start="7">
+<li id="fn7"><p>The exception? A data-only package,
 where the package’s purpose is to share data rather than R functions. We’ll look at an
-example in the “Collect” section.<a href="package.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p><strong>top-level functions.</strong> The functions in your package
+example in the “Collect” section.<a href="package.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p><strong>top-level functions.</strong> The functions in your package
 that you expect your users (including yourself) to call directly. Your package may also
 include some functions that are “helpers”, only used within other functions to help
-keep the code clean and avoid replication, but never used directly by package users.<a href="package.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>The <code>use_*</code> family of functions were previously in the <code>devtools</code>
+keep the code clean and avoid replication, but never used directly by package users.<a href="package.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>The <code>use_*</code> family of functions were previously in the <code>devtools</code>
 package, but they are being deprecated there and moved to the <code>usethis</code> package.
 The <a href="http://r-pkgs.had.co.nz/">R Packages</a> book was written before they were
 deprecated in <code>devtools</code>, and so it discusses them as <code>devtools</code> functions. As
 long as you install and load the <code>usethis</code> package, though, you’ll have no
-problem following along with the examples in that book.<a href="package.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>This call assumes that the other person has “convertr.tar.gz”
+problem following along with the examples in that book.<a href="package.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>This call assumes that the other person has “convertr.tar.gz”
 saved in his or her working directory. Otherwise, use a pathname to direct R to where
-the file is saved on the computer.<a href="package.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p><strong><code>devtools</code>
+the file is saved on the computer.<a href="package.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p><strong><code>devtools</code>
 package.</strong> An R package with functions that facilitate R package development.
 These functions are well-documented in the package documentation as well as
 through the book <a href="http://r-pkgs.had.co.nz/">R Packages</a>. This package also
@@ -478,7 +468,7 @@ includes a function for installing R packages from code posted on GitHub
 (<code>install_github</code>), which is very useful if you want to find and use packages
 that are not yet available on CRAN and other repositories or if you want to use
 the latest, “development” version of a package. This package is available on
-CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref15" class="footnote-back">↩</a></p></li>
+CRAN and so can be installed with <code>install.packages("devtools")</code>.<a href="package.html#fnref11" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

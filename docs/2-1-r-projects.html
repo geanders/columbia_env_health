@@ -112,8 +112,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
 <li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
 <li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
-<li><a href="2-2-directory-organization.html#keeping-things-tidy"><span class="toc-section-number">2.2.1</span> Keeping things tidy</a></li>
-<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.2</span> Avoiding repetition</a></li>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.1</span> Avoiding repetition</a></li>
 </ul></li>
 <li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
 </ul></li>
@@ -145,19 +144,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
 </ul></li>
 <li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
-<li class="has-sub"><a href="5-1-open-data.html#open-data"><span class="toc-section-number">5.1</span> Open data</a><ul>
-<li><a href="5-1-open-data.html#admin-databases"><span class="toc-section-number">5.1.1</span> [Admin databases?]</a></li>
-<li><a href="5-1-open-data.html#research-repositories"><span class="toc-section-number">5.1.2</span> [Research repositories?]</a></li>
+<li><a href="5-1-data-packages.html#data-packages"><span class="toc-section-number">5.1</span> Data packages</a></li>
+<li><a href="5-2-open-data-apis.html#open-data-apis"><span class="toc-section-number">5.2</span> Open data APIs</a></li>
+<li><a href="5-3-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.3</span> Learn more</a></li>
 </ul></li>
-<li><a href="5-2-data-packages.html#data-packages"><span class="toc-section-number">5.2</span> Data packages</a></li>
-<li><a href="5-3-web-services.html#web-services"><span class="toc-section-number">5.3</span> Web services [?]</a></li>
-<li><a href="5-4-ropensci.html#ropensci"><span class="toc-section-number">5.4</span> ROpenSci</a></li>
-<li><a href="5-5-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.5</span> Learn more</a></li>
-</ul></li>
-<li class="has-sub"><a href="6-process.html#process"><span class="toc-section-number">6</span> Process</a><ul>
-<li><a href="6-1-learn-more-4.html#learn-more-4"><span class="toc-section-number">6.1</span> Learn more</a></li>
-</ul></li>
-<li><a href="7-final-words.html#final-words"><span class="toc-section-number">7</span> Final Words</a></li>
 </ul>
 </div>
 </div>
@@ -168,11 +158,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> R Projects</h2>
 <p><span class="newthought">RStudio allows you to</span> create “Projects”, which help with this
 organization. An R Project is very simple—it’s just a file directory, with an
-extra subdirectory added to the directory [with settings?]. This directory is
-saved as a <strong>dot file</strong><label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> <strong>dot file.</strong> …</span>, so you probably won’t be able to see it
-listed if you look at the directory contents using your [file viewer?]. If you’d like
+extra subdirectory added to the directory with settings to remind RStudio about for the project. This directory is
+saved as a dot file, so you probably won’t be able to see it
+listed if you look at the directory contents using your computer’s file finder. If you’d like
 to see the listing (or delete it by hand, although you likely won’t ever need to
-do this), check the settings for your [file viewer?], and see if you have the option
+do this), check the settings for your file finder, and see if you have the option
 to show all files. Alternatively, you can use the “list” command with the “all” option
 (<code>ls -a</code>) at a Bash shell to view all files and subdirectories in a directory.</p>
 <p>Advantages of setting a directory to be an R Project are:</p>
@@ -188,8 +178,8 @@ your computer’s files to find an existing directory to make into an R Project.
 <p>Once you’ve created an R Project, you can open it in RStudio; opening an R Project will set
 the project’s directory as your working directory, opening a “Files” window with all the
 subdirectories and files in the project directory and allowing you to run code with
-<strong>relative filenames</strong><label for="tufte-sn-4" class="margin-toggle sidenote-number">4</label><input type="checkbox" id="tufte-sn-4" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">4</span> <strong>relative filename.</strong> …</span> from the project’s directory. If you
-share the R Project with someone else,<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> One way to do this would be to zipped the directory
+relative filenames from the project’s directory. If you
+share the R Project with someone else,<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> One way to do this would be to zipped the directory
 into a single file and share it by email. Another is to use git version control, post the
 directory to GitHub, and share the directory from there.</span> he or she will also be able to
 open the R project using RStudio.</p>
@@ -197,7 +187,7 @@ open the R project using RStudio.</p>
 A later section (“Track”) will go over how to initialize and use git version control for
 R Projects. You will also definitely want to use an R Project for any R package you write,
 as this will introduce a lot of functionality that “plays well” with the <code>devtools</code> package
-to make it easier to write, build, and publish an R package [?].</p>
+to make it easier to write, build, and publish an R package.</p>
 </div>
 <p style="text-align: center;">
 <a href="2-organize.html"><button class="btn btn-default">Previous</button></a>

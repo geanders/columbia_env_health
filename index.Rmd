@@ -42,8 +42,8 @@ suggest that you look at the latest on tidyverse functions for cleaning and
 visualizing data (the `dplyr` and `ggplot2` packages are at the heart of this),
 new developments on working with geospatial data with the `sf` package, creating
 interactive graphics with `htmlwidgets`, and creating reports, blogs, and books
-through the `rmarkdown` framework. In the conclusion to this booklet, I'll
-provide some references for learning more about all of these topics.
+through the `rmarkdown` framework. These are all areas for you to check out as you
+continue developing how you use R for research.
 
 Click on the **Next** button (or navigate using the
 links at the top of the page) to continue.
@@ -55,8 +55,8 @@ You may want to check that you have a recent version of both, and if not, update
 you version before the workshop. Some of the packages and RStudio tools we'll be
 using will require newer versions of R and RStudio to work. You can run
 `sessionInfo()` in R to find out the version of R you have installed. Compare
-this version to the latest R release version listed at the **Comprehensive R
-Archive Network (CRAN)**^[**Comprehensive R Archive Network (CRAN).** ...]
+this version to the latest R release version listed at the Comprehensive R
+Archive Network (CRAN).
 
 To try out the examples, you will also need a bit more set-up: 
 
@@ -70,9 +70,10 @@ This section will walk you through each step.
 1. Download git
 
 In the workshop, you will learn how to use **git**.[^**git.** Open-source version control
-software ...] To try the examples, you will need to install git to your computer and make 
+software that can be easily integrated with R projects.] To try the examples, you will need to 
+install git to your computer and make 
 sure that your installation of RStudio can find this software, so you can use git for version
-control for R Projects. ...
+control for R Projects. There are more details on this process in the "Track" section.
 
 2. Get a GitHub account
 
@@ -83,7 +84,7 @@ very popular for sharing code projects, as well as collaborating across a team o
 code and software. Other online git platforms exist and are used by some researchers, 
 including **GitLab**. Once you've mastered using GitHub, you should be able to easy 
 transfer those skills to other platforms like GitLab.] You will need to get a GitHub 
-account to be able to post repositories on GitHub. ...
+account to be able to post repositories on GitHub. 
 
 3. Install some R packages
 
@@ -91,11 +92,19 @@ This booklet uses a number of R packages beyond base R. To install all the packa
 need, run the following code in your version of R: 
 
 ```{r eval = FALSE}
-install.packages(c("readr", "ggplot2", "forcats", "magrittr", 
-                   "dplyr", "lubridate", "sf", "tigris",
-                   "DT", "plotly", "leaflet", "flexdashboard", 
-                   "tidyr", "stringr"))
+install.packages(c("devtools", "drat", "tigris", "ggplot2"))
 ```
+
+Also, you'll want to install the `hurricaneexposuredata` and `hurricaneexposure` packages, which 
+you need to do in a bit of a different way: 
+
+```{r eval = FALSE}
+library(drat)
+addRepo("geanders")
+install.packages("hurricaneexposuredata")
+install.packages("hurricaneexposure")
+```
+
 
 4. Download example R Project
 

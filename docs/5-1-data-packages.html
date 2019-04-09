@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="5.1 Data packages | R for Environmental Health Research" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Brooke Anderson" />
+
+<meta name="date" content="2019-04-09" />
+
+
+<meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
+
+<title>5.1 Data packages | R for Environmental Health Research</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a><ul>
+<li><a href="1-1-set-up.html#set-up"><span class="toc-section-number">1.1</span> Set-up</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-organize.html#organize"><span class="toc-section-number">2</span> Organize</a><ul>
+<li><a href="2-1-r-projects.html#r-projects"><span class="toc-section-number">2.1</span> R Projects</a></li>
+<li class="has-sub"><a href="2-2-directory-organization.html#directory-organization"><span class="toc-section-number">2.2</span> Directory organization</a><ul>
+<li><a href="2-2-directory-organization.html#avoiding-repetition"><span class="toc-section-number">2.2.1</span> Avoiding repetition</a></li>
+</ul></li>
+<li><a href="2-3-learn-more.html#learn-more"><span class="toc-section-number">2.3</span> Learn more</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-track.html#track"><span class="toc-section-number">3</span> Track</a><ul>
+<li class="has-sub"><a href="3-1-git.html#git"><span class="toc-section-number">3.1</span> git</a><ul>
+<li><a href="3-1-git.html#configuring-git"><span class="toc-section-number">3.1.1</span> Configuring git</a></li>
+<li><a href="3-1-git.html#tracking-an-r-project"><span class="toc-section-number">3.1.2</span> Tracking an R project</a></li>
+</ul></li>
+<li><a href="3-2-github.html#github"><span class="toc-section-number">3.2</span> GitHub</a></li>
+<li><a href="3-3-terminal.html#terminal"><span class="toc-section-number">3.3</span> Terminal</a></li>
+<li class="has-sub"><a href="3-4-try-it-out.html#try-it-out"><span class="toc-section-number">3.4</span> Try it out</a><ul>
+<li><a href="3-4-try-it-out.html#track-a-project-with-git"><span class="toc-section-number">3.4.1</span> Track a project with git</a></li>
+<li><a href="3-4-try-it-out.html#link-the-project-with-a-github-repository"><span class="toc-section-number">3.4.2</span> Link the project with a GitHub repository</a></li>
+</ul></li>
+<li><a href="3-5-learn-more-1.html#learn-more-1"><span class="toc-section-number">3.5</span> Learn more</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-package.html#package"><span class="toc-section-number">4</span> Package</a><ul>
+<li class="has-sub"><a href="4-1-components-of-r-packages.html#components-of-r-packages"><span class="toc-section-number">4.1</span> Components of R packages</a><ul>
+<li><a href="4-1-components-of-r-packages.html#r-code"><span class="toc-section-number">4.1.1</span> R code</a></li>
+<li><a href="4-1-components-of-r-packages.html#description-file"><span class="toc-section-number">4.1.2</span> DESCRIPTION file</a></li>
+<li><a href="4-1-components-of-r-packages.html#other-package-components"><span class="toc-section-number">4.1.3</span> Other package components</a></li>
+</ul></li>
+<li><a href="4-2-try-it-out-1.html#try-it-out-1"><span class="toc-section-number">4.2</span> Try it out</a></li>
+<li class="has-sub"><a href="4-3-sharing.html#sharing"><span class="toc-section-number">4.3</span> Sharing</a><ul>
+<li><a href="4-3-sharing.html#when-to-publish-your-packages"><span class="toc-section-number">4.3.1</span> When to publish your packages</a></li>
+<li><a href="4-3-sharing.html#where-to-publish-packages"><span class="toc-section-number">4.3.2</span> Where to publish packages</a></li>
+<li><a href="4-3-sharing.html#extra-steps-for-publishing"><span class="toc-section-number">4.3.3</span> Extra steps for publishing</a></li>
+</ul></li>
+<li><a href="4-4-learn-more-2.html#learn-more-2"><span class="toc-section-number">4.4</span> Learn more</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-collect.html#collect"><span class="toc-section-number">5</span> Collect</a><ul>
+<li><a href="5-1-data-packages.html#data-packages"><span class="toc-section-number">5.1</span> Data packages</a></li>
+<li><a href="5-2-open-data-apis.html#open-data-apis"><span class="toc-section-number">5.2</span> Open data APIs</a></li>
+<li><a href="5-3-learn-more-3.html#learn-more-3"><span class="toc-section-number">5.3</span> Learn more</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="data-packages" class="section level2">
+<h2><span class="header-section-number">5.1</span> Data packages</h2>
+<p>With R, you can create packages that are exclusively or mainly created to share data.
+Some researchers are creating and publishing this type of “data package”, and some
+may be relevant to your research. These packages provide access to open datasets that the
+package maintainer collected and processed and is now making available as an R package,
+but the data is static (as of the last version of the package), rather than interfacing
+to pull the most recent data. However, this set-up can achieve more stability—it won’t
+be broken by a change in an online API.</p>
+<p>This package is too big for CRAN to host, so we have it posted through our own package
+repository.<label for="tufte-sn-12" class="margin-toggle sidenote-number">12</label><input type="checkbox" id="tufte-sn-12" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">12</span> For more on how and why we did this, see
+<a href="https://journal.r-project.org/archive/2017/RJ-2017-026/">an article</a> we wrote about the
+process for <strong>The R Journal</strong>.</span> Because of this, you’ll need to take a few extra steps
+to download and install the package:<label for="tufte-sn-13" class="margin-toggle sidenote-number">13</label><input type="checkbox" id="tufte-sn-13" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">13</span> If you don’t have the <code>drat</code> package, install it in
+the usual way with <code>install.packages("drat")</code>.</span></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(drat)
+<span class="kw">addRepo</span>(<span class="st">&quot;geanders&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposuredata&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposure&quot;</span>)</code></pre>
+<p>Once you’ve installed both the <code>hurricaneexposuredata</code> and <code>hurricaneexposure</code> packages, you
+can load them as usual to access both the data and some functions to work with them:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(hurricaneexposuredata)
+<span class="kw">library</span>(hurricaneexposure)</code></pre>
+<p>The <code>hurricaneexposure</code> package has a series of functions that let you explore different
+exposures during storms. For example, to get the storms where either New York County, NY,
+or Suffolk County, MA, (which includes Boston) were exposed to tropical storm-level winds
+(17.5 m/s or higher), you can run:<label for="tufte-sn-14" class="margin-toggle sidenote-number">14</label><input type="checkbox" id="tufte-sn-14" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">14</span> For any of these functions, you can find out what parameters
+to include, and in what format, but opening the helpfile for the function. For example, once you’ve
+loaded the <code>hurricaneexposure</code> package, you can open the helpfile for the <code>county_wind</code> function
+by calling <code>?county_wind</code>. Also helpful for navigating packages: take advantage of the <code>package::function</code>
+notation and RStudio’s tab completion to look up the names of functions in a package. For example,
+type <code>hurricaneexposure::</code>. A pop-up window should show up with all the functions in the package (press
+Tab if the pop-up doesn’t automatically open).</span></p>
+<p>
+<span class="marginnote shownote">
+<!--
+<div class="figure">-->
+<img src="images/tab_completion_example.png" alt=" " width="492"  />
+<!--
+<p class="caption marginnote">--> <!--</p>-->
+<!--</div>--></span>
+</p>
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/tab_completion_example.png&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">county_wind</span>(<span class="dt">counties =</span> <span class="kw">c</span>(<span class="st">&quot;36061&quot;</span>, <span class="st">&quot;25025&quot;</span>),
+            <span class="dt">start_year =</span> <span class="dv">1988</span>, <span class="dt">end_year =</span> <span class="dv">2015</span>, 
+            <span class="dt">wind_limit =</span> <span class="fl">17.5</span>)</code></pre>
+<pre><code>##       storm_id  fips vmax_sust vmax_gust sust_dur gust_dur
+## 1     Bob-1991 25025  26.46639  39.43492      210      570
+## 2     Bob-1991 36061  18.19559  27.11142        0      480
+## 3  Bertha-1996 25025  29.64453  44.17035      240      525
+## 4  Bertha-1996 36061  28.95496  43.14289      180      540
+## 5   Floyd-1999 25025  24.46946  36.45949      345      750
+## 6   Floyd-1999 36061  20.50178  30.54765       60      315
+## 7   Hanna-2008 25025  18.36505  27.36392        0      150
+## 8   Hanna-2008 36061  19.25390  28.68832        0      195
+## 9   Irene-2011 36061  25.68553  38.27144      165      510
+## 10  Sandy-2012 36061  21.99213  32.76827      225      795
+##    closest_time_utc storm_dist       local_time closest_date
+## 1  1991-08-19 20:00  27.042565 1991-08-19 16:00   1991-08-19
+## 2  1991-08-19 15:00 161.571830 1991-08-19 11:00   1991-08-19
+## 3  1996-07-14 01:15  38.177990 1996-07-13 21:15   1996-07-13
+## 4  1996-07-13 19:45  16.966013 1996-07-13 15:45   1996-07-13
+## 5  1999-09-17 07:45  51.254726 1999-09-17 03:45   1999-09-17
+## 6  1999-09-17 00:15  45.408483 1999-09-16 20:15   1999-09-16
+## 7  2008-09-07 07:15   6.202866 2008-09-07 03:15   2008-09-07
+## 8  2008-09-07 01:45  29.916672 2008-09-06 21:45   2008-09-06
+## 9  2011-08-28 13:15   5.796733 2011-08-28 09:15   2011-08-28
+## 10 2012-10-30 00:30 158.040788 2012-10-29 20:30   2012-10-29</code></pre>
+<p>If you look up events based on flood events, you can instead run the
+<code>county_events</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">county_events</span>(<span class="dt">counties =</span> <span class="kw">c</span>(<span class="st">&quot;36061&quot;</span>, <span class="st">&quot;25025&quot;</span>),
+             <span class="dt">start_year =</span> <span class="dv">1996</span>, <span class="dt">end_year =</span> <span class="dv">2015</span>, 
+             <span class="dt">event_type =</span> <span class="st">&quot;flood&quot;</span>)</code></pre>
+<pre><code>##     fips     storm_id closest_time_utc storm_dist       local_time
+## 1  25025  Dennis-1999 1999-09-08 08:00 390.047523 1999-09-08 04:00
+## 2  36061   Floyd-1999 1999-09-17 00:15  45.408483 1999-09-16 20:15
+## 3  36061 Allison-2001 2001-06-17 14:15 158.909890 2001-06-17 10:15
+## 4  36061 Frances-2004 2004-09-09 13:30 379.343696 2004-09-09 09:30
+## 5  36061    Ivan-2004 2004-09-18 17:45 311.346881 2004-09-18 13:45
+## 6  36061  Jeanne-2004 2004-09-29 06:30 222.900157 2004-09-29 02:30
+## 7  36061   Beryl-2006 2006-07-20 22:15 207.358443 2006-07-20 18:15
+## 8  36061   Barry-2007 2007-06-04 15:45 148.251718 2007-06-04 11:45
+## 9  36061   Irene-2011 2011-08-28 13:15   5.796733 2011-08-28 09:15
+## 10 25025   Sandy-2012 2012-10-29 22:00 433.295980 2012-10-29 18:00
+## 11 25025  Andrea-2013 2013-06-08 11:30  45.412565 2013-06-08 07:30
+## 12 36061  Andrea-2013 2013-06-08 06:45  92.381282 2013-06-08 02:45
+##    closest_date
+## 1    1999-09-08
+## 2    1999-09-16
+## 3    2001-06-17
+## 4    2004-09-09
+## 5    2004-09-18
+## 6    2004-09-29
+## 7    2006-07-20
+## 8    2007-06-04
+## 9    2011-08-28
+## 10   2012-10-29
+## 11   2013-06-08
+## 12   2013-06-08</code></pre>
+<p>The <code>hurricaneexposure</code> package also has functions for mapping the exposure
+data for specific storms. For example, to see the rainfall fro Hurricane Ivan in
+2004, you can run:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">map_counties</span>(<span class="dt">storm =</span> <span class="st">&quot;Ivan-2004&quot;</span>, <span class="dt">metric =</span> <span class="st">&quot;rainfall&quot;</span>)</code></pre>
+<div class="figure fullwidth">
+<img src="columbia_env_health_files/figure-html/unnamed-chunk-13-1.png" alt=" " width="672"  />
+<p class="caption marginnote shownote">
+</p>
+</div>
+<p>From this map, you can see that the rain from this storm extended into New
+England, even after the storm looped back around to the east and south. This is
+why New York City had heavy rainfall (and flooding) from this event, but not
+tropical storm-level winds.</p>
+<p>For more on the <code>hurricaneexposure</code> package, see <a href="https://cran.r-project.org/web/packages/hurricaneexposure/vignettes/hurricaneexposure.html">its vignette</a>.</p>
+</div>
+<p style="text-align: center;">
+<a href="5-collect.html"><button class="btn btn-default">Previous</button></a>
+<a href="5-2-open-data-apis.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
