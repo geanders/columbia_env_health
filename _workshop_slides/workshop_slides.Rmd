@@ -187,6 +187,89 @@ ____
 knitr::include_graphics("images/repro_research_book.jpeg")
 ```
 
+
+____
+
+\begin{center}
+ \hugetext{PACKAGE} 
+ \medskip 
+ \small Collect R functions in \textbf{packages} 
+\end{center}
+
+## Why write R packages
+
+\begin{block}{Software development in biostatistics}
+\includegraphics[width = \textwidth]{images/JeffLeekQuote.png}
+\\ Source: Jeff Leek, Simply Statistics
+\end{block}
+
+## Why write R packages
+
+\footnotesize
+
+Research impacts of NMMAPS package (*Source: Barnett, Huang, and Turner, "Benefits of Publicly Available Data", Epidemiology 2012*):
+
+- As of November 2011, 67 publications had been published using this
+data, with 1,781 citations to these papers \medskip
+- Research using NMMAPS has been used by the US EPA in creating
+  regulatory impact statements for air pollution (particulates and
+  ozone) \medskip
+- "Thanks to NMMAPS, there is probably no other country in the
+  world with a greater understanding of the health effects of air
+  pollution and heat waves in its population."
+
+## What an R package looks like
+
+```{r echo = FALSE, fig.align = "center", out.width = "\\textwidth"}
+knitr::include_graphics("images/weathermetrics_package.png")
+```
+
+## R package template
+
+```{r echo = FALSE, fig.align = "center", out.width = "\\textwidth"}
+knitr::include_graphics("images/package_template.png")
+```
+
+## Required files
+
+- **R/** or **data/** If you don't have one of these, your package won't do anything \bigskip
+- **DESCRIPTION** Needed, but you can't keep the template version as-is \bigskip
+- **NAMESPACE** Needed, but you can't keep the template version as-is 
+
+____
+
+\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
+  \includegraphics[width=1\paperwidth]{images/example_code}};
+\color{colorblue}
+\begin{center}
+\hugetext{\montserratfont [Live coding example]}
+\end{center}
+
+
+## Resources
+
+```{r echo = FALSE, out.height = "0.7\\textheight", fig.align = "center"}
+knitr::include_graphics("images/p_packages_cover.png.png")
+```
+
+\centering
+http://r-pkgs.had.co.nz/
+
+## Resources
+
+```{r echo = FALSE, out.width = "0.8\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/package-development.pdf")
+```
+\vspace{-0.5cm}
+\small
+https://www.rstudio.com/resources/cheatsheets/
+
+## Resources
+
+```{r echo = FALSE, out.width = "0.5\\textwidth", fig.align = "center"}
+knitr::include_graphics("images/train_dragon.jpeg")
+```
+
 ____
 
 \begin{center}
@@ -270,89 +353,6 @@ knitr::include_graphics("images/maze-minecraft.png")
 
 ```{r echo = FALSE, out.width = "\\textwidth", fig.align = "center"}
 knitr::include_graphics("images/github_pages.png")
-```
-
-
-____
-
-\begin{center}
- \hugetext{PACKAGE} 
- \medskip 
- \small Collect R functions in \textbf{packages} 
-\end{center}
-
-## Why write R packages
-
-\begin{block}{Software development in biostatistics}
-\includegraphics[width = \textwidth]{images/JeffLeekQuote.png}
-\\ Source: Jeff Leek, Simply Statistics
-\end{block}
-
-## Why write R packages
-
-\footnotesize
-
-Research impacts of NMMAPS package (*Source: Barnett, Huang, and Turner, "Benefits of Publicly Available Data", Epidemiology 2012*):
-
-- As of November 2011, 67 publications had been published using this
-data, with 1,781 citations to these papers \medskip
-- Research using NMMAPS has been used by the US EPA in creating
-  regulatory impact statements for air pollution (particulates and
-  ozone) \medskip
-- "Thanks to NMMAPS, there is probably no other country in the
-  world with a greater understanding of the health effects of air
-  pollution and heat waves in its population."
-
-## What an R package looks like
-
-```{r echo = FALSE, fig.align = "center", out.width = "\\textwidth"}
-knitr::include_graphics("images/weathermetrics_package.png")
-```
-
-## R package template
-
-```{r echo = FALSE, fig.align = "center", out.width = "\\textwidth"}
-knitr::include_graphics("images/package_template.png")
-```
-
-## Required files
-
-- **R/** or **data/** If you don't have one of these, your package won't do anything \bigskip
-- **DESCRIPTION** Needed, but you can't keep the template version as-is \bigskip
-- **NAMESPACE** Needed, but you can't keep the template version as-is 
-
-____
-
-\tikz[overlay,remember picture] \node[opacity=0.2, at=(current page.center)]{%
-  \includegraphics[width=1\paperwidth]{images/example_code}};
-\color{colorblue}
-\begin{center}
-\hugetext{\montserratfont [Live coding example]}
-\end{center}
-
-
-## Resources
-
-```{r echo = FALSE, out.height = "0.7\\textheight", fig.align = "center"}
-knitr::include_graphics("images/p_packages_cover.png.png")
-```
-
-\centering
-http://r-pkgs.had.co.nz/
-
-## Resources
-
-```{r echo = FALSE, out.width = "0.8\\textwidth", fig.align = "center"}
-knitr::include_graphics("images/package-development.pdf")
-```
-\vspace{-0.5cm}
-\small
-https://www.rstudio.com/resources/cheatsheets/
-
-## Resources
-
-```{r echo = FALSE, out.width = "0.5\\textwidth", fig.align = "center"}
-knitr::include_graphics("images/train_dragon.jpeg")
 ```
 
 ____

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  9 APR 2019 00:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.25)  9 APR 2019 08:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1740,101 +1740,101 @@ File: images/repro_research_book.jpg Graphic file (type bmp)
 ] [23
 
 ]
-File: images/GitHubDiagram.png Graphic file (type bmp)
-<images/GitHubDiagram.png>
-[24
-
-]
-File: images/hidden_files.png Graphic file (type bmp)
-<images/hidden_files.png>
-[25
-
-]
-File: images/ExampleGitWindow.png Graphic file (type bmp)
-<images/ExampleGitWindow.png>
-[26
-
-]
-File: images/ExampleCommitWindow.png Graphic file (type bmp)
-<images/ExampleCommitWindow.png>
-[27
-
-]
-File: images/git_commit.png Graphic file (type bmp)
-<images/git_commit.png>
-[28
-
-]
-File: images/ExampleHistoryWindow.png Graphic file (type bmp)
-<images/ExampleHistoryWindow.png>
-[29
-
-]
-File: images/example_code.png Graphic file (type bmp)
-<images/example_code.png>
-[30
-
-]
-File: images/maze-minecraft.png Graphic file (type bmp)
-<images/maze-minecraft.png>
-
-Overfull \vbox (6.66086pt too high) detected at line 491
- []
-
-[31
-
-]
-File: images/github_pages.png Graphic file (type bmp)
-<images/github_pages.png>
-[32
-
-] [33
-
-]
 File: images/JeffLeekQuote.png Graphic file (type bmp)
 <images/JeffLeekQuote.png>
-[34
+[24
 
-] [35
+] [25
 
 ]
 File: images/weathermetrics_package.png Graphic file (type bmp)
 <images/weathermetrics_package.png>
-[36
+[26
 
 ]
 File: images/package_template.png Graphic file (type bmp)
 <images/package_template.png>
-[37
+[27
 
-] [38
+] [28
 
 ]
 File: images/example_code.png Graphic file (type bmp)
 <images/example_code.png>
-[39
+[29
 
 ]
 File: images/p_packages_cover.png Graphic file (type bmp)
 <images/p_packages_cover.png>
-[40
+[30
 
 ]
 File: images/package-development.pdf Graphic file (type pdf)
 <use images/package-development.pdf>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 609.
+(Font)              <8> on input line 505.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 609.
-[41
+(Font)              <6> on input line 505.
+[31
 
 ]
 File: images/train_dragon.jpeg Graphic file (type bmp)
 <images/train_dragon.jpeg>
 
-Overfull \vbox (8.4402pt too high) detected at line 616
+Overfull \vbox (8.4402pt too high) detected at line 512
  []
 
+[32
+
+] [33
+
+]
+File: images/GitHubDiagram.png Graphic file (type bmp)
+<images/GitHubDiagram.png>
+[34
+
+]
+File: images/hidden_files.png Graphic file (type bmp)
+<images/hidden_files.png>
+[35
+
+]
+File: images/ExampleGitWindow.png Graphic file (type bmp)
+<images/ExampleGitWindow.png>
+[36
+
+]
+File: images/ExampleCommitWindow.png Graphic file (type bmp)
+<images/ExampleCommitWindow.png>
+[37
+
+]
+File: images/git_commit.png Graphic file (type bmp)
+<images/git_commit.png>
+[38
+
+]
+File: images/ExampleHistoryWindow.png Graphic file (type bmp)
+<images/ExampleHistoryWindow.png>
+[39
+
+]
+File: images/example_code.png Graphic file (type bmp)
+<images/example_code.png>
+[40
+
+]
+File: images/maze-minecraft.png Graphic file (type bmp)
+<images/maze-minecraft.png>
+
+Overfull \vbox (6.66086pt too high) detected at line 609
+ []
+
+[41
+
+]
+File: images/github_pages.png Graphic file (type bmp)
+<images/github_pages.png>
 [42
 
 ] [43
@@ -1905,7 +1905,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  36567 strings out of 494921
  742809 string characters out of 6174292
- 809868 words of memory out of 5000000
+ 809870 words of memory out of 5000000
  39815 multiletter control sequences out of 15000+600000
  542356 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

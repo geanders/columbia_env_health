@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="1.1 Set-up | R for Environmental Health Research" />
+<meta property="og:title" content="4.1 git | R for Environmental Health Research" />
 <meta property="og:type" content="book" />
 
 
@@ -22,7 +22,7 @@
 
 <meta name="description" content="Online booklet for workshop on R for environmental health research, geared to those who already use R for their research but want to learn more tools.">
 
-<title>1.1 Set-up | R for Environmental Health Research</title>
+<title>4.1 git | R for Environmental Health Research</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/envisioned.css" rel="stylesheet" />
@@ -154,84 +154,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="set-up" class="section level2">
-<h2><span class="header-section-number">1.1</span> Set-up</h2>
-<p>I am assuming that you already have R and RStudio installed on your computer.
-You may want to check that you have a recent version of both, and if not, update
-you version before the workshop. Some of the packages and RStudio tools we’ll be
-using will require newer versions of R and RStudio to work. You can run
-<code>sessionInfo()</code> in R to find out the version of R you have installed. Compare
-this version to the latest R release version listed at the Comprehensive R
-Archive Network (CRAN).</p>
-<p>To try out the examples, you will also need a bit more set-up:</p>
-<ol style="list-style-type: decimal">
-<li>Download git</li>
-<li>Get a GitHub account</li>
-<li>Install some R packages</li>
-<li>Download example R Project</li>
-</ol>
-<p>This section will walk you through each step.</p>
-<ol style="list-style-type: decimal">
-<li>Download git</li>
-</ol>
-<p>In the workshop, you will learn how to use <strong>git</strong>.[^<strong>git.</strong> Open-source version control
-software that can be easily integrated with R projects.] To try the examples, you will need to
-install git to your computer and make
-sure that your installation of RStudio can find this software, so you can use git for version
-control for R Projects. There are more details on this process in the “Track” section.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Get a GitHub account</li>
-</ol>
-<p>You’ll also learn how to share and collaborate on an R Project using <strong>GitHub</strong>.<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <strong>GitHub.</strong>
-An online platform for directories tracked with
-the version control software <code>git</code>. This platform has become
-very popular for sharing code projects, as well as collaborating across a team on developing
-code and software. Other online git platforms exist and are used by some researchers,
-including <strong>GitLab</strong>. Once you’ve mastered using GitHub, you should be able to easy
-transfer those skills to other platforms like GitLab.</span> You will need to get a GitHub
-account to be able to post repositories on GitHub.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Install some R packages</li>
-</ol>
-<p>This booklet uses a number of R packages beyond base R. To install all the packages that you’ll
-need, run the following code in your version of R:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;drat&quot;</span>, <span class="st">&quot;tigris&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>))</code></pre>
-<p>Also, you’ll want to install the <code>hurricaneexposuredata</code> and <code>hurricaneexposure</code> packages, which
-you need to do in a bit of a different way:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(drat)
-<span class="kw">addRepo</span>(<span class="st">&quot;geanders&quot;</span>)
-<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposuredata&quot;</span>)
-<span class="kw">install.packages</span>(<span class="st">&quot;hurricaneexposure&quot;</span>)</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Download example R Project</li>
-</ol>
-<p>I’ve created a repository on GitHub. You can find this example
-repository by <a href="https://github.com/geanders/columbia_env_health_examples">clicking here</a>. On the
-page takes you to, click on the “Clone or download” button and then select “Download ZIP”.</p>
-<p>This will download a single zipped file to your computer. When you unzip the file, it will be a
-special type of directory, an R Project directory. To open the R Project and start on the
-examples, open RStudio, then go to “File” -&gt; “Open Project”. A pop-up window will open to let you
-navigate through your files and find an R Project to open. Navigate to the directory you
-downloaded, which should be called “columbia_env_health_examples” and doubleclick on the file
-in this directory called “columbia_env_health_examples.Rproj”.</p>
-<p>This will open the project. In the “Files” pane of RStudio, you should see some subdirectories for
-“R” and “data”. These have the example R code and data, respectively, for you to try the examples
-in this booklet. The code in each of the R files should run independently, including the code to
-load all required packages. Figure <a href="1-1-set-up.html#fig:examplerepo">1.1</a> shows what this package should
-look like once you’ve downloaded and opened it, as well as some of the files in the
-project’s “R” subdirectory.</p>
-<div class="figure fullwidth"><span id="fig:examplerepo"></span>
-<img src="images/example_repo.png" alt="What the example R Project for this booklet should look like once you've downloaded and opened it." width="1039"  />
-<p class="caption marginnote shownote">
-Figure 1.1: What the example R Project for this booklet should look like once you’ve downloaded and opened it.
-</p>
+<div id="git" class="section level2">
+<h2><span class="header-section-number">4.1</span> git</h2>
+<p>Git is a version control system. It saves information about all changes you make
+on all files in a repository. This allows you to revert back to previous
+versions and search through the history for all files in the repository. Git is
+open source. You can download it for different operating systems at
+<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>. You will need git on your computer to use git
+with RStudio and create local git repositories you can sync with GitHub
+repositories. If you are using Windows OS, you’ll want your git installation to
+include a “Bash emulation” (i.e., access to a command line that acts like a Bash
+shell), which I think should come standard with the Windows git installation.
+On Mac or Linux computers, you should already have access to a Bash shell.</p>
+<div id="configuring-git" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Configuring git</h3>
+<p>Before you use git, you should configure it. For example, you should make sure
+it has your name and email address. You can configure git with commands at a
+Bash shell.<label for="tufte-sn-9" class="margin-toggle sidenote-number">9</label><input type="checkbox" id="tufte-sn-9" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">9</span> If you are using Windows, search for “Bash” among your programs.
+You should be able to fine the Bash emulator that cam with your git install. If
+you are using a Mac, you’ll want to open “Terminal”. If you’re using Linux, you
+almost certainly already know your way around a Bash shell.</span> For example, I
+would run the following code at a shell to configure git to have my proper user
+name and email:</p>
+<pre><code>git config --global user.name &quot;Brooke Anderson&quot;
+git config --global user.email &quot;brooke.anderson@colostate.edu&quot;</code></pre>
+<p>You’ll only need to run this configuration once, until you get a new computer or
+for some reason need to re-install git. Once you set these configurations on
+your computer, they should be set on that computer indefinitely.</p>
+<p>Next, you need to make sure that RStudio can find the git software you
+installed. Sometimes, RStudio will automatically find git (once you’ve installed
+git) when you start RStudio. However, in some cases, you may need to take some
+more steps to activate git in RStudio. To do this, go to “RStudio” -&gt;
+“Preferences” -&gt; “Git/SVN”. Choose “Enable version control”. If you have just
+installed git, and have not restarted RStudio, you’ll need to do that before
+RStudio will recognize git. If you do not see “Git” in the box for “Version
+control system”, it means either that you do not have git installed on your
+computer or that RStudio was unable to find it. If RStudio doesn’t find your
+version of git in the “Git executable” box, browse for it. If you’re still
+having problems, there’s a chance that you’ll need to mess around some with your
+PATH variables. You may want to find a computer-savy friend or IT person to help
+you if you get to this stage.</p>
 </div>
-
+<div id="tracking-an-r-project" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Tracking an R project</h3>
+<p>To track an R package, you’ll first need to initialize it as a git repository.
+Then, as you make changes to the code, you’ll want to <strong>commit</strong> those changes
+as you go, using <strong>commit messages</strong> that are short but clear enough for you to
+follow them when you review them later.</p>
+<p>You can initialize a git repository for a directory that is an R Project
+directory through R Studio.</p>
+<ol style="list-style-type: decimal">
+<li>Open the Project.</li>
+<li>Go to “Tools” -&gt; “Version Control” -&gt; “Project Setup”.</li>
+<li>In the box for “Version control system”, choose “Git”.</li>
+</ol>
+<p>You only need to do this once per project, but you will need to do it for each
+project you want to keep under version control.</p>
+<p>Once you initialize the project as a git repository, you should have a “Git”
+window in one of your RStudio panes (top right pane by default). As you make and
+save changes to files, they will show up in this window for you to commit. When
+you want git to record changes, you <em>commit</em> the files with the changes. Each
+time you commit, you have to include a short commit message with some
+information about the changes. You can make commits from a shell. However, it’s
+much easier to just make commits from the RStudio environment. Click on the
+“Commit” button in the Git window. That will open a separate commit window. In
+this window, to commit changes:</p>
+<ol style="list-style-type: decimal">
+<li>Click on the files you want to commit to select them.</li>
+<li>If you’d like, you can use the bottom part of the window to look through the
+changes you are committing in each file.</li>
+<li>Write a message in the “Commit message” box. Keep the message to one line in
+this box if you can. If you need to explain more, write a short one-line
+message, skip a line, and then write a longer explanation.</li>
+<li>Click on the “Commit” button on the right.</li>
+</ol>
+<p>Once you commit changes to files, they will disappear from the Git window until
+you make and save more changes in them.</p>
+<p>Once you’ve made some commits, you may want to browse through the changes. On
+the top left of the Commit window, you can toggle to “History”. This window
+allows you to explore the history of commits for the repository.</p>
 </div>
-<!-- </div> -->
+</div>
 <p style="text-align: center;">
-<a href="index.html"><button class="btn btn-default">Previous</button></a>
-<a href="2-organize.html"><button class="btn btn-default">Next</button></a>
+<a href="4-track.html"><button class="btn btn-default">Previous</button></a>
+<a href="4-2-github.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>
